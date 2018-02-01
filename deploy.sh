@@ -6,6 +6,7 @@ if [[ $TRAVIS_PULL_REQUEST == "false" ]] ; then
     else
       S3_BUCKET="beta-docs.preside.org"
     fi
+    export S3_BUCKET
 
     echo "Zipping up docs for offline download..."
     cd builds/html
