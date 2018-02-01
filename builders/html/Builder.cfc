@@ -1,4 +1,9 @@
 component {
+
+	public any function init() {
+		_setBuildProps( new api.build.BuildProperties() );
+	}
+
 	public string function renderLink( any page, required string title ) {
 
 		if ( IsNull( arguments.page ) ) {
@@ -66,6 +71,7 @@ component {
 				, crumbs     = renderTemplate( template="layouts/breadcrumbs.cfm", helpers  = "/builders/html/helpers", args={ crumbs=crumbs, page=arguments.page } )
 				, navTree    = renderTemplate( template="layouts/sideNavTree.cfm", helpers  = "/builders/html/helpers", args={ crumbs=crumbs, docTree=arguments.docTree, pageLineage=arguments.page.getLineage() } )
 				, seeAlso    = renderTemplate( template="layouts/seeAlso.cfm"    , helpers  = "/builders/html/helpers", args={ links=links } )
+				, isBeta     = _getBuildProps().getIsBeta()
 			  }
 		);
 	}
@@ -167,5 +173,13 @@ component {
 				, navTree    = renderTemplate( template="layouts/sideNavTree.cfm", helpers  = "/builders/html/helpers", args={ crumbs=crumbs, docTree=arguments.docTree, pageLineage=[ "/home" ] } )
 			  }
 		);
+	}
+
+// getters and setters
+	private any function _getBuildProps() {
+		return _buildProps;
+	}
+	private void function _setBuildProps( required any buildProps ) {
+		_buildProps = arguments.buildProps;
 	}
 }

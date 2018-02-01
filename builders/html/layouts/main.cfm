@@ -3,6 +3,7 @@
 <cfparam name="args.crumbs"     type="string" />
 <cfparam name="args.navTree"    type="string" />
 <cfparam name="args.seeAlso"    type="string" />
+<cfparam name="args.isBeta"     type="boolean" />
 
 <cfoutput><!DOCTYPE html>
 <html>
@@ -115,6 +116,21 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-10 col-lg-push-1 body">
+							<cfif !args.isBeta>
+								<div class="card-wrap">
+									<div class="card card-red">
+										<aside class="card-side">
+											<span class="card-heading icon icon-info"></span>
+										</aside>
+										<div class="card-main">
+											<div class="card-inner">
+												<p class="alert alert-info"><strong>You are currently viewing the BETA version of the documentation.</strong> This documentation should be used as a preview for the upcoming release only. For documentation relating to the latest stable version of Preside, visit <a href="https://docs.preside.org">https://docs.preside.org</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</cfif>
+
 							<div class="tile-wrap">
 								<div class="tile">
 									#args.crumbs#
