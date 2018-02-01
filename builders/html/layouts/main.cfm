@@ -17,6 +17,10 @@
 		<link href="assets/css/highlight.css" rel="stylesheet">
 		<link rel="icon" type="image/png" href="assets/images/preside-favicon.png">
 
+		<cfif args.isBeta>
+			<meta name="robots" content="noindex, nofollow">
+		</cfif>
+
 		<!-- ie -->
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.js" type="text/javascript"></script>
