@@ -1,0 +1,24 @@
+language: java
+rvm:
+  - 1.9.3
+jdk:
+  - oraclejdk8
+before_install:
+  - mkdir /tmp/bin
+  - export PATH=$PATH:/tmp/bin
+install:
+  - curl --location 'https://www.ortussolutions.com/parent/download/commandbox/type/bin' -o /tmp/box.zip
+  - unzip /tmp/box.zip -d /tmp/bin
+  - sed -i "s/java_args='-client'/java_args='-Xmx512m -client'/" /tmp/bin/box
+  - gem install s3_website
+script:
+  - "box install save=false force=true"
+  - "./build.sh"
+  - "./deploy.sh"
+cache:
+  directories:
+    - $HOME/.CommandBox
+
+notifications:
+  email: false
+  webhooks: https://pixl8-preside-cms.getbadges.io/api/app/webhook/706b9f2f-93d8-4948-b279-ebfbaea9a7a8
