@@ -15,13 +15,13 @@ component accessors=true {
 		var env          = CreateObject("java", "java.lang.System").getenv();
 		var travisBranch = env.travis_branch ?: "";
 
-		if ( env.keyExists( "EDIT_SOURCE_LINK" ) ) {
+		if ( StructKeyExists( env, "EDIT_SOURCE_LINK" ) ) {
 			setEditSourceLink( env.EDIT_SOURCE_LINK );
 		}
-		if ( env.keyExists( "DASH_BUILD_NUMBER" ) ) {
+		if ( StructKeyExists( env, "DASH_BUILD_NUMBER" ) ) {
 			setDashBuildNumber( env.DASH_BUILD_NUMBER );
 		}
-		if ( env.keyExists( "DASH_DOWNLOAD_URL" ) ) {
+		if ( StructKeyExists( env, "DASH_DOWNLOAD_URL" ) ) {
 			setDashDownloadUrl( env.DASH_DOWNLOAD_URL );
 		}
 
