@@ -4,7 +4,7 @@ if [[ $TRAVIS_PULL_REQUEST == "false" ]] ; then
     if [[ $TRAVIS_BRANCH == "master" ]] ; then
       S3_BUCKET="docs.preside.org"
     else
-      S3_BUCKET="beta-docs.preside.org"
+      S3_BUCKET="preside-beta-docs"
     fi
     export S3_BUCKET
 
