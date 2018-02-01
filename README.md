@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/pixl8/Preside-Documentation.svg?branch=master)](https://travis-ci.org/pixl8/Preside-Documentation)
 
-This directory contains the source and build scripts for creating Preside CMS's documentation. The website output of the docs can be found at [http://docs.preside.org](http://docs.preside.org).
+This directory contains the source and build scripts for creating Preside CMS's documentation. The website output of the docs can be found at [https://docs.preside.org](https://docs.preside.org).
 
 ## Build locally
 
