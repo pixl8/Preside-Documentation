@@ -116,7 +116,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-10 col-lg-push-1 body">
-							<cfif !args.isBeta>
+							<cfif args.isBeta>
 								<div class="card-wrap">
 									<div class="card card-red">
 										<aside class="card-side">
