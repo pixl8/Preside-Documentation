@@ -27,8 +27,9 @@
 		padding  : 10px 10px 10px 20px;
 		background-color : white;
 		border-radius : 10px;
-		max-width : 400px;
-		// overflow-x : elipsis;
+		width         : 400px;
+		max-height    : 550px;
+		overflow-y : scroll;
 		text-overflow: ellipsis;
 	}
 }
