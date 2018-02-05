@@ -6,3 +6,29 @@
 @import "variable";
 
 // project css
+.toc-navigation {
+	.toc-list {
+		li {
+			list-style : none;
+		}
+	}
+
+	.toc-list.toc-list-level-1 {
+		margin-left : 0;
+		padding-left : 0;
+	}
+}
+
+@media only screen and (min-width: 1720px) {
+	.toc-navigation {
+		position : fixed;
+		right    : 20px;
+		top      : 190px;
+		padding  : 10px 10px 10px 20px;
+		background-color : white;
+		border-radius : 10px;
+		max-width : 400px;
+		// overflow-x : elipsis;
+		text-overflow: ellipsis;
+	}
+}

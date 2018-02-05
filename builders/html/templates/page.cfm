@@ -1,8 +1,14 @@
 <cfparam name="args.page" type="page" />
 
-<cfset pg = args.page />
+<cfscript>
+	pg   = args.page;
+	body = markdownToHtml( pg.getBody() );
+</cfscript>
 
 <cfoutput>
+	#toc( body )#
+
 	<a class="pull-right" href="#getSourceLink( path=pg.getSourceFile() )#" title="Improve the docs"><i class="fa fa-pencil fa-fw"></i></a>
-	#markdownToHtml( pg.getBody() )#
+
+	#body#
 </cfoutput>
