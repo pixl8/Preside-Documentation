@@ -45,7 +45,7 @@ component {
 }
 ```
 
-## Building and customizing links to objects and records
+## Building and customizing links
 
 With the new 10.9.0 customization system, comes a new method of building data manager links for objects. Use `event.buildAdminLink( objectName=objectName )` along with optional arguments, `operation` and `recordId` to build various links. For example, to link to the data manager listing page for an object, use the following:
 
@@ -97,7 +97,7 @@ event.buildAdminLink(
 );
 ```
 
-### Providing a custom link builder for an operation
+### Custom link builders
 
 There is a naming convention for providing a custom link builder for an operation: `build{operation}Link`. There are therefore Data Manager customizations named, `buildListingLink`, `buildViewRecordLink`, and so on. For example, to provide a completely different link for a view record screen for your object, you could do:
 
@@ -144,4 +144,140 @@ Linking to the "preview" "operation" can then be done with:
 
 ```luceescript
 event.buildAdminLink( objectName="article", operation="preview", id=recordId );
+```
+
+## Customization reference
+
+There are currently more than 60 customization points in the Data Manager and this number is set to grow. We have grouped them into categories below for your reference:
+
+### Record listing table/grid
+
+* [[datamanager-customization-listingviewlet|listingViewlet]]
+* [[datamanager-customization-prerenderlisting|preRenderListing]]
+* [[datamanager-customization-postrenderlisting|postRenderListing]]
+* [[datamanager-customization-toprightbuttonsforobject|topRightButtonsForObject]]
+* [[datamanager-customization-extratoprightbuttonsforobject|extraTopRightButtonsForObject]]
+* [[datamanager-customization-prefetchrecordsforgridlisting|preFetchRecordsForGridListing]]
+* [[datamanager-customization-postfetchrecordsforgridlisting|postFetchRecordsForGridListing]]
+* [[datamanager-customization-decoraterecordsforgridlisting|decorateRecordsForGridListing]]
+* [[datamanager-customization-getactionsforgridlisting|getActionsForGridListing]]
+* [[datamanager-customization-getrecordactionsforgridlisting|getRecordActionsForGridListing]]
+* [[datamanager-customization-extrarecordactionsforgridlisting|extraRecordActionsForGridListing]]
+* [[datamanager-customization-getadditionalquerystringforbuildajaxlistinglink|getAdditionalQueryStringForBuildAjaxListingLink]]
+
+
+### Adding records
+
+* [[datamanager-customization-addrecordform|addRecordForm]]
+* [[datamanager-customization-getaddrecordformname|getAddRecordFormName]]
+* [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
+* [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
+* [[datamanager-customization-addrecordactionbuttons|addRecordActionButtons]]
+* [[datamanager-customization-toprightbuttonsforaddrecord|topRightButtonsForAddRecord]]
+* [[datamanager-customization-extratoprightbuttonsforaddrecord|extraTopRightButtonsForAddRecord]]
+* [[datamanager-customization-addrecordaction|addRecordAction]]
+* [[datamanager-customization-preaddrecordaction|preAddRecordAction]]
+* [[datamanager-customization-postaddrecordaction|postAddRecordAction]]
+
+
+### Viewing records
+
+* [[datamanager-customization-renderrecord|renderRecord]]
+* [[datamanager-customization-prerenderrecord|preRenderRecord]]
+* [[datamanager-customization-postrenderrecord|postRenderRecord]]
+* [[datamanager-customization-prerenderrecordleftcol|preRenderRecordLeftCol]]
+* [[datamanager-customization-postrenderrecordleftcol|postRenderRecordLeftCol]]
+* [[datamanager-customization-prerenderrecordrightcol|preRenderRecordRightCol]]
+* [[datamanager-customization-postrenderrecordrightcol|postRenderRecordRightCol]]
+* [[datamanager-customization-toprightbuttonsforviewrecord|topRightButtonsForViewRecord]]
+* [[datamanager-customization-extratoprightbuttonsforviewrecord|extraTopRightButtonsForViewRecord]]
+
+### Editing records
+
+* [[datamanager-customization-editrecordform|editRecordForm]]
+* [[datamanager-customization-geteditrecordformname|getEditRecordFormName]]
+* [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
+* [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]
+* [[datamanager-customization-editrecordactionbuttons|editRecordActionButtons]]
+* [[datamanager-customization-toprightbuttonsforeditrecord|topRightButtonsForEditRecord]]
+* [[datamanager-customization-extratoprightbuttonsforeditrecord|extraTopRightButtonsForEditRecord]]
+* [[datamanager-customization-editrecordaction|editRecordAction]]
+* [[datamanager-customization-preeditrecordaction|preEditRecordAction]]
+* [[datamanager-customization-posteditrecordaction|postEditRecordAction]]
+
+### Deleting records
+
+* [[datamanager-customization-deleterecordaction|deleteRecordAction]]
+* [[datamanager-customization-predeleterecordaction|preDeleteRecordAction]]
+* [[datamanager-customization-postdeleterecordaction|postDeleteRecordAction]]
+
+### Building links
+
+* [[datamanager-customization-buildlistinglink|buildListingLink]]
+* [[datamanager-customization-buildviewrecordlink|buildViewRecordLink]]
+* [[datamanager-customization-buildaddrecordlink|buildAddRecordLink]]
+* [[datamanager-customization-buildaddrecordactionlink|buildAddRecordActionLink]]
+* [[datamanager-customization-buildeditrecordlink|buildEditRecordLink]]
+* [[datamanager-customization-buildeditrecordactionlink|buildEditRecordActionLink]]
+* [[datamanager-customization-builddeleterecordactionlink|buildDeleteRecordActionLink]]
+* [[datamanager-customization-buildtranslaterecordlink|buildTranslateRecordLink]]
+* [[datamanager-customization-buildsortrecordslink|buildSortRecordsLink]]
+* [[datamanager-customization-buildmanagepermslink|buildManagePermsLink]]
+* [[datamanager-customization-buildajaxlistinglink|buildAjaxListingLink]]
+* [[datamanager-customization-buildmultirecordactionlink|buildMultiRecordActionLink]]
+* [[datamanager-customization-buildexportdataactionlink|buildExportDataActionLink]]
+* [[datamanager-customization-builddataexportconfigmodallink|buildDataExportConfigModalLink]]
+* [[datamanager-customization-buildrecordhistorylink|buildRecordHistoryLink]]
+* [[datamanager-customization-buildgetnodesfortreeviewlink|buildGetNodesForTreeViewLink]]
+
+### Permissioning
+
+* [[datamanager-customization-checkpermission|checkPermission]]
+* [[datamanager-customization-isoperationallowed|isOperationAllowed]]
+
+### General
+
+* [[datamanager-customization-toprightbuttons|topRightButtons]]
+* [[datamanager-customization-extratoprightbuttons|extraTopRightButtons]]
+* [[datamanager-customization-rootbreadcrumb|rootBreadcrumb]]
+* [[datamanager-customization-objectbreadcrumb|objectBreadcrumb]]
+* [[datamanager-customization-recordbreadcrumb|recordBreadcrumb]]
+* [[datamanager-customization-versionnavigator|versionNavigator]]
+
+### Translations
+
+* [[datamanager-customization-gettranslationsactionbutton|getTranslationsActionButton]]
+
+
+## Creating your own customizations
+
+You may wish to utilize the customization system in your extensions to allow implementations to easily override additional data manager features that you may provide. To do so, you can inject the [[api-datamanagercustomizationservice]] into your handler or service and make use of the methods:
+
+* [[datamanagercustomizationservice-runCustomization]]
+* [[datamanagercustomizationservice-objectHasCustomization]]
+
+For example:
+
+
+```luceescript
+if ( datamanagerCustomizationService.objectHasCustomization( objectName, "printPreview" ) ) {
+	printPreview = datamanagerCustomizationService.runCustomization(
+		  objectName = objectName
+		, action     = "printPreview"
+		, args       = args
+	);
+} else {
+	printPreview = renderView( view=defaultView, args=args );
+}
+```
+
+Or:
+
+```luceescript
+printPreview = datamanagerCustomizationService.runCustomization(
+	  objectName     = objectName
+	, action         = "printPreview"
+	, defaultHandler = "myhandler.printPreview"
+	, args           = args
+);
 ```
