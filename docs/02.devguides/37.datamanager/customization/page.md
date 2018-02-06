@@ -281,3 +281,82 @@ printPreview = datamanagerCustomizationService.runCustomization(
 	, args           = args
 );
 ```
+
+## Custom navigation to your objects
+
+One of the most powerful changes in 10.9.0 is the ability to have objects use the Data Manager system _without needing to be listed in the Data Manager homepage_. This means that you could have a main navigation link directly to your object(s), for example. In short, you can build highly custom admin interfaces much quicker and with much less code.
+
+### Remove from Data Manager homepage
+
+To allow an object to use Data Manager without appearing in the Data Manager homepage listing, use the `@datamanagerEnabled true` annotation and **not** the `@datamanagerGroup` annotation. For example:
+
+```luceescript
+// /application/preside-objects/blog.cfc
+/**
+ * @datamanagerEnabled true
+ *
+ */
+component {
+    // ...
+}
+```
+
+### Example: Add to the admin left-hand menu
+
+>>>>>> See [[adminlefthandmenu]] for a full guide to customizing the left-hand menu/navigation.
+
+In your application or extension's `Config.cfc` file, modify the `settings.adminSideBarItems` to add a new entry for your object. For example:
+
+```luceescript
+settings.adminSideBarItems.append( "blog" );
+```
+
+Then, create a corresponding view at `/views/admin/layout/sidebar/blog.cfm`. For _example_:
+
+```luceescript
+// /views/admin/layout/sidebar/blog.cfm
+hasPermission = hasCmsPermission(
+	  permissionKey = "read"
+	, context       = "datamanger"
+	, contextKeys   = [ "blog" ]
+);
+if ( hasPermission ) {
+    Echo( renderView(
+          view = "/admin/layout/sidebar/_menuItem"
+        , args = {
+              active  = ReFindNoCase( "^admin\.datamanager", event.getCurrentEvent() ) && ( prc.objectName ?: "" ) == "blog"
+            , link    = event.buildAdminLink( objectName="blog" )
+            , gotoKey = "b"
+            , icon    = "fa-comments"
+            , title   = translateResource( 'preside-objects.blog:menu.title' )
+          }
+    ) );
+}
+
+```
+
+### Modify the breadcrumb
+
+By default, your object will get breadcrumbs that start with a link to the Data Manager homepage. Use the breadcrumb customizations to modify this:
+
+* [[datamanager-customization-rootbreadcrumb|rootBreadcrumb]]
+* [[datamanager-customization-objectbreadcrumb|objectBreadcrumb]]
+* [[datamanager-customization-recordbreadcrumb|recordBreadcrumb]]
+
+For example:
+
+```luceescript
+// /application/handlers/admin/datamanager/blog.cfc
+
+component {
+
+	private void function rootBreadcrumb() {
+		// Deliberately do nothing so as to remove the root 
+		// 'Data manager' breadcrumb just for the 'blog' object.
+
+		// We could, instead, call event.addAdminBreadCrumb( title=title, link=link )
+		// to provide an alternative root breadcrumb
+	}
+
+}
+```
