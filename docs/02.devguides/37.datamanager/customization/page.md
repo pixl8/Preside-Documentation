@@ -158,12 +158,12 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-gettoprightbuttonsforobject|getTopRightButtonsForObject]]
 * [[datamanager-customization-extratoprightbuttonsforobject|extraTopRightButtonsForObject]]
 * [[datamanager-customization-prefetchrecordsforgridlisting|preFetchRecordsForGridListing]]
+* [[datamanager-customization-getadditionalquerystringforbuildajaxlistinglink|getAdditionalQueryStringForBuildAjaxListingLink]]
 * [[datamanager-customization-postfetchrecordsforgridlisting|postFetchRecordsForGridListing]]
 * [[datamanager-customization-decoraterecordsforgridlisting|decorateRecordsForGridListing]]
 * [[datamanager-customization-getactionsforgridlisting|getActionsForGridListing]]
 * [[datamanager-customization-getrecordactionsforgridlisting|getRecordActionsForGridListing]]
 * [[datamanager-customization-extrarecordactionsforgridlisting|extraRecordActionsForGridListing]]
-* [[datamanager-customization-getadditionalquerystringforbuildajaxlistinglink|getAdditionalQueryStringForBuildAjaxListingLink]]
 
 
 ### Adding records
