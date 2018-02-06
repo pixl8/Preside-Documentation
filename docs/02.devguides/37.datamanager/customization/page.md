@@ -150,12 +150,12 @@ event.buildAdminLink( objectName="article", operation="preview", id=recordId );
 
 There are currently more than 60 customization points in the Data Manager and this number is set to grow. We have grouped them into categories below for your reference:
 
-### Record listing table/grid
+### Record listing table / grid
 
 * [[datamanager-customization-listingviewlet|listingViewlet]]
 * [[datamanager-customization-prerenderlisting|preRenderListing]]
 * [[datamanager-customization-postrenderlisting|postRenderListing]]
-* [[datamanager-customization-toprightbuttonsforobject|topRightButtonsForObject]]
+* [[datamanager-customization-gettoprightbuttonsforobject|getTopRightButtonsForObject]]
 * [[datamanager-customization-extratoprightbuttonsforobject|extraTopRightButtonsForObject]]
 * [[datamanager-customization-prefetchrecordsforgridlisting|preFetchRecordsForGridListing]]
 * [[datamanager-customization-postfetchrecordsforgridlisting|postFetchRecordsForGridListing]]
@@ -173,7 +173,7 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
 * [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
 * [[datamanager-customization-addrecordactionbuttons|addRecordActionButtons]]
-* [[datamanager-customization-toprightbuttonsforaddrecord|topRightButtonsForAddRecord]]
+* [[datamanager-customization-gettoprightbuttonsforaddrecord|getTopRightButtonsForAddRecord]]
 * [[datamanager-customization-extratoprightbuttonsforaddrecord|extraTopRightButtonsForAddRecord]]
 * [[datamanager-customization-addrecordaction|addRecordAction]]
 * [[datamanager-customization-preaddrecordaction|preAddRecordAction]]
@@ -189,7 +189,7 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-postrenderrecordleftcol|postRenderRecordLeftCol]]
 * [[datamanager-customization-prerenderrecordrightcol|preRenderRecordRightCol]]
 * [[datamanager-customization-postrenderrecordrightcol|postRenderRecordRightCol]]
-* [[datamanager-customization-toprightbuttonsforviewrecord|topRightButtonsForViewRecord]]
+* [[datamanager-customization-gettoprightbuttonsforviewrecord|getTopRightButtonsForViewRecord]]
 * [[datamanager-customization-extratoprightbuttonsforviewrecord|extraTopRightButtonsForViewRecord]]
 
 ### Editing records
@@ -199,7 +199,7 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
 * [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]
 * [[datamanager-customization-editrecordactionbuttons|editRecordActionButtons]]
-* [[datamanager-customization-toprightbuttonsforeditrecord|topRightButtonsForEditRecord]]
+* [[datamanager-customization-gettoprightbuttonsforeditrecord|getTopRightButtonsForEditRecord]]
 * [[datamanager-customization-extratoprightbuttonsforeditrecord|extraTopRightButtonsForEditRecord]]
 * [[datamanager-customization-editrecordaction|editRecordAction]]
 * [[datamanager-customization-preeditrecordaction|preEditRecordAction]]
