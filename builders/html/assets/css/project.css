@@ -42,4 +42,8 @@
   .toc-navigation > .toc-list {
     margin-top: 0px;
   }
+  .toc-navigation .toc-list a {
+    font-size: 85%;
+    line-height: 1;
+  }
 }
