@@ -19,8 +19,6 @@ For example:
 
 component {
 
-	property name="blogService" inject="blogService";
-
 	private void function postAddRecordAction( event, rc, prc, args={} ) {
 		var newId = args.newId ?: "";
 
@@ -34,6 +32,6 @@ component {
 }
 ```
 
-See also: [[datamanager-customization-preaddrecordaction|preAddRecordAction]] and [[datamanager-customization-addrecordaction|addRecordAction]].
+See also: [[datamanager-customization-pre	addrecordaction|pre	AddRecordAction]] and [[datamanager-customization-addrecordaction|addRecordAction]].
 
 
