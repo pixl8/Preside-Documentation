@@ -33,6 +33,7 @@
 
 <cfoutput>
 	<nav class="toc-navigation">
+		<h2 class="toc-navigation-title">Table of contents</h2>
 		<ul class="toc-list toc-list-level-1">
 			#renderTocItems( args.tocItems )#
 		</ul>
