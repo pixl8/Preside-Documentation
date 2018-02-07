@@ -182,6 +182,8 @@ There are currently more than 60 customization points in the Data Manager and th
 
 ### Viewing records
 
+>>> The customizations below allow you override or decorate the core record rendering system in Data Manager. In addition to these, you should also familiarize yourself with [[adminrecordviews]] as the core view record screen can also be customized using annotations within your Preside Objects.
+
 * [[datamanager-customization-renderrecord|renderRecord]]
 * [[datamanager-customization-prerenderrecord|preRenderRecord]]
 * [[datamanager-customization-postrenderrecord|postRenderRecord]]

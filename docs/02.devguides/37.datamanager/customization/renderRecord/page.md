@@ -13,6 +13,8 @@ The action is expected to return the rendered HTML of the record as a string and
 * `recordId`: ID of the record
 * `version`: Version number of the record (if the object is versioned)
 
+>>>>>> You can also make use of variables in the `prc` scope, such as `prc.record`, that will allow you to potentially not duplicate calls to the database.
+
 For example:
 
 ```luceescript

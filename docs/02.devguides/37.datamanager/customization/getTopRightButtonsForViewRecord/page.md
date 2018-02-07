@@ -1,9 +1,9 @@
 ---
-id: datamanager-customization-toprightbuttonsforviewrecord
-title: "Data Manager customization: topRightButtonsForViewRecord"
+id: datamanager-customization-gettoprightbuttonsforviewrecord
+title: "Data Manager customization: getTopRightButtonsForViewRecord"
 ---
 
-## Data Manager customization: topRightButtonsForViewRecord
+## Data Manager customization: getTopRightButtonsForViewRecord
 
 TODO
 
