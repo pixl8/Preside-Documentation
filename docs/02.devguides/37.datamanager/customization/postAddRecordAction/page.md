@@ -32,6 +32,6 @@ component {
 }
 ```
 
-See also: [[datamanager-customization-pre	addrecordaction|pre	AddRecordAction]] and [[datamanager-customization-addrecordaction|addRecordAction]].
+See also: [[datamanager-customization-preaddrecordaction|pre	AddRecordAction]] and [[datamanager-customization-addrecordaction|addRecordAction]].
 
 
