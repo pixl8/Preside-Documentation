@@ -246,10 +246,6 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-recordbreadcrumb|recordBreadcrumb]]
 * [[datamanager-customization-versionnavigator|versionNavigator]]
 
-### Translations
-
-* [[datamanager-customization-gettranslationsactionbutton|getTranslationsActionButton]]
-
 
 ## Creating your own customizations
 
