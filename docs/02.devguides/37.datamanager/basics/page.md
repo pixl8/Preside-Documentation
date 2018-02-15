@@ -160,3 +160,33 @@ component {
 ## Allowing records to be translated
 
 The Data Manager comes with a basic user interface to allow translation of records. See [[multilingualcontent]] for how configure this feature and enable this per object.
+
+## Displaying records in a tree view
+
+>>> This feature is available since version 10.9.0
+
+For hierarchical data, you can choose to show the listing screen as a tree by using the following attributes on your object:
+
+* `@datamanagerTreeView`: True / false - whether or not to use tree view
+* `@datamanagerTreeParentProperty`: The self referencing foreign key property that creates the hierarchical relationship
+* `@datamanagerTreeSortOrder`: What field(s) to sort on when displaying the children of a node
+
+For example:
+
+```luceescript
+// /application/preside-objects/article.cfc
+
+/**
+ * @labelfield                    title
+ * @datamanagerTreeView           true
+ * @datamanagerTreeParentProperty parent_article
+ * @datamanagerTreeSortOrder      title
+ *
+ */
+component {
+	property name="parent_article" relationship="many-to-one" relatedto="article";
+
+	property name="title" type="string" dbtype="varchar" maxlength=100 required=true;
+	property name="body"  type="string" dbtype="text";
+}
+```
