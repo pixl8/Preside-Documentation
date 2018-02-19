@@ -131,11 +131,34 @@ If you are extending Data Manager to add extra pages for a particular object (fo
 // /handlers/admin/datamanager/article.cfc
 component {
 
-	private string function buildPreviewLink( event, rc, prc, args={} ) {
-		var articleId = args.recordId ?: "";
-		
-		return "https://preview.mysite.com/?articleId=#articleId#";
+// Public events for extra admin pages and actions
+	public void function preview() {		
+		event.initializeDatamanagerPage(
+			  objectName = "article"
+			, recordId   = rc.id ?: ""
+		);
+
+		event.addAdminBreadCrumb(
+			  title = translateResource( "preside-objects.article:preview.breadcrumb.title" )
+			, linke = ""
+		);
+
+		prc.pageTitle = translateResource( "preside-objects.article:preview.page.title" );
+		prc.pageSubTitle = translateResource( "preside-objects.article:preview.page.subtitle" );
 	}
+
+// customizations
+	private string function buildPreviewLink( event, rc, prc, args={} ) {
+		var qs = "id=#( args.recordId ?: "" )#";
+
+		if ( Len( Trim( args.queryString ?: "" ) ) ) {
+			qs &= "&#args.queryString#";
+		}
+		
+		return event.buildAdminLink( linkto="datamanager.article.preview", querystring=qs );
+	}
+
+
 
 }
 ```
@@ -145,6 +168,20 @@ Linking to the "preview" "operation" can then be done with:
 ```luceescript
 event.buildAdminLink( objectName="article", operation="preview", id=recordId );
 ```
+
+#### event.initializeDatamanagerPage()
+
+Notice the handy `event.initializeDatamanagerPage()` in the example, above. This method will setup standard breadcrumbs for your page as well as setting up common variables that are available to other data manager pages such as:
+
+* `prc.recordId`: id of the current record being viewed
+* `prc.record`: current record being viewed
+* `prc.recordLabel`: rendered label field for the current record
+* `prc.objectName`: current object name
+* `prc.objectTitle`: translated title of the current object
+* `prc.objectTitlePlural`: translated _plural_ title of the current object
+
+The method expects either one, or two arguments: `objectName`, the name of the object, and `recordId`, the ID of the current record (if applicable).
+
 
 ## Customization reference
 
