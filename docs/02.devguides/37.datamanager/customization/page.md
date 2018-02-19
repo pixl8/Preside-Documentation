@@ -53,7 +53,7 @@ With the new 10.9.0 customization system comes a new method of building data man
 event.buildAdminLink( objectName=objectName );
 ```
 
-To link to the default view for a record (insert ref for customizing this), use:
+To link to the default view for a record, use:
 
 ```luceescript
 event.buildAdminLink( objectName=objectName, recordId=recordId );
