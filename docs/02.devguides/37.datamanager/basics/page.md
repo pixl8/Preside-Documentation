@@ -9,7 +9,7 @@ This page will take you through the basic default set up and configuration of [[
 
 ## Data Manager homepage
 
-The Data Manager homepage in the Preside administrator displays all of the objects in the system **that have been configured to display within Data Manager**. Objects are organised into groups and are searchable (by object name). Clicking on an object will take you into that object's listing screen:
+The Data Manager homepage in the Preside administrator displays all of the objects in the system **that have been configured to display within Data Manager**. Objects are organised into groups and are searchable (by object name). Clicking on an object will take you into that object's listing screen.
 
 
 ![Screenshot showing example of a Data Manager object listing screen](images/screenshots/datamanager-listing-screen.png)
@@ -30,7 +30,7 @@ component {
 }
 ```
 
-That is all their is to it. You now how a full CRUD interface for your object. However, you probably want to make things a little more user friendly with regards to human readable and translatable labels; see below.
+That is all there is to it. You now how a full CRUD interface for your object. However, you probably want to make things a little more user friendly with regards to human readable and translatable labels; see below.
 
 ### Translatable and human readable labels
 
@@ -57,9 +57,9 @@ description=Data related to blogs
 iconclass=fa-comments
 ```
 
-## Basic customisations for the listing grid
+## Basic customizations for the listing grid
 
-There are three basic customisations that can be achieved with simple annotations on your preside object `.cfc` file:
+There are three basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
 
 1. Change the fields that are displayed in the table
 2. Change the _default_ sort order of records

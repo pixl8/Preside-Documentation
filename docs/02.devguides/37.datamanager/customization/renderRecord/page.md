@@ -23,7 +23,7 @@ For example:
 component {
 
 	private string function renderRecord() {
-		args.blog = prc.record ?: ""; // Data Manager will have already fetched the record for you. Check out the prc scope for other commonly fetched goodies that you can make use of
+		args.blog = prc.record ?: QueryNew(''); // Data Manager will have already fetched the record for you. Check out the prc scope for other commonly fetched goodies that you can make use of
 
 		return renderView( view="/admin/blogs/customRecordView", args=args );
 	}

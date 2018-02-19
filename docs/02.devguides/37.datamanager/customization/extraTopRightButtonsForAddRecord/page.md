@@ -22,8 +22,8 @@ component {
 
 	private void function extraTopRightButtonsForAddRecord( event, rc, prc, args={} ) {
 		var objectName = args.objectName ?: "";
-		
-		args.actions = args.actions ?: "";
+
+		args.actions = args.actions ?: [];
 
 		args.actions.append({
 			  link      = event.buildAdminLink( objectName=objectName, operation="reports" )

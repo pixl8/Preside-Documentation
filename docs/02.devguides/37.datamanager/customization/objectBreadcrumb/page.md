@@ -13,13 +13,13 @@ The `objectBreadcrumb` customization allows you to override what happens for the
 component {
 
 	private string function objectBreadcrumb() {
-		var blogId          = prc.record.blog ?: ( rc.blogId ?: "" )
+		var blogId = prc.record.blog ?: ( rc.blogId ?: "" );
 
 		if ( !Len( Trim( blogId ) ) ) {
 			setNextEvent( url=blogListingLink );
 		}
 
-		event.addAdminBreadCrumb( 
+		event.addAdminBreadCrumb(
 			  title = "Posts"
 			, link  = event.buildAdminLink( objectName="blog", recordId=blogId, operation="posts" )
 		);

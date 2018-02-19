@@ -15,7 +15,7 @@ The `extraRecordActionsForGridListing` allows you to add actions to the object's
 Each "action" in the `args.actions` array is a struct with the following possible keys:
 
 * `link`: Link for the action
-* `icon`: Front awesome icon class for the action, e.g. `fa-pencil`
+* `icon`: Font awesome icon class for the action, e.g. `fa-pencil`
 * `class`: Additional css classes for the action
 * `contextKey`: Optional keyboard shortcut that will activate the action when the row is in focus
 * `title`: Optional title that will be used in the title attribute of the link

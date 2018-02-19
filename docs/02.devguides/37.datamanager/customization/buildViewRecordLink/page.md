@@ -14,13 +14,13 @@ component {
 
 	private string function buildViewRecordLink( event, rc, prc, args={} ) {
 		var recordId    = args.recordId ?: "";
-		var version     = Val( args.version  ?: "" );
+		var version     = Val( args.version ?: "" );
 		var qs          = "id=" & recordId;
 
 		if ( version ) {
 			qs &= "&version=" & version;
 		}
-		
+
 		if ( Len( Trim( args.queryString ?: "" ) ) {
 			qs &= "&" & args.queryString;
 		}

@@ -31,14 +31,14 @@ component {
 		var oldData    = args.existingRecord ?: {};
 		var employeeId = args.recordId       ?: {}
 
-		// here, as an example, we use the notification service to 
+		// here, as an example, we use the notification service to
 		// raise a "Date of birth change" notification when the DOB changes
 		if ( newData.keyExists( "dob" ) && newData.dob != oldData.dob ) {
 			notificationService.createNotification( topic="DOBChange", type="info", data={ employeeId=employeeId } )
 		}
 
 		// of course, we could do anything we like here. For instance,
-		// we could redirect the user to a different screen than the 
+		// we could redirect the user to a different screen than the
 		// normal "post-edit" behaviour for Data Manager.
 	}
 
@@ -47,7 +47,7 @@ component {
 
 ## Building and customizing links
 
-With the new 10.9.0 customization system, comes a new method of building data manager links for objects. Use `event.buildAdminLink( objectName=objectName )` along with optional arguments, `operation` and `recordId` to build various links. For example, to link to the data manager listing page for an object, use the following:
+With the new 10.9.0 customization system comes a new method of building data manager links for objects. Use `event.buildAdminLink( objectName=objectName )` along with optional arguments, `operation` and `recordId` to build various links. For example, to link to the data manager listing page for an object, use the following:
 
 ```luceescript
 event.buildAdminLink( objectName=objectName );
@@ -67,7 +67,7 @@ event.buildAdminLink( objectName=objectName, operation="editRecord", recordId=re
 // etc.
 ```
 
-The core, "out-of-box", operations are:
+The core, "out-of-box" operations are:
 
 * `listing`
 * `viewRecord`
@@ -90,7 +90,7 @@ The core, "out-of-box", operations are:
 >>>>>> You can pass extra query string parameters to any of these links with the `queryString` argument. For example:
 >>>>>>
 ```
-event.buildAdminLink( 
+event.buildAdminLink(
 	  objectName  = objectName
 	, operation   = "addRecord"
 	, queryString = "categoryId=#categoryId#"
@@ -99,7 +99,7 @@ event.buildAdminLink(
 
 ### Custom link builders
 
-There is a naming convention for providing a custom link builder for an operation: `build{operation}Link`. There are therefore Data Manager customizations named, `buildListingLink`, `buildViewRecordLink`, and so on. For example, to provide a completely different link for a view record screen for your object, you could do:
+There is a naming convention for providing a custom link builder for an operation: `build{operation}Link`. There are therefore Data Manager customizations named `buildListingLink`, `buildViewRecordLink`, and so on. For example, to provide a completely different link for a view record screen for your object, you could do:
 
 ```luceescript
 // /application/handlers/admin/datamanager/blog_author.cfc
@@ -115,8 +115,8 @@ component {
 			qs &= "&#extraQs#";
 		}
 
-		// e.g. here we would have a coldbox handler /admin/BlogAuthors.cfc 
-		// with a public 'view' method for completely controlling the entire 
+		// e.g. here we would have a coldbox handler /admin/BlogAuthors.cfc
+		// with a public 'view' method for completely controlling the entire
 		// view record request outside of Data Manager
 		return event.buildAdminLink( linkto="blogauthors.view", querystring=qs );
 	}
@@ -132,7 +132,7 @@ If you are extending Data Manager to add extra pages for a particular object (fo
 component {
 
 // Public events for extra admin pages and actions
-	public void function preview() {		
+	public void function preview() {
 		event.initializeDatamanagerPage(
 			  objectName = "article"
 			, recordId   = rc.id ?: ""
@@ -154,7 +154,7 @@ component {
 		if ( Len( Trim( args.queryString ?: "" ) ) ) {
 			qs &= "&#args.queryString#";
 		}
-		
+
 		return event.buildAdminLink( linkto="datamanager.article.preview", querystring=qs );
 	}
 
@@ -163,7 +163,7 @@ component {
 }
 ```
 
-Linking to the "preview" "operation" can then be done with:
+Linking to the "preview" operation can then be done with:
 
 ```luceescript
 event.buildAdminLink( objectName="article", operation="preview", id=recordId );
@@ -352,7 +352,7 @@ Then, create a corresponding view at `/views/admin/layout/sidebar/blog.cfm`. For
 // /views/admin/layout/sidebar/blog.cfm
 hasPermission = hasCmsPermission(
 	  permissionKey = "read"
-	, context       = "datamanger"
+	, context       = "datamanager"
 	, contextKeys   = [ "blog" ]
 );
 if ( hasPermission ) {
@@ -386,7 +386,7 @@ For example:
 component {
 
 	private void function rootBreadcrumb() {
-		// Deliberately do nothing so as to remove the root 
+		// Deliberately do nothing so as to remove the root
 		// 'Data manager' breadcrumb just for the 'blog' object.
 
 		// We could, instead, call event.addAdminBreadCrumb( title=title, link=link )

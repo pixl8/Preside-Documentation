@@ -5,13 +5,13 @@ title: "Data Manager customization: decorateRecordsForGridListing"
 
 ## Data Manager customization: decorateRecordsForGridListing
 
-The `decorateRecordsForGridListing` customization allows you to modify the result set that will be used to fill an object's record listing table. The core implementation of this custmoization adds columns for action links, checkboxes for multi row actions, etc.
+The `decorateRecordsForGridListing` customization allows you to modify the result set that will be used to fill an object's record listing table. The core implementation of this customization adds columns for action links, checkboxes for multi row actions, etc.
 
 >>>> Unless you know that you want to completely override all this logic, you are likely better off using the [[datamanager-customization-postfetchrecordsforgridlisting|postFetchRecordsForGridListing]] customization.
 
 The customization is not expected to return a value and receives the following in the `args` struct:
 
-* `records`: Query result set          
+* `records`: Query result set
 * `objectName`: Object name
 * `gridFields`: Array of grid fields used by the current table
 * `useMultiActions`: Whether or not to use multi actions (i.e. whether or not to include checkbox per row)

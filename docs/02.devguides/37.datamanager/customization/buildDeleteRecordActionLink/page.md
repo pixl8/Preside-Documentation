@@ -14,9 +14,9 @@ component {
 
 	private string function buildDeleteRecordActionLink( event, rc, prc, args={} ) {
 		var recordId    = args.recordId ?: "";
-		var version     = Val( args.version  ?: "" );
+		var version     = Val( args.version ?: "" );
 		var qs          = "id=" & recordId;
-		
+
 		if ( Len( Trim( args.queryString ?: "" ) ) {
 			qs &= "&" & args.queryString;
 		}
