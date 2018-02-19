@@ -20,7 +20,7 @@ component {
 	property name="blogService" inject="blogService";
 
 	private void function preDeleteRecordAction( event, rc, prc, args={} ) {
-		var records = args.records ?: QueyNew('');
+		var records = args.records ?: QueryNew('');
 
 		for( var record in records ) {
 			blogService.moveRecordToRecycleBinTable( record.id );

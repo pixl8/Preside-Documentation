@@ -1,6 +1,6 @@
 ---
 id: datamanager-customization-toprightbuttonsformat
-title: "Reference: Data Manager top right buttons array" 
+title: "Reference: Data Manager top right buttons array"
 ---
 
 ## Reference: Data Manager top right buttons array
@@ -16,8 +16,8 @@ Each "action" struct can/must have the following keys:
 * `btnClass` _(optional)_: Twitter bootstrap button class for the button. e.g. `btn-success`, `btn-danger`, etc.
 * `iconClass` _(optional)_: Font awesome icon class to use. Icon will be displayed before the title.
 * `globalKey` _(optional)_: Global keyboard key shortcut for the button.
-* `prompt` _(optional)_: Prompt for the action should you want a modal dialog to appear to confirm the action. 
-* `target` _(optional)_: e.g. "blank" to have the button link open in a new tab.
+* `prompt` _(optional)_: Prompt for the action should you want a modal dialog to appear to confirm the action.
+* `target` _(optional)_: e.g. "\_blank" to have the button link open in a new tab.
 * `children` _(optional)_: Array of child actions that will appear in a drop-down menu on button click.
 
 ### Children
@@ -26,7 +26,7 @@ If you wish your button to be a drop down menu, use the `children` array. Each i
 
 * `title` _(required)_: Title/label for the item
 * `link` _(required)_: Link of the item
-* `target` _(optional)_: Optional link target, e.g. "blank" to open in a new tab
+* `target` _(optional)_: Optional link target, e.g. "\_blank" to open in a new tab
 * `icon` _(optional)_: Font awesome icon class for the item. Icon will appear before the title
 
 ### Examples
@@ -38,7 +38,7 @@ A minimal button item:
       link      = event.buildAdminLink( objectName=objectName, operation="preview" )
     , title     = translateResource( "preside-objects.blog:preview.btn" )
     , iconClass = "fa-eye"
-} 
+}
 ```
 
 A button with children:
@@ -51,5 +51,5 @@ A button with children:
           { title="Stats"   , link=statsLink   , icon="fa-bar-chart" }
         , { title="Download", link=downloadLink, icon="fa-download"  }
       ]
-} 
+}
 ```

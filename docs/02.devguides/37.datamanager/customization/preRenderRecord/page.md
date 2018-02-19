@@ -21,7 +21,7 @@ For example:
 component {
 
 	private string function preRenderRecord() {
-		args.blog = prc.record ?: "";
+		args.blog = prc.record ?: QueryNew('');
 
 		return renderView( view="/admin/blogs/viewRecordHeader", args=args );
 	}

@@ -15,7 +15,7 @@ This view is automatically available to any object that is managed in the data m
 
 ### View groups and columns
 
-One of the first features you might want to customize is the grouping of fields in the default view of a record for your object. 
+One of the first features you might want to customize is the grouping of fields in the default view of a record for your object.
 
 The standard groups are `default` and `system` and these will appear in your view with core Preside fields in the `system` "box" and everything else in the `default` "box". By default, the `default` group's title will be the name of the object, will have a sort order of `1`, and be positioned in the `left` column; the system group will have a sort order of `1` and be positioned in the `right` column:
 
@@ -152,7 +152,7 @@ property name="blog" sortorder=10;
 
 The `richeditor` content renderer uses a special iFrame to display the rendered content in a full HTML layout. The purpose of this is to allow you to load front-end CSS and show the content as it would appear in the front end site.
 
-The default preview layout provided by Preside will load the css defined to be used within your ckeditor instances with the `settings.ckeditor.defaults.stylesheets` setting. To change this, define your own layout in your application folder at `/application/layouts/richeditorPreview.cfm`. Use the following core layout as a starting point to customize:
+The default preview layout provided by Preside will load the CSS defined to be used within your ckeditor instances with the `settings.ckeditor.defaults.stylesheets` setting. To change this, define your own layout in your application folder at `/application/layouts/richeditorPreview.cfm`. Use the following core layout as a starting point to customize:
 
 ```lucee
 <cfscript>

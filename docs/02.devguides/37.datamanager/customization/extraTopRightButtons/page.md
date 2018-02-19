@@ -26,8 +26,8 @@ component {
 		var action = args.action ?: "";
 		var actionsWithButtons = [ "editRecord", "viewRecord" ];
 
-		if ( actionsWithButtons.findNoCase( action ) ) {		
-			args.actions = args.actions ?: "";
+		if ( actionsWithButtons.findNoCase( action ) ) {
+			args.actions = args.actions ?: [];
 			args.actions.append({
 				  link      = event.buildAdminLink( objectName="blog", operation="reports" )
 				, btnClass  = "btn-default"

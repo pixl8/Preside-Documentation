@@ -23,13 +23,13 @@ component {
 	private string function buildTranslateRecordLink( event, rc, prc, args={} ) {
 		var recordId    = args.recordId ?: "";
 		var language    = args.language ?: "";
-		var version     = Val( args.version  ?: "" );
+		var version     = Val( args.version ?: "" );
 		var qs          = "id=#recordId#&language=#language#";
 
 		if ( version ) {
 			qs &= "&version=" & version;
 		}
-		
+
 		if ( Len( Trim( args.queryString ?: "" ) ) {
 			qs &= "&" & args.queryString;
 		}

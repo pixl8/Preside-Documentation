@@ -9,7 +9,7 @@ The `postAddRecordAction` customization allows you to run logic _after_ the core
 
 * `objectName`: name of the object
 * `formData`: struct containing the form submission
-* `newid`: ID of the newly created record
+* `newId`: ID of the newly created record
 
 
 For example:
