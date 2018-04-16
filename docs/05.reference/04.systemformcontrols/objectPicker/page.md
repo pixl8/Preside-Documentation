@@ -75,6 +75,10 @@ The `objectPicker` control allows users to select one or multiple records from a
                 <th>quickEditUrl (optional)</th>
                 <td>If quickEdit is enabled, you can additionally set a custom URL for providing the quick edit form.</td>
             </tr>
+            <tr>
+                <th>bypassTenants (optional)</th>
+                <td>A comma separated list of tenants to **ignore** when populating the dropdown. See [[data-tenancy]].</td>
+            </tr>
         </tbody>
     </table>
 </div>

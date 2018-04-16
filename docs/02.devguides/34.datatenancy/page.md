@@ -163,3 +163,20 @@ settings.tenancy.customer = {
 };
 ```
 
+## Bypassing tenancy
+
+You may wish to bypass tenancy altogether in some scenarios. To do so, you can pass the `bypassTenants` arguments to [[presideobjectservice-selectdata]]:
+
+```luceescript
+presideObjectService.selectData(
+	  // ...
+	, bypassTenants = [ "customer" ]
+);
+```
+
+This will ensure that any tenancy filters are **not** applied for the given tenants. You are also able to specify these bypasses on an object picker in forms:
+
+
+```xml
+<field binding="article.related_articles" bypassTenants="customer" /> 
+```
