@@ -129,7 +129,7 @@ If you are extending Data Manager to add extra pages for a particular object (fo
 
 ```luceescript
 // /handlers/admin/datamanager/article.cfc
-component {
+component extends="preside.system.base.AdminHandler" {
 
 // Public events for extra admin pages and actions
 	public void function preview() {
@@ -168,6 +168,8 @@ Linking to the "preview" operation can then be done with:
 ```luceescript
 event.buildAdminLink( objectName="article", operation="preview", id=recordId );
 ```
+
+>>> Notice that the handler extends `preside.system.base.AdminHandler`. This base handler supplies a preAction that sets the admin layout and checks for logged in users. You should do this when supplying additional public handler actions in your customization.
 
 #### event.initializeDatamanagerPage()
 
