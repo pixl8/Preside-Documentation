@@ -2,11 +2,8 @@
 id: formcontrol-objectPicker
 title: "Form control: Object Picker"
 ---
-
 The `objectPicker` control allows users to select one or multiple records from a given preside object. Configuration options also allow you to add new records and edit existing records from within the form control.
-
 ### Arguments
-
 <div class="table-responsive">
     <table class="table">
         <tbody>
@@ -31,6 +28,10 @@ The `objectPicker` control allows users to select one or multiple records from a
                 <td>When ajax is set to "true", you can additionally supply a specific URL for fetching records to match typed searches</td>
             </tr>
             <tr>
+                <th>useCache (optional)</th>
+                <td>True (default) or false. Whether to use caching when selecting data for this form field and its respective ajax lookup and prefetch.</td>
+            </tr>
+            <tr>
                 <th>orderBy (optional)</th>
                 <td>Specify which column(s) to sort the select list on. Default is "label", which sorts alphabetically on the text displayed in the picker.</td>
             </tr>
@@ -50,7 +51,6 @@ The `objectPicker` control allows users to select one or multiple records from a
                 <th>searchable (optional)</th>
                 <td>True (default) or false. Whether or not the search feature of the control is enabled.</td>
             </tr>
-
             <tr>
                 <th>resultTemplate (optional)</th>
                 <td>A Mustache template for rendering items in the drop down list. The default is "{{text}}". This can be used in conjunction with a custom remote URL for providing a highly customized object picker.</td>
@@ -82,11 +82,12 @@ The `objectPicker` control allows users to select one or multiple records from a
         </tbody>
     </table>
 </div>
-
 ### Example
-
 ```xml
 <field name="categories" control="objectPicker" object="blog_category" multiple="true" sortable="true" quickAdd="true" quickEdit="true" />
 ```
-
+### Example with caching disabled
+```xml
+<field name="categories" useCache="false" control="objectPicker" object="blog_category" multiple="true" sortable="true" quickAdd="true" quickEdit="true" />
+```
 ![Screenshot of object picker](images/screenshots/objectPicker.png)

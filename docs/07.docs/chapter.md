@@ -14,9 +14,7 @@ Good documentation is at the heart of all successful open source projects. With 
 
 ## Contributing
 
-This documentation is built from a folder within the main PresideCMS source repository. The folder can be found at [https://github.com/pixl8/Preside-CMS/tree/stable/support/docs](https://github.com/pixl8/Preside-CMS/tree/stable/support/docs).
-
-You'll find information on ways in which you can contribute in the [[docs-content]] and [[docs-build]] sections.
+You'll find information on ways in which you can contribute in the [[docs-content]] and [[docs-build]] sections. The quickest and easiest way to get started is fixing mistakes and omissions by finding the **pencil** icon in pages and editing directly in GitHub then submitting a Pull Request (the GitHub UI takes care of most of this for you).
 
 ## Technology
 
