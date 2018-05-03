@@ -210,6 +210,8 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
 * [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
 * [[datamanager-customization-addrecordactionbuttons|addRecordActionButtons]]
+* [[datamanager-customization-getaddrecordactionbuttons|getAddRecordActionButtons]]
+* [[datamanager-customization-getextraaddrecordactionbuttons|getExtraAddRecordActionButtons]]
 * [[datamanager-customization-gettoprightbuttonsforaddrecord|getTopRightButtonsForAddRecord]]
 * [[datamanager-customization-extratoprightbuttonsforaddrecord|extraTopRightButtonsForAddRecord]]
 * [[datamanager-customization-addrecordaction|addRecordAction]]
@@ -219,7 +221,7 @@ There are currently more than 60 customization points in the Data Manager and th
 
 ### Viewing records
 
->>> The customizations below allow you override or decorate the core record rendering system in Data Manager. In addition to these, you should also familiarize yourself with [[adminrecordviews]] as the core view record screen can also be customized using annotations within your Preside Objects.
+>>> The customizations below allow you to override or decorate the core record rendering system in Data Manager. In addition to these, you should also familiarize yourself with [[adminrecordviews]] as the core view record screen can also be customized using annotations within your Preside Objects.
 
 * [[datamanager-customization-renderrecord|renderRecord]]
 * [[datamanager-customization-prerenderrecord|preRenderRecord]]
@@ -238,6 +240,8 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
 * [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]
 * [[datamanager-customization-editrecordactionbuttons|editRecordActionButtons]]
+* [[datamanager-customization-geteditrecordactionbuttons|getEditRecordActionButtons]]
+* [[datamanager-customization-getextraeditrecordactionbuttons|getExtraEditRecordActionButtons]]
 * [[datamanager-customization-gettoprightbuttonsforeditrecord|getTopRightButtonsForEditRecord]]
 * [[datamanager-customization-extratoprightbuttonsforeditrecord|extraTopRightButtonsForEditRecord]]
 * [[datamanager-customization-editrecordaction|editRecordAction]]
