@@ -5,7 +5,7 @@ title: "Reference: Data Manager top right buttons array"
 
 ## Reference: Data Manager top right buttons array
 
-Several [[customizingdatamanager|Data Manager customizations]] allow you modify the top right buttons that appear for a particular screen in the Data Manager. These modififications expect to either return an array of structs, or are passed this array of structs for modification / appending to.
+Several [[customizingdatamanager|Data Manager customizations]] allow you modify the top right buttons that appear for a particular screen in the Data Manager. These modififications expect to either return an array of structs and/or strings, or are passed this array of structs/strings for modification / appending to.
 
 ### Keys
 
@@ -19,6 +19,8 @@ Each "action" struct can/must have the following keys:
 * `prompt` _(optional)_: Prompt for the action should you want a modal dialog to appear to confirm the action.
 * `target` _(optional)_: e.g. "\_blank" to have the button link open in a new tab.
 * `children` _(optional)_: Array of child actions that will appear in a drop-down menu on button click.
+
+>>> Note: alternatively, a button in the array can be a fully rendered string representing the button (should you require something a bit different)
 
 ### Children
 

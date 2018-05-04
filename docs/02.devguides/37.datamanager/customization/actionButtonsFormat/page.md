@@ -5,7 +5,7 @@ title: "Reference: Data Manager action buttons array for add and edit forms"
 
 ## Reference: Data Manager action buttons array for add and edit forms
 
-The add and edit record forms allow you modify the action button set that appear beneath the form. These modififications expect to either return an array of structs, or are passed this array of structs for modification / appending to.
+The add and edit record forms allow you modify the action button set that appear beneath the form. These modififications expect to either return an array of structs and/or strings, or are passed this array of structs/strings for modification / appending to.
 
 ### Keys
 
@@ -19,6 +19,8 @@ Each "action" struct can/must have the following keys:
 * `class` _(optional)_: Twitter bootstrap button class for the button. e.g. `btn-info`, `btn-warning`, `btn-success`, `btn-danger`, etc.
 * `iconClass` _(optional)_: Font awesome icon class to use. Icon will be displayed before the label on the button.
 * `globalKey` _(optional)_: Global keyboard key shortcut for the button.
+
+>>> Note: alternatively, a button in the array can be a fully rendered string representing the button (should you require something a bit different)
 
 ### Examples
 

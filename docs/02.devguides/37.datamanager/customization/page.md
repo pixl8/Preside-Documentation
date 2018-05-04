@@ -203,6 +203,10 @@ There are currently more than 60 customization points in the Data Manager and th
 * [[datamanager-customization-getactionsforgridlisting|getActionsForGridListing]]
 * [[datamanager-customization-getrecordactionsforgridlisting|getRecordActionsForGridListing]]
 * [[datamanager-customization-extrarecordactionsforgridlisting|extraRecordActionsForGridListing]]
+* [[datamanager-customization-listingmultiactions|listingMultiActions]]
+* [[datamanager-customization-getlistingmultiactions|getListingMultiActions]]
+* [[datamanager-customization-getextralistingmultiactions|getExtraListingMultiActions]]
+* [[datamanager-customization-multirecordaction|multiRecordAction]]
 
 
 ### Adding records
