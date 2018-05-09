@@ -286,6 +286,7 @@ There are currently more than 60 customization points in the Data Manager and th
 
 ### General
 
+* [[datamanager-customization-prelayoutrender|preLayoutRender]]
 * [[datamanager-customization-toprightbuttons|topRightButtons]]
 * [[datamanager-customization-extratoprightbuttons|extraTopRightButtons]]
 * [[datamanager-customization-rootbreadcrumb|rootBreadcrumb]]
@@ -403,5 +404,39 @@ component {
 		// to provide an alternative root breadcrumb
 	}
 
+}
+```
+
+## Modify core default page titles and other layout changes
+
+A really useful customization is the [[datamanager-customization-prelayoutrender|preLayoutRender]] customization. This fires before the full admin page layout is rendered and allows you to make adjustments after all the handler logic has run. For example:
+
+```luceescript
+// /application/handlers/admin/datamanager/blog.cfc
+
+component {
+
+    private void function preLayoutRender( event, rc, prc, args={} ) {
+        prc.pageTitle = translateResource(
+              uri          = "preside-objects.blog:#args.action#.page.title"
+            , defaultValue = prc.pageTitle ?: ""
+        );
+        prc.pageSubTitle = translateResource(
+              uri          = "preside-objects.blog:#args.action#.page.subtitle"
+            , defaultValue = prc.pageSubTitle ?: ""
+        );
+        prc.pageIcon = "fa-comments";
+    }
+
+    private void function preLayoutRenderForEditRecord( event, rc, prc, args={} ) {
+        prc.pageTitle = translateResource(
+              uri  = "preside-objects.blog:editRecord.page.title"
+            , data = [ prc.recordLabel ?: "" ]
+        );
+
+        // modify the title of the last breadcrumb
+        var breadCrumbs = event.getAdminBreadCrumbs();
+        breadCrumbs[ breadCrumbs.len() ].title = prc.pageTitle;
+    }
 }
 ```
