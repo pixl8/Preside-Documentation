@@ -180,3 +180,19 @@ This will ensure that any tenancy filters are **not** applied for the given tena
 ```xml
 <field binding="article.related_articles" bypassTenants="customer" /> 
 ```
+
+## Overriding the per-request tenant
+
+If you need to select data from a tenant that is not the currently active tenant for the request, you can use the `tenantIds` argument to specify the IDs for specific tenants. For example:
+
+
+```luceescript
+// ...
+var alternativeCustomerAccounts = accounts.selectData(
+	  selectFields = [ "id", "account_name" ]
+	, tenantIds    = { customer=alternativeCustomerId }
+);
+// ...
+```
+
+The value of this argument must be a struct whose keys are the names of the tenant and whose values are the ID to use for the tenant. See [[presideobjectservice-selectdata]] for documentation.
