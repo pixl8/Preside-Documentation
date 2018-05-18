@@ -7,16 +7,8 @@ title: Upgrade notes for 10.8 -> 10.9
 
 The 10.9 release has a small number of changes that require special consideration for upgrade:
 
-* Objects that are in **Administrator left hand menu**
-
-
-## Preside objects that are in Administrator left hand menu
-
-Objects that are only availalbe in Administrator left hand menu would required to add attributes:
-```
-@datamanagerEnabled          true
-```
-This is to ensure that all new custom functions added to Data Manager would still work correctly.
+* Coldbox 4
+* Admin interfaces that have been built with the "crudadmin" tool
 
 
 ## Coldbox 4
@@ -48,3 +40,10 @@ if ( coldboxMajorVersion < 4 ) {
 }
 ```
 
+## Admin interfaces that have been built with the "crudadmin" tool
+
+This objects would required to add attributes:
+```
+@datamanagerEnabled          true
+```
+This is to ensure that all new custom functions added to Data Manager would still work correctly.
