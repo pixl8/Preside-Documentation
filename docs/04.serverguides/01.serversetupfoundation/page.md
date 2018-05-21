@@ -63,6 +63,10 @@ Next, you will need to edit your servlet's `web.xml` file. For a default Lucee i
 
 PresideCMS requires the use of a couple of non-default settings in Lucee that cannot be defined in the Application's code. 
 
+### Null Support
+
+>>> Coldbox and Preside will **not run with Full NULL support**. Ensure that Null support is set to **Partial Support (CFML Default)**.
+
 ### Preserve case for structs
 
 Log in to the Lucee _Server_ admin and go to **Settings -> Language/Compiler**. 
