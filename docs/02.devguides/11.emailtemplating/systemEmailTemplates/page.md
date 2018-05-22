@@ -39,8 +39,8 @@ All system email templates must be registered in `Config.cfc`. An example config
 
 ```luceescript
 // register a 'bookingConfirmation' template:
-settings.email.templates.bookingConfirmation = { 
-	recipientType = "websiteUser", 
+settings.email.templates.bookingConfirmation = {
+	recipientType = "websiteUser",
 	parameters    = [
 		  { id="booking_summary"  , required=true }
 		, { id="edit_booking_link", required=false }
@@ -116,7 +116,7 @@ emailService.send(
 component {
 
 	property name="bookingService" inject="bookingService";
-	
+
 	// bookingId argument expected in `args` struct
 	// in all `send()` calls for 'bookingConfirmation'
 	// template
@@ -146,14 +146,14 @@ The `getPreviewParameters()` method has the exact same purpose as the `getParame
 For example:
 
 ```luceescript
-private struct function prepareParameters() {
+private struct function getPreviewParameters() {
 	var params = {};
 	var args   = {};
 
 	args.bookingDetails = {
 		  event_name = "Example event"
 		, start_time = "09:00"
-		// ... etc 
+		// ... etc
 	};
 
 	params.eventName      = "Example event";

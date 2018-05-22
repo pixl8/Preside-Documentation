@@ -82,7 +82,7 @@ The purpose here is to allow variables in an email's body and/or subject to be r
 component {
 
 	property name="bookingService" inject="bookingService";
-	
+
 	private struct function prepareParameters( required string recipientId ) {
 		var delegate = bookingService.getDelegate( arguments.recipientId );
 
@@ -104,7 +104,7 @@ The `getPreviewParameters()` method has the exact same purpose as the `getParame
 For example:
 
 ```luceescript
-private struct function prepareParameters() {
+private struct function getPreviewParameters() {
 	return {
 		  first_name = "Example"
 		, last_name  = "Delegate"
