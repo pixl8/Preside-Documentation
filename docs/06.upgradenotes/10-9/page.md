@@ -7,9 +7,14 @@ title: Upgrade notes for 10.8 -> 10.9
 
 The 10.9 release has a small number of changes that require special consideration for upgrade:
 
+* Lucee restart
 * Coldbox 4
 * Admin interfaces that have been built with the "crudadmin" tool
 
+
+## Lucee restart
+
+If you are upgrading to Preside 10.9 from previous versions, you should restart Lucee after upgrading your code to avoid various issues.
 
 ## Coldbox 4
 
@@ -42,8 +47,8 @@ if ( coldboxMajorVersion < 4 ) {
 
 ## Admin interfaces that have been built with the "crudadmin" tool
 
-This objects would required to add attributes:
+10.9.0 Comes with a whole new system for [[customizingdatamanager|customizing the data manager]] that makes the `crudadmin` tool redundant. If you have built admin sections with the `crudadmin` tool, you should add the following attribute to your object definitions to ensure no problems:
+
 ```
-@datamanagerEnabled          true
+@datamanagerEnabled true
 ```
-This is to ensure that all new custom functions added to Data Manager would still work correctly.
