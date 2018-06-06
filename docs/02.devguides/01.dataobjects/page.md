@@ -276,11 +276,12 @@ component {
 }
 ```
 
-The core system provides you with three named generators:
+The core system provides you with four named generators:
 
 * `UUID` - uses `CreateUUId()` to generate a UUID for your field. This is used by default for the primary key in preside objects.
 * `timestamp` - uses `Now()` to auto generate a timestamp for your field
 * `hash` - used in conjunction with a `generateFrom` attribute that should be a list of other properties which to concatenate and generate an MD5 hash from
+* `slug` - takes an optional `generateFrom` attribute that defines which field (if present in the submitted data) should be used to generate the slug; by default it will use the object's label field. A unique slug will be generated, so may be suffixed with `-1`, `-2`, etc.
 
 ### Formula fields
 
