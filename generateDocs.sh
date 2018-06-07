@@ -1,5 +1,3 @@
 #!/bin/bash
 
-CWD=$(pwd)
-
-box execute $CWD/generateDocs.cfm
+curl http://localhost:5555/generateDocs.cfm

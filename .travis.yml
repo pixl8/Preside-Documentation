@@ -13,8 +13,10 @@ install:
   - gem install s3_website
 script:
   - "box install save=false force=true"
+  - "box start serverConfigFile=server.json"
   - "./generateDocs.sh"
   - "./build.sh"
+  - "box stop serverConfigFile=server.json"
   - "./deploy.sh"
 cache:
   directories:

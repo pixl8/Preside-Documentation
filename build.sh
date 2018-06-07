@@ -18,7 +18,7 @@ export DASH_DOWNLOAD_URL
 
 echo "Building documentation with Lucee :)"
 
-box $CWD/build.cfm
+curl http://localhost:5555/build.cfm
 if [ -f .exitcode ]; then
   exitcode=$(<.exitcode)
   rm -f .exitcode

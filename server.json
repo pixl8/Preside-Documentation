@@ -1,0 +1,11 @@
+{
+    "name":"presidedocsserverbuild",
+    "trayEnable":false,
+    "openbrowser":false,
+    "port":4444,
+    "web":{
+        "http":{
+            "port":"5555"
+        }
+    }
+}
