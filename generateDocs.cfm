@@ -115,4 +115,7 @@
 	}
 
 	FileWrite( indexDocPath, indexDoc.toString() );
+
+	content reset=true;
+	echo( "Docs generated :)" & Chr( 10 ) & Chr( 13 ) );
 </cfscript>
