@@ -191,6 +191,13 @@ There are currently more than 60 customization points in the Data Manager and th
 
 ### Record listing table / grid
 
+>>> In addition to the specific customizations, below, you can also use the following helper function in your handlers and views to render a data table for an object:
+>>>
+```luceescript
+renderedListingTable = objectDataTable( objectName );
+```
+
+
 * [[datamanager-customization-listingviewlet|listingViewlet]]
 * [[datamanager-customization-prerenderlisting|preRenderListing]]
 * [[datamanager-customization-postrenderlisting|postRenderListing]]
