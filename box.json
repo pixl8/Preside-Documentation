@@ -1,6 +1,6 @@
 {
     "dependencies":{
-        "presidecms":"10.9.0-snapshot120",
+        "presidecms":"10.9.0",
         "jsoup-1.11.2":"jar:https://jsoup.org/packages/jsoup-1.11.2.jar"
     },
     "installPaths":{
