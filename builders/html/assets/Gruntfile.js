@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask( 'default', [ 'concat:base', 'uglify:base', 'sass:base', 'cssmin:base' ] );
+	grunt.registerTask( 'js', [ 'concat:base', 'uglify:base' ] );
 
 	// grunt config
 	grunt.initConfig({
@@ -41,7 +42,7 @@ module.exports = function(grunt) {
 		uglify: {
 			base: {
 				files: {
-					'js/base.2.min.js': ['js/base.js']
+					'js/base.3.min.js': ['js/base.js']
 				}
 			}
 		},

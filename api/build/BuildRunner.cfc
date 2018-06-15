@@ -67,7 +67,7 @@ component accessors=true {
 			return new api.rendering.WikiLinksRenderer( docTree=docTree ).renderLinks( text=arguments.text, builder=builder );
 		} );
 		builder.injectMethod( "renderTemplate", function( required string template, struct args={} ){
-			var renderer = new api.rendering.TemplateRenderer();
+			var renderer = new api.rendering.TemplateRenderer( rootPath=rootPathForRenderer );
 			var rendered = renderer.render( argumentCollection=arguments, template=rootPathForRenderer & arguments.template );
 
 			return builder.renderLinks( rendered );

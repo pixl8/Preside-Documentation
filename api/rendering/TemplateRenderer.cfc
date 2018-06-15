@@ -1,5 +1,11 @@
 component {
 
+	public any function init( required string rootPath ) {
+		_setRootPath( arguments.rootPath );
+
+		return this;
+	}
+
 	public string function render( required string template, struct args={}, string helpers="" ) {
 		var rendered = "";
 
@@ -20,6 +26,23 @@ component {
 		return new api.parsers.ParserFactory().getMarkdownParser().markdownToHtml( rendered );
 	}
 
+	public string function toc( required string content ) {
+		var toc      = "";
+		var args     = {}
+
+		args.tocItems = new api.parsers.TocGenerator().generateToc( arguments.content );
+
+		if ( args.tocItems.len() && ( args.tocItems.len() != 1 || args.tocItems[1].children.len() ) ) {
+			try {
+				savecontent variable="toc" {
+					include template=_getRootPath() & "layouts/toc.cfm";
+				}
+			} catch( missinginclude e ) {}
+		}
+
+		return toc;
+	}
+
 	private void function _includeHelpers( required string helpers ) {
 		if ( Len( Trim( arguments.helpers ) ) ) {
 			var fullHelpersPath = ExpandPath( arguments.helpers );
@@ -30,5 +53,13 @@ component {
 				include template=mappedPath;
 			}
 		}
+	}
+
+// gets/sets
+	private string function _getRootPath() {
+		return _rootPath;
+	}
+	private void function _setRootPath( required string rootPath ) {
+		_rootPath = arguments.rootPath;
 	}
 }
