@@ -1,11 +1,10 @@
 {
     "dependencies":{
-        "preside-be":"stable",
         "jsoup-1.11.2":"jar:https://jsoup.org/packages/jsoup-1.11.2.jar",
-        "presidecms":"stable"
+        "presidecms":"^10.10.0.0004727"
     },
     "installPaths":{
-        "presidecms":"/home/dom/code/Preside-CMS/",
-        "jsoup-1.11.2":"api/lib/jsoup-1.11.2/"
+        "jsoup-1.11.2":"api/lib/jsoup-1.11.2/",
+        "presidecms":"preside"
     }
 }
