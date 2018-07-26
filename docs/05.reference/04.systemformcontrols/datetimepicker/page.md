@@ -11,6 +11,18 @@ The `dateTimePicker` control allows users to choose a date and time from a calen
     <table class="table">
         <tbody>
             <tr>
+                <th>minDate (optional)</th>
+                <td>Minimum allowed date</td>
+            </tr>
+            <tr>
+                <th>maxDate (optional)</th>
+                <td>Maximum allowed date</td>
+            </tr>
+            <tr>
+                <th>defaultDate (optional)</th>
+                <td>Default date to choose when opening the picker for the first time. Defaults to the current day at midnight (00:00)</td>
+            </tr>
+            <tr>
                 <th>relativeToField (optional)</th>
                 <td>Related Date Picker field</td>
             </tr>
