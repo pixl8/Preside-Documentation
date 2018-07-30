@@ -261,6 +261,19 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-preeditrecordaction|preEditRecordAction]]
 * [[datamanager-customization-posteditrecordaction|postEditRecordAction]]
 
+### Cloning records
+
+* [[datamanager-customization-clonerecordform|cloneRecordForm]]
+* [[datamanager-customization-getclonerecordformname|getCloneRecordFormName]]
+* [[datamanager-customization-prerenderclonerecordform|preRenderCloneRecordForm]]
+* [[datamanager-customization-postrendereditrecordform|postRenderCloneRecordForm]]
+* [[datamanager-customization-clonerecordactionbuttons|cloneRecordActionButtons]]
+* [[datamanager-customization-getclonerecordactionbuttons|getCloneRecordActionButtons]]
+* [[datamanager-customization-getextraclonerecordactionbuttons|getExtraCloneRecordActionButtons]]
+* [[datamanager-customization-clonerecordaction|cloneRecordAction]]
+* [[datamanager-customization-preclonerecordaction|preCloneRecordAction]]
+* [[datamanager-customization-postclonerecordaction|postCloneRecordAction]]
+
 ### Deleting records
 
 * [[datamanager-customization-deleterecordaction|deleteRecordAction]]
