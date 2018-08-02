@@ -84,6 +84,8 @@ When tasks run on a schedule, the system currently only allows a single task to 
 
 ### Timeouts
 
+>>> As of 10.10.0, timeouts are no longer supported and will be ignored. All tasks will run until they expire themselves or until 100 years, whichever comes first.
+
 Tasks can be given a timeout value using the `@timeout` attribute. Values are in seconds. If the timeout is reached, the system will terminate the running thread for the task using a java thread interrupt.
 
 ### Display groups
@@ -124,5 +126,68 @@ component {
 	}
 
 	// ...
+}
+```
+
+## Gracefully shutting down tasks
+
+As of Preside **10.10.0**, the system provides a helper method for detecting whether or not the current running thread has been "interrupted". For task manager tasks, this might happen because:
+
+* An admin user has hit the "Kill task button"
+* A developer has performed a **framework reinit** (`?fwreinit=true` or `reload all`)
+
+When this happens, the system gives you the opportunity to detect shutdown and exit gracefully. You can do this with the [[presidesuperclass-$isinterrupted]] method of the [[api-presidesuperclass]], or by injecting the [[api-threadutil]] service into your handler/service and calling [[threadutil-isinterrupted|threadUtil.isInterrupted()]]. For example:
+
+
+```luceescript
+/**
+ * My service
+ *
+ * @presideservice
+ * @singleton
+ */
+component {
+
+	// ...
+	public boolean function runSomeLongTask( logger ) {
+
+		do {
+			if ( $isInterrupted() ) {
+				logger.warn( "Aborting task gracefully..." );
+				break;
+			}
+
+			_doMoreWork();
+		} while( _moreWorkToDo() );
+
+		return true;
+	}
+}
+```
+
+**AND/OR:**
+
+```luceescript
+// /handlers/Tasks.cfc
+component {
+	property name="threadUtil" inject="threadUtil";
+	property name="myService"  inject="myService";
+
+
+	/**
+	 * Does a load of important work
+	 *
+	 * @priority     13
+	 * @schedule     0 *\/15 * * * *
+	 * @displayName  Run things
+	 * @displayGroup Stuff
+	 */
+	private boolean function multitask( event, rc, prc, logger ) {
+		return myService.taskOne( logger ?: NullValue() )
+		    && !threadUtil.isInterrupted()
+		    && myService.taskTwo( logger ?: NullValue() )
+		    && !threadUtil.isInterrupted()
+		    && myService.taskThree( logger ?: NullValue() );
+	}
 }
 ```
