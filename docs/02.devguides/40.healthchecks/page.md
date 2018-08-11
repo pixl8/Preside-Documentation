@@ -10,9 +10,44 @@ As of **10.10.0**, Preside comes with an external service healthchecking system 
 * Periodically check the up status of external services (every 30 seconds)
 * Call `isUp( "myservice" )` or `isDown( "myservice" )` to check the result of the last status check, without going to the external service
 
+## Turning the feature on/off
+
+The `healthchecks` feature is used to control whether healthchecks are run within the preside application. This is turned **on** by default but turned **off** by default for local development servers. To turn on in your local dev environment, use the following in `Config.cfc`:
+
+```luceescript
+component extends="preside.system.config.Config" {
+
+	// ...
+
+	// override the "local" function to provide
+	// local env settings.
+	public void function local() {
+		super.local();
+
+		settings.features.healthchecks.enabled = true;
+	}
+}
+```
+
 ## Registering a healthcheck
 
-To register a healthcheck for a service, you must implement a handler with a `check()` method at: `/handlers/healtchcheck/servicename.cfc`. For example, to create an `ElasticSearch` healthcheck, we'd create `/handlers/healthcheck/ElasticSearch.cfc`:
+### In Config.cfc
+
+First, you must register your healthcheck in your application or extension's `Config.cfc$configure()` method. The `settings.healthcheckServices` _struct_ is used to configure healtcheck services. The struct keys indicate the service ID, e.g. for an "ElasticSearch" healthcheck:
+
+```luceescript
+settings.healthcheckServices.ElasticSearch = {
+	interval = CreateTimeSpan( 0, 0, 0, 10 ) // default is 30 seconds
+};
+```
+
+Possible settings for your healthcheck services are:
+
+* `interval`: must be a `timespan` default is `CreateTimeSpan( 0, 0, 0, 30 )`
+
+### Create corresponding handler
+
+For each configured service, there must be a corresponding handler with a `check()` method at: `/handlers/healtchcheck/serviceid.cfc`. For example, to create an `ElasticSearch` healthcheck, we'd create `/handlers/healthcheck/ElasticSearch.cfc`:
 
 ```luceescript
 component {
@@ -24,7 +59,7 @@ component {
 }
 ```
 
-If the `check` action returns `true` the service is deemed to be up. Any other return value, or an error thrown will lead to the system marking the service as being down.
+If the `check` action returns `true` the service is deemed to be up. Any other return value, or error thrown, will lead to the system marking the service as being down.
 
 ## Checking service health in your code
 
