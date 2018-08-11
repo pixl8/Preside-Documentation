@@ -7,8 +7,8 @@ title: External service health checks
 
 As of **10.10.0**, Preside comes with an external service healthchecking system that allows your code to:
 
-* Periodically check the up status of external services (every 30 seconds)
-* Call `isUp( "myservice" )` or `isDown( "myservice" )` to check the result of the last status check, without going to the external service
+* Periodically check the up status of external services (e.g. every 30 seconds)
+* Call `isUp( "myservice" )` or `isDown( "myservice" )` to check the result of the last status check, without calling the external service directly
 
 ## Turning the feature on/off
 
