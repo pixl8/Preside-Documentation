@@ -10,25 +10,6 @@ As of **10.10.0**, Preside comes with an external service healthchecking system 
 * Periodically check the up status of external services (e.g. every 30 seconds)
 * Call `isUp( "myservice" )` or `isDown( "myservice" )` to check the result of the last status check, without calling the external service directly
 
-## Turning the feature on/off
-
-The `healthchecks` feature is used to control whether healthchecks are run within the preside application. This is turned **on** by default but turned **off** by default for local development servers. To turn on in your local dev environment, use the following in `Config.cfc`:
-
-```luceescript
-component extends="preside.system.config.Config" {
-
-	// ...
-
-	// override the "local" function to provide
-	// local env settings.
-	public void function local() {
-		super.local();
-
-		settings.features.healthchecks.enabled = true;
-	}
-}
-```
-
 ## Registering a healthcheck
 
 ### In Config.cfc
