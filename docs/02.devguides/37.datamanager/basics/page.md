@@ -134,23 +134,24 @@ component {
 
 ## Limiting operations
 
-The system defines five core "operations" that can be "performed" on any given object record:
+The system defines six core "operations" that can be "performed" on any given object record:
 
 1. `read`: view an individual record in the view record screen
 2. `add`: add new records
 3. `edit`: edit records (including bulk edit)
 4. `delete`: delete a record
+4. `clone`: clones a record (as of 10.10.0)
 5. `viewversions`: view version history for a record
 
-All operations are enabled by default. To limit the operations that are allowed for an object, use the `@datamanagerAllowedOperations` annotation and supply a comma separated list, without spaces, of the operations that are allowed. For example, we could disable deleting and the view screen for our blog authors with:
+All operations are enabled by default. To limit the operations that are allowed for an object, use either the `@datamanagerAllowedOperations` or `@datamanagerDisallowedOperations`annotations, supplying a comma separated list without spaces of the operations that are allowed/disallowed. For example, we could disable deleting and the view screen for our blog authors with:
 
 ```luceescript
 // /application/preside-objects/author.cfc
 
 /**
- * @labelfield                   name
- * @datamanagerGroup             blog
- * @datamanagerAllowedOperations add,edit,viewversions
+ * @labelfield                      name
+ * @datamanagerGroup                blog
+ * @datamanagerDisallowedOperations delete,view
  */
 component {
 	property name="name" type="string" dbtype="varchar" maxlength="200" required=true uniqueindexes="name";

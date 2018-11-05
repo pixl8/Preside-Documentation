@@ -40,3 +40,6 @@ In this chapter, you should find detailed guides on developing with the PresideC
 * [[adminrecordviews]]
 * [[taskmanager]]
 * [[fullpagecaching]]
+* [[cloning]]
+* [[healthchecks]]
+* [[adminloginproviders]]
