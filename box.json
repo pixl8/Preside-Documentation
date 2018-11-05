@@ -1,7 +1,7 @@
 {
     "dependencies":{
         "jsoup-1.11.2":"jar:https://jsoup.org/packages/jsoup-1.11.2.jar",
-        "preside-be":"^10.10.0.0004730"
+        "preside-be":"stable"
     },
     "installPaths":{
         "jsoup-1.11.2":"api/lib/jsoup-1.11.2/",
