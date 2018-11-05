@@ -38,7 +38,7 @@ The `select` control allows the user to select either a single or multiple items
 ### Example
 
 ```xml
-<field name="colours" values="red,blue,aquamarine" labels="colours:red,colours:blue,colours:aquamarine" multiple="true" />
+<field name="colours" control="select" values="red,blue,aquamarine" labels="colours:red,colours:blue,colours:aquamarine" multiple="true" />
 ```
 
 ### "Extending" the control
