@@ -287,6 +287,14 @@ component {
 }
 ```
 
+## Choosing whether or not to redirect 404 and 401 pages
+
+In `10.10.13`, a feature flag was added to make 404 and 401 pages _redirect_ rather show inline (the default behaviour). To turn on the redirection feature, use the following in your `Config.cfc$configure()` method:
+
+```luceescript
+settings.features.redirectErrorPages.enabled = true;
+```
+
 ## 500 Error Pages
 
 The implementation of 500 error pages is more straight forward than the 40x templates and involves only creating a flat `500.htm` file in your webroot. The reason behind this is that a server error may be caused by your site's layout code, or may even occur before PresideCMS code is called at all; in which case the code to render your error template will not be available.
