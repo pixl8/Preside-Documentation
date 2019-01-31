@@ -3,7 +3,7 @@
 	var $searchBox = $( "#presidecms-docs-search-input" )
 	  , $searchLink = $( ".search-link" )
 	  , $searchContainer = $( ".search-container" )
-	  , duckduckgoUrl = "https://duckduckgo.com/?q=site:docs.presidecms.com "
+	  , duckduckgoUrl = "https://duckduckgo.com/?q=site:docs.preside.org "
 	  , setupTypeahead, setupBloodhound, renderSuggestion
 	  , itemSelectedHandler, tokenizer, generateRegexForInput, search, searchIndex;
 
