@@ -316,7 +316,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 				$('header').removeClass('open');
 			};
 	});
-		
+
 // dropdown menu show
 	$(document).on('show.bs.dropdown', '.dropdown', function() {
 		var $dropdownMenu = $('.dropdown-menu', $(this)),
@@ -507,7 +507,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			mReset();
 		};
 	});
-	
+
 	mReset = function () {
 		var $bd = $('body');
 
@@ -792,7 +792,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 	var $searchBox = $( "#presidecms-docs-search-input" )
 	  , $searchLink = $( ".search-link" )
 	  , $searchContainer = $( ".search-container" )
-	  , duckduckgoUrl = "https://duckduckgo.com/?q=site:docs.presidecms.com "
+	  , duckduckgoUrl = "https://duckduckgo.com/?q=site:docs.preside.org "
 	  , setupTypeahead, setupBloodhound, renderSuggestion
 	  , itemSelectedHandler, tokenizer, generateRegexForInput, search, searchIndex;
 
