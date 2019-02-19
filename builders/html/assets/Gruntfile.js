@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 		uglify: {
 			base: {
 				files: {
-					'js/base.3.min.js': ['js/base.js']
+					'js/base.4.min.js': ['js/base.js']
 				}
 			}
 		},
