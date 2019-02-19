@@ -5,7 +5,7 @@ title: Custom error pages & maintenance mode
 
 ## Overview
 
-PresideCMS provides a simple mechanism for creating custom `401`, `404` and `500` error pages while providing the flexibility to allow you to implement more complex systems should you need it.
+Preside provides a simple mechanism for creating custom `401`, `404` and `500` error pages while providing the flexibility to allow you to implement more complex systems should you need it.
 
 
 ## 404 Not found pages
@@ -111,7 +111,7 @@ component {
 
 The 404 template can be directly accessed by visiting /404.html. This is achieved through a custom route dedicated to error pages (see [[routing]]).
 
-This is particular useful for rendering the 404 template in cases where PresideCMS is not producing the 404. For example, you may be serving static assets directly through Tomcat and want to see the custom 404 template when one of these assets is missing. To do this, you would edit your `${catalina_home}/config/web.xml` file to define a rewrite URL for 404s:
+This is particular useful for rendering the 404 template in cases where Preside is not producing the 404. For example, you may be serving static assets directly through Tomcat and want to see the custom 404 template when one of these assets is missing. To do this, you would edit your `${catalina_home}/config/web.xml` file to define a rewrite URL for 404s:
 
 ```xml
 <!-- ... -->
@@ -128,7 +128,7 @@ This is particular useful for rendering the 404 template in cases where PresideC
 </web-app>
 ```
 
-Another example is producing 404 responses for secured areas of the application. In PresideCMS's default urlrewrite.xml file (that works with Tuckey URL Rewrite), we block access to files such as Application.cfc by responding with a 404:
+Another example is producing 404 responses for secured areas of the application. In Preside's default urlrewrite.xml file (that works with Tuckey URL Rewrite), we block access to files such as Application.cfc by responding with a 404:
 
 ```xml
 <rule>
@@ -297,9 +297,9 @@ settings.features.redirectErrorPages.enabled = true;
 
 ## 500 Error Pages
 
-The implementation of 500 error pages is more straight forward than the 40x templates and involves only creating a flat `500.htm` file in your webroot. The reason behind this is that a server error may be caused by your site's layout code, or may even occur before PresideCMS code is called at all; in which case the code to render your error template will not be available.
+The implementation of 500 error pages is more straight forward than the 40x templates and involves only creating a flat `500.htm` file in your webroot. The reason behind this is that a server error may be caused by your site's layout code, or may even occur before Preside code is called at all; in which case the code to render your error template will not be available.
 
-If you do not create a `500.htm` in your webroot, PresideCMS will use its own default template for errors. This can be found at `/preside/system/html/500.htm`.
+If you do not create a `500.htm` in your webroot, Preside will use its own default template for errors. This can be found at `/preside/system/html/500.htm`.
 
 ### Bypassing the error template
 
@@ -319,7 +319,7 @@ component extends="preside.system.config.Config" {
 }
 ```
 
-In most cases however, you will not need to configure this for your local environment. PresideCMS uses ColdBox's environment configuration to configure a "local" environment that already has `showErrors` set to **true** for you. If you wish to override that setting, you can do so by creating your own "local" environment function:
+In most cases however, you will not need to configure this for your local environment. Preside uses ColdBox's environment configuration to configure a "local" environment that already has `showErrors` set to **true** for you. If you wish to override that setting, you can do so by creating your own "local" environment function:
 
 ```luceescript
 // /application/config/Config.cfc
@@ -339,7 +339,7 @@ component extends="preside.system.config.Config" {
 }
 ```
 
->>> PresideCMS's built-in local environment configuration will map URLs like "mysite.local", "local.mysite", "localhost" and "127.0.0.1" to the "local" environment.
+>>> Preside's built-in local environment configuration will map URLs like "mysite.local", "local.mysite", "localhost" and "127.0.0.1" to the "local" environment.
 
 ## 503 Maintenance mode page
 

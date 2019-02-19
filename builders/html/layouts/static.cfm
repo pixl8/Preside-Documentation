@@ -6,7 +6,7 @@
 <cfoutput><!DOCTYPE html>
 <html>
 	<head>
-		<title>PresideCMS Documentation :: #HtmlEditFormat( args.title )#</title>
+		<title>Preside Documentation :: #HtmlEditFormat( args.title )#</title>
 
 		<meta content="initial-scale=1.0, width=device-width" name="viewport">
 
@@ -31,7 +31,7 @@
 						<hr>
 						<ul class="nav">
 							<li>
-								<a href="http://www.presidecms.com"><span class="fa fa-fw fa-globe"></span>PresideCMS Website</a>
+								<a href="https://www.preside.org"><span class="fa fa-fw fa-globe"></span>Preside Website</a>
 							</li>
 							<li>
 								<a href="https://github.com/pixl8/Preside-CMS"><span class="fa fa-fw fa-github"></span>Source repository</a>
@@ -55,7 +55,7 @@
 					</a>
 				</li>
 			</ul>
-			<a class="header-logo hidden-lg" href="index.html"><img alt="PresideCMS" src="assets/images/logo-preside-reverse.png"></a>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Preside" src="assets/images/logo-preside-reverse.png"></a>
 			<ul class="nav nav-list pull-right">
 				<li>
 					<a class="menu-toggle" href="##search">
@@ -109,7 +109,7 @@
 
 		<footer class="footer">
 			<div class="container">
-				<p>The PresideCMS Documentation is developed and maintained by Pixl8 Interactive and is licensed under a
+				<p>The Preside Documentation is developed and maintained by Pixl8 Interactive and is licensed under a
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 				</p>

@@ -3,7 +3,7 @@ id: serverguides
 title: Server setup guides
 ---
 
-The guides here are for those who wish to setup PresideCMS in various hosting environments:
+The guides here are for those who wish to setup Preside in various hosting environments:
 
 [[serversetupfoundation]]
 

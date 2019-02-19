@@ -3,7 +3,7 @@ id: contribguides
 title: Contributor guides
 ---
 
-This guide is for those who wish to maintain or contribute to PresideCMS. 
+This guide is for those who wish to maintain or contribute to Preside.
 
 * [[buildfromsource]]
 * [[submittingchanges]]

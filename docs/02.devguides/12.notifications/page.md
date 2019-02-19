@@ -5,7 +5,7 @@ title: Notifications
 
 ## Overview
 
-PresideCMS comes with a system for raising notifications for the CMS admin users. These notifications may appear in a user's notification feed (see screenshot, below) and/or trigger notification emails. It is also possible to extend the notifications system so that you can have notifications raised in your team's IM tool of choice (Hipchat, Slack, etc.) or any other integration you can think of.
+Preside comes with a system for raising notifications for the CMS admin users. These notifications may appear in a user's notification feed (see screenshot, below) and/or trigger notification emails. It is also possible to extend the notifications system so that you can have notifications raised in your team's IM tool of choice (Hipchat, Slack, etc.) or any other integration you can think of.
 
 ![Screenshot showing various programatically raised user notifications.](images/screenshots/notifications.png)
 
@@ -63,7 +63,7 @@ component {
     }
 
 }
-``` 
+```
 
 ## Rendering notifications
 
@@ -125,14 +125,14 @@ component {
         );
     }
 
-} 
+}
 ```
 
 ```lucee
 <!-- /views/renderers/notifications/customerComplaintFiled/full.cfm -->
-<cfparam name="args.complaint.customerName" type="string" /> 
-<cfparam name="args.complaint.complaint"    type="string" /> 
-<cfparam name="args.complaint.dateMade"     type="string" /> 
+<cfparam name="args.complaint.customerName" type="string" />
+<cfparam name="args.complaint.complaint"    type="string" />
+<cfparam name="args.complaint.dateMade"     type="string" />
 
 <cfoutput>
     <div class="alert alert-danger">
@@ -145,9 +145,9 @@ component {
 
 ```lucee
 <!-- /views/renderers/notifications/customerComplaintFiled/emailHtml.cfm -->
-<cfparam name="args.complaint.customerName" type="string" /> 
-<cfparam name="args.complaint.complaint"    type="string" /> 
-<cfparam name="args.complaint.dateMade"     type="string" /> 
+<cfparam name="args.complaint.customerName" type="string" />
+<cfparam name="args.complaint.complaint"    type="string" />
+<cfparam name="args.complaint.dateMade"     type="string" />
 
 <cfoutput>
     <p><bold>Customer complaint made by #args.complaint.customerName# on #args.complaint.dateMade#</bold></p>
@@ -158,9 +158,9 @@ component {
 
 ```lucee
 <!-- /views/renderers/notifications/customerComplaintFiled/emailText.cfm -->
-<cfparam name="args.complaint.customerName" type="string" /> 
-<cfparam name="args.complaint.complaint"    type="string" /> 
-<cfparam name="args.complaint.dateMade"     type="string" /> 
+<cfparam name="args.complaint.customerName" type="string" />
+<cfparam name="args.complaint.complaint"    type="string" />
+<cfparam name="args.complaint.dateMade"     type="string" />
 
 <cfoutput>
 Customer complaint made by #args.complaint.customerName# on #args.complaint.dateMade#:

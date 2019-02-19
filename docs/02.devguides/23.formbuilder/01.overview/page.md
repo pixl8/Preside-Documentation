@@ -3,7 +3,7 @@ id: formbuilder-overview
 title: Form Builder overview
 ---
 
-As of v10.5.0, PresideCMS provides a system that enables content administrators to build input forms to gather submissions from their site's user base.
+As of v10.5.0, Preside provides a system that enables content administrators to build input forms to gather submissions from their site's user base.
 
 ![Screenshot showing a form builder form's workbench](images/screenshots/formbuilder_workbench.jpg)
 
@@ -16,7 +16,7 @@ component extends="preside.system.config.Config" {
 
 	public void function configure() {
 		super.configure();
-		
+
 		// ...
 
 		// enable form builder

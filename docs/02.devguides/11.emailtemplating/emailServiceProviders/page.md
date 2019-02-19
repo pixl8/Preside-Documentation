@@ -96,7 +96,7 @@ Your service provider must provide a handler with at least a `send` action + an 
 
 ```luceescript
 component {
-    
+
     private boolean function send( struct sendArgs={}, struct settings={} ) {}
 
     private any function validateSettings( required struct settings, required any validationResult ) {}
@@ -168,7 +168,7 @@ private boolean function send( struct sendArgs={}, struct settings={} ) {
 
     sendArgs.messageId = sendArgs.messageId ?: CreateUUId();
 
-    m.addParam( name="X-Mailer", value="PresideCMS" );
+    m.addParam( name="X-Mailer", value="Preside" );
     m.addParam( name="X-Message-ID", value=sendArgs.messageId );
     m.send();
 

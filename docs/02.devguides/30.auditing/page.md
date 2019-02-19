@@ -3,7 +3,7 @@ id: auditing
 title: Using the audit trail system
 ---
 
-As of v10.7.0, PresideCMS comes with an audit trail system that allows you to log the activity of your admin users and display that activity in the admin:
+As of v10.7.0, Preside comes with an audit trail system that allows you to log the activity of your admin users and display that activity in the admin:
 
 ![Screenshot showing audit trail in action](images/screenshots/auditTrail.png)
 

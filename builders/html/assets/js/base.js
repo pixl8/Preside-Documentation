@@ -206,7 +206,7 @@ function AnchorJS(options) {
   };
 }
 
-// PRESIDECMS DOCS SPECIFIC CODE
+// PRESIDE DOCS SPECIFIC CODE
 ( function(){
   var anchors    = new AnchorJS()
     , $fixedMenu = $( "header.header" )

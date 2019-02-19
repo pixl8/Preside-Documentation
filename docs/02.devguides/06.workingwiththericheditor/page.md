@@ -5,9 +5,9 @@ title: Working with the richeditor
 
 ## Overview
 
-PresideCMS uses [CKEditor](http://ckeditor.com/) for its richeditor.
+Preside uses [CKEditor](http://ckeditor.com/) for its richeditor.
 
-Beyond the standard install, PresideCMS provides custom plugins to interact with the CMS such as inserting images and documents from the Asset Manager, linking to pages in the site tree, etc. It also allows you to customize and configure the editor from your CFML code.
+Beyond the standard install, Preside provides custom plugins to interact with the CMS such as inserting images and documents from the Asset Manager, linking to pages in the site tree, etc. It also allows you to customize and configure the editor from your CFML code.
 
 ## Configuration
 
@@ -49,7 +49,7 @@ public void function configure() {
 
 ### Configuring toolbars
 
-PresideCMS uses a light-weight syntax for defining sets of toolbars that translates to the full CKEditor toolbar definition. The following two definitions are equivalent:
+Preside uses a light-weight syntax for defining sets of toolbars that translates to the full CKEditor toolbar definition. The following two definitions are equivalent:
 
 **CKEditor config.js**
 
@@ -80,7 +80,7 @@ public void function configure() {
         , toolbar = "mytoolbar"
     };
 
-    // in the PresideCMS version of the toolbar configuration, toolbar groups
+    // in the Preside version of the toolbar configuration, toolbar groups
     // are simply comma separated lists of buttons and dividers. Toolbar groups
     // are then delimited by the pipe ('|') symbol.
     settings.ckeditor.toolbars.mytoolbar = 'Source,-,NewPage,Preview,-,Templates'
@@ -94,7 +94,7 @@ public void function configure() {
 
 #### Specifying non-default toolbars for form fields
 
-You can define multiple toolbars in your configuration and then specify which toolbar to use for individual form fields (if you do not define a toolbar, the default will be used). An example, using a PresideCMS form definition:
+You can define multiple toolbars in your configuration and then specify which toolbar to use for individual form fields (if you do not define a toolbar, the default will be used). An example, using a Preside form definition:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

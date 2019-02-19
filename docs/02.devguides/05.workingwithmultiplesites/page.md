@@ -5,10 +5,10 @@ title: Working with multiple sites
 
 ## Overview
 
-PresideCMS allows users to create and manage multiple sites. This is perfect for things like microsites, different language sites and any other organisation of workflows and users.
+Preside allows users to create and manage multiple sites. This is perfect for things like microsites, different language sites and any other organisation of workflows and users.
 
 ![Screenshot showing the site picker that appears in the administrator for users with access to multiple sites and / or users with access to the site manager.](images/screenshots/site_picker.png)
-    
+
 
 From a development standpoint, the CMS allows developers to create and maintain multiple site templates. A site template is very similar to a Preside Extension, the difference being that the site template is only active when the currently active site is using the template.
 
@@ -16,9 +16,9 @@ Finally, the CMS allows you to easily segment the data in your Preside data obje
 
 ## Site templates
 
-Site templates are like a PresideCMS application within another PresideCMS application. They can contain all the same folders and concepts as your main application but are only active when the currently active site is using the template. This means that any widgets, page types, views, etc. that are defined within your site template, will only kick in when the site that uses the template is active. CMS administrators can apply a single template to a site.
+Site templates are like a Preside application within another Preside application. They can contain all the same folders and concepts as your main application but are only active when the currently active site is using the template. This means that any widgets, page types, views, etc. that are defined within your site template, will only kick in when the site that uses the template is active. CMS administrators can apply a single template to a site.
 
-![Screenshot of an edit site form where the user can choose which template to apply to the site.](images/screenshots/edit_site.png) 
+![Screenshot of an edit site form where the user can choose which template to apply to the site.](images/screenshots/edit_site.png)
 
 
 ### Creating a barebones site template
@@ -40,7 +40,7 @@ description=The microsite template provides layouts, widgets and page types that
 
 ### Overriding layouts, views, forms, etc.
 
-To override any PresideCMS features that are defined in your main application, you simply need to create the same files in the same directory structure within your site template.
+To override any Preside features that are defined in your main application, you simply need to create the same files in the same directory structure within your site template.
 
 For example, if you wanted to create a different page layout for a site template, you might want to override the main application's `/application/layouts/Main.cfm` file. To do so, simply create `/application/site-templates/mytemplate/layouts/Main.cfm`:
 

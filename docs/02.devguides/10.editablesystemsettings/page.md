@@ -35,7 +35,7 @@ A category groups configuration options into a single form. To define a new cate
 
 ```properties
 name=Hipchat integration
-description=Configure notifications from PresideCMS into your Hipchat rooms
+description=Configure notifications from Preside into your Hipchat rooms
 iconClass=fa-comment
 
 api_key.label=API Key
@@ -86,7 +86,7 @@ component {
 
 #### Wirebox
 
-Settings can alternatively be injected into your service layer components using the PresideCMS custom WireBox DSL. For example:
+Settings can alternatively be injected into your service layer components using the Preside custom WireBox DSL. For example:
 
 ```luceescript
 component {

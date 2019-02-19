@@ -7,15 +7,15 @@ title: REST framework
 
 ## Introduction
 
-PresideCMS provides a framework for developing REST APIs that work inline and seamlessly with the rest of the ecosystem. It has taken inspiration from the [Taffy REST Framework](http://taffy.io/) by Adam Tuttle, and follows several of its patterns.
+Preside provides a framework for developing REST APIs that work inline and seamlessly with the rest of the ecosystem. It has taken inspiration from the [Taffy REST Framework](http://taffy.io/) by Adam Tuttle, and follows several of its patterns.
 
 The current version of the framework provides you with the conventions, services and routing layer to help you easily author your own REST APIs; further tooling such as documentation generation and user management are planned for future releases.
 
->>> The documentation here will not attempt to teach the ins and outs of RESTful APIs; rather document how PresideCMS implements RESTful concepts. We can highly recommend Adam Tuttle's book, [REST Assured](http://restassuredbook.com/) as a primer and go-to resource for authoring REST APIs.
+>>> The documentation here will not attempt to teach the ins and outs of RESTful APIs; rather document how Preside implements RESTful concepts. We can highly recommend Adam Tuttle's book, [REST Assured](http://restassuredbook.com/) as a primer and go-to resource for authoring REST APIs.
 
 ## APIs and Resources
 
-Creating a new REST API in PresideCMS is a case of creating a directory containing coldbox handler CFCs. Each handler represents a resource in your API. These APIs and resources must all live under your application's `/handlers/rest-apis/` folder. For example:
+Creating a new REST API in Preside is a case of creating a directory containing coldbox handler CFCs. Each handler represents a resource in your API. These APIs and resources must all live under your application's `/handlers/rest-apis/` folder. For example:
 
 ```
 /application/handlers/rest-apis
@@ -73,7 +73,7 @@ The `@restUri` annotation defines URL patterns that will be matched by this reso
 
 The entire URL path for routing a REST request to a resource will be made up of three parts:
 
-1. The configured REST path that tells PresideCMS that this is a REST request. The default is `/api`.
+1. The configured REST path that tells Preside that this is a REST request. The default is `/api`.
 2. The path to the specific API that the resource lives under, i.e. the folder structure beneath `/handlers/rest-apis`
 3. The path that will match the specific resource
 
@@ -233,7 +233,7 @@ settings.rest.apis[ "/myapi/v2" ] = { corsEnabled=true };
 
 The framework automatically adds `ETag` response headers for GET and HEAD REST requests. These are a simple MD5 hash of the serialized response body. In addition, if the REST request includes a `If-None-Match` request header whose value matches the generated `ETag`, the framework will set an empty response body and set the status of the response to `304 Not modified`.
 
-More advanced caching can be achieved using the CacheBox framework that is built in to ColdBox (and therefore PresideCMS). See the [ColdBox docs](http://wiki.coldbox.org/wiki/CacheBox.cfm) for further details.
+More advanced caching can be achieved using the CacheBox framework that is built in to ColdBox (and therefore Preside). See the [ColdBox docs](http://wiki.coldbox.org/wiki/CacheBox.cfm) for further details.
 
 ## HEAD requests
 
@@ -243,7 +243,7 @@ The framework deals with HEAD requests for you, without you needing to implement
 
 [CORS (Cross-Origin Request Sharing)](http://www.w3.org/TR/cors/) is used to validate that a resource can be used by a system from another origin. This is relevant for browser based JavaScript requests to your API where the requesting page resides at a domain that differs to that of the API.
 
-Before requesting the remote resource fully, a browser will send a "pre-flight" request using the `OPTIONS` HTTP Method along with headers to describe the intentions of the upcoming request. The PresideCMS Rest framework detects these requests for you and responds appropriately based on:
+Before requesting the remote resource fully, a browser will send a "pre-flight" request using the `OPTIONS` HTTP Method along with headers to describe the intentions of the upcoming request. The Preside Rest framework detects these requests for you and responds appropriately based on:
 
 1. Whether or not CORS is enabled for the API (currently, we only allow enabling or disabling CORS globally for all domains)
 2. Whether or not the matching resource supplies a method for responding to the given HTTP Method

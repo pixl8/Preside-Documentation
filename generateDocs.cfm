@@ -1,5 +1,5 @@
 <!---
-	This h4ckt4st!c file builds the API reference documenation from the PresideCMS system services directory.
+	This h4ckt4st!c file builds the API reference documenation from the Preside system services directory.
 	It must be run with CommandBox from the command line (the easiest way to do this is using the build.sh file
 	that also runs the sphinx build)
 --->

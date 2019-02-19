@@ -5,7 +5,7 @@ title: Forms system
 
 ## Introduction
 
-PresideCMS provides a built-in forms system which allows you to define user-input forms that can be used throughout the admin and in your application's front-end.
+Preside provides a built-in forms system which allows you to define user-input forms that can be used throughout the admin and in your application's front-end.
 
 Forms are defined using xml files that live under a `/forms` directory. A typical form definition file will look like this:
 
@@ -61,7 +61,7 @@ var formData = event.getCollectionForForm( "eventsmanager.create.event" );
 * [[systemforms|Reference: System form definitions]]
 * [[systemformcontrols|Reference: System form controls]]
 
->>>> The Preside forms system is not to be confused with the [[formbuilder|PresideCMS Form builder]]. The form builder is a system in which content editors can produce dynamically configured forms and insert them into content pages. The Preside Forms system is a system of programatically defining forms that can be used either in the admin interface or hard wired into the application's front end interfaces.
+>>>> The Preside forms system is not to be confused with the [[formbuilder|Preside Form builder]]. The form builder is a system in which content editors can produce dynamically configured forms and insert them into content pages. The Preside Forms system is a system of programatically defining forms that can be used either in the admin interface or hard wired into the application's front end interfaces.
 
 
 

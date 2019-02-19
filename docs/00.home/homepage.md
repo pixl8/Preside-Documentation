@@ -1,12 +1,12 @@
 ---
-title: PresideCMS documentation
+title: Preside documentation
 ---
 
 ## Welcome
 
 <img src="images/puffy.png" height="200px" class="pull-right no-border">
 
-Welcome to the official [PresideCMS](http://www.presidecms.com) documentation for Developers. The documentation here aims to provide both a thorough reference and guide to developing applications with the PresideCMS platform.
+Welcome to the official [Preside](https://www.preside.org) documentation for Developers. The documentation here aims to provide both a thorough reference and guide to developing applications with the Preside platform.
 
 * [[quickstart]] for first time developers
 * [[devguides]] for detailed guides

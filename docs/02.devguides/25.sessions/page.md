@@ -29,7 +29,7 @@ var sessionStorage = getPlugin( "sessionStorage" );
  *
  */
 component {
-	
+
 	/**
 	 * @sessionStorage.inject coldbox:plugin:sessionStorage
 	 *
@@ -50,7 +50,7 @@ Or
  *
  */
 component {
-	
+
 	property name="sessionStorage" inject="coldbox:plugin:sessionStorage";
 
 	// ...
@@ -64,7 +64,7 @@ See the [ColdBox wiki for full documentation](http://wiki.coldbox.org/wiki/Plugi
 
 # Stateless requests
 
-As of v10.5.0, PresideCMS comes with some configuration options for automatically serving "stateless" requests which turn off session management and ensure that no cookies are set. This is useful for things like [[restframework|REST API requests]], scheduled tasks, and known bots and spiders.
+As of v10.5.0, Preside comes with some configuration options for automatically serving "stateless" requests which turn off session management and ensure that no cookies are set. This is useful for things like [[restframework|REST API requests]], scheduled tasks, and known bots and spiders.
 
 ## Default implementation
 
@@ -82,7 +82,7 @@ In your site's `Application.cfc`, you can pass arrays of user agent and URL rege
 
 ```luceescript
 component extends="preside.system.Bootstrap" {
-	
+
 	super.setupApplication(
 		  id                         = "my-site"
 		, statelessUrlPatterns       = [ "https?://static\..*" ]
@@ -100,7 +100,7 @@ In your site's `Application.cfc`, implement the `isStatelessRequest( fullUrl )` 
 
 ```luceescript
 component extends="preside.system.Bootstrap" {
-	
+
 	super.setupApplication(
 		id = "my-site"
 	);
@@ -121,7 +121,7 @@ You could also use a combination of both methods:
 
 ```luceescript
 component extends="preside.system.Bootstrap" {
-	
+
 	// set custom URL and user agent patterns
 	super.setupApplication(
 		  id                         = "my-site"
@@ -138,8 +138,8 @@ component extends="preside.system.Bootstrap" {
 		if ( !isStateless ) {
 			// add some further custom logic to define stateless requests
 			// ...
-			
-		} 
+
+		}
 
 		return isStateless;
 	}

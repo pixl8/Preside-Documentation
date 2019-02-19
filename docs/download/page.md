@@ -7,6 +7,6 @@ The documentation is available for offline browsing as a [zip file](presidecms-d
 
 ## Dash / Zeal install
 
-You can add the PresideCMS documentation to your Dash or Zealdocs install by adding the following feed:
+You can add the Preside documentation to your Dash or Zealdocs install by adding the following feed:
 
-[http://docs.presidecms.com/dash/presidecms.xml](http://docs.presidecms.com/dash/presidecms.xml)
+[https://docs.preside.org/dash/presidecms.xml](https://docs.preside.org/dash/presidecms.xml)
