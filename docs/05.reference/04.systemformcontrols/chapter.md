@@ -9,6 +9,7 @@ System provided form controls for the [[presideforms]]:
 * [[formcontrol-assetPicker]]
 * [[formcontrol-assetStorageLocationPicker]]
 * [[formcontrol-autoSlug]]
+* [[formcontrol-captcha]]
 * [[formcontrol-checkbox]]
 * [[formcontrol-checkboxList]]
 * [[formcontrol-dataManagerObjectPicker]]
