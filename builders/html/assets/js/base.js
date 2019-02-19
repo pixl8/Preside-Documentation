@@ -316,7 +316,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 				$('header').removeClass('open');
 			};
 	});
-
+		
 // dropdown menu show
 	$(document).on('show.bs.dropdown', '.dropdown', function() {
 		var $dropdownMenu = $('.dropdown-menu', $(this)),
@@ -507,7 +507,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			mReset();
 		};
 	});
-
+	
 	mReset = function () {
 		var $bd = $('body');
 
