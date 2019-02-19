@@ -3,7 +3,7 @@ id: formcontrol-captcha
 title: "Form control: Captcha"
 ---
 
-The `captcha` form control renders a Google ReCaptcha (v2) control.
+The `captcha` form control renders a Google ReCaptcha (v2) control, and was introduced in *10.10.38*.
 
 Note that the name of the Captcha field is irrelevant - this is just used internally to attach validation errors. Validation is done automatically, as part of the standard form validation.
 
