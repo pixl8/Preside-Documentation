@@ -68,6 +68,15 @@ The `objectPicker` control allows users to select one or multiple records from a
                 <td>If quickAdd is enabled, you can additionally set a custom URL for providing the quick add form.</td>
             </tr>
             <tr>
+                <th>superQuickAdd (optional, 10.10.38 and above)</th>
+                <td>True of false (default). Whether or not the **super** quick add record feature is enabled. The super quick add feature allows you to add records inline when the search text
+                entered does not exactly match any existing records</td>
+            </tr>
+            <tr>
+                <th>superQuickAddUrl (optional, 10.10.38 and above)</th>
+                <td>If superQuickAdd is enabled, you can additionally set a custom URL for processing the super quick add request. The URL will receive a POST request with a `value` field and should return a json object with `text` (_label_) and `value` (_id_) fields.</td>
+            </tr>
+            <tr>
                 <th>quickEdit (optional)</th>
                 <td>True of false (default). Whether or not the quick edit record feature is enabled. If enabled, you should create a /forms/preside-objects/(objectname)/admin.quickadd.xml form that will be used in the quick edit dialog.</td>
             </tr>
@@ -79,9 +88,22 @@ The `objectPicker` control allows users to select one or multiple records from a
                 <th>bypassTenants (optional)</th>
                 <td>A comma separated list of tenants to **ignore** when populating the dropdown. See [[data-tenancy]].</td>
             </tr>
+            <tr>
+                <th>filterBy (optional)</th>
+                <td>An optional comma separated list of fields to filter the selectable data on. These fields can be present in either the form, URL parameters, or in any data set using event.includeData().</td>
+            </tr>
+            <tr>
+                <th>filterByField (optional)</th>
+                <td>An optional comma separated list of database field names to correspond with the fields defined in the filterBy attribute. Only necessary when the database fieldnames differ from the field names used to get the values for the filter.</td>
+            </tr>
+            <tr>
+                <th>disabledIfUnfiltered (optional)</th>
+                <td>true or false and only to be used in conjunction with the filterBy attribute. If true and the filterBy field(s) are empty, the control will be disabled until the field(s) have value.</td>
+            </tr>
         </tbody>
     </table>
 </div>
+
 ### Example
 ```xml
 <field name="categories" control="objectPicker" object="blog_category" multiple="true" sortable="true" quickAdd="true" quickEdit="true" />
