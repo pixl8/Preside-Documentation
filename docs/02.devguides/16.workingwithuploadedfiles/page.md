@@ -3,11 +3,11 @@ id: workingwithuploadedfiles
 title: Working with uploaded files
 ---
 
-PresideCMS comes with its own Digital Asset Manager (see [[assetmanager]]) and in many cases this will meet your document / image uploading needs. However, there are scenarios in which the users of your website will upload files that will not warrant a presence in your asset manager and the following APIs and practices can be used to deal with these cases.
+Preside comes with its own Digital Asset Manager (see [[assetmanager]]) and in many cases this will meet your document / image uploading needs. However, there are scenarios in which the users of your website will upload files that will not warrant a presence in your asset manager and the following APIs and practices can be used to deal with these cases.
 
 ## The storage provider interface
 
-PresideCMS has a concept of a "Storage Provider" and provides an interface at `/system/services/fileStorage/StorageProvider.cfc`. A storage provider is a an API interface to any implementation of a system that can store and serve files. The system provides a concrete implementation using a regular file system which can be found at `/system/services/fileStorage/FileSystemStorageProvider.cfc`. 
+Preside has a concept of a "Storage Provider" and provides an interface at `/system/services/fileStorage/StorageProvider.cfc`. A storage provider is a an API interface to any implementation of a system that can store and serve files. The system provides a concrete implementation using a regular file system which can be found at `/system/services/fileStorage/FileSystemStorageProvider.cfc`.
 
 >>> The core asset manager system uses storage providers for its file storage.
 
@@ -39,20 +39,20 @@ The following *example* code will upload a file into the storage provider we cre
 ```luceescript
 property name="storageProvider" inject="userProfileImageStorageProvider";
 
-public string function uploadProfilePicture( 
+public string function uploadProfilePicture(
       required string userId
     , required string fileExtension
-    , required binary uploadedImageBinary 
+    , required binary uploadedImageBinary
 ) {
     var filePath = "/#arguments.userId#.#arguments.fileExtension#";
-    
+
     storageProvider.putObject( object=fileBinary, path=filePath );
 
     return filePath;
 }
 ```
 
-Downloading a file can be done through a specific core route (see [[routing]]), i.e. you can build a link to the direct download / serving of the file. The syntax is as follows:  
+Downloading a file can be done through a specific core route (see [[routing]]), i.e. you can build a link to the direct download / serving of the file. The syntax is as follows:
 
 ```luceescript
 var downloadLink = event.buildLink(
@@ -83,7 +83,7 @@ For access control, your most likely choice will be the `preDownloadFile` interc
 
 ```luceescript
 component extends="coldbox.system.Interceptor" {
-   
+
     // note: important to use Wirebox's 'provider' DSL here to delay
     // injection in our interceptors
     property name="websiteLoginService"    inject="provider:websiteLoginService";

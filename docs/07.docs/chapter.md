@@ -20,7 +20,7 @@ You'll find information on ways in which you can contribute in the [[docs-conten
 
 ### Lucee
 
-The documentation build is achieved using Lucee code. The only dependency required to build and locally run the documentation is [CommandBox](http://www.ortussolutions.com/products/commandbox).
+The documentation build is achieved using Lucee code. The only dependency required to build and locally run the documentation is [CommandBox](https://www.ortussolutions.com/products/commandbox).
 
 ### Markdown
 

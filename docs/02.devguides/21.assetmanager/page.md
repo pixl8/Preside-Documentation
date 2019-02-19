@@ -5,7 +5,7 @@ title: Working with the asset manager
 
 ## Introduction
 
-PresideCMS provides an asset management system that allows users of the system to upload, and add information about, multimedia files. Files can be organised into a folder tree and folders can be configured with permission rules and upload restrictions.
+Preside provides an asset management system that allows users of the system to upload, and add information about, multimedia files. Files can be organised into a folder tree and folders can be configured with permission rules and upload restrictions.
 
 ![Screenshot showing asset manager homepage](images/screenshots/assetmanager.jpg)
 

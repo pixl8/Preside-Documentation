@@ -3,7 +3,7 @@ id: presidesuperclass
 title: Using the super class
 ---
 
-PresideCMS comes with its own suite of service objects that you can use in your application just like any of your application's own service objects. In order to make it easy to access the most common core services, we created the [[api-presidesuperclass]] that can be injected into your service objects simply by adding the `@presideService` annotation to your service CFC file:
+Preside comes with its own suite of service objects that you can use in your application just like any of your application's own service objects. In order to make it easy to access the most common core services, we created the [[api-presidesuperclass]] that can be injected into your service objects simply by adding the `@presideService` annotation to your service CFC file:
 
 ```luceescript
 /**

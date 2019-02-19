@@ -1,4 +1,4 @@
-# PresideCMS documentation source and builder
+# Preside documentation source and builder
 
 [![Build Status](https://travis-ci.org/pixl8/Preside-Documentation.svg?branch=master)](https://travis-ci.org/pixl8/Preside-Documentation)
 
@@ -8,7 +8,7 @@ This directory contains the source and build scripts for creating Preside CMS's 
 
 ### Prerequisites
 
-The only dependency required is [CommandBox](http://www.ortussolutions.com/products/commandbox). Ensure that commandbox is installed and that the `box` command is in your path.
+The only dependency required is [CommandBox](https://www.ortussolutions.com/products/commandbox). Ensure that commandbox is installed and that the `box` command is in your path.
 
 ### Install dependencies
 

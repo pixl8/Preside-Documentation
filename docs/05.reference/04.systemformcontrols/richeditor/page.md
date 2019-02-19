@@ -3,7 +3,7 @@ id: formcontrol-richeditor
 title: "Form control: Rich editor"
 ---
 
-The `richEditor` control gives the user a PresideCMS rich editor instance that can be used to insert Preside Widgets, images from the asset manager, etc.
+The `richEditor` control gives the user a Preside rich editor instance that can be used to insert Preside Widgets, images from the asset manager, etc.
 
 For an in-depth guide, see [[workingwiththericheditor]].
 
@@ -34,6 +34,6 @@ For an in-depth guide, see [[workingwiththericheditor]].
 <field name="body" control="richeditor" />
 ```
 
-![Screenshot of PresideCMS richeditor](images/screenshots/richeditor.png)
+![Screenshot of Preside richeditor](images/screenshots/richeditor.png)
 
 

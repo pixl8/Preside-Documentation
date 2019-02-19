@@ -13,7 +13,7 @@ Individual changes are all made in their own *feature* branches that are merged 
 
 Whenever we push changes to the GitHub repository, we have [Travis CI](https://travis-ci.org/) run our test suite (the [test results](http://downloads.presidecms.com/#!/presidecms%2Ftestresults%2F) are posted to our downloads site). In addition, we also have Travis create a packaged zip file of the system when the branch being pushed is a *release* branch, or when we push a *tag*.
 
-Builds of tagged releases make it to the ["release" folder on our downloads site](http://downloads.presidecms.com/#!/presidecms%2Frelease%2F). Builds of upcoming release branches make it the the ["bleeding-edge" folder on our downloads site](http://downloads.presidecms.com/#!/presidecms%2Fbleeding-edge%2F).
+Builds of tagged releases make it to the ["stable" folder on our downloads site](https://downloads.preside.org/#!/stable%2F). Builds of upcoming release branches make it the the ["bleeding-edge" folder on our downloads site](https://downloads.preside.org/#!/bleeding-edge%2F).
 
 ## What this means for you
 

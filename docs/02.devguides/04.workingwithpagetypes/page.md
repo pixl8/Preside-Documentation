@@ -57,7 +57,7 @@ component labelfield="page.title" {
 
 ### View layer
 
-The page types system takes advantage of auto wired views (see [[dataobjectviews]]). What this means is that we do not need to create a service layer or a coldbox handler for our page type, PresideCMS will take care of wiring your view to your page type data object.
+The page types system takes advantage of auto wired views (see [[dataobjectviews]]). What this means is that we do not need to create a service layer or a coldbox handler for our page type, Preside will take care of wiring your view to your page type data object.
 
 Using our "event" page type example, we would create a view file at `/views/page-types/event/index.cfm`. A simplified example might then look something like this:
 
@@ -147,7 +147,7 @@ layout.special=Special layout
 
 ### Add and edit page forms
 
-The core PresideCMS system ships with default form layouts for adding and editing pages in the site tree. The page types system allows you to modify those forms for specific page types.
+The core Preside system ships with default form layouts for adding and editing pages in the site tree. The page types system allows you to modify those forms for specific page types.
 
 ![Screenshot of a typical edit page form.](images/screenshots/edit_page.png)
 

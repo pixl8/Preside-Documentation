@@ -5,7 +5,7 @@ title: Data object views
 
 ## Overview
 
-PresideCMS provides a feature that allows you to autowire your data model to your views, completely bypassing hand written handlers and service layer objects. Rendering one of these views looks like this:
+Preside provides a feature that allows you to autowire your data model to your views, completely bypassing hand written handlers and service layer objects. Rendering one of these views looks like this:
 
 ```lucee
 #renderView(
@@ -45,7 +45,7 @@ In order for the `renderView()` function to know what fields to select for your 
 </cfoutput>
 ```
 
->>> We introduced the `<cf_presideparam` custom tag in **PresideCMS 10.2.4**. Prior to this, we used the `<cfparam` tag for this feature. The
+>>> We introduced the `<cf_presideparam` custom tag in **Preside 10.2.4**. Prior to this, we used the `<cfparam` tag for this feature. The
 `<cfparam` tag approach will continue to work in version 10 but we may decide to drop this support in future versions. This change is due to an unforeseen incompatibility with Adobe ColdFusion.
 
 Given the examples above, the SQL you would expect to be automatically generated and executed for you would look something like this:
@@ -146,7 +146,7 @@ To allow this to work, you can specify `field="false"`, so:
 <cfparam name="args.showComments"     field="false" type="boolean" />
 ```
 
-This looks as though it should not be necessary because we are using the `<cfparam` tag to state that we expect the `args.showComments` variable to be available. However, the `cfparam` tag is still supported here for backward compatibility with versions of PresideCMS prior to **10.2.4**. As an alternative approach, one can use something like:
+This looks as though it should not be necessary because we are using the `<cfparam` tag to state that we expect the `args.showComments` variable to be available. However, the `cfparam` tag is still supported here for backward compatibility with versions of Preside prior to **10.2.4**. As an alternative approach, one can use something like:
 
 ```lucee
 <cf_presideparam name="args.headline" field="news.label" />

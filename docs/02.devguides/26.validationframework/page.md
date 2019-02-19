@@ -3,7 +3,7 @@ id: validation-framework
 title: Validation framework
 ---
 
-The PresideCMS platform provides its own validation framework. This framework is used in the forms system without the need of any specific knowledge of its working. However, you may find yourself requiring custom validation and wanting to use the framework directly. The guide below provides a comprehensive reference for the framework's APIs.
+The Preside platform provides its own validation framework. This framework is used in the forms system without the need of any specific knowledge of its working. However, you may find yourself requiring custom validation and wanting to use the framework directly. The guide below provides a comprehensive reference for the framework's APIs.
 
 # Core concepts
 

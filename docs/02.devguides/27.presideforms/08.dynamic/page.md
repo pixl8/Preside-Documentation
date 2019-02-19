@@ -5,18 +5,18 @@ title: Dynamically generating Preside form definitions
 
 ## Dynamically generating Preside form definitions
 
-As of PresideCMS v10.6.0, the [[api-formsservice]] provides a [[formsservice-createform]] method for dynamically creating forms without the need for an XML definition file. This can be useful in scenarios where the form can take on many different fields that will differ depending on the current user context.
+As of Preside v10.6.0, the [[api-formsservice]] provides a [[formsservice-createform]] method for dynamically creating forms without the need for an XML definition file. This can be useful in scenarios where the form can take on many different fields that will differ depending on the current user context.
 
 Example usage:
 
 ```luceescript
 var newFormName = formsService.createForm( function( formDefinition ){
-	
+
 	formDefinition.setAttributes(
 		i18nBaseUri = "forms.myform:"
 	);
-	
-	formDefinition.addField( 
+
+	formDefinition.addField(
 		  tab       = "default"
 		, fieldset  = "default"
 		, name      = "title"
@@ -24,13 +24,13 @@ var newFormName = formsService.createForm( function( formDefinition ){
 		, maxLength = 100
 		, required  = true
 	);
-	
+
 	formDefinition.addField(
 		  tab      = "default"
 		, fieldset = "default"
 		, name     = "body"
 		, control  = "richeditor"
-		, required = true		
+		, required = true
 	);
 
 } );
@@ -44,8 +44,8 @@ As well as creating forms from scratch, you can also extend an existing form by 
 
 ```luceescript
 var newFormName = formsService.createForm( basedOn="existing.form", generator=function( formDefinition ){
-	
-	formDefinition.addField( 
+
+	formDefinition.addField(
 		  tab       = "default"
 		, fieldset  = "default"
 		, name      = "title"
@@ -53,7 +53,7 @@ var newFormName = formsService.createForm( basedOn="existing.form", generator=fu
 		, maxLength = 100
 		, required  = true
 	);
-	
+
 	// ...
 } );
 ```
@@ -64,8 +64,8 @@ By default, a form name will be generated for you and returned. If you wish, how
 
 ```luceescript
 formsService.createForm( basedOn="existing.form", formName="my.new.form", generator=function( formDefinition ){
-	
-	formDefinition.addField( 
+
+	formDefinition.addField(
 		  tab       = "default"
 		, fieldset  = "default"
 		, name      = "title"
@@ -73,7 +73,7 @@ formsService.createForm( basedOn="existing.form", formName="my.new.form", genera
 		, maxLength = 100
 		, required  = true
 	);
-	
+
 	// ...
 } );
 ```

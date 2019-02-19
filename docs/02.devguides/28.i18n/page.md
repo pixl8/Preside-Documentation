@@ -11,6 +11,6 @@ The term i18n comes from the desire not to write down the rather long word, inte
 * Formatting of numbers
 * Formatting of dates
 
-The PresideCMS admin interface provides a translation system to allow you to define the system's labels and descriptions in a standard way that allows translation. Date and number formatting is a work in progress.
+The Preside admin interface provides a translation system to allow you to define the system's labels and descriptions in a standard way that allows translation. Date and number formatting is a work in progress.
 
 >>> This is a work in progress and requires further work. Checkout the [[about]] page if you're keen on contributing.

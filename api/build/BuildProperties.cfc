@@ -9,7 +9,7 @@ component accessors=true {
 
 	property name="editSourceLink"  default="https://github.com/pixl8/Preside-Documentation/blob/master{path}";
 	property name="dashBuildNumber" default="1.0.0";
-	property name="dashDownloadUrl" default="http://docs.preside.org/dash/presidecms.tgz";
+	property name="dashDownloadUrl" default="https://docs.preside.org/dash/presidecms.tgz";
 	property name="isBeta"          default="false";
 
 	public any function init() {

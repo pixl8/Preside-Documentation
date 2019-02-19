@@ -5,7 +5,7 @@ title: Email templating (pre-10.8.0)
 
 ## Overview
 
-PresideCMS comes with a very simple email templating system that allows you to define email templates by creating ColdBox handlers.
+Preside comes with a very simple email templating system that allows you to define email templates by creating ColdBox handlers.
 
 Emails are sent through the core email service which in turn invokes template handlers to render the emails and return any other necessary mail parameters.
 
@@ -35,7 +35,7 @@ An example send() call for this template might look like this:
 ```luceescript
  emailService.send( template="adminNotification", args={
       notificationTitle   = "Something just happened"
-    , notificationMessage = "Some message" 
+    , notificationMessage = "Some message"
 } );
 ```
 
@@ -58,7 +58,7 @@ component {
 ```
 
 ```luceescript
-emailService.send( 
+emailService.send(
       template = "adminNotification"
     , args     = { notificationMessage = "Some message" }
     , to       = user.email_address
@@ -66,7 +66,7 @@ emailService.send(
 );
 ```
 
->>> Note the missing "from" parameter. The core send() implementation will attempt to use the system configuration setting `email.default_from_address` when encountering messages with a missing **from** address. This default address can be configured by users through the PresideCMS administrator (see [[editablesystemsettings]]).
+>>> Note the missing "from" parameter. The core send() implementation will attempt to use the system configuration setting `email.default_from_address` when encountering messages with a missing **from** address. This default address can be configured by users through the Preside administrator (see [[editablesystemsettings]]).
 
 ## Mail server and other configuration settings
 

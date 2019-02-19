@@ -5,7 +5,7 @@ title: Multilingual content
 
 ## Overview
 
-PresideCMS comes packaged with a powerful multilingual content feature that allows you to make your client's pages and other data objects translatable to multiple languages.
+Preside comes packaged with a powerful multilingual content feature that allows you to make your client's pages and other data objects translatable to multiple languages.
 
 Enabling multilingual translations is a case of:
 
@@ -15,7 +15,7 @@ Enabling multilingual translations is a case of:
 4. Optionally providing specific form layouts for translations
 5. Providing a mechanism in the front-end application for users to choose from configured languages
 
-Once the multilingual content feature is enabled, PresideCMS will provide a basic UI for allowing CMS administrators to translate content and to configure what languages are available. When selecting data for display in your application, PresideCMS will automatically select translations of your multilingual properties for you when available for the currently selected language. If no translation is available, the system will fall back to the default content.
+Once the multilingual content feature is enabled, Preside will provide a basic UI for allowing CMS administrators to translate content and to configure what languages are available. When selecting data for display in your application, Preside will automatically select translations of your multilingual properties for you when available for the currently selected language. If no translation is available, the system will fall back to the default content.
 
 ![Screenshot showing selection of configured languages](images/screenshots/select_translations.png)
 
@@ -60,7 +60,7 @@ Configuring languages is done entirely through the admin user interface and can 
 
 By default, the forms for translating records will be automatically generated. They will contain no tabs or fieldsets and the order of fields may be unpredictable.
 
-To provide a better experience when dealing with records with many fields, you can define an alternative translation form at: 
+To provide a better experience when dealing with records with many fields, you can define an alternative translation form at:
 
 ```
 /forms/preside-objects/_translation_objectname/admin.edit.xml // where 'objectname' is the name of your object
@@ -75,7 +75,7 @@ When dealing with page types and pages, this will be:
 
 ## Setting the current language
 
-It is up to your application to choose the way in which it will set the language for the current request. One common way in which to do this would be to allow the user to pick from the available languages and to persist their preference. 
+It is up to your application to choose the way in which it will set the language for the current request. One common way in which to do this would be to allow the user to pick from the available languages and to persist their preference.
 
 The list of available languages can be obtained with the `listLanguages()` method of the `multilingualPresideObjectService` object, e.g.:
 
@@ -93,7 +93,7 @@ Setting the current language can be done with `event.setLanguage( idOfLanguage )
 
 ```luceescript
 component extends="preside.system.handlers.General" {
-    
+
     // here, userPreferenceService would be some custom service
     // object that was written to get and set user preferences
     // it is for illustration purposes only and not a core service

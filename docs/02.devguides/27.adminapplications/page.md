@@ -3,7 +3,7 @@ id: admin-applications
 title: Creating multiple admin applications
 ---
 
-As of v10.6.0, PresideCMS offers the ability to define multiple admin applications. The "CMS" is the single default application and, if you define more than one application, your admin interface will receive a new application switcher:
+As of v10.6.0, Preside offers the ability to define multiple admin applications. The "CMS" is the single default application and, if you define more than one application, your admin interface will receive a new application switcher:
 
 
 ![Screenshot showing an example application switcher](images/screenshots/application_switcher.jpg)
@@ -72,7 +72,7 @@ The default handler might be look something like this:
 component extends="preside.system.base.AdminHandler" {
 
 // PRE HANDLER
-    
+
     // preHandler useful for doing basic security checks,
     // and any other handler-wide logic
     function preHandler( event, rc, prc ) {

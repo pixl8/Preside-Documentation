@@ -5,24 +5,24 @@ title: Routing
 
 ## Overview
 
-Routing is the term used to describe how a URL gets mapped to actions and input variables in your application. In PresideCMS, the action will be a [Coldbox event handler](http://wiki.coldbox.org/wiki/EventHandlers.cfm) and the input variables will appear in your request context.
+Routing is the term used to describe how a URL gets mapped to actions and input variables in your application. In Preside, the action will be a [Coldbox event handler](http://wiki.coldbox.org/wiki/EventHandlers.cfm) and the input variables will appear in your request context.
 
-We use Coldbox's own routing system along with a PresideCMS addition for handling dynamic routes. When creating your own custom routes, you are free to use either system.
+We use Coldbox's own routing system along with a Preside addition for handling dynamic routes. When creating your own custom routes, you are free to use either system.
 
 URLs can be built with `event.buildLink()`. Different routing URLs will be generated depending on the arguments passed to the `buildLink()` function.
 
 ## Creating custom routes
 
-To create custom routes for your site, you must create a `Routes.cfm` file in your `/application/config/` directory. In this file, you can create regular [ColdBox routes](http://wiki.coldbox.org/wiki/URLMappings.cfm) as well as PresideCMS routes. The following `routes.cfm` file registers a couple of PresideCMS route handlers:
+To create custom routes for your site, you must create a `Routes.cfm` file in your `/application/config/` directory. In this file, you can create regular [ColdBox routes](http://wiki.coldbox.org/wiki/URLMappings.cfm) as well as Preside routes. The following `routes.cfm` file registers a couple of Preside route handlers:
 
 ```luceescript
 addRouteHandler( getModel( "myCustomRouteHandler" ) );
 addRouteHandler( CreateObject( "app.routeHandlers.anotherCustomRouteHandler" ).init() );
 ```
 
-### PresideCMS Route Handlers
+### Preside Route Handlers
 
-A PresideCMS Route Handler is any CFC that implements a simple interface to handle routing. The interface looks like this:
+A Preside Route Handler is any CFC that implements a simple interface to handle routing. The interface looks like this:
 
 ```luceescript
 interface {
@@ -79,7 +79,7 @@ component implements="preside.system.routeHandlers.iRouteHandler" {
 
 ## URL Rewriting
 
-In order for the core routes to work, URL rewrites need to be in place. PresideCMS server distributions ship with the [Tuckey URL rewrite filter](http://tuckey.org/urlrewrite/) installed and expect to find a `urlrewrite.xml` file in your webroot. The PresideCMS site skeleton builder creates one of these for you with the following rules which you are then free to modify and/or augment:
+In order for the core routes to work, URL rewrites need to be in place. Preside server distributions ship with the [Tuckey URL rewrite filter](http://tuckey.org/urlrewrite/) installed and expect to find a `urlrewrite.xml` file in your webroot. The Preside site skeleton builder creates one of these for you with the following rules which you are then free to modify and/or augment:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -156,9 +156,9 @@ and map to the site tree page:
 
 >>>>>> You can build a link to a site tree page with `event.buildLink( page=idOfThePage )`
 
-### PresideCMS Admin pages and actions
+### Preside Admin pages and actions
 
-Any URL that begins with `/(adminPath)` and ends in a forward slash followed by an optional query string, will be routed as a PresideCMS admin request. Directory nodes in the URL will be translated to the ColdBox event.
+Any URL that begins with `/(adminPath)` and ends in a forward slash followed by an optional query string, will be routed as a Preside admin request. Directory nodes in the URL will be translated to the ColdBox event.
 
 >>> Your admin path can be configured in your site's `Config.cfc` file with the `settings.preside_admin_path` setting. The setting defaults to "preside_admin".
 

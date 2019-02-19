@@ -3,7 +3,7 @@ id: taskmanager-adhoctasks
 title: Task manager - ad-hoc tasks (10.9.0 and above)
 ---
 
-As of v10.9.0, PresideCMS allows you to create, run and optionally track, ad-hoc background tasks. For example, the core data export and form builder export functionality now runs in the background and uses a core Preside admin view to track and deliver the final download.
+As of v10.9.0, Preside allows you to create, run and optionally track, ad-hoc background tasks. For example, the core data export and form builder export functionality now runs in the background and uses a core Preside admin view to track and deliver the final download.
 
 For predefined scheduled tasks, see [[taskmanager-predefinedtasks]].
 
@@ -11,7 +11,7 @@ For predefined scheduled tasks, see [[taskmanager-predefinedtasks]].
 
 ## Creating and running a task
 
-The [[adhoctaskmanagerservice-createtask]] method of the [[api-adhoctaskmanagerservice]] service will register a task and optionally allow you to run it. 
+The [[adhoctaskmanagerservice-createtask]] method of the [[api-adhoctaskmanagerservice]] service will register a task and optionally allow you to run it.
 
 >>> To make life easier, this method can be directly accessed in your handlers with just `createTask()`, or in your service objects with [[presidesuperclass-$createtask]]
 
@@ -89,7 +89,7 @@ If your task fails, i.e. throws an error, you can optionally configure it to ret
 ```luceescript
 {
 	  tries    = 3
-	, interval = CreateTimeSpan( 0, 0, 5, 0 ) 
+	, interval = CreateTimeSpan( 0, 0, 5, 0 )
 }
 ```
 

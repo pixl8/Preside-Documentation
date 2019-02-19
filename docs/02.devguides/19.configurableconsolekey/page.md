@@ -5,7 +5,7 @@ title: Configuring the developer console key
 
 Keyboard layouts vary. The default key code that is used to toggle the developer console is `96` which on a UK keyboard layout maps to the backtick key (`).
 
-In order to accomodate different layouts, PresideCMS allows you to configure the keycode that will trigger the Preside developer console to be toggled. In your application's `Config.cfc`, add the following entry:
+In order to accomodate different layouts, Preside allows you to configure the keycode that will trigger the Preside developer console to be toggled. In your application's `Config.cfc`, add the following entry:
 
 ```luceescript
 component extends="preside.system.config.Config" {

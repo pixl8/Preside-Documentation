@@ -5,7 +5,7 @@ title: Data objects
 
 ## Overview
 
-**Preside Data Objects** are the data layer implementation for PresideCMS. Just about everything in the system that persists data to the database uses Preside Data Objects to do so.
+**Preside Data Objects** are the data layer implementation for Preside. Just about everything in the system that persists data to the database uses Preside Data Objects to do so.
 
 The Preside Data Objects system is deeply integrated into the CMS:
 
@@ -47,7 +47,7 @@ component {
 }
 ```
 
->>> All of the preside objects that are provided by the core PresideCMS system have their table names prefixed with **psys_**.
+>>> All of the preside objects that are provided by the core Preside system have their table names prefixed with **psys_**.
 
 ### Registering objects
 
@@ -466,7 +466,7 @@ component {
 }
 ```
 
-TODO: explain these in more detail. In short though, these attributes control the names of the pivot table and foreign keys that get automatically created for you. If you leave them out, PresideCMS will figure out sensible defaults for you.
+TODO: explain these in more detail. In short though, these attributes control the names of the pivot table and foreign keys that get automatically created for you. If you leave them out, Preside will figure out sensible defaults for you.
 
 As well as controlling the automatically created pivot table name with "relatedVia", you can also use this attribute to define a relationship that exists through a pre-existing pivot object.
 

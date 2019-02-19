@@ -5,7 +5,7 @@ title: Website users and permissioning
 
 ## Overview
 
-PresideCMS supplies a basic core system for setting up user logins and permissioning for your front end websites. This system includes:
+Preside supplies a basic core system for setting up user logins and permissioning for your front end websites. This system includes:
 
 * Membership management screens in the administrator
 * Ability to create users and user "benefits" (synonymous with user groups)
@@ -34,7 +34,7 @@ Passwords are hashed using BCrypt and the default login procedure checks the sup
 
 ### Core handler actions
 
-In addition to the core service logic, PresideCMS also provides a thin handler layer for processing login and logout and for rendering a login page. The handler can be found at `/system/handlers/Login.cfc`. It provides the following direct actions and viewlets:
+In addition to the core service logic, Preside also provides a thin handler layer for processing login and logout and for rendering a login page. The handler can be found at `/system/handlers/Login.cfc`. It provides the following direct actions and viewlets:
 
 #### Default (index)
 
@@ -54,7 +54,7 @@ You can build a logout link with `event.buildLink( linkTo='login.logout' )`.
 
 #### Viewlet: loginPage
 
-The `loginPage` viewlet is intended to render the login page. 
+The `loginPage` viewlet is intended to render the login page.
 
 The core view for this viewlet is just an example and should probably be overwritten within your application. However it should show how things could be implemented.
 
@@ -108,7 +108,7 @@ If you wish to restrict these impersonated logins in any way, you can use the `i
 
 ## Permissions
 
-A permission is something that a user can do within the website. PresideCMS comes with two permissions out of the box, the ability to access a restricted page and the ability to access a restricted asset. These are configured in `Config.cfc` with the `settings.websitePermissions` struct:
+A permission is something that a user can do within the website. Preside comes with two permissions out of the box, the ability to access a restricted page and the ability to access a restricted asset. These are configured in `Config.cfc` with the `settings.websitePermissions` struct:
 
 ```luceescript
 // /preside/system/config/Config.cfc
@@ -152,9 +152,9 @@ Applied permissions are instances of a permission that are granted or denied to 
 
 #### Contexts
 
-In addition to being able to set a grant or deny permission against a user or benefit, applied permissions can also be given a **context** and **context key** to create more refined permission schemes. 
+In addition to being able to set a grant or deny permission against a user or benefit, applied permissions can also be given a **context** and **context key** to create more refined permission schemes.
 
-For instance, when you grant or deny access to a user for a particular **page** in the site tree, you are creating a grant or deny instance with a context of "page" and a context key that is the id of the page. 
+For instance, when you grant or deny access to a user for a particular **page** in the site tree, you are creating a grant or deny instance with a context of "page" and a context key that is the id of the page.
 
 
 ### Defining your own custom permissions
@@ -220,7 +220,7 @@ public void function addCommentAction( event, rc, prc ) {
         , context       = "commentthread"
         , contextKeys   = [ rc.thread ?: "" ]
     );
-    
+
     if ( !hasPermission ) {
         event.accessDenied( reason="INSUFFIENCT_PRIVILEGES" );
     }

@@ -3,7 +3,7 @@ id: devguides
 title: Developer guides
 ---
 
-In this chapter, you should find detailed guides on developing with the PresideCMS platform.
+In this chapter, you should find detailed guides on developing with the Preside platform.
 
 * [[dataobjects]]
 * [[dataobjectviews]]

@@ -7,7 +7,7 @@
 <cfoutput><!DOCTYPE html>
 <html>
 	<head>
-		<title>PresideCMS Documentation :: #HtmlEditFormat( args.page.getTitle() )#</title>
+		<title>Preside Documentation :: #HtmlEditFormat( args.page.getTitle() )#</title>
 		<base href="">
 		<meta content="initial-scale=1.0, width=device-width" name="viewport">
 		<link href="assets/css/base.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 
 		<footer class="footer">
 			<div class="container">
-				<p>The PresideCMS Documentation is developed and maintained by Pixl8 Interactive and is licensed under a
+				<p>The Preside Documentation is developed and maintained by Pixl8 Interactive and is licensed under a
 					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 				</p>
 			</div>

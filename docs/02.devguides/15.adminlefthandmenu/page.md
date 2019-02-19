@@ -5,7 +5,7 @@ title: Modifying the administrator left hand menu
 
 ## Overview
 
-PresideCMS provides a simple mechanism for configuring the left hand menu of the administrator, either to add new main navigational sections, take existing ones away or to modify the order of menu items.
+Preside provides a simple mechanism for configuring the left hand menu of the administrator, either to add new main navigational sections, take existing ones away or to modify the order of menu items.
 
 ## Configuration
 
@@ -15,7 +15,7 @@ Each top level item of the menu is stored in an array that is set in `settings.a
 component {
 
     public void function configure() {
-        
+
         // ... other settings ...
 
         settings.adminSideBarItems = [
@@ -91,14 +91,14 @@ Renders a top level menu item.
 
     if ( hasCmsPermission( "mynewsubfeature.access" ) ) {
         subMenuItems.append( {
-            link  = event.buildAdminLink( linkTo="mynewsubfeature" ) 
+            link  = event.buildAdminLink( linkTo="mynewsubfeature" )
             , title = translateResource( uri="mynewsubfeature:menu.title" )
         } );
     }
 
     if ( hasCmsPermission( "myothernewsubfeature.access" ) ) {
         subMenuItems.append( {
-              link  = event.buildAdminLink( linkTo="myothernewsubfeature" ) 
+              link  = event.buildAdminLink( linkTo="myothernewsubfeature" )
             , title = translateResource( uri="myothernewsubfeature:menu.title" )
         } );
     }

@@ -5,9 +5,9 @@ title: Restricting Preside form elements by feature
 
 ## Restricting Preside form elements by feature
 
-PresideCMS has a concept of features that are configurable in your application's `Config.cfc`. Features can be enabled and disabled for your entire application, or individual site templates. This can be useful for turning off core features, or features in extensions.
+Preside has a concept of features that are configurable in your application's `Config.cfc`. Features can be enabled and disabled for your entire application, or individual site templates. This can be useful for turning off core features, or features in extensions.
 
-In the PresideCMS forms system, you can tag your forms, tabs, fieldsets and fields with feature names so that those elements are removed from the form definition when the feature is disabled.
+In the Preside forms system, you can tag your forms, tabs, fieldsets and fields with feature names so that those elements are removed from the form definition when the feature is disabled.
 
 ### Examples
 

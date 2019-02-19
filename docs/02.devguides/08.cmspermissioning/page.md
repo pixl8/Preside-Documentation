@@ -5,7 +5,7 @@ title: CMS permissioning
 
 ## Overview
 
-CMS Permissioning is split into three distinct concepts in PresideCMS:
+CMS Permissioning is split into three distinct concepts in Preside:
 
 ### Permissions and roles
 
@@ -31,7 +31,7 @@ For example, you could deny the "*Freelancers*" user group the "*Add pages*" per
 
 Contextual permissions are granted or denied to user **groups** and always take precedence over permissions granted through groups and roles.
 
->>> If a feature of the CMS requires context permissions, it must supply its own views and handlers for managing them. PresideCMS helps you out here with a viewlet and action handler for some common UI and saving logic, see 'Rolling out Context Permission GUIs', below.
+>>> If a feature of the CMS requires context permissions, it must supply its own views and handlers for managing them. Preside helps you out here with a viewlet and action handler for some common UI and saving logic, see 'Rolling out Context Permission GUIs', below.
 
 ## Configuring permissions and roles
 
