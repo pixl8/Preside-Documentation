@@ -43,7 +43,23 @@ component {
 
 ### Scheduling tasks
 
-Tasks can be given a default schedule, or defined as _not_ scheduled tasks using the `@schedule` attribute. The attribute expects a value of either `disabled` or an extended (6 point) [cron definition](http://www.nncron.ru/help/EN/working/cron-format.htm). Some example cron definitions:
+Tasks can be given a default schedule, or defined as _not_ scheduled tasks using the `@schedule` attribute. The attribute expects a value of either `disabled` or an extended (6 point) cron definition in the following format:
+
+```
+* * * * * *
+| | | | | | 
+| | | | | +---- Day of the Week   (range: 1-7, 1 standing for Monday)
+| | | | +------ Month of the Year (range: 1-12)
+| | | +-------- Day of the Month  (range: 1-31)
+| | +---------- Hour              (range: 0-23)
+| +------------ Minute            (range: 0-59)
++-------------- Second            (range: 0-59)
+```
+
+>>> Note that there are multiple cron formats and most start with the `minute` definition and not `seconds`. However, the principal is the same in all cases. You can read more about Cron here: [https://en.wikipedia.org/wiki/Cron](https://en.wikipedia.org/wiki/Cron).
+
+
+Some example cron definitions:
 
 ```luceescript
 /**
