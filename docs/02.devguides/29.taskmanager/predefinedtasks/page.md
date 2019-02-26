@@ -70,7 +70,7 @@ Some example cron definitions:
  * @schedule 0 25 *\/2 * * *
  *
  * At 4:06 AM, only on Tuesday
- * @schedule 0 06 04 * * Tue
+ * @schedule 0 06 04 * * 2
  */
 ```
 
