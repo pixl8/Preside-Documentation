@@ -5,7 +5,7 @@ title: Data exports
 
 ## Overview
 
-As of **10.8.7**, Preside comes with a data export API with a simple UI built in to admin data tables. This export UI has been implented for all data manager grids, website users and redirect rules grids. The feature is turned off by default but we expect to enable it by default in the next stable release (**10.9.0**).
+As of **10.8.7**, Preside comes with a data export API with a simple UI built in to admin data tables. This export UI has been implented for all data manager grids, website users and redirect rules grids. The feature is turned off by default but we expect to enable it by default in a future version.
 
 The platform also offers a concept of custom data exporters. A data exporter consists of a single handler action and an i18n `.properties` file to describe it.
 
