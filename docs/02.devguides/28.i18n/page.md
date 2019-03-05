@@ -19,100 +19,395 @@ The Preside admin interface provides a translation system to allow you to define
 
 In .properties file you need to escape special characters to Unicode-Entities. Here are the most common ones:
 
-| Unicode - Escapes | Character |
-| ------ | --- |
-| \u00A1 | ¡ |
-| \u00A2 | ¢ |
-| \u00A3 | £ |
-| \u00A4 | ¤ |
-| \u00A5 | ¥ |
-| \u00A6 | ¦ |
-| \u00A7 | § |
-| \u00A8 | ¨ |
-| \u00A9 | © |
-| \u00AA | ª |
-| \u00AB | « |
-| \u00AC | ¬ |
-| \u00AD | ­ |
-| \u00AE | ® |
-| \u00AF | ¯ |
-| \u00B0 | ° |
-| \u00B1 | ± |
-| \u00B2 | ² |
-| \u00B3 | ³ |
-| \u00B4 | ´ |
-| \u00B5 | µ |
-| \u00B6 | ¶ |
-| \u00B7 | · |
-| \u00B8 | ¸ |
-| \u00B9 | ¹ |
-| \u00BA | º |
-| \u00BB | » |
-| \u00BC | ¼ |
-| \u00BD | ½ |
-| \u00BE | ¾ |
-| \u00BF | ¿ |
-| \u00C0 | À |
-| \u00C1 | Á |
-| \u00C2 | Â |
-| \u00C3 | Ã |
-| \u00C4 | Ä |
-| \u00C5 | Å |
-| \u00C6 | Æ |
-| \u00C7 | Ç |
-| \u00C8 | È |
-| \u00C9 | É |
-| \u00CA | Ê |
-| \u00CB | Ë |
-| \u00CC | Ì |
-| \u00CD | Í |
-| \u00CE | Î |
-| \u00CF | Ï |
-| \u00D0 | Ð |
-| \u00D1 | Ñ |
-| \u00D2 | Ò |
-| \u00D3 | Ó |
-| \u00D4 | Ô |
-| \u00D5 | Õ |
-| \u00D6 | Ö |
-| \u00D7 | × |
-| \u00D8 | Ø |
-| \u00D9 | Ù |
-| \u00DA | Ú |
-| \u00DB | Û |
-| \u00DC | Ü |
-| \u00DD | Ý |
-| \u00DE | Þ |
-| \u00DF | ß |
-| \u00E0 | à |
-| \u00E1 | á |
-| \u00E2 | â |
-| \u00E3 | ã |
-| \u00E4 | ä |
-| \u00E5 | å |
-| \u00E6 | æ |
-| \u00E7 | ç |
-| \u00E8 | è |
-| \u00E9 | é |
-| \u00EA | ê |
-| \u00EB | ë |
-| \u00EC | ì |
-| \u00ED | í |
-| \u00EE | î |
-| \u00EF | ï |
-| \u00F0 | ð |
-| \u00F1 | ñ |
-| \u00F2 | ò |
-| \u00F3 | ó |
-| \u00F4 | ô |
-| \u00F5 | õ |
-| \u00F6 | ö |
-| \u00F7 | ÷ |
-| \u00F8 | ø |
-| \u00F9 | ù |
-| \u00FA | ú |
-| \u00FB | û |
-| \u00FC | ü |
-| \u00FD | ý |
-| \u00FE | þ |
-| \u00FF | ÿ |
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Unicode - Escapes</th>
+				<th>Character</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>\u00A1</code></td>
+				<td>¡</td>
+			</tr>
+			<tr>
+				<td><code>\u00A2</code></td>
+				<td>¢</td>
+			</tr>
+			<tr>
+				<td><code>\u00A3</code></td>
+				<td>£</td>
+			</tr>
+			<tr>
+				<td><code>\u00A4</code></td>
+				<td>¤</td>
+			</tr>
+			<tr>
+				<td><code>\u00A5</code></td>
+				<td>¥</td>
+			</tr>
+			<tr>
+				<td><code>\u00A6</code></td>
+				<td>¦</td>
+			</tr>
+			<tr>
+				<td><code>\u00A7</code></td>
+				<td>§</td>
+			</tr>
+			<tr>
+				<td><code>\u00A8</code></td>
+				<td>¨</td>
+			</tr>
+			<tr>
+				<td><code>\u00A9</code></td>
+				<td>©</td>
+			</tr>
+			<tr>
+				<td><code>\u00AA</code></td>
+				<td>ª</td>
+			</tr>
+			<tr>
+				<td><code>\u00AB</code></td>
+				<td>«</td>
+			</tr>
+			<tr>
+				<td><code>\u00AC</code></td>
+				<td>¬</td>
+			</tr>
+			<tr>
+				<td><code>\u00AD</code></td>
+				<td>­</td>
+			</tr>
+			<tr>
+				<td><code>\u00AE</code></td>
+				<td>®</td>
+			</tr>
+			<tr>
+				<td><code>\u00AF</code></td>
+				<td>¯</td>
+			</tr>
+			<tr>
+				<td><code>\u00B0</code></td>
+				<td>°</td>
+			</tr>
+			<tr>
+				<td><code>\u00B1</code></td>
+				<td>±</td>
+			</tr>
+			<tr>
+				<td><code>\u00B2</code></td>
+				<td>²</td>
+			</tr>
+			<tr>
+				<td><code>\u00B3</code></td>
+				<td>³</td>
+			</tr>
+			<tr>
+				<td><code>\u00B4</code></td>
+				<td>´</td>
+			</tr>
+			<tr>
+				<td><code>\u00B5</code></td>
+				<td>µ</td>
+			</tr>
+			<tr>
+				<td><code>\u00B6</code></td>
+				<td>¶</td>
+			</tr>
+			<tr>
+				<td><code>\u00B7</code></td>
+				<td>·</td>
+			</tr>
+			<tr>
+				<td><code>\u00B8</code></td>
+				<td>¸</td>
+			</tr>
+			<tr>
+				<td><code>\u00B9</code></td>
+				<td>¹</td>
+			</tr>
+			<tr>
+				<td><code>\u00BA</code></td>
+				<td>º</td>
+			</tr>
+			<tr>
+				<td><code>\u00BB</code></td>
+				<td>»</td>
+			</tr>
+			<tr>
+				<td><code>\u00BC</code></td>
+				<td>¼</td>
+			</tr>
+			<tr>
+				<td><code>\u00BD</code></td>
+				<td>½</td>
+			</tr>
+			<tr>
+				<td><code>\u00BE</code></td>
+				<td>¾</td>
+			</tr>
+			<tr>
+				<td><code>\u00BF</code></td>
+				<td>¿</td>
+			</tr>
+			<tr>
+				<td><code>\u00C0</code></td>
+				<td>À</td>
+			</tr>
+			<tr>
+				<td><code>\u00C1</code></td>
+				<td>Á</td>
+			</tr>
+			<tr>
+				<td><code>\u00C2</code></td>
+				<td>Â</td>
+			</tr>
+			<tr>
+				<td><code>\u00C3</code></td>
+				<td>Ã</td>
+			</tr>
+			<tr>
+				<td><code>\u00C4</code></td>
+				<td>Ä</td>
+			</tr>
+			<tr>
+				<td><code>\u00C5</code></td>
+				<td>Å</td>
+			</tr>
+			<tr>
+				<td><code>\u00C6</code></td>
+				<td>Æ</td>
+			</tr>
+			<tr>
+				<td><code>\u00C7</code></td>
+				<td>Ç</td>
+			</tr>
+			<tr>
+				<td><code>\u00C8</code></td>
+				<td>È</td>
+			</tr>
+			<tr>
+				<td><code>\u00C9</code></td>
+				<td>É</td>
+			</tr>
+			<tr>
+				<td><code>\u00CA</code></td>
+				<td>Ê</td>
+			</tr>
+			<tr>
+				<td><code>\u00CB</code></td>
+				<td>Ë</td>
+			</tr>
+			<tr>
+				<td><code>\u00CC</code></td>
+				<td>Ì</td>
+			</tr>
+			<tr>
+				<td><code>\u00CD</code></td>
+				<td>Í</td>
+			</tr>
+			<tr>
+				<td><code>\u00CE</code></td>
+				<td>Î</td>
+			</tr>
+			<tr>
+				<td><code>\u00CF</code></td>
+				<td>Ï</td>
+			</tr>
+			<tr>
+				<td><code>\u00D0</code></td>
+				<td>Ð</td>
+			</tr>
+			<tr>
+				<td><code>\u00D1</code></td>
+				<td>Ñ</td>
+			</tr>
+			<tr>
+				<td><code>\u00D2</code></td>
+				<td>Ò</td>
+			</tr>
+			<tr>
+				<td><code>\u00D3</code></td>
+				<td>Ó</td>
+			</tr>
+			<tr>
+				<td><code>\u00D4</code></td>
+				<td>Ô</td>
+			</tr>
+			<tr>
+				<td><code>\u00D5</code></td>
+				<td>Õ</td>
+			</tr>
+			<tr>
+				<td><code>\u00D6</code></td>
+				<td>Ö</td>
+			</tr>
+			<tr>
+				<td><code>\u00D7</code></td>
+				<td>×</td>
+			</tr>
+			<tr>
+				<td><code>\u00D8</code></td>
+				<td>Ø</td>
+			</tr>
+			<tr>
+				<td><code>\u00D9</code></td>
+				<td>Ù</td>
+			</tr>
+			<tr>
+				<td><code>\u00DA</code></td>
+				<td>Ú</td>
+			</tr>
+			<tr>
+				<td><code>\u00DB</code></td>
+				<td>Û</td>
+			</tr>
+			<tr>
+				<td><code>\u00DC</code></td>
+				<td>Ü</td>
+			</tr>
+			<tr>
+				<td><code>\u00DD</code></td>
+				<td>Ý</td>
+			</tr>
+			<tr>
+				<td><code>\u00DE</code></td>
+				<td>Þ</td>
+			</tr>
+			<tr>
+				<td><code>\u00DF</code></td>
+				<td>ß</td>
+			</tr>
+			<tr>
+				<td><code>\u00E0</code></td>
+				<td>à</td>
+			</tr>
+			<tr>
+				<td><code>\u00E1</code></td>
+				<td>á</td>
+			</tr>
+			<tr>
+				<td><code>\u00E2</code></td>
+				<td>â</td>
+			</tr>
+			<tr>
+				<td><code>\u00E3</code></td>
+				<td>ã</td>
+			</tr>
+			<tr>
+				<td><code>\u00E4</code></td>
+				<td>ä</td>
+			</tr>
+			<tr>
+				<td><code>\u00E5</code></td>
+				<td>å</td>
+			</tr>
+			<tr>
+				<td><code>\u00E6</code></td>
+				<td>æ</td>
+			</tr>
+			<tr>
+				<td><code>\u00E7</code></td>
+				<td>ç</td>
+			</tr>
+			<tr>
+				<td><code>\u00E8</code></td>
+				<td>è</td>
+			</tr>
+			<tr>
+				<td><code>\u00E9</code></td>
+				<td>é</td>
+			</tr>
+			<tr>
+				<td><code>\u00EA</code></td>
+				<td>ê</td>
+			</tr>
+			<tr>
+				<td><code>\u00EB</code></td>
+				<td>ë</td>
+			</tr>
+			<tr>
+				<td><code>\u00EC</code></td>
+				<td>ì</td>
+			</tr>
+			<tr>
+				<td><code>\u00ED</code></td>
+				<td>í</td>
+			</tr>
+			<tr>
+				<td><code>\u00EE</code></td>
+				<td>î</td>
+			</tr>
+			<tr>
+				<td><code>\u00EF</code></td>
+				<td>ï</td>
+			</tr>
+			<tr>
+				<td><code>\u00F0</code></td>
+				<td>ð</td>
+			</tr>
+			<tr>
+				<td><code>\u00F1</code></td>
+				<td>ñ</td>
+			</tr>
+			<tr>
+				<td><code>\u00F2</code></td>
+				<td>ò</td>
+			</tr>
+			<tr>
+				<td><code>\u00F3</code></td>
+				<td>ó</td>
+			</tr>
+			<tr>
+				<td><code>\u00F4</code></td>
+				<td>ô</td>
+			</tr>
+			<tr>
+				<td><code>\u00F5</code></td>
+				<td>õ</td>
+			</tr>
+			<tr>
+				<td><code>\u00F6</code></td>
+				<td>ö</td>
+			</tr>
+			<tr>
+				<td><code>\u00F7</code></td>
+				<td>÷</td>
+			</tr>
+			<tr>
+				<td><code>\u00F8</code></td>
+				<td>ø</td>
+			</tr>
+			<tr>
+				<td><code>\u00F9</code></td>
+				<td>ù</td>
+			</tr>
+			<tr>
+				<td><code>\u00FA</code></td>
+				<td>ú</td>
+			</tr>
+			<tr>
+				<td><code>\u00FB</code></td>
+				<td>û</td>
+			</tr>
+			<tr>
+				<td><code>\u00FC</code></td>
+				<td>ü</td>
+			</tr>
+			<tr>
+				<td><code>\u00FD</code></td>
+				<td>ý</td>
+			</tr>
+			<tr>
+				<td><code>\u00FE</code></td>
+				<td>þ</td>
+			</tr>
+			<tr>
+				<td><code>\u00FF</code></td>
+				<td>ÿ</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
