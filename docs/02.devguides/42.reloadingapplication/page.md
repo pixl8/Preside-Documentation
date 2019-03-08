@@ -32,7 +32,7 @@ e.g. `http://www.mysite.com/?fwreinitForms=true`
 
 By default, the reload password is set to "true" (hence the examples above). This can be made slightly more secure by setting it in your site's `Config.cfc`. e.g.
 
-```luceescript	
+```luceescript
 component extends="preside.system.config.Config" {
     public void function configure() {
         super.configure();
