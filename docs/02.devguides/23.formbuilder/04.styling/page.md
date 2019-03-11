@@ -43,9 +43,9 @@ stacked.title=Stacked layout
 
 ## Item layouts
 
-Form item layouts are implemented in a similar way to form layouts. Viewlets matching the pattern `formbuilder.layouts.formfields.(yourlayout)` will be automatically registered as _global_ layouts for _all_ form field items.
+Form item layouts are implemented in a similar way to form layouts. Viewlets matching the pattern `formbuilder.layouts.formfield.(yourlayout)` will be automatically registered as _global_ layouts for _all_ form field items.
 
-In addition, specific layouts for item types can also be implemented by creating viewlets that match the pattern, `formbuilder.layouts.formfields.(youritemtype).(yourlayout)`. If an item type specific layout shares the same name as a global form field layout, the item type specific layout will be used when rendering an item for that type.
+In addition, specific layouts for item types can also be implemented by creating viewlets that match the pattern, `formbuilder.layouts.formfield.(youritemtype).(yourlayout)`. If an item type specific layout shares the same name as a global form field layout, the item type specific layout will be used when rendering an item for that type.
 
 ### The viewlet
 
