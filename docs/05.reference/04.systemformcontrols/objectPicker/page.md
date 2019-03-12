@@ -69,12 +69,12 @@ The `objectPicker` control allows users to select one or multiple records from a
             </tr>
             <tr>
                 <th>superQuickAdd (optional, 10.10.38 and above)</th>
-                <td>True of false (default). Whether or not the **super** quick add record feature is enabled. The super quick add feature allows you to add records inline when the search text
-                entered does not exactly match any existing records</td>
+                <td>True of false (default). Whether or not the <em>super</em> quick add record feature is enabled. The super quick add feature allows you to add records inline when the search text
+                entered does not exactly match any existing records. <strong>Note: the target object must be enabled for data manager.</strong></td>
             </tr>
             <tr>
                 <th>superQuickAddUrl (optional, 10.10.38 and above)</th>
-                <td>If superQuickAdd is enabled, you can additionally set a custom URL for processing the super quick add request. The URL will receive a POST request with a `value` field and should return a json object with `text` (_label_) and `value` (_id_) fields.</td>
+                <td>If superQuickAdd is enabled, you can additionally set a custom URL for processing the super quick add request. The URL will receive a POST request with a <code>value</code> field and should return a json object with <code>text</code> (<em>label</em>) and <code>value</code> (<em>id</em>) fields.</td>
             </tr>
             <tr>
                 <th>quickEdit (optional)</th>
@@ -86,7 +86,7 @@ The `objectPicker` control allows users to select one or multiple records from a
             </tr>
             <tr>
                 <th>bypassTenants (optional)</th>
-                <td>A comma separated list of tenants to **ignore** when populating the dropdown. See [[data-tenancy]].</td>
+                <td>A comma separated list of tenants to <strong>ignore</strong> when populating the dropdown. See [[data-tenancy]].</td>
             </tr>
             <tr>
                 <th>filterBy (optional)</th>
