@@ -1,6 +1,6 @@
 ---
 id: serversetupfoundation
-title: Manual install of Preside in (almost) any environment
+title: Lucee setup
 ---
 
 This guide assumes you already have a webserver up and running using Lucee (e.g. using one of Lucee's installers). It will take you through the settings and additional installation requirements for working with Preside websites.
