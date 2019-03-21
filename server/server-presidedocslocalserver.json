@@ -1,0 +1,14 @@
+{
+    "name":"presidedocslocalserver",
+    "trayIcon":"trayicon_hires.png",
+    "web":{
+        "http":{
+            "port":"4141"
+        },
+        "rewrites":{
+            "config":"urlrewrite.xml",
+            "enable":"true"
+        },
+        "webroot":"/"
+    }
+}
