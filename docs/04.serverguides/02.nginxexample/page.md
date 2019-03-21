@@ -3,7 +3,7 @@ id: nginxexample
 title: Nginx Proxy example
 ---
 
-The following is an example NGiNX proxy server definition that should work well proxying to a Lucee backend setup with the [[serversetupfoundation|setup guide]].
+The following is an example NGiNX proxy server definition that should work well proxying to a Lucee backend setup with the [[serversetupfoundation|Lucee setup guide]].
 
 ```nginx
 server {
