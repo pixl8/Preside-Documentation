@@ -775,6 +775,31 @@ By default, all [[presideobjectservice-selectData]] calls have their recordset r
 
 You can specify *not* to cache results with the `useCache` argument.
 
+#### Cache per object
+
+**As of Preside 10.10.55**, an additional feature flag enables the setting of caches _per object_. This greatly simplifies and speeds up the cache clearing and invalidation logic which may benefit certain application profiles. The feature can be enabled in your `Config.cfc` with:
+
+```luceescript
+settings.features.queryCachePerObject.enabled = true;
+```
+
+Configuration of the `defaultQueryCache` then becomes the _default_ configuration for each individual object's own cachebox cache instance. 
+
+In addition, you can annotate your Preside object with `@cacheProvider` to use a different cache provider for a specific object. Finally, any other annotation attributes on your object that begin with `@cache` will be treated as properties of the cache box cache. 
+
+A common example may be to set a larger cache for a specific object with different reaping frequency and eviction count:
+
+```luceescript
+/**
+ * @cacheMaxObjects    10000
+ * @cacheReapFrequency 5
+ * @cacheEvictCount    2000
+ */
+component {
+
+}
+```
+
 ## Extending Objects
 
 >>>>>> You can easily extend core data objects and objects that have been provided by extensions simply by creating `.cfc` file with the same name.
