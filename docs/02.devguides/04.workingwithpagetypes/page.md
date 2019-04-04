@@ -17,7 +17,7 @@ Pages in a site's tree are stored in the `page` preside object. This object stor
 
 All pages in the tree must be associated with a page *type*; this page type will define further fields that are specific to its purpose. Each page type will have its own Preside Object in which the specific data is stored. For example, you might have an "event" page type that had *Start date*, *End date* and *Location* fields.
 
-**A one-to-one relationship exists between each page type object and the page obejct**. This means that every **page type** record must and will have a corresponding **page** record.
+**A one-to-one relationship exists between each page type object and the page object**. This means that every **page type** record must and will have a corresponding **page** record.
 
 ## Creating a page type
 
