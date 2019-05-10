@@ -9,7 +9,7 @@ One of Preside's most powerful and easy to build features is its widget framewor
 
 ![Screenshot showing widget configurator](images/screenshots/widgetConfiguration.jpg)
 
-![Screenshot showing widget placeholders](images/screenshots/widgetPlaceholders.jpg)
+![Screenshot showing widget placeholders](images/screenshots/widgetplaceholders.jpg)
 
 
 ## Creating a new widget
