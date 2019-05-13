@@ -23,7 +23,7 @@ component {
 		var newId = args.newId ?: "";
 
 		// redirect to a different than default page
-		setNextEvent( event.buildAdminLink(
+		setNextEvent( url=event.buildAdminLink(
 			  objectName = "blog"
 			, recordId   = newId
 			, operation  = "preview"
