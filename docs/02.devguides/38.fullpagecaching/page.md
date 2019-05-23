@@ -26,6 +26,29 @@ By default, this will cache _everything_ except:
 
 Each page will potentially have two cached entries - one for logged in users and one for anonymous visitors.
 
+## Configuration
+
+The following additional settings are available as of **10.11.0** (the default preside settings are show below):
+
+```luceescript
+// whether or not to limit  data cached with
+// each page to a specified list of keys (below)
+settings.fullPageCaching.limitCacheData = false;
+
+// when limitCacheData = true allowed list 
+// of keys in rc scope that will be cached
+settings.fullPageCaching.limitCacheDataKeys.rc = [];
+
+// when limitCacheData = true allowed list 
+// of keys in prc scope that will be cached
+settings.fullPageCaching.limitCacheDataKeys.prc = [ "_site", "presidePage", "__presideInlineJs", "_presideUrlPath", "currentLayout", "currentView", "slug", "viewModule" ];
+};
+```
+
+>>> Recommendation: always set `settings.settings.fullPageCaching.limitCacheData = true` and cache as little data from `prc` scope as possible. This will limit the memory requirements of the cache which otherwise can grow large depending on your application.
+
+>>> The settings above control the variables that are available to any **delayed (non-cacheable) viewlets**, so try to make those viewlets rely on as little outside data as possible.
+
 ## Auto non-cacheable viewlets
 
 To mark a `viewlet` as not being cacheable, add the `@cacheable false` annotation to the viewlet's handler:
