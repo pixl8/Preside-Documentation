@@ -96,3 +96,53 @@ settings.adminPermissions.emailCenter = {
 ```
 
 The default `sysadmin` and `contentadmin` user roles have access to all of these permissions _except_ for the `emailCenter.queue.view` and `emailCenter.queue.clear` permissions. For a full guide to customizing admin permissions and roles, see [[cmspermissioning]].
+
+## Interception points
+
+As of 10.11.0, there are a number of interception points that can be used to more deeply customize the email sending experience. You may, for example, use the `onSendEmail` interception point to inject campaign tags into all links in an email. Interception points are listed below:
+
+### onPrepareEmailSendArguments
+
+This interception point is announced after the "sendArgs" are prepared ready for sending the email. This include keys such as `htmlBody`, `textBody`, `to`, `from`, etc. You will receive `sendArgs` as a key in the `interceptData` argument and can then modify this struct as you see fit. e.g.
+
+```luceescript
+component extends="coldbox.system.Interceptor" {
+
+	property name="smartSubjectService" inject="delayedInjector:smartSubjectService";
+
+	public void function onPrepareEmailSendArguments( event, interceptData ) {
+		interceptData.sendArgs.subject = smartSubjectService.optimizeSubject( argumentCollection=interceptData.sendArgs );
+	}
+}
+```
+
+### preSendEmail
+
+This interception point is announced just before the email is sent. It is near identical to `onPrepareEmailSendArguments` but also contains a `settings` key pertaining to the email service provider sending the email.  e.g.
+
+```luceescript
+component extends="coldbox.system.Interceptor" {
+
+	// force local testing perhaps??
+	public void function preSendEmail( event, interceptData ) {
+		interceptData.settings.smtp_host = "127.0.0.1"; 
+	}
+
+}
+```
+
+### postSendEmail
+
+This interception point is announced just after the email is sent and after any logs have been inserted in the database. Receives the same arguments as `preSendEmail`.
+
+```luceescript
+component extends="coldbox.system.Interceptor" {
+
+	property name="someService" inject="delayedInjector:someService";
+
+	public void function postSendEmail( event, interceptData ) {
+		someService.doSomethingAfterEmailSend( argumentCollection=interceptData.sendArgs );
+	}
+
+}
+```
