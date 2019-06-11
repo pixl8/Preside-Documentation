@@ -3,8 +3,6 @@ id: restframework
 title: REST framework
 ---
 
->>>> As of v10.4.0, the REST framework should be considered BETA. We expect details may change in upcoming releases, though we do not expect those changes to be dramatic or breaking.
-
 ## Introduction
 
 Preside provides a framework for developing REST APIs that work inline and seamlessly with the rest of the ecosystem. It has taken inspiration from the [Taffy REST Framework](http://taffy.io/) by Adam Tuttle, and follows several of its patterns.
