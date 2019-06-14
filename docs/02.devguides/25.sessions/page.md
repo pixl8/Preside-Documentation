@@ -16,7 +16,7 @@ property name="sessionStorage" inject="coldbox:plugin:sessionStorage";
 
 // or...
 
-var sessionStorage = getPlugin( "sessionStorage" );   // ColdBox 4
+var sessionStorage = getPlugin( "sessionStorage" );   // ColdBox 4 
 var sessionStorage = getInstance( "sessionStorage" ); // ColdBox 5, getPlugin() has been deprecated.
 
 ```
