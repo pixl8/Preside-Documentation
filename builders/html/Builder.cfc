@@ -95,7 +95,7 @@ component {
 					icon = "file-o";
 			}
 
-			var subHeaders = reMatchNoCase( "(##{2,6}[a-zA-Z)( ]+)", page.getBody() );
+			var subHeaders = reMatchNoCase( "(##{2,6}[a-zA-Z0-9)( ]+)", page.getBody() );
 
 			for( subHeader in subHeaders ) {
 				if( len(subHeader) > 3 ) { 
