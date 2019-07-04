@@ -102,7 +102,7 @@ component {
 					searchIndex.append( {
 						  "value"   = page.getPath() & ".html"
 						, "display" = page.getTitle()
-						, "text"    = HtmlEditFormat( trim( reReplace( subHeader, '##', '', 'all' ) ) );
+						, "text"    = HtmlEditFormat( trim( reReplace( subHeader, '##', '', 'all' ) ) )
 						, "type"    = page.getPageType()
 						, "icon"    = icon
 					} );
@@ -122,11 +122,6 @@ component {
 	}
 
 // PRIVATE HELPERS
-	private string function stripHtml(required string content) {
-		return REReplaceNoCase(arguments.content, "<[^[:space:]][^>]*>", "", "ALL");
-	}
-
-
 	private void function _writePage( required any page, required string buildDirectory, required any docTree ) {
 		var filePath      = _getHtmlFilePath( arguments.page, arguments.buildDirectory );
 		var fileDirectory = GetDirectoryFromPath( filePath );
