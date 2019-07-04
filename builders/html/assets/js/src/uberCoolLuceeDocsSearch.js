@@ -48,7 +48,7 @@
 
 		matches = searchIndex.filter( function( item ) {
 			var titleLen = item.text.length
-			  , match, nextMatch, i, highlighted;
+			  , match, nextMatch, i, highlighted, title;
 
 			for( i=0; i < titleLen; i++ ){
 				nextMatch = item.text.substr(i).match( reg.expr );
@@ -56,14 +56,16 @@
 				if ( !nextMatch ) {
 					break;
 				} else if ( !match || nextMatch[0].length < match[0].length ) {
-					match = nextMatch;
-					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace );
+					match       = nextMatch;
+					title       = item.display;
+					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace )
 				}
 			}
 
 			if ( match ) {
-				item.score = match[0].length - input.length;
+				item.score     = match[0].length - input.length;
 				item.highlight = highlighted;
+				item.title     = title;
 
 				return true;
 			}
@@ -107,7 +109,15 @@
 	};
 
 	renderSuggestion = function( item ) {
-		return Mustache.render( '<div><i class="fa fa-fw fa-{{icon}}"></i> {{{highlight}}}</div>', item );
+		console.log(item);
+		return Mustache.render(
+			'<div>' +
+				'<i class="fa fa-fw fa-{{icon}}"></i>' + ' ' + '<font size="3"><b> {{{title}}} </b></font>' +
+				'<br>' +
+				'<font size="2"><i> {{{highlight}}} </i></font>' +
+			'</div>'
+			, item
+			);
 	};
 
 	itemSelectedHandler = function( item ) {
