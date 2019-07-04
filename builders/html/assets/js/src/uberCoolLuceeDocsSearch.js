@@ -116,9 +116,8 @@
 	renderSuggestion = function( item ) {
 		return Mustache.render(
 			'<div>' +
-				'<i class="fa fa-fw fa-{{icon}}"></i>' + ' ' + '<font size="3"><b> {{{title}}} </b></font>' +
-				'<br>' +
-				'<font size="2"><i> {{{highlight}}} </i></font>' +
+				'<p style="margin: 0"><i class="fa fa-fw fa-{{icon}}"></i><strong> {{{title}}} </strong></p>' +
+				'<p style="margin: -5px 0 2px 22px;line-height:1.1em;"><small><i> {{{highlight}}} </i></small></p>' +
 			'</div>'
 			, item
 			);
