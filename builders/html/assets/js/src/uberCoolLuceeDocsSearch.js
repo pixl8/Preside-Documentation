@@ -44,6 +44,7 @@
 	search = function( input ){
 		var reg     = generateRegexForInput( input )
 		  , fulltextitem, matches;
+		var previousMatches = [];
 
 
 		matches = searchIndex.filter( function( item ) {
@@ -55,10 +56,14 @@
 
 				if ( !nextMatch ) {
 					break;
+				} else if ( previousMatches.includes( item.display ) ) {
+					break;
 				} else if ( !match || nextMatch[0].length < match[0].length ) {
 					match       = nextMatch;
 					title       = item.display;
 					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace )
+
+					previousMatches.push( item.display );
 				}
 			}
 
