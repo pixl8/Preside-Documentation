@@ -697,6 +697,27 @@ records = newsObject.selectData(
 
 >>> Notice that all but the *daysOld* filter param do not specify a datatype. This is because the parameters can be mapped to fields on the object/s and their data types derived from there. The *daysOld* filter has no field mapping and so its data type must also be defined here.
 
+#### Multiple filters
+
+In addition to the `filter` and `filterParams` arguments, you can also make use of an `extraFilters` argument that allows you to pass an array of structs, each with a `filter` and optional `filterParams` key. All filters will be combined using a logical AND:
+
+```luceescript
+records = newsObject.selectData(
+    extraFilters = [{ 
+          filter = { active=true } 
+    },{
+          filter       = "category != :category and DateDiff( publishdate, :publishdate ) > :daysold and category$tag.label = :category$tag.label"
+        , filterParams = {
+               category             = chosenCategory
+             , publishdate          = publishDateFilter
+             , "category$tag.label" = "red"
+             , daysOld              = { type="integer", value=3 }
+          }
+
+    } ]
+);
+```
+
 #### Pre-saved filters
 
 Developers are able to define named filters that can be passed to methods in an array using the `savedFilters` argument, for example:
@@ -713,7 +734,7 @@ A saved filter is defined using the `settings.filters` struct. A filter can eith
 
 ```luceescript
 settings.filters.activeCategories = { 
-      filter       = "category.active = :category.active and category.pub_date > Now()
+      filter       = "category.active = :category.active and category.pub_date > Now()"
     , filterParams = { "category.active"=true }
 };
 
