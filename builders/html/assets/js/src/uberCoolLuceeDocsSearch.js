@@ -44,7 +44,6 @@
 	search = function( input ){
 		var reg     = generateRegexForInput( input )
 		  , fulltextitem, matches;
-		var previousMatches = [];
 
 
 		matches = searchIndex.filter( function( item ) {
@@ -56,14 +55,10 @@
 
 				if ( !nextMatch ) {
 					break;
-				} else if ( previousMatches.includes( item.display ) ) {
-					break;
 				} else if ( !match || nextMatch[0].length < match[0].length ) {
 					match       = nextMatch;
 					title       = item.display;
-					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace )
-
-					previousMatches.push( item.display );
+					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace );
 				}
 			}
 
@@ -117,7 +112,7 @@
 		return Mustache.render(
 			'<div>' +
 				'<p style="margin: 0"><i class="fa fa-fw fa-{{icon}}"></i><strong> {{{title}}} </strong></p>' +
-				'<p style="margin: -5px 0 2px 22px;line-height:1.1em;"><small><i> {{{highlight}}} </i></small></p>' +
+				'<p style="margin: -2px 0 6px 26px;line-height:1.1em;"><small><i> {{{highlight}}} </i></small></p>' +
 			'</div>'
 			, item
 			);
