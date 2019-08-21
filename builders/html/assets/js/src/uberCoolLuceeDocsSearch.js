@@ -86,8 +86,6 @@
 		fulltextitem.display = fulltextitem.text;
 		matches.unshift( fulltextitem );
 
-		console.log( matches );
-
 		return matches;
 	}
 
