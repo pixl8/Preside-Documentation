@@ -47,3 +47,4 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[adminloginproviders]]
 * [[reloadingtheapplication]]
 * [[admingritternotifications]]
+* [[extensions]]
