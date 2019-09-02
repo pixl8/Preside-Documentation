@@ -59,4 +59,4 @@ component extends="preside.system.config.Config" {
 }
 ```
 
->>> The above example uses ColdBox environments to achieve the configuration, but other approaches could be used. For example, you could inject environment variables into your application (see [[environment-variables]]).
+>>> The above example uses ColdBox environments to achieve the configuration, but other approaches could be used. For example, you could inject environment variables into your application (see [[config]]).
