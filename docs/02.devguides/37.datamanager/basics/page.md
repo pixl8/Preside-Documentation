@@ -151,7 +151,7 @@ All operations are enabled by default. To limit the operations that are allowed 
 /**
  * @labelfield                      name
  * @datamanagerGroup                blog
- * @datamanagerDisallowedOperations delete,view
+ * @datamanagerDisallowedOperations delete,read
  */
 component {
 	property name="name" type="string" dbtype="varchar" maxlength="200" required=true uniqueindexes="name";
