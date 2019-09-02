@@ -120,3 +120,55 @@ The following examples show the different results from different **resize** argu
 ![300x300 with crop hint](images/transformations/dragonfly-300x300-crop-hint.jpg)
 
 *Crop hint set in the asset edit UI around the centre of the image*
+
+## Developing custom transformations
+
+**As of Preside 10.11.0**, Transformations are created as coldbox handlers with a convention based path of `assettransformers.{transformername}`. For example, the `resize` transformation has a corresponding private handler action at `/handlers/AssetTransformers.cfc$resize()`:
+
+```luceescript
+component {
+	property name="imageManipulationService" inject="imageManipulationService";
+
+	private binary function resize( event, rc, prc, args={} ) {
+		return imageManipulationService.resize( argumentCollection=args );
+	}
+
+	// ...
+}
+```
+
+Create your own handler actions and use the handler name in your transformations. Any arguments set in the derivative transformation config will be passed in the `args` structure sent to the handler action, along with a `binary` `asset` argument.
+
+The handler must return a `binary` object that is the asset binary. A blank example:
+
+```luceescript
+// /application/handlers/AssetTransformers.cfc
+component {
+
+	private binary function doNothing( event, rc, prc, args={} ) {
+		return args.asset;
+	}
+
+	// ...
+}
+```
+
+```luceescript
+// /application/config/Config.cfc
+component extends="preside.system.config.Config" {
+
+	public void function configure() {
+		super.configure();
+
+		// ...
+
+		settings.assetManager.derivatives.example = {
+			  permissions = "inherit"
+			, transformations = [
+				  { method="doNothing"  , args={} } // refers to our custom, pointless, transformation
+				, { method="shrinkToFit", args={ width=200, height=200 } }
+			  ]
+		};
+	}
+
+```
