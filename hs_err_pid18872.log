@@ -1,0 +1,1795 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000000004f546, pid=18872, tid=0x00007f29de174700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_222-b10) (build 1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10)
+# Java VM: OpenJDK 64-Bit Server VM (25.222-b10 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  0x000000000004f546
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f28ec001800):  JavaThread "Thread-98166" daemon [_thread_in_native, id=25033, stack(0x00007f29de074000,0x00007f29de175000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x000000000004f546
+
+Registers:
+RAX=0x00007f29fce06000, RBX=0x00007f28ec001800, RCX=0x00007f29ff3ed320, RDX=0x00007f29400027f0
+RSP=0x00007f29de173c98, RBP=0x00007f28ec0019e0, RSI=0x00007f29400027f0, RDI=0x00007f28ec0019e0
+R8 =0x0000000000000000, R9 =0x0000000000000000, R10=0x00007f29b000bf60, R11=0x0000000000000000
+R12=0x00007f29400027f0, R13=0x00007f29f8006050, R14=0x00007f2920001060, R15=0x00007f28ec0019e0
+RIP=0x000000000004f546, EFLAGS=0x0000000000010206, CSGSFS=0x002b000000000033, ERR=0x0000000000000014
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f29de173c98)
+0x00007f29de173c98:   00007f29fce0601f 00007f29b000c1b0
+0x00007f29de173ca8:   00007f29f800ba40 00007f28ec000d80
+0x00007f29de173cb8:   00007f2988d41ee0 00007f29de173d10
+0x00007f29de173cc8:   00007f29fe99309a 00007f29de074000
+0x00007f29de173cd8:   00007f29feaf66c8 00007f29de173d10
+0x00007f29de173ce8:   00007f28ec001800 00007f29de173e10
+0x00007f29de173cf8:   00007f29de173d60 00007f29f8006050
+0x00007f29de173d08:   00007f2920001060 00007f28ec0019e0
+0x00007f29de173d18:   00007f29fe996c5b 00007f29de173d40
+0x00007f29de173d28:   00007f28ec0019c0 0000008000000000
+0x00007f29de173d38:   0000000100003000 00007f28ec001800
+0x00007f29de173d48:   00007f28ec0019e0 00007f29de070000
+0x00007f29de173d58:   00007f29400027f0 00007f29de173de0
+0x00007f29de173d68:   00007f28ec000d80 00007f2988d41ed0
+0x00007f29de173d78:   00007f2988d41ee0 00007f2988d422b8
+0x00007f29de173d88:   00000000000003d8 00007f28ec001800
+0x00007f29de173d98:   00007f28ec001800 00007f28ec002360
+0x00007f29de173da8:   00007f2928002840 00007f2928002850
+0x00007f29de173db8:   00007f2928002928 00000000000000d8
+0x00007f29de173dc8:   00007f28ec0023a0 0000000000000003
+0x00007f29de173dd8:   2e322dc66a1b0100 00007f28ec001800
+0x00007f29de173de8:   00007f28ec001800 00007f2988d41ed0
+0x00007f29de173df8:   00007f2988d41ee0 00007f28ec000d80
+0x00007f29de173e08:   00007f2988d41ee0 00007f29de173eb0
+0x00007f29de173e18:   00007f29fec9e270 00000000000003d8
+0x00007f29de173e28:   00007f2988d422b8 000061c90000000c
+0x00007f29de173e38:   0000000000018248 0000000000000000
+0x00007f29de173e48:   00007f28ec001800 00007f29de173eb0
+0x00007f29de173e58:   00007f29feaf6d3a 00007f29fed74777
+0x00007f29de173e68:   00007f28ec002f00 00007f29de173eb0
+0x00007f29de173e78:   2e322dc66a1b0100 00007f29de173eb0
+0x00007f29de173e88:   00007f28ec002f00 00007f28ec0025d0 
+
+Instructions: (pc=0x000000000004f546)
+0x000000000004f526:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xb]
+
+Register to memory mapping:
+
+RAX=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x00007f29de074000,0x00007f29de175000],  sp=0x00007f29de173c98,  free space=1023k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x000000000004f546
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x00007f28ec001800 JavaThread "Thread-98166" daemon [_thread_in_native, id=25033, stack(0x00007f29de074000,0x00007f29de175000)]
+  0x00007f290801c800 JavaThread "Thread-98163" daemon [_thread_blocked, id=24882, stack(0x00007f29dd8bb000,0x00007f29dd9bc000)]
+  0x00007f293405f000 JavaThread "Thread-98156" daemon [_thread_blocked, id=24805, stack(0x00007f29b4bb0000,0x00007f29b4cb1000)]
+  0x00007f293c27c000 JavaThread "Thread-98153" daemon [_thread_blocked, id=24790, stack(0x00007f29d78f9000,0x00007f29d79fa000)]
+  0x00007f293405e800 JavaThread "Thread-98151" daemon [_thread_blocked, id=24787, stack(0x00007f29dd4b7000,0x00007f29dd5b8000)]
+  0x00007f28cc02c000 JavaThread "FusionReactor - Worker-582" daemon [_thread_blocked, id=22075, stack(0x00007f29dc735000,0x00007f29dc836000)]
+  0x00007f28f8007800 JavaThread "FusionReactor - Signal - Cloud Messenger Thread 0" daemon [_thread_blocked, id=22583, stack(0x00007f29dc937000,0x00007f29dca38000)]
+  0x00007f28f8004000 JavaThread "FusionReactor - Cloud - Netty Thread Group - Thread-96294" daemon [_thread_in_native, id=22582, stack(0x00007f29d566a000,0x00007f29d576b000)]
+  0x00007f2954334000 JavaThread "XNIO-1 task-28" [_thread_blocked, id=20662, stack(0x00007f29dd2b5000,0x00007f29dd3b6000)]
+  0x00007f295c00c000 JavaThread "XNIO-1 task-27" [_thread_blocked, id=20661, stack(0x00007f29de377000,0x00007f29de478000)]
+  0x00007f296400d800 JavaThread "XNIO-1 task-26" [_thread_blocked, id=20660, stack(0x00007f29dd9bc000,0x00007f29ddabd000)]
+  0x00007f2954333000 JavaThread "XNIO-1 task-25" [_thread_blocked, id=20659, stack(0x00007f29dd1b4000,0x00007f29dd2b5000)]
+  0x00007f295c00a800 JavaThread "XNIO-1 task-24" [_thread_blocked, id=20657, stack(0x00007f29dd7ba000,0x00007f29dd8bb000)]
+  0x00007f296400b800 JavaThread "XNIO-1 task-23" [_thread_blocked, id=20656, stack(0x00007f29de478000,0x00007f29de579000)]
+  0x00007f2954332800 JavaThread "XNIO-1 task-22" [_thread_blocked, id=20655, stack(0x00007f29dc836000,0x00007f29dc937000)]
+  0x00007f2954331800 JavaThread "XNIO-1 task-21" [_thread_blocked, id=20634, stack(0x00007f29dd3b6000,0x00007f29dd4b7000)]
+  0x00007f28dc43b000 JavaThread "FusionReactor - Cloud - Periodic Data Particle Shipping" daemon [_thread_blocked, id=19765, stack(0x00007f29b61b3000,0x00007f29b62b4000)]
+  0x00007f28dc330000 JavaThread "FusionReactor - Cloud - Data Transfer Daemon" daemon [_thread_blocked, id=19763, stack(0x00007f29b6fb5000,0x00007f29b70b6000)]
+  0x00007f295c00b800 JavaThread "XNIO-1 task-20" [_thread_blocked, id=19642, stack(0x00007f29d7eff000,0x00007f29d8000000)]
+  0x00007f295c008000 JavaThread "XNIO-1 task-19" [_thread_blocked, id=19641, stack(0x00007f29dc533000,0x00007f29dc634000)]
+  0x00007f2954467800 JavaThread "XNIO-1 task-18" [_thread_blocked, id=19640, stack(0x00007f29dc432000,0x00007f29dc533000)]
+  0x00007f2954466800 JavaThread "XNIO-1 task-16" [_thread_blocked, id=19639, stack(0x00007f29dc331000,0x00007f29dc432000)]
+  0x00007f296c015000 JavaThread "XNIO-1 task-17" [_thread_blocked, id=19638, stack(0x00007f29dc230000,0x00007f29dc331000)]
+  0x00007f295c007000 JavaThread "XNIO-1 task-15" [_thread_blocked, id=19636, stack(0x00007f29d6f73000,0x00007f29d7074000)]
+  0x00007f296c014000 JavaThread "XNIO-1 task-14" [_thread_blocked, id=19635, stack(0x00007f29d7dfe000,0x00007f29d7eff000)]
+  0x00007f28f0097800 JavaThread "org.python.google.common.base.internal.Finalizer" daemon [_thread_blocked, id=19623, stack(0x00007f29d7cfd000,0x00007f29d7dfe000)]
+  0x00007f296c013800 JavaThread "XNIO-1 task-13" [_thread_blocked, id=19622, stack(0x00007f29dc634000,0x00007f29dc735000)]
+  0x00007f2954146800 JavaThread "XNIO-1 task-12" [_thread_blocked, id=19145, stack(0x00007f29b70b6000,0x00007f29b71b7000)]
+  0x00007f2954144800 JavaThread "XNIO-1 task-11" [_thread_blocked, id=19143, stack(0x00007f29b71b7000,0x00007f29b72b8000)]
+  0x00007f2954143000 JavaThread "XNIO-1 task-10" [_thread_blocked, id=19142, stack(0x00007f29b72b8000,0x00007f29b73b9000)]
+  0x00007f2954142000 JavaThread "XNIO-1 task-9" [_thread_blocked, id=19141, stack(0x00007f29b73b9000,0x00007f29b74ba000)]
+  0x00007f295c006800 JavaThread "XNIO-1 task-7" [_thread_blocked, id=19140, stack(0x00007f29b74ba000,0x00007f29b75bb000)]
+  0x00007f296c011800 JavaThread "XNIO-1 task-8" [_thread_blocked, id=19139, stack(0x00007f29b75bb000,0x00007f29b76bc000)]
+  0x00007f2964025800 JavaThread "XNIO-1 task-6" [_thread_blocked, id=19138, stack(0x00007f29b76bc000,0x00007f29b77bd000)]
+  0x00007f2954141000 JavaThread "XNIO-1 task-4" [_thread_blocked, id=19137, stack(0x00007f29b77bd000,0x00007f29b78be000)]
+  0x00007f296c007800 JavaThread "XNIO-1 task-5" [_thread_blocked, id=19136, stack(0x00007f29b7cff000,0x00007f29b7e00000)]
+  0x00007f2964006000 JavaThread "XNIO-1 task-3" [_thread_blocked, id=19135, stack(0x00007f29bc095000,0x00007f29bc196000)]
+  0x00007f2954140800 JavaThread "XNIO-1 task-2" [_thread_blocked, id=19134, stack(0x00007f29d5d6f000,0x00007f29d5e70000)]
+  0x00007f295401e800 JavaThread "XNIO-1 task-1" [_thread_blocked, id=19106, stack(0x00007f29d525f000,0x00007f29d5360000)]
+  0x00007f2900087000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=19086, stack(0x00007f29cd10b000,0x00007f29cd20c000)]
+  0x00007f2900068800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=19085, stack(0x00007f29cd61c000,0x00007f29cd71d000)]
+  0x00007f28d0063800 JavaThread "FusionReactor HTTP-91" daemon [_thread_blocked, id=19081, stack(0x00007f29cde55000,0x00007f29cdf56000)]
+  0x00007f28d0062000 JavaThread "FusionReactor HTTP-90" daemon [_thread_blocked, id=19080, stack(0x00007f29cdf56000,0x00007f29ce057000)]
+  0x00007f28d0060000 JavaThread "FusionReactor HTTP-89 Acceptor0 SelectChannelConnector@127.0.0.1:46537" daemon [_thread_in_native, id=19079, stack(0x00007f29ce057000,0x00007f29ce158000)]
+  0x00007f28d005e800 JavaThread "FusionReactor HTTP-88 Selector1" daemon [_thread_in_native, id=19078, stack(0x00007f29ce158000,0x00007f29ce259000)]
+  0x00007f28d0071000 JavaThread "FusionReactor HTTP-87" daemon [_thread_blocked, id=19077, stack(0x00007f29ce259000,0x00007f29ce35a000)]
+  0x00007f28d0070000 JavaThread "FusionReactor HTTP-86" daemon [_thread_blocked, id=19076, stack(0x00007f29ce35a000,0x00007f29ce45b000)]
+  0x00007f28d0073800 JavaThread "FusionReactor HTTP-85 Selector0" daemon [_thread_in_native, id=19075, stack(0x00007f29ce45b000,0x00007f29ce55c000)]
+  0x00007f28d006c800 JavaThread "FusionReactor HTTP-84 Acceptor1 SelectChannelConnector@127.0.0.1:46537" daemon [_thread_blocked, id=19074, stack(0x00007f29ce55c000,0x00007f29ce65d000)]
+  0x00007f28d0055000 JavaThread "HashSessionScavenger-0" daemon [_thread_blocked, id=19073, stack(0x00007f29dfeff000,0x00007f29e0000000)]
+  0x00007f2904576800 JavaThread "Timer-1" daemon [_thread_blocked, id=19072, stack(0x00007f29ce85d000,0x00007f29ce95e000)]
+  0x00007f290456a000 JavaThread "Intergral APM - Crash Protection - Rule Executor" daemon [_thread_blocked, id=19071, stack(0x00007f29ce95e000,0x00007f29cea5f000)]
+  0x00007f2904554800 JavaThread "FusionReactor APM/Metro - Metrics Gathering Timer" daemon [_thread_blocked, id=19070, stack(0x00007f29cea5f000,0x00007f29ceb60000)]
+  0x00007f2904507800 JavaThread "FusionReactor - Debugger Watchdog" daemon [_thread_blocked, id=19069, stack(0x00007f29ced60000,0x00007f29cee61000)]
+  0x00007f29044b2000 JavaThread "FusionReactor Profiler - Idle" daemon [_thread_blocked, id=19068, stack(0x00007f29d4900000,0x00007f29d4a01000)]
+  0x00007f2904452000 JavaThread "FusionReactor - Report data gatherer thread" daemon [_thread_blocked, id=19067, stack(0x00007f29d4c01000,0x00007f29d4d02000)]
+  0x00007f2904348000 JavaThread "FusionReactor - Crash Protection - Request Queue Runner" daemon [_thread_blocked, id=19045, stack(0x00007f29d4f5c000,0x00007f29d505d000)]
+  0x00007f29f800e800 JavaThread "DestroyJavaVM" [_thread_blocked, id=18874, stack(0x00007f29fff19000,0x00007f2a00019000)]
+  0x00007f29f9037800 JavaThread "StopMonitor" daemon [_thread_in_native, id=19042, stack(0x00007f29d5360000,0x00007f29d5461000)]
+  0x00007f29f8fd1800 JavaThread "Thread-22" daemon [_thread_blocked, id=19040, stack(0x00007f29d576b000,0x00007f29d586c000)]
+  0x00007f290429f000 JavaThread "FusionReactor Enterprise Service - Local Metrics Cache" daemon [_thread_blocked, id=19038, stack(0x00007f29d5b6d000,0x00007f29d5c6e000)]
+  0x00007f2904280000 JavaThread "FusionReactor - Plugin scheduled task thread" daemon [_thread_blocked, id=19037, stack(0x00007f29d5c6e000,0x00007f29d5d6f000)]
+  0x00007f2904270000 JavaThread "FusionReactor Scheduler Task" daemon [_thread_blocked, id=19033, stack(0x00007f29d5e7e000,0x00007f29d5f7f000)]
+  0x00007f29041a7800 JavaThread "FusionReactor - Scheduler" daemon [_thread_blocked, id=19028, stack(0x00007f29d70b5000,0x00007f29d71b6000)]
+  0x00007f290407d000 JavaThread "Jetty HTTP Service" daemon [_thread_blocked, id=19027, stack(0x00007f29d76f7000,0x00007f29d77f8000)]
+  0x00007f2904059800 JavaThread "SCR Component Actor" daemon [_thread_blocked, id=19026, stack(0x00007f29d77f8000,0x00007f29d78f9000)]
+  0x00007f290403f000 JavaThread "CM Event Dispatcher" daemon [_thread_blocked, id=19021, stack(0x00007f29d7afb000,0x00007f29d7bfc000)]
+  0x00007f2904036000 JavaThread "CM Configuration Updater" daemon [_thread_blocked, id=19020, stack(0x00007f29d7bfc000,0x00007f29d7cfd000)]
+  0x00007f298c82b000 JavaThread "FelixStartLevel" daemon [_thread_blocked, id=19008, stack(0x00007f29dca38000,0x00007f29dcb39000)]
+  0x00007f298c11f000 JavaThread "FelixFrameworkWiring" daemon [_thread_blocked, id=19005, stack(0x00007f29dd0b3000,0x00007f29dd1b4000)]
+  0x00007f298c124000 JavaThread "FelixDispatchQueue" daemon [_thread_blocked, id=18964, stack(0x00007f29dd6b9000,0x00007f29dd7ba000)]
+  0x00007f29f89f5000 JavaThread "FelixStartLevel" daemon [_thread_blocked, id=18949, stack(0x00007f29ddc72000,0x00007f29ddd73000)]
+  0x00007f29f89f4800 JavaThread "FelixFrameworkWiring" daemon [_thread_blocked, id=18947, stack(0x00007f29ddd73000,0x00007f29dde74000)]
+  0x00007f29f89d1000 JavaThread "FelixDispatchQueue" [_thread_blocked, id=18937, stack(0x00007f29de579000,0x00007f29de67a000)]
+  0x00007f29f8764000 JavaThread "XNIO-1 Accept" [_thread_in_native, id=18936, stack(0x00007f29debe6000,0x00007f29dece7000)]
+  0x00007f29f8762800 JavaThread "XNIO-1 I/O-8" [_thread_in_native, id=18935, stack(0x00007f29dece7000,0x00007f29dede8000)]
+  0x00007f29f8761000 JavaThread "XNIO-1 I/O-7" [_thread_in_native, id=18934, stack(0x00007f29dede8000,0x00007f29deee9000)]
+  0x00007f29f875f000 JavaThread "XNIO-1 I/O-6" [_thread_in_native, id=18933, stack(0x00007f29deee9000,0x00007f29defea000)]
+  0x00007f29f875d800 JavaThread "XNIO-1 I/O-5" [_thread_in_native, id=18932, stack(0x00007f29defea000,0x00007f29df0eb000)]
+  0x00007f29f875b800 JavaThread "XNIO-1 I/O-4" [_thread_in_native, id=18931, stack(0x00007f29df0eb000,0x00007f29df1ec000)]
+  0x00007f29f875a000 JavaThread "XNIO-1 I/O-3" [_thread_in_native, id=18930, stack(0x00007f29df1ec000,0x00007f29df2ed000)]
+  0x00007f29f8759800 JavaThread "XNIO-1 I/O-2" [_thread_in_native, id=18929, stack(0x00007f29df2ed000,0x00007f29df3ee000)]
+  0x00007f29f8758800 JavaThread "XNIO-1 I/O-1" [_thread_in_native, id=18928, stack(0x00007f29df3ee000,0x00007f29df4ef000)]
+  0x00007f29f84af000 JavaThread "Service Thread" daemon [_thread_blocked, id=18926, stack(0x00007f29df9fa000,0x00007f29dfafb000)]
+  0x00007f29f84a9800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=18925, stack(0x00007f29dfafc000,0x00007f29dfbfc000)]
+  0x00007f29f84a7800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=18924, stack(0x00007f29dfbfd000,0x00007f29dfcfd000)]
+  0x00007f29f84a5000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18923, stack(0x00007f29dfcfe000,0x00007f29dfdfe000)]
+  0x00007f29f84a4000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=18922, stack(0x00007f29dfdff000,0x00007f29dfeff000)]
+  0x00007f29f8208000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18917, stack(0x00007f29e462c000,0x00007f29e472d000)]
+  0x00007f29f81d8000 JavaThread "Finalizer" daemon [_thread_blocked, id=18916, stack(0x00007f29e4a0b000,0x00007f29e4b0c000)]
+  0x00007f29f81d5800 JavaThread "Reference Handler" daemon [_thread_blocked, id=18915, stack(0x00007f29e4b0c000,0x00007f29e4c0d000)]
+
+Other Threads:
+  0x00007f29f81cb800 VMThread [stack: 0x00007f29e4c0e000,0x00007f29e4d0e000] [id=18914]
+  0x00007f29f84c2000 WatcherThread [stack: 0x00007f29df8fa000,0x00007f29df9fa000] [id=18927]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c6800000, size: 3992 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 340480K, used 230193K [0x000000076cd80000, 0x0000000782880000, 0x00000007c0000000)
+  eden space 326144K, 66% used [0x000000076cd80000,0x000000077a0adb10,0x0000000780c00000)
+  from space 14336K, 97% used [0x0000000780c00000,0x000000078199e8f0,0x0000000781a00000)
+  to   space 14336K, 0% used [0x0000000781a80000,0x0000000781a80000,0x0000000782880000)
+ ParOldGen       total 546816K, used 191675K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d232eee8,0x00000006e7e00000)
+ Metaspace       used 92218K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+
+Card table byte_map: [0x00007f29e8473000,0x00007f29e8c40000] byte_map_base: 0x00007f29e4e3f000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f29ff1b6360
+ Begin Bits: [0x00007f29a0340000, 0x00007f29a41a0000)
+ End Bits:   [0x00007f29a41a0000, 0x00007f29a8000000)
+
+Polling page: 0x00007f2a00037000
+
+CodeCache: size=245760Kb used=70538Kb max_used=70701Kb free=175221Kb
+ bounds [0x00007f29e9000000, 0x00007f29ed650000, 0x00007f29f8000000]
+ total_blobs=16713 nmethods=15778 adapters=856
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 366380.066 Thread 0x00007f29f84a7800 22511       4       io.netty.buffer.AbstractByteBuf::getUnsignedShort (9 bytes)
+Event: 366380.069 Thread 0x00007f29f84a7800 nmethod 22511 0x00007f29ea246f90 code [0x00007f29ea2470e0, 0x00007f29ea2471f8]
+Event: 366694.170 Thread 0x00007f29f84a5000 22512       4       sun.management.MappedMXBeanType$MapMXBeanType::toJavaTypeData (100 bytes)
+Event: 366694.198 Thread 0x00007f29f84a5000 nmethod 22512 0x00007f29ec229690 code [0x00007f29ec229920, 0x00007f29ec22aaa0]
+Event: 366980.444 Thread 0x00007f29f84a9800 22513       3       io.netty.buffer.WrappedByteBuf::readerIndex (8 bytes)
+Event: 366980.445 Thread 0x00007f29f84a9800 nmethod 22513 0x00007f29eb4f0590 code [0x00007f29eb4f0700, 0x00007f29eb4f0928]
+Event: 366980.447 Thread 0x00007f29f84a9800 22514       3       io.netty.buffer.WrappedByteBuf::nioBufferCount (8 bytes)
+Event: 366980.447 Thread 0x00007f29f84a9800 nmethod 22514 0x00007f29e9a96010 code [0x00007f29e9a96180, 0x00007f29e9a963a8]
+Event: 367340.738 Thread 0x00007f29f84a9800 22515       3       io.netty.handler.ssl.SslHandler::channelReadComplete (6 bytes)
+Event: 367340.739 Thread 0x00007f29f84a9800 nmethod 22515 0x00007f29ea4dd690 code [0x00007f29ea4dd840, 0x00007f29ea4ddd98]
+
+GC Heap History (10 events):
+Event: 366424.945 GC heap before
+{Heap before GC invocations=1566 (full 5):
+ PSYoungGen      total 339456K, used 338993K [0x000000076cd80000, 0x0000000782700000, 0x00000007c0000000)
+  eden space 325120K, 100% used [0x000000076cd80000,0x0000000780b00000,0x0000000780b00000)
+  from space 14336K, 96% used [0x0000000781900000,0x000000078268c688,0x0000000782700000)
+  to   space 14336K, 0% used [0x0000000780b00000,0x0000000780b00000,0x0000000781900000)
+ ParOldGen       total 546816K, used 191211K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 34% used [0x00000006c6800000,0x00000006d22baee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+Event: 366424.951 GC heap after
+Heap after GC invocations=1566 (full 5):
+ PSYoungGen      total 339456K, used 12906K [0x000000076cd80000, 0x0000000782780000, 0x00000007c0000000)
+  eden space 325120K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000780b00000)
+  from space 14336K, 90% used [0x0000000780b00000,0x000000078179aa40,0x0000000781900000)
+  to   space 14336K, 0% used [0x0000000781980000,0x0000000781980000,0x0000000782780000)
+ ParOldGen       total 546816K, used 191291K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 34% used [0x00000006c6800000,0x00000006d22ceee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+}
+Event: 366694.155 GC heap before
+{Heap before GC invocations=1567 (full 5):
+ PSYoungGen      total 339456K, used 338026K [0x000000076cd80000, 0x0000000782780000, 0x00000007c0000000)
+  eden space 325120K, 100% used [0x000000076cd80000,0x0000000780b00000,0x0000000780b00000)
+  from space 14336K, 90% used [0x0000000780b00000,0x000000078179aa40,0x0000000781900000)
+  to   space 14336K, 0% used [0x0000000781980000,0x0000000781980000,0x0000000782780000)
+ ParOldGen       total 546816K, used 191291K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 34% used [0x00000006c6800000,0x00000006d22ceee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+Event: 366694.169 GC heap after
+Heap after GC invocations=1567 (full 5):
+ PSYoungGen      total 339968K, used 12854K [0x000000076cd80000, 0x0000000782780000, 0x00000007c0000000)
+  eden space 325632K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000780b80000)
+  from space 14336K, 89% used [0x0000000781980000,0x000000078260dbc8,0x0000000782780000)
+  to   space 14336K, 0% used [0x0000000780b80000,0x0000000780b80000,0x0000000781980000)
+ ParOldGen       total 546816K, used 191411K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d22ecee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+}
+Event: 366964.968 GC heap before
+{Heap before GC invocations=1568 (full 5):
+ PSYoungGen      total 339968K, used 338486K [0x000000076cd80000, 0x0000000782780000, 0x00000007c0000000)
+  eden space 325632K, 100% used [0x000000076cd80000,0x0000000780b80000,0x0000000780b80000)
+  from space 14336K, 89% used [0x0000000781980000,0x000000078260dbc8,0x0000000782780000)
+  to   space 14336K, 0% used [0x0000000780b80000,0x0000000780b80000,0x0000000781980000)
+ ParOldGen       total 546816K, used 191411K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d22ecee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+Event: 366964.974 GC heap after
+Heap after GC invocations=1568 (full 5):
+ PSYoungGen      total 339968K, used 12992K [0x000000076cd80000, 0x0000000782800000, 0x00000007c0000000)
+  eden space 325632K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000780b80000)
+  from space 14336K, 90% used [0x0000000780b80000,0x0000000781830300,0x0000000781980000)
+  to   space 14336K, 0% used [0x0000000781a00000,0x0000000781a00000,0x0000000782800000)
+ ParOldGen       total 546816K, used 191499K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d2302ee8,0x00000006e7e00000)
+ Metaspace       used 92217K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+}
+Event: 367264.893 GC heap before
+{Heap before GC invocations=1569 (full 5):
+ PSYoungGen      total 339968K, used 338624K [0x000000076cd80000, 0x0000000782800000, 0x00000007c0000000)
+  eden space 325632K, 100% used [0x000000076cd80000,0x0000000780b80000,0x0000000780b80000)
+  from space 14336K, 90% used [0x0000000780b80000,0x0000000781830300,0x0000000781980000)
+  to   space 14336K, 0% used [0x0000000781a00000,0x0000000781a00000,0x0000000782800000)
+ ParOldGen       total 546816K, used 191499K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d2302ee8,0x00000006e7e00000)
+ Metaspace       used 92218K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+Event: 367264.908 GC heap after
+Heap after GC invocations=1569 (full 5):
+ PSYoungGen      total 340480K, used 12957K [0x000000076cd80000, 0x0000000782800000, 0x00000007c0000000)
+  eden space 326144K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000780c00000)
+  from space 14336K, 90% used [0x0000000781a00000,0x00000007826a7478,0x0000000782800000)
+  to   space 14336K, 0% used [0x0000000780c00000,0x0000000780c00000,0x0000000781a00000)
+ ParOldGen       total 546816K, used 191595K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d231aee8,0x00000006e7e00000)
+ Metaspace       used 92218K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+}
+Event: 367505.062 GC heap before
+{Heap before GC invocations=1570 (full 5):
+ PSYoungGen      total 340480K, used 339101K [0x000000076cd80000, 0x0000000782800000, 0x00000007c0000000)
+  eden space 326144K, 100% used [0x000000076cd80000,0x0000000780c00000,0x0000000780c00000)
+  from space 14336K, 90% used [0x0000000781a00000,0x00000007826a7478,0x0000000782800000)
+  to   space 14336K, 0% used [0x0000000780c00000,0x0000000780c00000,0x0000000781a00000)
+ ParOldGen       total 546816K, used 191595K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d231aee8,0x00000006e7e00000)
+ Metaspace       used 92218K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+Event: 367505.067 GC heap after
+Heap after GC invocations=1570 (full 5):
+ PSYoungGen      total 340480K, used 13946K [0x000000076cd80000, 0x0000000782880000, 0x00000007c0000000)
+  eden space 326144K, 0% used [0x000000076cd80000,0x000000076cd80000,0x0000000780c00000)
+  from space 14336K, 97% used [0x0000000780c00000,0x000000078199e8f0,0x0000000781a00000)
+  to   space 14336K, 0% used [0x0000000781a80000,0x0000000781a80000,0x0000000782880000)
+ ParOldGen       total 546816K, used 191675K [0x00000006c6800000, 0x00000006e7e00000, 0x000000076cd80000)
+  object space 546816K, 35% used [0x00000006c6800000,0x00000006d232eee8,0x00000006e7e00000)
+ Metaspace       used 92218K, capacity 98095K, committed 98688K, reserved 1134592K
+  class space    used 11199K, capacity 12587K, committed 12672K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 308824.681 Thread 0x00007f290801c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f29ed4fee3c method=com.intergral.fusionreactor.plugin.reports.internal.reports.EnterpriseDailyReport.processBody(Lcom/intergral/fusionreactor/plugin/reports/DailyData;Lcom/intergral/fusionre
+Event: 308824.681 Thread 0x00007f290801c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f29ed4d18ec method=com.intergral.fusionreactor.plugin.reports.internal.reports.AbstractReport.processMetaData()Ljava/util/Map; @ 12
+Event: 311920.359 Thread 0x00007f2904270000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007f29ed2e1510 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 183
+Event: 315520.267 Thread 0x00007f2904270000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007f29ed2e1510 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 183
+Event: 345999.698 Thread 0x00007f2904554800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f29ec7bcad0 method=com.intergral.fusionreactor.system.monitor.osgi.internal.samplers.NetworkSampler.sample(Lcom/intergral/fusionreactor/plugin/probi/ISampler$IMetricStore;Lcom/intergral/fusion
+Event: 346015.563 Thread 0x00007f28dc3f4000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f29ec22a014 method=sun.security.ssl.Handshaker.getActiveCipherSuites()Lsun/security/ssl/CipherSuiteList; @ 75
+Event: 346015.628 Thread 0x00007f28dc3f4000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f29ec6357e4 method=sun.security.ssl.InputRecord.decrypt(Lsun/security/ssl/Authenticator;Lsun/security/ssl/CipherBox;)V @ 40
+Event: 346015.694 Thread 0x00007f299400d800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007f29ec42a8dc method=com.codahale.metrics.MetricRegistry$MetricBuilder$1.isInstance(Lcom/codahale/metrics/Metric;)Z @ 4
+Event: 349447.687 Thread 0x00007f2904554800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f29ec08de80 method=java.math.MutableBigInteger.compareHalf(Ljava/math/MutableBigInteger;)I @ 54
+Event: 360610.807 Thread 0x00007f28f8004000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f29ec9f9044 method=io.netty.handler.codec.ByteToMessageDecoder.discardSomeReadBytes()V @ 4
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 367693.695 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fab450) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367693.695 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fab880) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367694.686 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fd7ed0) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367694.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fd8ab0) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367694.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fd8ee0) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367694.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x0000000779fd9310) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367695.686 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x000000077a007150) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367695.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x000000077a007d30) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367695.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x000000077a008160) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+Event: 367695.687 Thread 0x00007f2904554800 Exception <a 'org/hyperic/sigar/SigarPermissionDeniedException': Permission denied> (0x000000077a008590) thrown at [/build/openjdk-8-OqY7zN/openjdk-8-8u222-b10/src/hotspot/src/share/vm/prims/jni.cpp, line 737]
+
+Events (10 events):
+Event: 367694.687 Thread 0x00007f2904554800 DEOPT UNPACKING pc=0x00007f29e90474c4 sp=0x00007f29ceb5e158 mode 1
+Event: 367695.686 Thread 0x00007f2904554800 DEOPT PACKING pc=0x00007f29ea04976c sp=0x00007f29ceb5e4a0
+Event: 367695.686 Thread 0x00007f2904554800 DEOPT UNPACKING pc=0x00007f29e90474c4 sp=0x00007f29ceb5e168 mode 1
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT PACKING pc=0x00007f29eaae4748 sp=0x00007f29ceb5e470
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT UNPACKING pc=0x00007f29e90474c4 sp=0x00007f29ceb5e158 mode 1
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT PACKING pc=0x00007f29eaae4748 sp=0x00007f29ceb5e470
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT UNPACKING pc=0x00007f29e90474c4 sp=0x00007f29ceb5e158 mode 1
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT PACKING pc=0x00007f29eaae4748 sp=0x00007f29ceb5e470
+Event: 367695.687 Thread 0x00007f2904554800 DEOPT UNPACKING pc=0x00007f29e90474c4 sp=0x00007f29ceb5e158 mode 1
+Event: 367696.488 Thread 0x00007f28ec001800 Thread added: 0x00007f28ec001800
+
+
+Dynamic libraries:
+6c6800000-6e7e00000 rw-p 00000000 00:00 0 
+6e7e00000-76cd80000 ---p 00000000 00:00 0 
+76cd80000-782880000 rw-p 00000000 00:00 0 
+782880000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c0c60000 rw-p 00000000 00:00 0 
+7c0c60000-800000000 ---p 00000000 00:00 0 
+55d521225000-55d521226000 r-xp 00000000 08:02 5566123                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+55d521425000-55d521426000 r--p 00000000 08:02 5566123                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+55d521426000-55d521427000 rw-p 00001000 08:02 5566123                    /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+55d521a4d000-55d521b13000 rw-p 00000000 00:00 0                          [heap]
+7f28cc000000-7f28cc096000 rw-p 00000000 00:00 0 
+7f28cc096000-7f28d0000000 ---p 00000000 00:00 0 
+7f28d0000000-7f28d0121000 rw-p 00000000 00:00 0 
+7f28d0121000-7f28d4000000 ---p 00000000 00:00 0 
+7f28d4000000-7f28d4198000 rw-p 00000000 00:00 0 
+7f28d4198000-7f28d8000000 ---p 00000000 00:00 0 
+7f28d8000000-7f28d8063000 rw-p 00000000 00:00 0 
+7f28d8063000-7f28dc000000 ---p 00000000 00:00 0 
+7f28dc000000-7f28dc46e000 rw-p 00000000 00:00 0 
+7f28dc46e000-7f28e0000000 ---p 00000000 00:00 0 
+7f28e0000000-7f28e0422000 rw-p 00000000 00:00 0 
+7f28e0422000-7f28e4000000 ---p 00000000 00:00 0 
+7f28e4000000-7f28e407e000 rw-p 00000000 00:00 0 
+7f28e407e000-7f28e8000000 ---p 00000000 00:00 0 
+7f28e8000000-7f28e8085000 rw-p 00000000 00:00 0 
+7f28e8085000-7f28ec000000 ---p 00000000 00:00 0 
+7f28ec000000-7f28ec07e000 rw-p 00000000 00:00 0 
+7f28ec07e000-7f28f0000000 ---p 00000000 00:00 0 
+7f28f0000000-7f28f166d000 rw-p 00000000 00:00 0 
+7f28f166d000-7f28f4000000 ---p 00000000 00:00 0 
+7f28f4000000-7f28f407b000 rw-p 00000000 00:00 0 
+7f28f407b000-7f28f8000000 ---p 00000000 00:00 0 
+7f28f8000000-7f28f80ac000 rw-p 00000000 00:00 0 
+7f28f80ac000-7f28fc000000 ---p 00000000 00:00 0 
+7f28fc000000-7f28fc075000 rw-p 00000000 00:00 0 
+7f28fc075000-7f2900000000 ---p 00000000 00:00 0 
+7f2900000000-7f290021f000 rw-p 00000000 00:00 0 
+7f290021f000-7f2904000000 ---p 00000000 00:00 0 
+7f2904000000-7f29045f2000 rw-p 00000000 00:00 0 
+7f29045f2000-7f2908000000 ---p 00000000 00:00 0 
+7f2908000000-7f290809e000 rw-p 00000000 00:00 0 
+7f290809e000-7f290c000000 ---p 00000000 00:00 0 
+7f290c000000-7f290c101000 rw-p 00000000 00:00 0 
+7f290c101000-7f2910000000 ---p 00000000 00:00 0 
+7f2910000000-7f29100c8000 rw-p 00000000 00:00 0 
+7f29100c8000-7f2914000000 ---p 00000000 00:00 0 
+7f2914000000-7f291422a000 rw-p 00000000 00:00 0 
+7f291422a000-7f2918000000 ---p 00000000 00:00 0 
+7f2918000000-7f291807d000 rw-p 00000000 00:00 0 
+7f291807d000-7f291c000000 ---p 00000000 00:00 0 
+7f291c000000-7f291c081000 rw-p 00000000 00:00 0 
+7f291c081000-7f2920000000 ---p 00000000 00:00 0 
+7f2920000000-7f2920068000 rw-p 00000000 00:00 0 
+7f2920068000-7f2924000000 ---p 00000000 00:00 0 
+7f2924000000-7f2924081000 rw-p 00000000 00:00 0 
+7f2924081000-7f2928000000 ---p 00000000 00:00 0 
+7f2928000000-7f2928090000 rw-p 00000000 00:00 0 
+7f2928090000-7f292c000000 ---p 00000000 00:00 0 
+7f292c000000-7f292c07b000 rw-p 00000000 00:00 0 
+7f292c07b000-7f2930000000 ---p 00000000 00:00 0 
+7f2930000000-7f293007f000 rw-p 00000000 00:00 0 
+7f293007f000-7f2934000000 ---p 00000000 00:00 0 
+7f2934000000-7f29340cd000 rw-p 00000000 00:00 0 
+7f29340cd000-7f2938000000 ---p 00000000 00:00 0 
+7f2938000000-7f2938091000 rw-p 00000000 00:00 0 
+7f2938091000-7f293c000000 ---p 00000000 00:00 0 
+7f293c000000-7f293c334000 rw-p 00000000 00:00 0 
+7f293c334000-7f2940000000 ---p 00000000 00:00 0 
+7f2940000000-7f294017c000 rw-p 00000000 00:00 0 
+7f294017c000-7f2944000000 ---p 00000000 00:00 0 
+7f2944000000-7f29440b1000 rw-p 00000000 00:00 0 
+7f29440b1000-7f2948000000 ---p 00000000 00:00 0 
+7f2948000000-7f29480da000 rw-p 00000000 00:00 0 
+7f29480da000-7f294c000000 ---p 00000000 00:00 0 
+7f294c000000-7f294c0e6000 rw-p 00000000 00:00 0 
+7f294c0e6000-7f2950000000 ---p 00000000 00:00 0 
+7f2950000000-7f29500b3000 rw-p 00000000 00:00 0 
+7f29500b3000-7f2954000000 ---p 00000000 00:00 0 
+7f2954000000-7f295473a000 rw-p 00000000 00:00 0 
+7f295473a000-7f2958000000 ---p 00000000 00:00 0 
+7f2958000000-7f295807e000 rw-p 00000000 00:00 0 
+7f295807e000-7f295c000000 ---p 00000000 00:00 0 
+7f295c000000-7f295c0bb000 rw-p 00000000 00:00 0 
+7f295c0bb000-7f2960000000 ---p 00000000 00:00 0 
+7f2960000000-7f2960075000 rw-p 00000000 00:00 0 
+7f2960075000-7f2964000000 ---p 00000000 00:00 0 
+7f2964000000-7f2964093000 rw-p 00000000 00:00 0 
+7f2964093000-7f2968000000 ---p 00000000 00:00 0 
+7f2968000000-7f296809b000 rw-p 00000000 00:00 0 
+7f296809b000-7f296c000000 ---p 00000000 00:00 0 
+7f296c000000-7f296c09a000 rw-p 00000000 00:00 0 
+7f296c09a000-7f2970000000 ---p 00000000 00:00 0 
+7f2970000000-7f2970093000 rw-p 00000000 00:00 0 
+7f2970093000-7f2974000000 ---p 00000000 00:00 0 
+7f2974000000-7f2974093000 rw-p 00000000 00:00 0 
+7f2974093000-7f2978000000 ---p 00000000 00:00 0 
+7f2978000000-7f297809e000 rw-p 00000000 00:00 0 
+7f297809e000-7f297c000000 ---p 00000000 00:00 0 
+7f297c000000-7f297d648000 rw-p 00000000 00:00 0 
+7f297d648000-7f2980000000 ---p 00000000 00:00 0 
+7f2980000000-7f298009e000 rw-p 00000000 00:00 0 
+7f298009e000-7f2984000000 ---p 00000000 00:00 0 
+7f2984000000-7f29874ba000 rw-p 00000000 00:00 0 
+7f29874ba000-7f2988000000 ---p 00000000 00:00 0 
+7f2988000000-7f298bffd000 rw-p 00000000 00:00 0 
+7f298bffd000-7f298c000000 ---p 00000000 00:00 0 
+7f298c000000-7f298c833000 rw-p 00000000 00:00 0 
+7f298c833000-7f2990000000 ---p 00000000 00:00 0 
+7f2990000000-7f2993898000 rw-p 00000000 00:00 0 
+7f2993898000-7f2994000000 ---p 00000000 00:00 0 
+7f2994000000-7f299407b000 rw-p 00000000 00:00 0 
+7f299407b000-7f2998000000 ---p 00000000 00:00 0 
+7f2998000000-7f299809f000 rw-p 00000000 00:00 0 
+7f299809f000-7f299c000000 ---p 00000000 00:00 0 
+7f299c000000-7f299c08c000 rw-p 00000000 00:00 0 
+7f299c08c000-7f29a0000000 ---p 00000000 00:00 0 
+7f29a0340000-7f29a8000000 rw-p 00000000 00:00 0 
+7f29a8000000-7f29a8114000 rw-p 00000000 00:00 0 
+7f29a8114000-7f29ac000000 ---p 00000000 00:00 0 
+7f29ac000000-7f29ac3c5000 rw-p 00000000 00:00 0 
+7f29ac3c5000-7f29b0000000 ---p 00000000 00:00 0 
+7f29b0000000-7f29b0092000 rw-p 00000000 00:00 0 
+7f29b0092000-7f29b4000000 ---p 00000000 00:00 0 
+7f29b42c1000-7f29b44c1000 rw-p 00000000 00:00 0 
+7f29b45b0000-7f29b47b0000 rw-p 00000000 00:00 0 
+7f29b47b0000-7f29b49b0000 rw-p 00000000 00:00 0 
+7f29b49b0000-7f29b4bb0000 rw-p 00000000 00:00 0 
+7f29b4bb0000-7f29b4bb3000 ---p 00000000 00:00 0 
+7f29b4bb3000-7f29b4eb1000 rw-p 00000000 00:00 0 
+7f29b4eb1000-7f29b5eb2000 rw-p 00000000 00:00 0 
+7f29b5eb2000-7f29b5eb5000 ---p 00000000 00:00 0 
+7f29b5eb5000-7f29b61b3000 rw-p 00000000 00:00 0 
+7f29b61b3000-7f29b61b6000 ---p 00000000 00:00 0 
+7f29b61b6000-7f29b62b4000 rw-p 00000000 00:00 0 
+7f29b62b4000-7f29b62b7000 ---p 00000000 00:00 0 
+7f29b62b7000-7f29b65b5000 rw-p 00000000 00:00 0 
+7f29b65b5000-7f29b67b5000 rw-p 00000000 00:00 0 
+7f29b67b5000-7f29b69b5000 rw-p 00000000 00:00 0 
+7f29b69b5000-7f29b6bb5000 rw-p 00000000 00:00 0 
+7f29b6bb5000-7f29b6db5000 rw-p 00000000 00:00 0 
+7f29b6db5000-7f29b6fb5000 rw-p 00000000 00:00 0 
+7f29b6fb5000-7f29b6fb8000 ---p 00000000 00:00 0 
+7f29b6fb8000-7f29b70b6000 rw-p 00000000 00:00 0 
+7f29b70b6000-7f29b70b9000 ---p 00000000 00:00 0 
+7f29b70b9000-7f29b71b7000 rw-p 00000000 00:00 0 
+7f29b71b7000-7f29b71ba000 ---p 00000000 00:00 0 
+7f29b71ba000-7f29b72b8000 rw-p 00000000 00:00 0 
+7f29b72b8000-7f29b72bb000 ---p 00000000 00:00 0 
+7f29b72bb000-7f29b73b9000 rw-p 00000000 00:00 0 
+7f29b73b9000-7f29b73bc000 ---p 00000000 00:00 0 
+7f29b73bc000-7f29b74ba000 rw-p 00000000 00:00 0 
+7f29b74ba000-7f29b74bd000 ---p 00000000 00:00 0 
+7f29b74bd000-7f29b75bb000 rw-p 00000000 00:00 0 
+7f29b75bb000-7f29b75be000 ---p 00000000 00:00 0 
+7f29b75be000-7f29b76bc000 rw-p 00000000 00:00 0 
+7f29b76bc000-7f29b76bf000 ---p 00000000 00:00 0 
+7f29b76bf000-7f29b77bd000 rw-p 00000000 00:00 0 
+7f29b77bd000-7f29b77c0000 ---p 00000000 00:00 0 
+7f29b77c0000-7f29b7abe000 rw-p 00000000 00:00 0 
+7f29b7abe000-7f29b7cbe000 rw-p 00000000 00:00 0 
+7f29b7cff000-7f29b7d02000 ---p 00000000 00:00 0 
+7f29b7d02000-7f29b8000000 rw-p 00000000 00:00 0 
+7f29b8000000-7f29b80d8000 rw-p 00000000 00:00 0 
+7f29b80d8000-7f29bc000000 ---p 00000000 00:00 0 
+7f29bc095000-7f29bc098000 ---p 00000000 00:00 0 
+7f29bc098000-7f29bc396000 rw-p 00000000 00:00 0 
+7f29bc396000-7f29bc596000 rw-p 00000000 00:00 0 
+7f29bc596000-7f29bc597000 ---p 00000000 00:00 0 
+7f29bc597000-7f29bcd97000 rw-p 00000000 00:00 0 
+7f29bce77000-7f29bd077000 rw-p 00000000 00:00 0 
+7f29bd077000-7f29bd084000 r-xp 00000000 08:02 3424079                    /tmp/jffi8869327002901653699.tmp
+7f29bd084000-7f29bd184000 ---p 0000d000 08:02 3424079                    /tmp/jffi8869327002901653699.tmp
+7f29bd184000-7f29bd185000 rw-p 0000d000 08:02 3424079                    /tmp/jffi8869327002901653699.tmp
+7f29bd185000-7f29bd385000 rw-p 00000000 00:00 0 
+7f29bd385000-7f29bd394000 r-xp 00000000 08:02 5903374                    /lib/x86_64-linux-gnu/libnss_myhostname.so.2 (deleted)
+7f29bd394000-7f29bd594000 ---p 0000f000 08:02 5903374                    /lib/x86_64-linux-gnu/libnss_myhostname.so.2 (deleted)
+7f29bd594000-7f29bd597000 r--p 0000f000 08:02 5903374                    /lib/x86_64-linux-gnu/libnss_myhostname.so.2 (deleted)
+7f29bd597000-7f29bd598000 rw-p 00012000 08:02 5903374                    /lib/x86_64-linux-gnu/libnss_myhostname.so.2 (deleted)
+7f29bd598000-7f29bd599000 ---p 00000000 00:00 0 
+7f29bd599000-7f29bdd99000 rw-p 00000000 00:00 0 
+7f29bdd99000-7f29bdd9a000 ---p 00000000 00:00 0 
+7f29bdd9a000-7f29be59a000 rw-p 00000000 00:00 0 
+7f29be59a000-7f29be5d0000 r-xp 00000000 08:02 4329163                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f29be5d0000-7f29be7d0000 ---p 00036000 08:02 4329163                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f29be7d0000-7f29be7d6000 r--p 00036000 08:02 4329163                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f29be7d6000-7f29be7d7000 rw-p 0003c000 08:02 4329163                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7f29be7d7000-7f29be808000 r-xp 00000000 08:02 4329164                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f29be808000-7f29bea08000 ---p 00031000 08:02 4329164                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f29bea08000-7f29bea0a000 r--p 00031000 08:02 4329164                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f29bea0a000-7f29bea0b000 rw-p 00033000 08:02 4329164                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7f29bea0b000-7f29bea45000 r-xp 00000000 08:02 4456780                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f29bea45000-7f29bec45000 ---p 0003a000 08:02 4456780                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f29bec45000-7f29bec46000 r--p 0003a000 08:02 4456780                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f29bec46000-7f29bec47000 rw-p 0003b000 08:02 4456780                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7f29bec47000-7f29bec51000 r-xp 00000000 08:02 4456781                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7f29bec51000-7f29bee50000 ---p 0000a000 08:02 4456781                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7f29bee50000-7f29bee51000 r--p 00009000 08:02 4456781                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7f29bee51000-7f29bee52000 rw-p 0000a000 08:02 4456781                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7f29bee52000-7f29bee53000 r-xp 00000000 08:02 4063729                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5600.4
+7f29bee53000-7f29bf052000 ---p 00001000 08:02 4063729                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5600.4
+7f29bf052000-7f29bf053000 r--p 00000000 08:02 4063729                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5600.4
+7f29bf053000-7f29bf054000 rw-p 00001000 08:02 4063729                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5600.4
+7f29bf054000-7f29bf05a000 r-xp 00000000 08:02 5903391                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0 (deleted)
+7f29bf05a000-7f29bf259000 ---p 00006000 08:02 5903391                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0 (deleted)
+7f29bf259000-7f29bf25a000 r--p 00005000 08:02 5903391                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0 (deleted)
+7f29bf25a000-7f29bf25b000 rw-p 00006000 08:02 5903391                    /lib/x86_64-linux-gnu/libuuid.so.1.3.0 (deleted)
+7f29bf25b000-7f29bf261000 r-xp 00000000 08:02 4071208                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f29bf261000-7f29bf460000 ---p 00006000 08:02 4071208                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f29bf460000-7f29bf461000 r--p 00005000 08:02 4071208                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f29bf461000-7f29bf462000 rw-p 00006000 08:02 4071208                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7f29bf462000-7f29bf48d000 r-xp 00000000 08:02 4071477                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f29bf48d000-7f29bf68c000 ---p 0002b000 08:02 4071477                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f29bf68c000-7f29bf68e000 r--p 0002a000 08:02 4071477                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f29bf68e000-7f29bf68f000 rw-p 0002c000 08:02 4071477                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7f29bf68f000-7f29bf6d6000 r-xp 00000000 08:02 5903213                    /lib/x86_64-linux-gnu/libblkid.so.1.1.0 (deleted)
+7f29bf6d6000-7f29bf8d6000 ---p 00047000 08:02 5903213                    /lib/x86_64-linux-gnu/libblkid.so.1.1.0 (deleted)
+7f29bf8d6000-7f29bf8da000 r--p 00047000 08:02 5903213                    /lib/x86_64-linux-gnu/libblkid.so.1.1.0 (deleted)
+7f29bf8da000-7f29bf8db000 rw-p 0004b000 08:02 5903213                    /lib/x86_64-linux-gnu/libblkid.so.1.1.0 (deleted)
+7f29bf8db000-7f29bf8dc000 rw-p 00000000 00:00 0 
+7f29bf8dc000-7f29bf90b000 r-xp 00000000 08:02 5903251                    /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7f29bf90b000-7f29bfb0b000 ---p 0002f000 08:02 5903251                    /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7f29bfb0b000-7f29bfb0d000 r--p 0002f000 08:02 5903251                    /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7f29bfb0d000-7f29bfb0e000 rw-p 00031000 08:02 5903251                    /lib/x86_64-linux-gnu/libexpat.so.1.6.7
+7f29bfb0e000-7f29bfbaa000 r-xp 00000000 08:02 4071568                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10702.0
+7f29bfbaa000-7f29bfdaa000 ---p 0009c000 08:02 4071568                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10702.0
+7f29bfdaa000-7f29bfdab000 r--p 0009c000 08:02 4071568                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10702.0
+7f29bfdab000-7f29bfdac000 rw-p 0009d000 08:02 4071568                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10702.0
+7f29bfdac000-7f29bfdfd000 r-xp 00000000 08:02 5903290                    /lib/x86_64-linux-gnu/libmount.so.1.1.0 (deleted)
+7f29bfdfd000-7f29bfffc000 ---p 00051000 08:02 5903290                    /lib/x86_64-linux-gnu/libmount.so.1.1.0 (deleted)
+7f29bfffc000-7f29bfffe000 r--p 00050000 08:02 5903290                    /lib/x86_64-linux-gnu/libmount.so.1.1.0 (deleted)
+7f29bfffe000-7f29bffff000 rw-p 00052000 08:02 5903290                    /lib/x86_64-linux-gnu/libmount.so.1.1.0 (deleted)
+7f29bffff000-7f29c0000000 rw-p 00000000 00:00 0 
+7f29c0000000-7f29c0093000 rw-p 00000000 00:00 0 
+7f29c0093000-7f29c4000000 ---p 00000000 00:00 0 
+7f29c4006000-7f29c400e000 r-xp 00000000 08:02 4072098                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7f29c400e000-7f29c420d000 ---p 00008000 08:02 4072098                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7f29c420d000-7f29c420e000 r--p 00007000 08:02 4072098                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7f29c420e000-7f29c420f000 rw-p 00008000 08:02 4072098                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7f29c420f000-7f29c4234000 r-xp 00000000 08:02 5903366                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f29c4234000-7f29c4433000 ---p 00025000 08:02 5903366                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f29c4433000-7f29c4434000 r--p 00024000 08:02 5903366                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f29c4434000-7f29c4435000 rw-p 00025000 08:02 5903366                    /lib/x86_64-linux-gnu/libselinux.so.1
+7f29c4435000-7f29c4437000 rw-p 00000000 00:00 0 
+7f29c4437000-7f29c4443000 r-xp 00000000 08:02 4072254                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f29c4443000-7f29c4642000 ---p 0000c000 08:02 4072254                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f29c4642000-7f29c4643000 r--p 0000b000 08:02 4072254                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f29c4643000-7f29c4644000 rw-p 0000c000 08:02 4072254                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7f29c4644000-7f29c4646000 r-xp 00000000 08:02 4072258                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f29c4646000-7f29c4845000 ---p 00002000 08:02 4072258                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f29c4845000-7f29c4846000 r--p 00001000 08:02 4072258                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f29c4846000-7f29c4847000 rw-p 00002000 08:02 4072258                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7f29c4847000-7f29c48e4000 r-xp 00000000 08:02 4071906                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7f29c48e4000-7f29c4ae3000 ---p 0009d000 08:02 4071906                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7f29c4ae3000-7f29c4aeb000 r--p 0009c000 08:02 4071906                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7f29c4aeb000-7f29c4aec000 rw-p 000a4000 08:02 4071906                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7f29c4aec000-7f29c4aee000 r-xp 00000000 08:02 4070934                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f29c4aee000-7f29c4ced000 ---p 00002000 08:02 4070934                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f29c4ced000-7f29c4cee000 r--p 00001000 08:02 4070934                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f29c4cee000-7f29c4cef000 rw-p 00002000 08:02 4070934                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7f29c4cef000-7f29c4cf1000 r-xp 00000000 08:02 4070930                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f29c4cf1000-7f29c4ef0000 ---p 00002000 08:02 4070930                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f29c4ef0000-7f29c4ef1000 r--p 00001000 08:02 4070930                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f29c4ef1000-7f29c4ef2000 rw-p 00002000 08:02 4070930                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7f29c4ef2000-7f29c4efc000 r-xp 00000000 08:02 4070956                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f29c4efc000-7f29c50fb000 ---p 0000a000 08:02 4070956                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f29c50fb000-7f29c50fc000 r--p 00009000 08:02 4070956                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f29c50fc000-7f29c50fd000 rw-p 0000a000 08:02 4070956                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7f29c50fd000-7f29c50ff000 r-xp 00000000 08:02 4070948                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f29c50ff000-7f29c52fe000 ---p 00002000 08:02 4070948                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f29c52fe000-7f29c52ff000 r--p 00001000 08:02 4070948                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f29c52ff000-7f29c5300000 rw-p 00002000 08:02 4070948                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7f29c5300000-7f29c533e000 r-xp 00000000 08:02 4071338                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.10.1
+7f29c533e000-7f29c553e000 ---p 0003e000 08:02 4071338                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.10.1
+7f29c553e000-7f29c5540000 r--p 0003e000 08:02 4071338                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.10.1
+7f29c5540000-7f29c5545000 rw-p 00040000 08:02 4071338                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.10.1
+7f29c5545000-7f29c558f000 r-xp 00000000 08:02 4071874                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.14
+7f29c558f000-7f29c578e000 ---p 0004a000 08:02 4071874                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.14
+7f29c578e000-7f29c5791000 r--p 00049000 08:02 4071874                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.14
+7f29c5791000-7f29c5792000 rw-p 0004c000 08:02 4071874                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.14
+7f29c5792000-7f29c57a6000 r-xp 00000000 08:02 4071878                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.14
+7f29c57a6000-7f29c59a6000 ---p 00014000 08:02 4071878                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.14
+7f29c59a6000-7f29c59a7000 r--p 00014000 08:02 4071878                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.14
+7f29c59a7000-7f29c59a8000 rw-p 00015000 08:02 4071878                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.14
+7f29c59a8000-7f29c5b3d000 r-xp 00000000 08:02 4063564                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5600.4
+7f29c5b3d000-7f29c5d3d000 ---p 00195000 08:02 4063564                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5600.4
+7f29c5d3d000-7f29c5d44000 r--p 00195000 08:02 4063564                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5600.4
+7f29c5d44000-7f29c5d45000 rw-p 0019c000 08:02 4063564                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5600.4
+7f29c5d45000-7f29c5d47000 rw-p 00000000 00:00 0 
+7f29c5d47000-7f29c5d69000 r-xp 00000000 08:02 4071392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3611.0
+7f29c5d69000-7f29c5f69000 ---p 00022000 08:02 4071392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3611.0
+7f29c5f69000-7f29c5f6a000 r--p 00022000 08:02 4071392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3611.0
+7f29c5f6a000-7f29c5f6b000 rw-p 00023000 08:02 4071392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3611.0
+7f29c5f6b000-7f29c6083000 r-xp 00000000 08:02 4071103                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11510.0
+7f29c6083000-7f29c6282000 ---p 00118000 08:02 4071103                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11510.0
+7f29c6282000-7f29c6285000 r--p 00117000 08:02 4071103                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11510.0
+7f29c6285000-7f29c6287000 rw-p 0011a000 08:02 4071103                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11510.0
+7f29c6287000-7f29c6288000 rw-p 00000000 00:00 0 
+7f29c6288000-7f29c6294000 r-xp 00000000 08:02 4071876                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.14
+7f29c6294000-7f29c6493000 ---p 0000c000 08:02 4071876                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.14
+7f29c6493000-7f29c6494000 r--p 0000b000 08:02 4071876                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.14
+7f29c6494000-7f29c6495000 rw-p 0000c000 08:02 4071876                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.14
+7f29c6495000-7f29c6498000 r-xp 00000000 08:02 4063703                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5600.4
+7f29c6498000-7f29c6697000 ---p 00003000 08:02 4063703                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5600.4
+7f29c6697000-7f29c6698000 r--p 00002000 08:02 4063703                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5600.4
+7f29c6698000-7f29c6699000 rw-p 00003000 08:02 4063703                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5600.4
+7f29c6699000-7f29c6749000 r-xp 00000000 08:02 4071390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.32
+7f29c6749000-7f29c6948000 ---p 000b0000 08:02 4071390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.32
+7f29c6948000-7f29c694c000 r--p 000af000 08:02 4071390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.32
+7f29c694c000-7f29c694e000 rw-p 000b3000 08:02 4071390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.32
+7f29c694e000-7f29c6d83000 r-xp 00000000 08:02 4071537                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.32
+7f29c6d83000-7f29c6f82000 ---p 00435000 08:02 4071537                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.32
+7f29c6f82000-7f29c6f89000 r--p 00434000 08:02 4071537                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.32
+7f29c6f89000-7f29c6f8d000 rw-p 0043b000 08:02 4071537                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.32
+7f29c6f8d000-7f29c6f90000 rw-p 00000000 00:00 0 
+7f29c6f90000-7f29c6fa4000 r-xp 00000000 08:02 5903262                    /lib/x86_64-linux-gnu/libgpg-error.so.0.22.0
+7f29c6fa4000-7f29c71a3000 ---p 00014000 08:02 5903262                    /lib/x86_64-linux-gnu/libgpg-error.so.0.22.0
+7f29c71a3000-7f29c71a4000 r--p 00013000 08:02 5903262                    /lib/x86_64-linux-gnu/libgpg-error.so.0.22.0
+7f29c71a4000-7f29c71a5000 rw-p 00014000 08:02 5903262                    /lib/x86_64-linux-gnu/libgpg-error.so.0.22.0
+7f29c71a5000-7f29c72b9000 r-xp 00000000 08:02 5903260                    /lib/x86_64-linux-gnu/libgcrypt.so.20.2.1
+7f29c72b9000-7f29c74b8000 ---p 00114000 08:02 5903260                    /lib/x86_64-linux-gnu/libgcrypt.so.20.2.1
+7f29c74b8000-7f29c74ba000 r--p 00113000 08:02 5903260                    /lib/x86_64-linux-gnu/libgcrypt.so.20.2.1
+7f29c74ba000-7f29c74bf000 rw-p 00115000 08:02 5903260                    /lib/x86_64-linux-gnu/libgcrypt.so.20.2.1
+7f29c74bf000-7f29c74c0000 rw-p 00000000 00:00 0 
+7f29c74c0000-7f29c74db000 r-xp 00000000 08:02 4071717                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f29c74db000-7f29c76da000 ---p 0001b000 08:02 4071717                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f29c76da000-7f29c76db000 r--p 0001a000 08:02 4071717                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f29c76db000-7f29c76dc000 rw-p 0001b000 08:02 4071717                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.7.1
+7f29c76dc000-7f29c7700000 r-xp 00000000 08:02 5903281                    /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7f29c7700000-7f29c7900000 ---p 00024000 08:02 5903281                    /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7f29c7900000-7f29c7901000 r--p 00024000 08:02 5903281                    /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7f29c7901000-7f29c7902000 rw-p 00025000 08:02 5903281                    /lib/x86_64-linux-gnu/liblzma.so.5.2.2
+7f29c7902000-7f29c7982000 r-xp 00000000 08:02 5904091                    /lib/x86_64-linux-gnu/libsystemd.so.0.21.0 (deleted)
+7f29c7982000-7f29c7b81000 ---p 00080000 08:02 5904091                    /lib/x86_64-linux-gnu/libsystemd.so.0.21.0 (deleted)
+7f29c7b81000-7f29c7b84000 r--p 0007f000 08:02 5904091                    /lib/x86_64-linux-gnu/libsystemd.so.0.21.0 (deleted)
+7f29c7b84000-7f29c7b85000 rw-p 00082000 08:02 5904091                    /lib/x86_64-linux-gnu/libsystemd.so.0.21.0 (deleted)
+7f29c7b85000-7f29c7b86000 rw-p 00000000 00:00 0 
+7f29c7b86000-7f29c7bf6000 r-xp 00000000 08:02 5903343                    /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7f29c7bf6000-7f29c7df6000 ---p 00070000 08:02 5903343                    /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7f29c7df6000-7f29c7df7000 r--p 00070000 08:02 5903343                    /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7f29c7df7000-7f29c7df8000 rw-p 00071000 08:02 5903343                    /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7f29c7df8000-7f29c7dff000 r-xp 00000000 08:02 4071322                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f29c7dff000-7f29c7ffe000 ---p 00007000 08:02 4071322                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f29c7ffe000-7f29c7fff000 r--p 00006000 08:02 4071322                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f29c7fff000-7f29c8000000 rw-p 00007000 08:02 4071322                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7f29c8000000-7f29c80b8000 rw-p 00000000 00:00 0 
+7f29c80b8000-7f29cc000000 ---p 00000000 00:00 0 
+7f29cc087000-7f29cc08e000 r--s 00000000 08:02 2369303                    /var/cache/fontconfig/4be9850f182b35c1350b6bbf2e42601c-le64.cache-7
+7f29cc08e000-7f29cc099000 r--s 00000000 08:02 2359389                    /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-7
+7f29cc099000-7f29cc09e000 r--s 00000000 08:02 2359360                    /var/cache/fontconfig/2300eef321c393bfd76478a5c0e95b23-le64.cache-7
+7f29cc09e000-7f29cc0b3000 r--s 00000000 08:02 2359350                    /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le64.cache-7
+7f29cc0b3000-7f29cc0df000 r-xp 00000000 08:02 4071023                    /usr/lib/x86_64-linux-gnu/libatspi.so.0.0.1
+7f29cc0df000-7f29cc2df000 ---p 0002c000 08:02 4071023                    /usr/lib/x86_64-linux-gnu/libatspi.so.0.0.1
+7f29cc2df000-7f29cc2e2000 r--p 0002c000 08:02 4071023                    /usr/lib/x86_64-linux-gnu/libatspi.so.0.0.1
+7f29cc2e2000-7f29cc2e3000 rw-p 0002f000 08:02 4071023                    /usr/lib/x86_64-linux-gnu/libatspi.so.0.0.1
+7f29cc2e3000-7f29cc32e000 r-xp 00000000 08:02 5903236                    /lib/x86_64-linux-gnu/libdbus-1.so.3.19.4
+7f29cc32e000-7f29cc52e000 ---p 0004b000 08:02 5903236                    /lib/x86_64-linux-gnu/libdbus-1.so.3.19.4
+7f29cc52e000-7f29cc52f000 r--p 0004b000 08:02 5903236                    /lib/x86_64-linux-gnu/libdbus-1.so.3.19.4
+7f29cc52f000-7f29cc530000 rw-p 0004c000 08:02 5903236                    /lib/x86_64-linux-gnu/libdbus-1.so.3.19.4
+7f29cc530000-7f29cc644000 r-xp 00000000 08:02 4063676                    /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.5600.4
+7f29cc644000-7f29cc844000 ---p 00114000 08:02 4063676                    /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.5600.4
+7f29cc844000-7f29cc845000 r--p 00114000 08:02 4063676                    /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.5600.4
+7f29cc845000-7f29cc846000 rw-p 00115000 08:02 4063676                    /usr/lib/x86_64-linux-gnu/libglib-2.0.so.0.5600.4
+7f29cc846000-7f29cc847000 rw-p 00000000 00:00 0 
+7f29cc847000-7f29cc899000 r-xp 00000000 08:02 4063728                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5600.4
+7f29cc899000-7f29cca99000 ---p 00052000 08:02 4063728                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5600.4
+7f29cca99000-7f29cca9a000 r--p 00052000 08:02 4063728                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5600.4
+7f29cca9a000-7f29cca9b000 rw-p 00053000 08:02 4063728                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5600.4
+7f29cca9b000-7f29ccac9000 r-xp 00000000 08:02 4071017                    /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0.0.0
+7f29ccac9000-7f29cccc9000 ---p 0002e000 08:02 4071017                    /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0.0.0
+7f29cccc9000-7f29cccca000 r--p 0002e000 08:02 4071017                    /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0.0.0
+7f29cccca000-7f29ccccb000 rw-p 0002f000 08:02 4071017                    /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0.0.0
+7f29ccccb000-7f29ccccc000 rw-p 00000000 00:00 0 
+7f29ccccc000-7f29cccee000 r-xp 00000000 08:02 4071015                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22810.1
+7f29cccee000-7f29cceee000 ---p 00022000 08:02 4071015                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22810.1
+7f29cceee000-7f29ccef1000 r--p 00022000 08:02 4071015                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22810.1
+7f29ccef1000-7f29ccef2000 rw-p 00025000 08:02 4071015                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22810.1
+7f29ccef2000-7f29ccf09000 r-xp 00000000 08:02 4086082                    /usr/lib/x86_64-linux-gnu/jni/libatk-wrapper.so.6.0.0
+7f29ccf09000-7f29cd109000 ---p 00017000 08:02 4086082                    /usr/lib/x86_64-linux-gnu/jni/libatk-wrapper.so.6.0.0
+7f29cd109000-7f29cd10a000 r--p 00017000 08:02 4086082                    /usr/lib/x86_64-linux-gnu/jni/libatk-wrapper.so.6.0.0
+7f29cd10a000-7f29cd10b000 rw-p 00018000 08:02 4086082                    /usr/lib/x86_64-linux-gnu/jni/libatk-wrapper.so.6.0.0
+7f29cd10b000-7f29cd10e000 ---p 00000000 00:00 0 
+7f29cd10e000-7f29cd20c000 rw-p 00000000 00:00 0 
+7f29cd20c000-7f29cd211000 r-xp 00000000 08:02 4070940                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f29cd211000-7f29cd410000 ---p 00005000 08:02 4070940                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f29cd410000-7f29cd411000 r--p 00004000 08:02 4070940                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f29cd411000-7f29cd412000 rw-p 00005000 08:02 4070940                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7f29cd412000-7f29cd41b000 r-xp 00000000 08:02 4070932                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f29cd41b000-7f29cd61a000 ---p 00009000 08:02 4070932                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f29cd61a000-7f29cd61b000 r--p 00008000 08:02 4070932                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f29cd61b000-7f29cd61c000 rw-p 00009000 08:02 4070932                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7f29cd61c000-7f29cd61f000 ---p 00000000 00:00 0 
+7f29cd61f000-7f29cd71d000 rw-p 00000000 00:00 0 
+7f29cd71d000-7f29cd74e000 r-xp 00000000 08:02 4071914                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.34.0
+7f29cd74e000-7f29cd94d000 ---p 00031000 08:02 4071914                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.34.0
+7f29cd94d000-7f29cd94e000 r--p 00030000 08:02 4071914                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.34.0
+7f29cd94e000-7f29cd94f000 rw-p 00031000 08:02 4071914                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.34.0
+7f29cd94f000-7f29cd9fc000 r-xp 00000000 08:02 4071352                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.15.0
+7f29cd9fc000-7f29cdbfb000 ---p 000ad000 08:02 4071352                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.15.0
+7f29cdbfb000-7f29cdc02000 r--p 000ac000 08:02 4071352                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.15.0
+7f29cdc02000-7f29cdc03000 rw-p 000b3000 08:02 4071352                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.15.0
+7f29cdc03000-7f29cdc52000 r-xp 00000000 08:02 4086096                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f29cdc52000-7f29cde52000 ---p 0004f000 08:02 4086096                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f29cde52000-7f29cde54000 r--p 0004f000 08:02 4086096                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f29cde54000-7f29cde55000 rw-p 00051000 08:02 4086096                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libfontmanager.so
+7f29cde55000-7f29cde58000 ---p 00000000 00:00 0 
+7f29cde58000-7f29cdf56000 rw-p 00000000 00:00 0 
+7f29cdf56000-7f29cdf59000 ---p 00000000 00:00 0 
+7f29cdf59000-7f29ce057000 rw-p 00000000 00:00 0 
+7f29ce057000-7f29ce05a000 ---p 00000000 00:00 0 
+7f29ce05a000-7f29ce158000 rw-p 00000000 00:00 0 
+7f29ce158000-7f29ce15b000 ---p 00000000 00:00 0 
+7f29ce15b000-7f29ce259000 rw-p 00000000 00:00 0 
+7f29ce259000-7f29ce25c000 ---p 00000000 00:00 0 
+7f29ce25c000-7f29ce35a000 rw-p 00000000 00:00 0 
+7f29ce35a000-7f29ce35d000 ---p 00000000 00:00 0 
+7f29ce35d000-7f29ce45b000 rw-p 00000000 00:00 0 
+7f29ce45b000-7f29ce45e000 ---p 00000000 00:00 0 
+7f29ce45e000-7f29ce55c000 rw-p 00000000 00:00 0 
+7f29ce55c000-7f29ce55f000 ---p 00000000 00:00 0 
+7f29ce55f000-7f29ce85d000 rw-p 00000000 00:00 0 
+7f29ce85d000-7f29ce860000 ---p 00000000 00:00 0 
+7f29ce860000-7f29ce95e000 rw-p 00000000 00:00 0 
+7f29ce95e000-7f29ce961000 ---p 00000000 00:00 0 
+7f29ce961000-7f29cea5f000 rw-p 00000000 00:00 0 
+7f29cea5f000-7f29cea62000 ---p 00000000 00:00 0 
+7f29cea62000-7f29ced60000 rw-p 00000000 00:00 0 
+7f29ced60000-7f29ced63000 ---p 00000000 00:00 0 
+7f29ced63000-7f29cee61000 rw-p 00000000 00:00 0 
+7f29cee61000-7f29cee74000 r-xp 00000000 08:02 5903217                    /lib/x86_64-linux-gnu/libbsd.so.0.8.7
+7f29cee74000-7f29cf073000 ---p 00013000 08:02 5903217                    /lib/x86_64-linux-gnu/libbsd.so.0.8.7
+7f29cf073000-7f29cf074000 r--p 00012000 08:02 5903217                    /lib/x86_64-linux-gnu/libbsd.so.0.8.7
+7f29cf074000-7f29cf075000 rw-p 00013000 08:02 5903217                    /lib/x86_64-linux-gnu/libbsd.so.0.8.7
+7f29cf075000-7f29cf076000 rw-p 00000000 00:00 0 
+7f29cf076000-7f29cf07b000 r-xp 00000000 08:02 4070936                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f29cf07b000-7f29cf27a000 ---p 00005000 08:02 4070936                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f29cf27a000-7f29cf27b000 r--p 00004000 08:02 4070936                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f29cf27b000-7f29cf27c000 rw-p 00005000 08:02 4070936                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7f29cf27c000-7f29cf27e000 r-xp 00000000 08:02 4070925                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f29cf27e000-7f29cf47e000 ---p 00002000 08:02 4070925                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f29cf47e000-7f29cf47f000 r--p 00002000 08:02 4070925                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f29cf47f000-7f29cf480000 rw-p 00003000 08:02 4070925                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7f29cf480000-7f29cf4a6000 r-xp 00000000 08:02 4072272                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f29cf4a6000-7f29cf6a6000 ---p 00026000 08:02 4072272                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f29cf6a6000-7f29cf6a7000 r--p 00026000 08:02 4072272                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f29cf6a7000-7f29cf6a8000 rw-p 00027000 08:02 4072272                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7f29cf6a8000-7f29cf6b7000 r-xp 00000000 08:02 4070946                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f29cf6b7000-7f29cf8b6000 ---p 0000f000 08:02 4070946                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f29cf8b6000-7f29cf8b7000 r--p 0000e000 08:02 4070946                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f29cf8b7000-7f29cf8b8000 rw-p 0000f000 08:02 4070946                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7f29cf8b8000-7f29cf8bd000 r-xp 00000000 08:02 4070964                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f29cf8bd000-7f29cfabc000 ---p 00005000 08:02 4070964                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f29cfabc000-7f29cfabd000 r--p 00004000 08:02 4070964                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f29cfabd000-7f29cfabe000 rw-p 00005000 08:02 4070964                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7f29cfabe000-7f29cfac7000 r-xp 00000000 08:02 4070958                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f29cfac7000-7f29cfcc6000 ---p 00009000 08:02 4070958                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f29cfcc6000-7f29cfcc7000 r--p 00008000 08:02 4070958                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f29cfcc7000-7f29cfcc8000 rw-p 00009000 08:02 4070958                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7f29cfcc8000-7f29cfdfb000 r-xp 00000000 08:02 4070921                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f29cfdfb000-7f29cfffb000 ---p 00133000 08:02 4070921                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f29cfffb000-7f29cfffc000 r--p 00133000 08:02 4070921                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f29cfffc000-7f29d0000000 rw-p 00134000 08:02 4070921                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7f29d0000000-7f29d00bf000 rw-p 00000000 00:00 0 
+7f29d00bf000-7f29d4000000 ---p 00000000 00:00 0 
+7f29d4003000-7f29d4004000 r--s 00000000 08:02 2359353                    /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-7
+7f29d4004000-7f29d4005000 r--s 00000000 08:02 2359357                    /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le64.cache-7
+7f29d4005000-7f29d4006000 r--s 00000000 08:02 2359409                    /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le64.cache-7
+7f29d4006000-7f29d4008000 r--s 00000000 08:02 2359354                    /var/cache/fontconfig/14a5e22175779b556eaa434240950366-le64.cache-7
+7f29d4008000-7f29d4009000 r--s 00000000 08:02 2359381                    /var/cache/fontconfig/660208299946a285a940457d1287da33-le64.cache-7
+7f29d4009000-7f29d400b000 r--s 00000000 08:02 2359372                    /var/cache/fontconfig/4f3e3037c9980c83b53a9351efadef62-le64.cache-7
+7f29d400b000-7f29d400d000 r--s 00000000 08:02 2359386                    /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le64.cache-7
+7f29d400d000-7f29d400e000 r--s 00000000 08:02 2359402                    /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-7
+7f29d400e000-7f29d4010000 r--s 00000000 08:02 2359351                    /var/cache/fontconfig/0bd3dc0958fa2205aaaa8ebb13e2872b-le64.cache-7
+7f29d4010000-7f29d4015000 r--s 00000000 08:02 2359410                    /var/cache/fontconfig/def309198bfa603429122923fa2bb2d4-le64.cache-7
+7f29d4015000-7f29d40b6000 r--s 00d93000 08:03 7476141                    /home/dom/code/Preside-Documentation/api/lib/pyg-in-blankets-1.0-SNAPSHOT-jar-with-dependencies.jar
+7f29d40b6000-7f29d40c7000 r-xp 00000000 08:02 4070938                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f29d40c7000-7f29d42c6000 ---p 00011000 08:02 4070938                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f29d42c6000-7f29d42c7000 r--p 00010000 08:02 4070938                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f29d42c7000-7f29d42c8000 rw-p 00011000 08:02 4070938                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7f29d42c8000-7f29d42c9000 r--s 00000000 08:02 2359397                    /var/cache/fontconfig/b872e6e592da6075ffa4ab0a1fcc0c75-le64.cache-7
+7f29d42c9000-7f29d42ca000 r--s 00000000 08:02 2359415                    /var/cache/fontconfig/f6d4eedfaab2589bde49f7a3ff831d22-le64.cache-7
+7f29d42ca000-7f29d42cb000 r--s 00000000 08:02 2359379                    /var/cache/fontconfig/589f83ef4c36d296ce6e1c846f468f08-le64.cache-7
+7f29d42cb000-7f29d42cc000 r--s 00000000 08:02 2359399                    /var/cache/fontconfig/bab58bb527bb656aaa9f116d68a48d89-le64.cache-7
+7f29d42cc000-7f29d42cd000 r--s 00000000 08:02 2359358                    /var/cache/fontconfig/2171a34dccabdb6bcbbc728186263178-le64.cache-7
+7f29d42cd000-7f29d42ce000 r--s 00000000 08:02 2359400                    /var/cache/fontconfig/c5c45a61289222e0d30b1a26ef4effbe-le64.cache-7
+7f29d42ce000-7f29d42cf000 r--s 00000000 08:02 2359395                    /var/cache/fontconfig/aec30016f93e1b46d1a973dce0d74068-le64.cache-7
+7f29d42cf000-7f29d42d0000 r--s 00000000 08:02 2359365                    /var/cache/fontconfig/3f589640d34b7dc9042c8d453f7c8b9c-le64.cache-7
+7f29d42d0000-7f29d42d1000 r--s 00000000 08:02 2359355                    /var/cache/fontconfig/16c2fda60d1b4b719f4b3d06fd951d25-le64.cache-7
+7f29d42d1000-7f29d42d2000 r--s 00000000 08:02 2359394                    /var/cache/fontconfig/a48eab177a16e4f3713381162db2f3e9-le64.cache-7
+7f29d42d2000-7f29d42d3000 r--s 00000000 08:02 2359375                    /var/cache/fontconfig/564b2e68ac9bc4e36a6f7f6d6125ec1c-le64.cache-7
+7f29d42d3000-7f29d42d8000 r--s 00000000 08:02 2359392                    /var/cache/fontconfig/9d2451b1fd30e5bffe8383fd27c35478-le64.cache-7
+7f29d42d8000-7f29d42de000 r--s 00000000 08:02 2359361                    /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le64.cache-7
+7f29d42de000-7f29d42df000 r--s 00000000 08:02 2359376                    /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le64.cache-7
+7f29d42df000-7f29d42e5000 r--s 00000000 08:02 2359396                    /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le64.cache-7
+7f29d42e5000-7f29d4340000 r-xp 00000000 08:02 4086094                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f29d4340000-7f29d453f000 ---p 0005b000 08:02 4086094                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f29d453f000-7f29d4540000 r--p 0005a000 08:02 4086094                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f29d4540000-7f29d4543000 rw-p 0005b000 08:02 4086094                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so
+7f29d4543000-7f29d4545000 rw-p 00000000 00:00 0 
+7f29d4545000-7f29d45e4000 r-xp 00000000 08:02 4086092                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f29d45e4000-7f29d47e3000 ---p 0009f000 08:02 4086092                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f29d47e3000-7f29d47e4000 r--p 0009e000 08:02 4086092                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f29d47e4000-7f29d47ef000 rw-p 0009f000 08:02 4086092                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt.so
+7f29d47ef000-7f29d4814000 rw-p 00000000 00:00 0 
+7f29d4814000-7f29d4815000 r--s 00000000 08:02 2359398                    /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le64.cache-7
+7f29d4815000-7f29d4828000 r--s 00000000 08:02 2359406                    /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-7
+7f29d4828000-7f29d4829000 r--s 00000000 08:02 2359363                    /var/cache/fontconfig/370e5b74bf5dafc30834de68e24a87a4-le64.cache-7
+7f29d4829000-7f29d482a000 r--s 00000000 08:02 2359384                    /var/cache/fontconfig/6b2c5944714ca7831b25bed9e85cb5c8-le64.cache-7
+7f29d482a000-7f29d482b000 r--s 00000000 08:02 2359405                    /var/cache/fontconfig/d5178ab6d91b49bf20a416737dcea9e8-le64.cache-7
+7f29d482b000-7f29d482c000 r--s 00000000 08:02 2359374                    /var/cache/fontconfig/551ecf3b0e8b0bca0f25c0944f561853-le64.cache-7
+7f29d482c000-7f29d482f000 r--s 00000000 08:02 2359414                    /var/cache/fontconfig/f259c2cffa685e28062317905db73c4a-le64.cache-7
+7f29d482f000-7f29d4831000 r--s 00000000 08:02 2359373                    /var/cache/fontconfig/550f3886151c940c12a5ed35f6a00586-le64.cache-7
+7f29d4831000-7f29d4834000 r--s 00000000 08:02 2359382                    /var/cache/fontconfig/674d1711f2d1d2a09646eb0bdcadee49-le64.cache-7
+7f29d4834000-7f29d4835000 r--s 00000000 08:02 2359366                    /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le64.cache-7
+7f29d4835000-7f29d4839000 r--s 00000000 08:02 2359407                    /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-7
+7f29d4839000-7f29d483a000 r--s 00000000 08:02 2359352                    /var/cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le64.cache-7
+7f29d483a000-7f29d483b000 r--s 00000000 08:02 2359359                    /var/cache/fontconfig/22368d551a680bfe5a62c02760edf4ea-le64.cache-7
+7f29d483b000-7f29d483c000 r--s 00000000 08:02 2359371                    /var/cache/fontconfig/4d9c95eba1cb85bbcf2878543262124a-le64.cache-7
+7f29d483c000-7f29d483d000 r--s 00000000 08:02 2359388                    /var/cache/fontconfig/85e0a52ce643a7ba2ae53e5d6949cead-le64.cache-7
+7f29d483d000-7f29d483e000 r--s 00000000 08:02 2359368                    /var/cache/fontconfig/49f0de54bdd920fe4f0dfd4cbac43e6b-le64.cache-7
+7f29d483e000-7f29d484d000 r--s 00000000 08:02 2359411                    /var/cache/fontconfig/9b89f8e3dae116d678bbf48e5f21f69b-le64.cache-7
+7f29d484d000-7f29d4856000 r--s 00000000 08:02 2359403                    /var/cache/fontconfig/d0972c3d32f097851eb916381fc38920-le64.cache-7
+7f29d486e000-7f29d486f000 r--s 00003000 08:03 23206616                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle91/version0.0/bundle.jar
+7f29d486f000-7f29d4871000 r--s 00051000 08:03 23206611                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle90/version0.0/bundle.jar
+7f29d4871000-7f29d4877000 r--s 00036000 08:03 23206606                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle89/version0.0/bundle.jar
+7f29d4877000-7f29d4878000 r--s 00000000 08:02 2359416                    /var/cache/fontconfig/f6e6e0a5c3d2f6ae0c0c2e0ecd42a997-le64.cache-7
+7f29d4878000-7f29d487a000 r--s 00000000 08:02 2359383                    /var/cache/fontconfig/6afa1bb216ce958c1589e297e8008489-le64.cache-7
+7f29d487a000-7f29d4881000 r--s 0003f000 08:03 23206599                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle90/version0.0/bundle.jar-embedded/commons-codec-1.10.jar
+7f29d4881000-7f29d4882000 r--s 00000000 08:02 2359369                    /var/cache/fontconfig/4b2eda6bb976bda485cb2176619421d5-le64.cache-7
+7f29d4882000-7f29d4885000 r--s 00000000 08:02 2366529                    /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-7
+7f29d4885000-7f29d4887000 r--s 00000000 08:03 22937787                   /home/dom/.cache/fontconfig/a886078c1c88e7ae8a5053b671bce334-le64.cache-7
+7f29d4887000-7f29d4889000 r--s 00010000 08:03 7476140                    /home/dom/code/Preside-Documentation/api/lib/pegdown-1.5.0.jar
+7f29d4889000-7f29d488b000 r--s 00010000 08:03 7476139                    /home/dom/code/Preside-Documentation/api/lib/parboiled-java-1.1.7.jar
+7f29d488b000-7f29d4890000 r--s 00029000 08:03 7476138                    /home/dom/code/Preside-Documentation/api/lib/parboiled-core-1.1.7.jar
+7f29d4890000-7f29d4896000 r--s 0003c000 08:03 7476142                    /home/dom/code/Preside-Documentation/api/lib/snakeyaml-1.15.jar
+7f29d4896000-7f29d48b8000 r--s 00000000 08:02 4588155                    /usr/share/mime/mime.cache
+7f29d48b8000-7f29d48ba000 r--p 00000000 08:02 4853852                    /usr/share/locale-langpack/en_GB/LC_MESSAGES/glib20.mo
+7f29d48ba000-7f29d48c1000 r--s 00000000 08:02 4330389                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f29d48c1000-7f29d48c5000 r--p 00000000 08:02 4853955                    /usr/share/locale-langpack/en_GB/LC_MESSAGES/gtk20-properties.mo
+7f29d48c5000-7f29d48c7000 r--p 00000000 08:02 4853956                    /usr/share/locale-langpack/en_GB/LC_MESSAGES/gtk20.mo
+7f29d48c7000-7f29d48ca000 ---p 00000000 00:00 0 
+7f29d48ca000-7f29d4900000 rw-p 00000000 00:00 0 
+7f29d4900000-7f29d4903000 ---p 00000000 00:00 0 
+7f29d4903000-7f29d4c01000 rw-p 00000000 00:00 0 
+7f29d4c01000-7f29d4c04000 ---p 00000000 00:00 0 
+7f29d4c04000-7f29d4d02000 rw-p 00000000 00:00 0 
+7f29d4d02000-7f29d4d0c000 r--s 000aa000 08:03 23206528                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle75/version0.0/bundle.jar-embedded/javassist-3.22.0-CR1.jar
+7f29d4d0c000-7f29d4d10000 r--s 00036000 08:03 23206527                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle75/version0.0/bundle.jar-embedded/ognl-3.1.14.jar
+7f29d4d10000-7f29d4f10000 rw-p 00000000 00:00 0 
+7f29d4f10000-7f29d4f12000 r--s 00008000 08:03 23206493                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/asm-commons-4.1.jar
+7f29d4f12000-7f29d4f14000 r--s 00008000 08:03 23206492                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/asm-util-4.1.jar
+7f29d4f14000-7f29d4f19000 r--s 00068000 08:03 23206491                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/antlr-2.7.7.jar
+7f29d4f19000-7f29d4f1b000 r--s 00004000 08:03 23206490                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/asm-tree-4.1.jar
+7f29d4f1b000-7f29d4f5a000 r--s 00312000 08:03 23206489                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/groovy-2.2.2.jar
+7f29d4f5a000-7f29d4f5c000 r--s 00008000 08:03 23206488                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/expiringmap-0.5.8.jar
+7f29d4f5c000-7f29d4f5f000 ---p 00000000 00:00 0 
+7f29d4f5f000-7f29d525d000 rw-p 00000000 00:00 0 
+7f29d525d000-7f29d525f000 r--s 00008000 08:03 23206452                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle47/version0.0/bundle.jar-embedded/joda-convert-1.2.jar
+7f29d525f000-7f29d5262000 ---p 00000000 00:00 0 
+7f29d5262000-7f29d5360000 rw-p 00000000 00:00 0 
+7f29d5360000-7f29d5363000 ---p 00000000 00:00 0 
+7f29d5363000-7f29d5661000 rw-p 00000000 00:00 0 
+7f29d5661000-7f29d5664000 r--s 000ab000 08:03 22285261                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle80/version0.0/bundle.jar (deleted)
+7f29d5664000-7f29d566a000 r--s 00126000 08:03 22285134                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle78/version0.0/bundle.jar (deleted)
+7f29d566a000-7f29d566d000 ---p 00000000 00:00 0 
+7f29d566d000-7f29d576b000 rw-p 00000000 00:00 0 
+7f29d576b000-7f29d576e000 ---p 00000000 00:00 0 
+7f29d576e000-7f29d586c000 rw-p 00000000 00:00 0 
+7f29d586c000-7f29d586f000 ---p 00000000 00:00 0 
+7f29d586f000-7f29d5b6d000 rw-p 00000000 00:00 0 
+7f29d5b6d000-7f29d5b70000 ---p 00000000 00:00 0 
+7f29d5b70000-7f29d5c6e000 rw-p 00000000 00:00 0 
+7f29d5c6e000-7f29d5c71000 ---p 00000000 00:00 0 
+7f29d5c71000-7f29d5d6f000 rw-p 00000000 00:00 0 
+7f29d5d6f000-7f29d5d72000 ---p 00000000 00:00 0 
+7f29d5d72000-7f29d5e70000 rw-p 00000000 00:00 0 
+7f29d5e70000-7f29d5e74000 r--s 00019000 08:03 23206431                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle36/version0.0/bundle.jar-embedded/compiler-0.8.18.jar
+7f29d5e74000-7f29d5e76000 r--s 0000f000 08:03 23206429                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle86/version0.0/bundle.jar-embedded/activation-1.1.1.jar
+7f29d5e76000-7f29d5e7e000 r--s 00078000 08:03 23206428                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle86/version0.0/bundle.jar-embedded/mail-1.4.6.jar
+7f29d5e7e000-7f29d5e81000 ---p 00000000 00:00 0 
+7f29d5e81000-7f29d617f000 rw-p 00000000 00:00 0 
+7f29d617f000-7f29d6189000 r--s 000aa000 08:03 23206360                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle65/version0.0/bundle.jar-embedded/javassist-3.22.0-CR1.jar
+7f29d6189000-7f29d618d000 r--s 00036000 08:03 23206359                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle65/version0.0/bundle.jar-embedded/ognl-3.1.14.jar
+7f29d618d000-7f29d6190000 r--s 00012000 08:03 23206343                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle65/version0.0/bundle.jar-embedded/metrics-core-3.0.1.jar
+7f29d6190000-7f29d6193000 r--s 0000c000 08:03 23206339                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle78/version0.0/bundle.jar-embedded/netty-servlet-bridge-2.0.0-SNAPSHOT.jar
+7f29d6193000-7f29d61a5000 r--s 001d5000 08:03 23206290                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle68/version0.0/bundle.jar-embedded/unboundid-ldapsdk-3.2.1.jar
+7f29d61a5000-7f29d627b000 r--s 007ba000 08:03 22285123                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle76/version0.0/bundle.jar (deleted)
+7f29d627b000-7f29d647b000 rw-p 00000000 00:00 0 
+7f29d647b000-7f29d648c000 r--s 0016e000 08:03 23206235                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle59/version0.0/bundle.jar-embedded/jfreechart-1.0.19.jar
+7f29d648c000-7f29d64cd000 r--s 00389000 08:03 22285103                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle72/version0.0/bundle.jar (deleted)
+7f29d64cd000-7f29d64e4000 r-xp 00000000 08:02 5903360                    /lib/x86_64-linux-gnu/libresolv-2.27.so
+7f29d64e4000-7f29d66e4000 ---p 00017000 08:02 5903360                    /lib/x86_64-linux-gnu/libresolv-2.27.so
+7f29d66e4000-7f29d66e5000 r--p 00017000 08:02 5903360                    /lib/x86_64-linux-gnu/libresolv-2.27.so
+7f29d66e5000-7f29d66e6000 rw-p 00018000 08:02 5903360                    /lib/x86_64-linux-gnu/libresolv-2.27.so
+7f29d66e6000-7f29d66e8000 rw-p 00000000 00:00 0 
+7f29d66e8000-7f29d66ed000 r-xp 00000000 08:02 5903309                    /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7f29d66ed000-7f29d68ed000 ---p 00005000 08:02 5903309                    /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7f29d68ed000-7f29d68ee000 r--p 00005000 08:02 5903309                    /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7f29d68ee000-7f29d68ef000 rw-p 00006000 08:02 5903309                    /lib/x86_64-linux-gnu/libnss_dns-2.27.so
+7f29d68ef000-7f29d68f1000 r-xp 00000000 08:02 5903317                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f29d68f1000-7f29d6af0000 ---p 00002000 08:02 5903317                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f29d6af0000-7f29d6af1000 r--p 00001000 08:02 5903317                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f29d6af1000-7f29d6af2000 rw-p 00002000 08:02 5903317                    /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f29d6af2000-7f29d6af3000 r--p 00000000 08:02 4853827                    /usr/share/locale-langpack/en_GB/LC_MESSAGES/atk10.mo
+7f29d6af3000-7f29d6afb000 r--s 0008a000 08:03 22285128                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle77/version0.0/bundle.jar (deleted)
+7f29d6afb000-7f29d6b01000 r--s 0004b000 08:03 23206236                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle59/version0.0/bundle.jar-embedded/jcommon-1.0.23.jar
+7f29d6b01000-7f29d6b0f000 r--s 00080000 08:03 22285108                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle73/version0.0/bundle.jar (deleted)
+7f29d6b0f000-7f29d6b37000 r-xp 00000000 08:02 4086119                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f29d6b37000-7f29d6d36000 ---p 00028000 08:02 4086119                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f29d6d36000-7f29d6d3a000 r--p 00027000 08:02 4086119                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f29d6d3a000-7f29d6d3b000 rw-p 0002b000 08:02 4086119                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libsunec.so
+7f29d6d3b000-7f29d6d3d000 r--s 00016000 08:02 4086152                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+7f29d6d3d000-7f29d6f3d000 rw-p 00000000 00:00 0 
+7f29d6f3d000-7f29d6f47000 r--s 00098000 08:03 23206414                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle31/version0.0/bundle.jar-embedded/windup-fernflower-1.0.0.20171018.jar
+7f29d6f47000-7f29d6f49000 r--s 00003000 08:03 22285093                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle70/version0.0/bundle.jar (deleted)
+7f29d6f49000-7f29d6f57000 r--s 000af000 08:03 22285088                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle69/version0.0/bundle.jar (deleted)
+7f29d6f57000-7f29d6f73000 r--s 001bc000 08:03 22285078                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle67/version0.0/bundle.jar (deleted)
+7f29d6f73000-7f29d6f76000 ---p 00000000 00:00 0 
+7f29d6f76000-7f29d7074000 rw-p 00000000 00:00 0 
+7f29d7074000-7f29d70b5000 r--s 0025d000 08:03 22285072                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle66/version0.0/bundle.jar (deleted)
+7f29d70b5000-7f29d70b8000 ---p 00000000 00:00 0 
+7f29d70b8000-7f29d73b6000 rw-p 00000000 00:00 0 
+7f29d73b6000-7f29d73c0000 r--s 000aa000 08:03 23206405                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle24/version0.0/bundle.jar-embedded/javassist-3.22.0-CR1.jar
+7f29d73c0000-7f29d75c0000 rw-p 00000000 00:00 0 
+7f29d75c0000-7f29d75ef000 r-xp 00000000 08:03 23206397                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle8/version0.0/bundle.jar-lib/0/libsigar-amd64-linux-fr.so
+7f29d75ef000-7f29d76ee000 ---p 0002f000 08:03 23206397                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle8/version0.0/bundle.jar-lib/0/libsigar-amd64-linux-fr.so
+7f29d76ee000-7f29d76f4000 rw-p 0002e000 08:03 23206397                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle8/version0.0/bundle.jar-lib/0/libsigar-amd64-linux-fr.so
+7f29d76f4000-7f29d76f7000 rw-p 00000000 00:00 0 
+7f29d76f7000-7f29d76fa000 ---p 00000000 00:00 0 
+7f29d76fa000-7f29d77f8000 rw-p 00000000 00:00 0 
+7f29d77f8000-7f29d77fb000 ---p 00000000 00:00 0 
+7f29d77fb000-7f29d78f9000 rw-p 00000000 00:00 0 
+7f29d78f9000-7f29d78fc000 ---p 00000000 00:00 0 
+7f29d78fc000-7f29d79fa000 rw-p 00000000 00:00 0 
+7f29d79fa000-7f29d79fd000 ---p 00000000 00:00 0 
+7f29d79fd000-7f29d7afb000 rw-p 00000000 00:00 0 
+7f29d7afb000-7f29d7afe000 ---p 00000000 00:00 0 
+7f29d7afe000-7f29d7bfc000 rw-p 00000000 00:00 0 
+7f29d7bfc000-7f29d7bff000 ---p 00000000 00:00 0 
+7f29d7bff000-7f29d7cfd000 rw-p 00000000 00:00 0 
+7f29d7cfd000-7f29d7d00000 ---p 00000000 00:00 0 
+7f29d7d00000-7f29d7dfe000 rw-p 00000000 00:00 0 
+7f29d7dfe000-7f29d7e01000 ---p 00000000 00:00 0 
+7f29d7e01000-7f29d7eff000 rw-p 00000000 00:00 0 
+7f29d7eff000-7f29d7f02000 ---p 00000000 00:00 0 
+7f29d7f02000-7f29d8000000 rw-p 00000000 00:00 0 
+7f29d8000000-7f29d8118000 rw-p 00000000 00:00 0 
+7f29d8118000-7f29dc000000 ---p 00000000 00:00 0 
+7f29dc000000-7f29dc001000 r--s 00004000 08:03 23206495                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/asm-analysis-4.1.jar
+7f29dc001000-7f29dc006000 r--s 00034000 08:03 22285083                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle68/version0.0/bundle.jar (deleted)
+7f29dc006000-7f29dc008000 r--s 0000f000 08:03 22285067                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle65/version0.0/bundle.jar (deleted)
+7f29dc008000-7f29dc00c000 r--s 00036000 08:03 23206404                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle24/version0.0/bundle.jar-embedded/ognl-3.1.14.jar
+7f29dc00c000-7f29dc00e000 r--s 00009000 08:03 23206403                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle24/version0.0/bundle.jar-embedded/httpmime-4.5.2.jar
+7f29dc00e000-7f29dc015000 r--s 0003f000 08:03 23206402                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle24/version0.0/bundle.jar-embedded/commons-codec-1.10.jar
+7f29dc015000-7f29dc02b000 r--s 00161000 08:03 23206400                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle11/version0.0/bundle.jar-embedded/procyon-compilertools-0.5.36-INTERGRALFORK.jar
+7f29dc02b000-7f29dc030000 r--s 00031000 08:03 23206399                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle11/version0.0/bundle.jar-embedded/procyon-core-0.5.36-INTERGRALFORK.jar
+7f29dc030000-7f29dc230000 rw-p 00000000 00:00 0 
+7f29dc230000-7f29dc233000 ---p 00000000 00:00 0 
+7f29dc233000-7f29dc331000 rw-p 00000000 00:00 0 
+7f29dc331000-7f29dc334000 ---p 00000000 00:00 0 
+7f29dc334000-7f29dc432000 rw-p 00000000 00:00 0 
+7f29dc432000-7f29dc435000 ---p 00000000 00:00 0 
+7f29dc435000-7f29dc533000 rw-p 00000000 00:00 0 
+7f29dc533000-7f29dc536000 ---p 00000000 00:00 0 
+7f29dc536000-7f29dc634000 rw-p 00000000 00:00 0 
+7f29dc634000-7f29dc637000 ---p 00000000 00:00 0 
+7f29dc637000-7f29dc735000 rw-p 00000000 00:00 0 
+7f29dc735000-7f29dc738000 ---p 00000000 00:00 0 
+7f29dc738000-7f29dc836000 rw-p 00000000 00:00 0 
+7f29dc836000-7f29dc839000 ---p 00000000 00:00 0 
+7f29dc839000-7f29dc937000 rw-p 00000000 00:00 0 
+7f29dc937000-7f29dc93a000 ---p 00000000 00:00 0 
+7f29dc93a000-7f29dca38000 rw-p 00000000 00:00 0 
+7f29dca38000-7f29dca3b000 ---p 00000000 00:00 0 
+7f29dca3b000-7f29dcb39000 rw-p 00000000 00:00 0 
+7f29dcb39000-7f29dcb3a000 r--s 00005000 08:03 23206392                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle87/version0.0/bundle.jar
+7f29dcb3a000-7f29dcb3f000 r--s 000bc000 08:03 23206387                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle86/version0.0/bundle.jar
+7f29dcb3f000-7f29dcb41000 r--s 00004000 08:03 23206382                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle85/version0.0/bundle.jar
+7f29dcb41000-7f29dcb43000 r--s 00003000 08:03 23206377                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle84/version0.0/bundle.jar
+7f29dcb43000-7f29dcb44000 r--s 00004000 08:03 23206372                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle83/version0.0/bundle.jar
+7f29dcb44000-7f29dcb46000 r--s 00000000 08:03 23206367                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle82/version0.0/bundle.jar
+7f29dcb46000-7f29dcb47000 r--s 0000b000 08:03 23206494                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar-embedded/asm-4.1.jar
+7f29dcb47000-7f29dcb49000 r--s 0000d000 08:03 23206357                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle80/version0.0/bundle.jar
+7f29dcb49000-7f29dcb4c000 r--s 00017000 08:03 23206352                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle79/version0.0/bundle.jar
+7f29dcb4c000-7f29dcb57000 r--s 000b6000 08:03 23206347                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle78/version0.0/bundle.jar
+7f29dcb57000-7f29dcb59000 r--s 00009000 08:03 23206341                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle78/version0.0/bundle.jar-embedded/slf4j-api-1.7.25.jar
+7f29dcb59000-7f29dcb5b000 r--s 00005000 08:03 23206337                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle76/version0.0/bundle.jar
+7f29dcb5b000-7f29dcb5d000 r--s 000e2000 08:03 23206332                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle75/version0.0/bundle.jar
+7f29dcb5d000-7f29dcb60000 r--s 00015000 08:03 23206327                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle74/version0.0/bundle.jar
+7f29dcb60000-7f29dcb8c000 r--s 00208000 08:03 23206322                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle73/version0.0/bundle.jar
+7f29dcb8c000-7f29dcb8f000 r--s 00014000 08:03 23206317                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle72/version0.0/bundle.jar
+7f29dcb8f000-7f29dcb91000 r--s 00002000 08:03 23206312                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle71/version0.0/bundle.jar
+7f29dcb91000-7f29dcb95000 r--s 0001f000 08:03 23206307                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle70/version0.0/bundle.jar
+7f29dcb95000-7f29dcb98000 r--s 0001c000 08:03 23206302                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle69/version0.0/bundle.jar
+7f29dcb98000-7f29dcb9a000 r--s 001da000 08:03 23206297                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle68/version0.0/bundle.jar
+7f29dcb9a000-7f29dcba0000 r--s 00047000 08:03 22285118                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle75/version0.0/bundle.jar (deleted)
+7f29dcba0000-7f29dcda0000 rw-p 00000000 00:00 0 
+7f29dcda0000-7f29dcda5000 r--s 0002f000 08:03 23206287                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle66/version0.0/bundle.jar
+7f29dcda5000-7f29dcdaa000 r--s 0010f000 08:03 23206282                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle65/version0.0/bundle.jar
+7f29dcdaa000-7f29dcdac000 r--s 00004000 08:03 23206277                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle64/version0.0/bundle.jar
+7f29dcdac000-7f29dcdad000 r--s 00005000 08:03 23206272                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle63/version0.0/bundle.jar
+7f29dcdad000-7f29dcdb0000 r--s 00015000 08:03 23206267                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle62/version0.0/bundle.jar
+7f29dcdb0000-7f29dcdb1000 r--s 00003000 08:03 23206262                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle61/version0.0/bundle.jar
+7f29dcdb1000-7f29dcdbe000 r--s 0040d000 08:03 23206257                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle60/version0.0/bundle.jar
+7f29dcdbe000-7f29dcdd9000 r--s 003a3000 08:03 23206252                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle59/version0.0/bundle.jar
+7f29dcdd9000-7f29dcddb000 r--s 00008000 08:03 23206247                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle58/version0.0/bundle.jar
+7f29dcddb000-7f29dcddd000 r--s 00004000 08:03 23206242                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle57/version0.0/bundle.jar
+7f29dcddd000-7f29dcdde000 r--s 000e6000 08:03 22285256                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle79/version0.0/bundle.jar (deleted)
+7f29dcdde000-7f29dcddf000 r--s 00000000 08:03 23206340                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle78/version0.0/bundle.jar-embedded/slf4j-nop-1.7.25.jar
+7f29dcddf000-7f29dcde5000 r--s 00066000 08:03 22285113                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle74/version0.0/bundle.jar (deleted)
+7f29dcde5000-7f29dcde7000 r--s 00021000 08:03 22285098                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle71/version0.0/bundle.jar (deleted)
+7f29dcde7000-7f29dcde9000 r--s 00018000 08:03 23206232                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle55/version0.0/bundle.jar
+7f29dcde9000-7f29dcdee000 r--s 0002f000 08:03 23206227                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle54/version0.0/bundle.jar
+7f29dcdee000-7f29dcdf1000 r--s 00014000 08:03 23206222                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle53/version0.0/bundle.jar
+7f29dcdf1000-7f29dcdf3000 r--s 0000a000 08:03 23206217                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle52/version0.0/bundle.jar
+7f29dcdf3000-7f29dcdf4000 r--s 00002000 08:03 23206212                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle51/version0.0/bundle.jar
+7f29dcdf4000-7f29dcdf6000 r--s 00010000 08:03 23206207                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle50/version0.0/bundle.jar
+7f29dcdf6000-7f29dcdf8000 r--s 00001000 08:03 23206202                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle49/version0.0/bundle.jar
+7f29dcdf8000-7f29dcdfa000 r--s 00004000 08:03 23206197                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle48/version0.0/bundle.jar
+7f29dcdfa000-7f29dcdff000 r--s 00036000 08:03 23206192                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle47/version0.0/bundle.jar
+7f29dcdff000-7f29dce01000 r--s 00003000 08:03 23206187                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle46/version0.0/bundle.jar
+7f29dce01000-7f29dce02000 r--s 00001000 08:03 23206182                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle45/version0.0/bundle.jar
+7f29dce02000-7f29dce03000 r--s 00002000 08:03 23206177                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle44/version0.0/bundle.jar
+7f29dce03000-7f29dce0c000 r--s 0007e000 08:03 23206172                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle43/version0.0/bundle.jar
+7f29dce0c000-7f29dce10000 r--s 00023000 08:03 23206167                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle42/version0.0/bundle.jar
+7f29dce10000-7f29dce11000 r--s 00005000 08:03 23206162                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle41/version0.0/bundle.jar
+7f29dce11000-7f29dce21000 r--s 00089000 08:03 23206157                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle40/version0.0/bundle.jar
+7f29dce21000-7f29dce23000 r--s 00003000 08:03 23206152                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle39/version0.0/bundle.jar
+7f29dce23000-7f29dce25000 r--s 00009000 08:03 23206147                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle38/version0.0/bundle.jar
+7f29dce25000-7f29dce27000 r--s 00004000 08:03 23206142                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle37/version0.0/bundle.jar
+7f29dce27000-7f29dce28000 r--s 0001c000 08:03 23206137                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle36/version0.0/bundle.jar
+7f29dce28000-7f29dce2e000 r--s 00048000 08:03 23206132                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle35/version0.0/bundle.jar
+7f29dce2e000-7f29dce30000 r--s 00004000 08:03 23206127                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle34/version0.0/bundle.jar
+7f29dce30000-7f29dce33000 r--s 0000e000 08:03 23206122                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle33/version0.0/bundle.jar
+7f29dce33000-7f29dce36000 r--s 00016000 08:03 23206117                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle32/version0.0/bundle.jar
+7f29dce36000-7f29dce38000 r--s 00096000 08:03 23206106                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle31/version0.0/bundle.jar
+7f29dce38000-7f29dce46000 r--s 0009a000 08:03 23206096                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle30/version0.0/bundle.jar
+7f29dce46000-7f29dce49000 r--s 00009000 08:03 23206086                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle29/version0.0/bundle.jar
+7f29dce49000-7f29dce54000 r--s 00082000 08:03 23206076                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle28/version0.0/bundle.jar
+7f29dce54000-7f29dce65000 r--s 0010d000 08:03 23206066                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle27/version0.0/bundle.jar
+7f29dce65000-7f29dce6d000 r--s 00062000 08:03 23206056                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle26/version0.0/bundle.jar
+7f29dce6d000-7f29dce71000 r--s 0001a000 08:03 23206046                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle25/version0.0/bundle.jar
+7f29dce71000-7f29dce75000 r--s 0013d000 08:03 23206036                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle24/version0.0/bundle.jar
+7f29dce75000-7f29dce7e000 r--s 00061000 08:03 23206026                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle23/version0.0/bundle.jar
+7f29dce7e000-7f29dce8b000 r--s 00086000 08:03 23206006                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle21/version0.0/bundle.jar
+7f29dce8b000-7f29dce9d000 r--s 000ab000 08:03 23205996                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle20/version0.0/bundle.jar
+7f29dce9d000-7f29dcea1000 r--s 0003c000 08:03 23205976                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle18/version0.0/bundle.jar
+7f29dcea1000-7f29dd0a1000 rw-p 00000000 00:00 0 
+7f29dd0a1000-7f29dd0a6000 r--s 0003d000 08:03 23205846                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle5/version0.0/bundle.jar
+7f29dd0a6000-7f29dd0a9000 r--s 0001a000 08:03 23205837                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle4/version0.0/bundle.jar
+7f29dd0a9000-7f29dd0ab000 r--s 0000e000 08:03 23205832                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle3/version0.0/bundle.jar
+7f29dd0ab000-7f29dd0ad000 r--s 00000000 08:03 23205827                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle2/version0.0/bundle.jar
+7f29dd0ad000-7f29dd0b3000 r--s 0002f000 08:03 23205822                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle1/version0.0/bundle.jar
+7f29dd0b3000-7f29dd0b6000 ---p 00000000 00:00 0 
+7f29dd0b6000-7f29dd1b4000 rw-p 00000000 00:00 0 
+7f29dd1b4000-7f29dd1b7000 ---p 00000000 00:00 0 
+7f29dd1b7000-7f29dd2b5000 rw-p 00000000 00:00 0 
+7f29dd2b5000-7f29dd2b8000 ---p 00000000 00:00 0 
+7f29dd2b8000-7f29dd3b6000 rw-p 00000000 00:00 0 
+7f29dd3b6000-7f29dd3b9000 ---p 00000000 00:00 0 
+7f29dd3b9000-7f29dd4b7000 rw-p 00000000 00:00 0 
+7f29dd4b7000-7f29dd4ba000 ---p 00000000 00:00 0 
+7f29dd4ba000-7f29dd5b8000 rw-p 00000000 00:00 0 
+7f29dd5b8000-7f29dd5bb000 ---p 00000000 00:00 0 
+7f29dd5bb000-7f29dd6b9000 rw-p 00000000 00:00 0 
+7f29dd6b9000-7f29dd6bc000 ---p 00000000 00:00 0 
+7f29dd6bc000-7f29dd7ba000 rw-p 00000000 00:00 0 
+7f29dd7ba000-7f29dd7bd000 ---p 00000000 00:00 0 
+7f29dd7bd000-7f29dd8bb000 rw-p 00000000 00:00 0 
+7f29dd8bb000-7f29dd8be000 ---p 00000000 00:00 0 
+7f29dd8be000-7f29dd9bc000 rw-p 00000000 00:00 0 
+7f29dd9bc000-7f29dd9bf000 ---p 00000000 00:00 0 
+7f29dd9bf000-7f29ddabd000 rw-p 00000000 00:00 0 
+7f29ddabd000-7f29ddb0c000 r--s 0095c000 08:03 22285062                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle64/version0.0/bundle.jar (deleted)
+7f29ddb0c000-7f29ddb0d000 r--s 00000000 08:03 22285057                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle63/version0.0/bundle.jar (deleted)
+7f29ddb0d000-7f29ddb11000 r--s 00041000 08:03 22285052                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle62/version0.0/bundle.jar (deleted)
+7f29ddb11000-7f29ddb13000 r--s 0001b000 08:03 22285047                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle61/version0.0/bundle.jar (deleted)
+7f29ddb13000-7f29ddb14000 r--s 00001000 08:03 22285039                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle60/version0.0/bundle.jar (deleted)
+7f29ddb14000-7f29ddb16000 r--s 0001d000 08:03 22285034                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle59/version0.0/bundle.jar (deleted)
+7f29ddb16000-7f29ddb18000 r--s 00014000 08:03 22285027                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle58/version0.0/bundle.jar (deleted)
+7f29ddb18000-7f29ddb20000 r--s 00049000 08:03 22285022                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle57/version0.0/bundle.jar (deleted)
+7f29ddb20000-7f29ddb22000 r--s 0000c000 08:03 22285017                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle56/version0.0/bundle.jar (deleted)
+7f29ddb22000-7f29ddb23000 r--s 00007000 08:03 22285012                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle55/version0.0/bundle.jar (deleted)
+7f29ddb23000-7f29ddb38000 r--s 00177000 08:03 22285007                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle54/version0.0/bundle.jar (deleted)
+7f29ddb38000-7f29ddb39000 r--s 00006000 08:03 22285002                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle53/version0.0/bundle.jar (deleted)
+7f29ddb39000-7f29ddb3d000 r--s 00029000 08:03 22284666                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle52/version0.0/bundle.jar (deleted)
+7f29ddb3d000-7f29ddb44000 r--s 00047000 08:03 22284661                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle51/version0.0/bundle.jar (deleted)
+7f29ddb44000-7f29ddb4c000 r--s 00085000 08:03 22284656                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle50/version0.0/bundle.jar (deleted)
+7f29ddb4c000-7f29ddb54000 r--s 00097000 08:03 22284651                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle49/version0.0/bundle.jar (deleted)
+7f29ddb54000-7f29ddb5c000 r--s 00086000 08:03 22284641                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle48/version0.0/bundle.jar (deleted)
+7f29ddb5c000-7f29ddb61000 r--s 00046000 08:03 22284636                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle47/version0.0/bundle.jar (deleted)
+7f29ddb61000-7f29ddb6a000 r--s 0006f000 08:03 22284627                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle46/version0.0/bundle.jar (deleted)
+7f29ddb6a000-7f29ddb6b000 r--s 0000b000 08:03 22284616                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle45/version0.0/bundle.jar (deleted)
+7f29ddb6b000-7f29ddb72000 r--s 0003a000 08:03 22284610                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle44/version0.0/bundle.jar (deleted)
+7f29ddb72000-7f29ddb76000 r--s 0001d000 08:03 22284605                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle43/version0.0/bundle.jar (deleted)
+7f29ddb76000-7f29ddb78000 r--s 00009000 08:03 22284600                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle42/version0.0/bundle.jar (deleted)
+7f29ddb78000-7f29ddb7d000 r--s 00041000 08:03 22284595                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle41/version0.0/bundle.jar (deleted)
+7f29ddb7d000-7f29ddb84000 r--s 00055000 08:03 22284590                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle40/version0.0/bundle.jar (deleted)
+7f29ddb84000-7f29ddb98000 r--s 001bb000 08:03 22284585                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle39/version0.0/bundle.jar (deleted)
+7f29ddb98000-7f29ddba7000 r--s 00119000 08:03 22284580                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle38/version0.0/bundle.jar (deleted)
+7f29ddba7000-7f29ddba8000 r--s 00009000 08:03 22284575                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle37/version0.0/bundle.jar (deleted)
+7f29ddba8000-7f29ddbaf000 r--s 00029000 08:03 22284570                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle36/version0.0/bundle.jar (deleted)
+7f29ddbaf000-7f29ddbc8000 r--s 00139000 08:03 22284565                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle35/version0.0/bundle.jar (deleted)
+7f29ddbc8000-7f29ddbca000 r--s 00004000 08:03 22284560                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle34/version0.0/bundle.jar (deleted)
+7f29ddbca000-7f29ddbd0000 r--s 00050000 08:03 22284555                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle33/version0.0/bundle.jar (deleted)
+7f29ddbd0000-7f29ddbd5000 r--s 00030000 08:03 22284550                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle32/version0.0/bundle.jar (deleted)
+7f29ddbd5000-7f29ddbd7000 r--s 00007000 08:03 22284544                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle31/version0.0/bundle.jar (deleted)
+7f29ddbd7000-7f29ddbe4000 r--s 000a2000 08:03 22284539                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle30/version0.0/bundle.jar (deleted)
+7f29ddbe4000-7f29ddbe6000 r--s 0000e000 08:03 22284534                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle29/version0.0/bundle.jar (deleted)
+7f29ddbe6000-7f29ddbec000 r--s 0003f000 08:03 22284529                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle28/version0.0/bundle.jar (deleted)
+7f29ddbec000-7f29ddbf0000 r--s 00022000 08:03 22284524                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle27/version0.0/bundle.jar (deleted)
+7f29ddbf0000-7f29ddbf2000 r--s 00012000 08:03 22284519                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle26/version0.0/bundle.jar (deleted)
+7f29ddbf2000-7f29ddbf3000 r--s 00014000 08:03 22284514                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle25/version0.0/bundle.jar (deleted)
+7f29ddbf3000-7f29ddbf5000 r--s 0000e000 08:03 22284509                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle24/version0.0/bundle.jar (deleted)
+7f29ddbf5000-7f29ddbf7000 r--s 00005000 08:03 22284504                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle23/version0.0/bundle.jar (deleted)
+7f29ddbf7000-7f29ddbfd000 r--s 0005b000 08:03 22284499                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle22/version0.0/bundle.jar (deleted)
+7f29ddbfd000-7f29ddc21000 r--s 002df000 08:03 22155848                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle21/version0.0/bundle.jar (deleted)
+7f29ddc21000-7f29ddc23000 r--s 00008000 08:03 22155830                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle20/version0.0/bundle.jar (deleted)
+7f29ddc23000-7f29ddc25000 r--s 00015000 08:03 22155824                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle19/version0.0/bundle.jar (deleted)
+7f29ddc25000-7f29ddc26000 r--s 00004000 08:03 22155818                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle18/version0.0/bundle.jar (deleted)
+7f29ddc26000-7f29ddc2a000 r--s 0004d000 08:03 22155805                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle17/version0.0/bundle.jar (deleted)
+7f29ddc2a000-7f29ddc37000 r--s 00088000 08:03 22155800                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle16/version0.0/bundle.jar (deleted)
+7f29ddc37000-7f29ddc3a000 r--s 00017000 08:03 22155777                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle15/version0.0/bundle.jar (deleted)
+7f29ddc3a000-7f29ddc3d000 r--s 00011000 08:03 22155772                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle14/version0.0/bundle.jar (deleted)
+7f29ddc3d000-7f29ddc3e000 r--s 00004000 08:03 22155767                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle13/version0.0/bundle.jar (deleted)
+7f29ddc3e000-7f29ddc44000 r--s 0005b000 08:03 22155762                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle12/version0.0/bundle.jar (deleted)
+7f29ddc44000-7f29ddc4b000 r--s 00045000 08:03 22155699                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle11/version0.0/bundle.jar (deleted)
+7f29ddc4b000-7f29ddc53000 r--s 00030000 08:03 22155693                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle10/version0.0/bundle.jar (deleted)
+7f29ddc53000-7f29ddc54000 r--s 00011000 08:03 22155686                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle9/version0.0/bundle.jar (deleted)
+7f29ddc54000-7f29ddc55000 r--s 00005000 08:03 22155681                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle8/version0.0/bundle.jar (deleted)
+7f29ddc55000-7f29ddc58000 r--s 00007000 08:03 22155676                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle7/version0.0/bundle.jar (deleted)
+7f29ddc58000-7f29ddc5a000 r--s 00002000 08:03 22155671                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle6/version0.0/bundle.jar (deleted)
+7f29ddc5a000-7f29ddc5c000 r--s 00014000 08:03 22155666                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle5/version0.0/bundle.jar (deleted)
+7f29ddc5c000-7f29ddc61000 r--s 00040000 08:03 22155661                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle4/version0.0/bundle.jar (deleted)
+7f29ddc61000-7f29ddc63000 r--s 0000d000 08:03 22155656                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle3/version0.0/bundle.jar (deleted)
+7f29ddc63000-7f29ddc70000 r--s 000a8000 08:03 22155651                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle2/version0.0/bundle.jar (deleted)
+7f29ddc70000-7f29ddc72000 r--s 00007000 08:03 22153732                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lucee-server/felix-cache/bundle1/version0.0/bundle.jar (deleted)
+7f29ddc72000-7f29ddc75000 ---p 00000000 00:00 0 
+7f29ddc75000-7f29ddd73000 rw-p 00000000 00:00 0 
+7f29ddd73000-7f29ddd76000 ---p 00000000 00:00 0 
+7f29ddd76000-7f29de074000 rw-p 00000000 00:00 0 
+7f29de074000-7f29de077000 ---p 00000000 00:00 0 
+7f29de077000-7f29de175000 rw-p 00000000 00:00 0 
+7f29de175000-7f29de178000 ---p 00000000 00:00 0 
+7f29de178000-7f29de276000 rw-p 00000000 00:00 0 
+7f29de276000-7f29de279000 ---p 00000000 00:00 0 
+7f29de279000-7f29de377000 rw-p 00000000 00:00 0 
+7f29de377000-7f29de37a000 ---p 00000000 00:00 0 
+7f29de37a000-7f29de478000 rw-p 00000000 00:00 0 
+7f29de478000-7f29de47b000 ---p 00000000 00:00 0 
+7f29de47b000-7f29de579000 rw-p 00000000 00:00 0 
+7f29de579000-7f29de57c000 ---p 00000000 00:00 0 
+7f29de57c000-7f29de67a000 rw-p 00000000 00:00 0 
+7f29de67a000-7f29de67b000 r--s 00001000 08:03 23206016                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle22/version0.0/bundle.jar
+7f29de67b000-7f29de67d000 r--s 00002000 08:03 23205986                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle19/version0.0/bundle.jar
+7f29de67d000-7f29de687000 r--s 0006a000 08:03 23205966                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle17/version0.0/bundle.jar
+7f29de687000-7f29de68b000 r--s 00041000 08:03 23205956                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle16/version0.0/bundle.jar
+7f29de68b000-7f29de68d000 r--s 00011000 08:03 23205946                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle15/version0.0/bundle.jar
+7f29de68d000-7f29de691000 r--s 0001d000 08:03 23205936                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle14/version0.0/bundle.jar
+7f29de691000-7f29de692000 r--s 00007000 08:03 23205926                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle13/version0.0/bundle.jar
+7f29de692000-7f29de694000 r--s 00007000 08:03 23205916                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle12/version0.0/bundle.jar
+7f29de694000-7f29de696000 r--s 0018c000 08:03 23205906                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle11/version0.0/bundle.jar
+7f29de696000-7f29de698000 r--s 00008000 08:03 23205896                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle10/version0.0/bundle.jar
+7f29de698000-7f29de6af000 r--s 0011c000 08:03 23205886                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle9/version0.0/bundle.jar
+7f29de6af000-7f29de6b6000 r--s 00261000 08:03 23205876                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle8/version0.0/bundle.jar
+7f29de6b6000-7f29de6b7000 r--s 0000b000 08:03 23205866                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle7/version0.0/bundle.jar
+7f29de6b7000-7f29de6c9000 r--s 00110000 08:03 23205856                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/osgi/env/runtimefw/bundle6/version0.0/bundle.jar
+7f29de6c9000-7f29de7ad000 r--s 00b12000 08:03 20054867                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/runwar-3.8.1-SNAPSHOT.jar
+7f29de7ad000-7f29de7c0000 r--s 000b0000 08:03 20054866                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/bcpkix-jdk15on-1.60.jar
+7f29de7c0000-7f29de7e6000 r--s 00277000 08:03 20054857                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/org.eclipse.jgit-5.3.0.201903130848-r.jar
+7f29de7e6000-7f29de9e6000 rw-p 00000000 00:00 0 
+7f29de9e6000-7f29debe6000 rw-p 00000000 00:00 0 
+7f29debe6000-7f29debe9000 ---p 00000000 00:00 0 
+7f29debe9000-7f29dece7000 rw-p 00000000 00:00 0 
+7f29dece7000-7f29decea000 ---p 00000000 00:00 0 
+7f29decea000-7f29dede8000 rw-p 00000000 00:00 0 
+7f29dede8000-7f29dedeb000 ---p 00000000 00:00 0 
+7f29dedeb000-7f29deee9000 rw-p 00000000 00:00 0 
+7f29deee9000-7f29deeec000 ---p 00000000 00:00 0 
+7f29deeec000-7f29defea000 rw-p 00000000 00:00 0 
+7f29defea000-7f29defed000 ---p 00000000 00:00 0 
+7f29defed000-7f29df0eb000 rw-p 00000000 00:00 0 
+7f29df0eb000-7f29df0ee000 ---p 00000000 00:00 0 
+7f29df0ee000-7f29df1ec000 rw-p 00000000 00:00 0 
+7f29df1ec000-7f29df1ef000 ---p 00000000 00:00 0 
+7f29df1ef000-7f29df2ed000 rw-p 00000000 00:00 0 
+7f29df2ed000-7f29df2f0000 ---p 00000000 00:00 0 
+7f29df2f0000-7f29df3ee000 rw-p 00000000 00:00 0 
+7f29df3ee000-7f29df3f1000 ---p 00000000 00:00 0 
+7f29df3f1000-7f29df4ef000 rw-p 00000000 00:00 0 
+7f29df4ef000-7f29df4f8000 r-xp 00000000 08:02 4086112                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f29df4f8000-7f29df6f7000 ---p 00009000 08:02 4086112                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f29df6f7000-7f29df6f8000 r--p 00008000 08:02 4086112                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f29df6f8000-7f29df6f9000 rw-p 00009000 08:02 4086112                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f29df6f9000-7f29df8f9000 rw-p 00000000 00:00 0 
+7f29df8f9000-7f29df8fa000 ---p 00000000 00:00 0 
+7f29df8fa000-7f29df9fa000 rw-p 00000000 00:00 0 
+7f29df9fa000-7f29df9fd000 ---p 00000000 00:00 0 
+7f29df9fd000-7f29dfafb000 rw-p 00000000 00:00 0 
+7f29dfafb000-7f29dfafc000 ---p 00000000 00:00 0 
+7f29dfafc000-7f29dfaff000 ---p 00000000 00:00 0 
+7f29dfaff000-7f29dfbfc000 rw-p 00000000 00:00 0 
+7f29dfbfc000-7f29dfbfd000 ---p 00000000 00:00 0 
+7f29dfbfd000-7f29dfc00000 ---p 00000000 00:00 0 
+7f29dfc00000-7f29dfcfd000 rw-p 00000000 00:00 0 
+7f29dfcfd000-7f29dfcfe000 ---p 00000000 00:00 0 
+7f29dfcfe000-7f29dfd01000 ---p 00000000 00:00 0 
+7f29dfd01000-7f29dfdfe000 rw-p 00000000 00:00 0 
+7f29dfdfe000-7f29dfdff000 ---p 00000000 00:00 0 
+7f29dfdff000-7f29dfe02000 ---p 00000000 00:00 0 
+7f29dfe02000-7f29dfeff000 rw-p 00000000 00:00 0 
+7f29dfeff000-7f29dff02000 ---p 00000000 00:00 0 
+7f29dff02000-7f29e0000000 rw-p 00000000 00:00 0 
+7f29e0000000-7f29e00e2000 rw-p 00000000 00:00 0 
+7f29e00e2000-7f29e4000000 ---p 00000000 00:00 0 
+7f29e4000000-7f29e4005000 r--s 00040000 08:03 20054865                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/jsch-0.1.54.jar
+7f29e4005000-7f29e400e000 r--s 000a3000 08:03 20054864                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/jline-3.10.0.jar
+7f29e400e000-7f29e4010000 r--s 0000d000 08:03 20054863                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/jcommander-1.47.jar
+7f29e4010000-7f29e4011000 r--s 00010000 08:03 20054862                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/jzlib-1.1.1.jar
+7f29e4011000-7f29e4015000 r--s 00025000 08:03 20054861                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/JavaEWAH-1.1.6.jar
+7f29e4015000-7f29e4027000 r--s 0424e000 08:03 20054859                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/lucee-5.2.9.31.jar
+7f29e4027000-7f29e407f000 r--s 003a7000 08:03 20054807                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/bcprov-jdk15on-1.60.jar
+7f29e407f000-7f29e4087000 r--s 00047000 08:03 20054806                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/bcpg-jdk15on-1.60.jar
+7f29e4087000-7f29e409a000 r--s 00346000 08:02 4086158                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+7f29e409a000-7f29e40ab000 r-xp 00000000 08:02 4086115                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f29e40ab000-7f29e42aa000 ---p 00011000 08:02 4086115                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f29e42aa000-7f29e42ab000 r--p 00010000 08:02 4086115                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f29e42ab000-7f29e42ac000 rw-p 00011000 08:02 4086115                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f29e42ac000-7f29e42c2000 r-xp 00000000 08:02 4086114                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f29e42c2000-7f29e44c1000 ---p 00016000 08:02 4086114                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f29e44c1000-7f29e44c2000 r--p 00015000 08:02 4086114                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f29e44c2000-7f29e44c3000 rw-p 00016000 08:02 4086114                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f29e44c3000-7f29e452d000 r--s 025ff000 08:03 23205797                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/fusionreactor.jar
+7f29e452d000-7f29e4611000 r--s 00b12000 08:03 19662315                   /home/dom/.CommandBox/lib/runwar-3.8.1-SNAPSHOT.jar
+7f29e4611000-7f29e462c000 r--s 001d6000 08:02 4086138                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7f29e462c000-7f29e462f000 ---p 00000000 00:00 0 
+7f29e462f000-7f29e472d000 rw-p 00000000 00:00 0 
+7f29e472d000-7f29e4a0b000 r--p 00000000 08:02 4069759                    /usr/lib/locale/locale-archive
+7f29e4a0b000-7f29e4a0e000 ---p 00000000 00:00 0 
+7f29e4a0e000-7f29e4b0c000 rw-p 00000000 00:00 0 
+7f29e4b0c000-7f29e4b0f000 ---p 00000000 00:00 0 
+7f29e4b0f000-7f29e4c0d000 rw-p 00000000 00:00 0 
+7f29e4c0d000-7f29e4c0e000 ---p 00000000 00:00 0 
+7f29e4c0e000-7f29e6829000 rw-p 00000000 00:00 0 
+7f29e6829000-7f29e69f9000 r--s 03c5c000 08:02 4086159                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7f29e69f9000-7f29e7a3b000 rw-p 00000000 00:00 0 
+7f29e7a3b000-7f29e7a3c000 ---p 00000000 00:00 0 
+7f29e7a3c000-7f29e7b3c000 rw-p 00000000 00:00 0 
+7f29e7b3c000-7f29e7b3d000 ---p 00000000 00:00 0 
+7f29e7b3d000-7f29e7c3d000 rw-p 00000000 00:00 0 
+7f29e7c3d000-7f29e7c3e000 ---p 00000000 00:00 0 
+7f29e7c3e000-7f29e7d3e000 rw-p 00000000 00:00 0 
+7f29e7d3e000-7f29e7d3f000 ---p 00000000 00:00 0 
+7f29e7d3f000-7f29e7e3f000 rw-p 00000000 00:00 0 
+7f29e7e3f000-7f29e7e40000 ---p 00000000 00:00 0 
+7f29e7e40000-7f29e804b000 rw-p 00000000 00:00 0 
+7f29e804b000-7f29e8473000 ---p 00000000 00:00 0 
+7f29e8473000-7f29e857e000 rw-p 00000000 00:00 0 
+7f29e857e000-7f29e89a5000 ---p 00000000 00:00 0 
+7f29e89a5000-7f29e8a54000 rw-p 00000000 00:00 0 
+7f29e8a54000-7f29e8c3f000 ---p 00000000 00:00 0 
+7f29e8c3f000-7f29e8d5a000 rw-p 00000000 00:00 0 
+7f29e8d5a000-7f29e9000000 ---p 00000000 00:00 0 
+7f29e9000000-7f29ed650000 rwxp 00000000 00:00 0 
+7f29ed650000-7f29f8000000 ---p 00000000 00:00 0 
+7f29f8000000-7f29f916e000 rw-p 00000000 00:00 0 
+7f29f916e000-7f29fc000000 ---p 00000000 00:00 0 
+7f29fc000000-7f29fc002000 r--s 0000e000 08:03 20054855                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/activation-1.1.jar
+7f29fc002000-7f29fc007000 r--s 002f9000 08:02 4086125                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar
+7f29fc007000-7f29fc010000 r--s 00029000 08:03 23205627                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/fr-management.jar
+7f29fc010000-7f29fc05e000 rw-p 00000000 00:00 0 
+7f29fc05e000-7f29fc05f000 ---p 00000000 00:00 0 
+7f29fc05f000-7f29fc15f000 rw-p 00000000 00:00 0 
+7f29fc15f000-7f29fc160000 ---p 00000000 00:00 0 
+7f29fc160000-7f29fc260000 rw-p 00000000 00:00 0 
+7f29fc260000-7f29fc261000 ---p 00000000 00:00 0 
+7f29fc261000-7f29fc361000 rw-p 00000000 00:00 0 
+7f29fc361000-7f29fc369000 r-xp 00000000 08:02 4086122                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f29fc369000-7f29fc568000 ---p 00008000 08:02 4086122                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f29fc568000-7f29fc569000 r--p 00007000 08:02 4086122                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f29fc569000-7f29fc56a000 rw-p 00008000 08:02 4086122                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f29fc56a000-7f29fc575000 r-xp 00000000 08:02 5903311                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f29fc575000-7f29fc774000 ---p 0000b000 08:02 5903311                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f29fc774000-7f29fc775000 r--p 0000a000 08:02 5903311                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f29fc775000-7f29fc776000 rw-p 0000b000 08:02 5903311                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f29fc776000-7f29fc77c000 rw-p 00000000 00:00 0 
+7f29fc77c000-7f29fc793000 r-xp 00000000 08:02 5903305                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f29fc793000-7f29fc992000 ---p 00017000 08:02 5903305                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f29fc992000-7f29fc993000 r--p 00016000 08:02 5903305                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f29fc993000-7f29fc994000 rw-p 00017000 08:02 5903305                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f29fc994000-7f29fc996000 rw-p 00000000 00:00 0 
+7f29fc996000-7f29fc9a1000 r-xp 00000000 08:02 5903322                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f29fc9a1000-7f29fcba0000 ---p 0000b000 08:02 5903322                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f29fcba0000-7f29fcba1000 r--p 0000a000 08:02 5903322                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f29fcba1000-7f29fcba2000 rw-p 0000b000 08:02 5903322                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f29fcba2000-7f29fcbaa000 r-xp 00000000 08:02 5903307                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f29fcbaa000-7f29fcdaa000 ---p 00008000 08:02 5903307                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f29fcdaa000-7f29fcdab000 r--p 00008000 08:02 5903307                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f29fcdab000-7f29fcdac000 rw-p 00009000 08:02 5903307                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f29fcdac000-7f29fce9b000 r-xp 00000000 08:03 23205790                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so
+7f29fce9b000-7f29fd09a000 ---p 000ef000 08:03 23205790                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so
+7f29fd09a000-7f29fd0a1000 r--p 000ee000 08:03 23205790                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so
+7f29fd0a1000-7f29fd0a3000 rw-p 000f5000 08:03 23205790                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so
+7f29fd0a3000-7f29fd0b7000 rw-p 00000000 00:00 0 
+7f29fd0b7000-7f29fd0c1000 r-xp 00000000 08:02 4086098                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7f29fd0c1000-7f29fd2c0000 ---p 0000a000 08:02 4086098                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7f29fd2c0000-7f29fd2c1000 r--p 00009000 08:02 4086098                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7f29fd2c1000-7f29fd2c2000 rw-p 0000a000 08:02 4086098                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libinstrument.so
+7f29fd2c2000-7f29fd2ec000 r-xp 00000000 08:02 4086103                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f29fd2ec000-7f29fd4eb000 ---p 0002a000 08:02 4086103                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f29fd4eb000-7f29fd4ec000 r--p 00029000 08:02 4086103                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f29fd4ec000-7f29fd4ee000 rw-p 0002a000 08:02 4086103                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f29fd4ee000-7f29fd4fe000 r-xp 00000000 08:02 4086121                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f29fd4fe000-7f29fd6fd000 ---p 00010000 08:02 4086121                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f29fd6fd000-7f29fd6ff000 r--p 0000f000 08:02 4086121                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f29fd6ff000-7f29fd700000 rw-p 00011000 08:02 4086121                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f29fd700000-7f29fd707000 r-xp 00000000 08:02 5903362                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f29fd707000-7f29fd906000 ---p 00007000 08:02 5903362                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f29fd906000-7f29fd907000 r--p 00006000 08:02 5903362                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f29fd907000-7f29fd908000 rw-p 00007000 08:02 5903362                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f29fd908000-7f29fd91f000 r-xp 00000000 08:02 5903258                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f29fd91f000-7f29fdb1e000 ---p 00017000 08:02 5903258                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f29fdb1e000-7f29fdb1f000 r--p 00016000 08:02 5903258                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f29fdb1f000-7f29fdb20000 rw-p 00017000 08:02 5903258                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f29fdb20000-7f29fdcbd000 r-xp 00000000 08:02 5903284                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f29fdcbd000-7f29fdebc000 ---p 0019d000 08:02 5903284                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f29fdebc000-7f29fdebd000 r--p 0019c000 08:02 5903284                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f29fdebd000-7f29fdebe000 rw-p 0019d000 08:02 5903284                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f29fdebe000-7f29fe037000 r-xp 00000000 08:02 4072074                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f29fe037000-7f29fe237000 ---p 00179000 08:02 4072074                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f29fe237000-7f29fe241000 r--p 00179000 08:02 4072074                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f29fe241000-7f29fe243000 rw-p 00183000 08:02 4072074                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+7f29fe243000-7f29fe247000 rw-p 00000000 00:00 0 
+7f29fe247000-7f29feee6000 r-xp 00000000 08:02 4086124                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f29feee6000-7f29ff0e6000 ---p 00c9f000 08:02 4086124                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f29ff0e6000-7f29ff17a000 r--p 00c9f000 08:02 4086124                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f29ff17a000-7f29ff1a3000 rw-p 00d33000 08:02 4086124                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f29ff1a3000-7f29ff1d3000 rw-p 00000000 00:00 0 
+7f29ff1d3000-7f29ff1ed000 r-xp 00000000 08:02 5903354                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f29ff1ed000-7f29ff3ec000 ---p 0001a000 08:02 5903354                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f29ff3ec000-7f29ff3ed000 r--p 00019000 08:02 5903354                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f29ff3ed000-7f29ff3ee000 rw-p 0001a000 08:02 5903354                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f29ff3ee000-7f29ff3f2000 rw-p 00000000 00:00 0 
+7f29ff3f2000-7f29ff3f5000 r-xp 00000000 08:02 5903244                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f29ff3f5000-7f29ff5f4000 ---p 00003000 08:02 5903244                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f29ff5f4000-7f29ff5f5000 r--p 00002000 08:02 5903244                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f29ff5f5000-7f29ff5f6000 rw-p 00003000 08:02 5903244                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f29ff5f6000-7f29ff612000 r-xp 00000000 08:02 5903395                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f29ff612000-7f29ff811000 ---p 0001c000 08:02 5903395                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f29ff811000-7f29ff812000 r--p 0001b000 08:02 5903395                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f29ff812000-7f29ff813000 rw-p 0001c000 08:02 5903395                    /lib/x86_64-linux-gnu/libz.so.1.2.11
+7f29ff813000-7f29ff9fa000 r-xp 00000000 08:02 5903221                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f29ff9fa000-7f29ffbfa000 ---p 001e7000 08:02 5903221                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f29ffbfa000-7f29ffbfe000 r--p 001e7000 08:02 5903221                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f29ffbfe000-7f29ffc00000 rw-p 001eb000 08:02 5903221                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f29ffc00000-7f29ffc04000 rw-p 00000000 00:00 0 
+7f29ffc04000-7f29ffc12000 r-xp 00000000 08:02 4086089                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f29ffc12000-7f29ffe11000 ---p 0000e000 08:02 4086089                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f29ffe11000-7f29ffe12000 r--p 0000d000 08:02 4086089                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f29ffe12000-7f29ffe13000 rw-p 0000e000 08:02 4086089                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f29ffe13000-7f29ffe3a000 r-xp 00000000 08:02 5903193                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f29ffe3a000-7f29ffe3b000 r--s 00000000 08:03 20054860                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/ortus-jgit.jar
+7f29ffe3b000-7f29ffe3c000 r--s 00048000 08:03 20054808                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/luceecli.jar
+7f29ffe3c000-7f29ffe43000 r--s 00072000 08:03 20054858                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/mail-1.4.4.jar
+7f29ffe43000-7f29ffe45000 r--s 00003000 08:03 20054856                   /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/lib/json-smart-mini-1.0.8.jar
+7f29ffe45000-7f29ffe4a000 r--s 000a3000 08:02 4086154                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+7f29ffe4a000-7f29ffe4b000 r--p 00000000 08:02 4854003                    /usr/share/locale-langpack/en_GB/LC_MESSAGES/libc.mo
+7f29ffe4b000-7f29ffe4c000 r--s 00010000 08:02 4086142                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f29ffe4c000-7f29ffe4d000 r--s 0000d000 08:02 4086139                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7f29ffe4d000-7f29ffe4e000 r--s 0000a000 08:02 4086136                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7f29ffe4e000-7f29ffe51000 r--s 00039000 08:02 4086141                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f29ffe51000-7f29ffe54000 r--s 0000f000 08:02 4086135                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f29ffe54000-7f29ffe6f000 r--s 00394000 08:02 4086133                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7f29ffe6f000-7f29fff18000 rw-p 00000000 00:00 0 
+7f29fff18000-7f29fff19000 ---p 00000000 00:00 0 
+7f29fff19000-7f29fff1c000 ---p 00000000 00:00 0 
+7f29fff1c000-7f2a0001b000 rw-p 00000000 00:00 0 
+7f2a0001b000-7f2a0001d000 r--s 00007000 08:02 4631957                    /usr/share/java/java-atk-wrapper.jar
+7f2a0001d000-7f2a00022000 r--s 0003c000 08:02 4086140                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f2a00022000-7f2a0002c000 r--s 00116000 08:02 4086137                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7f2a0002c000-7f2a0002e000 r--s 00001000 08:02 4086134                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f2a0002e000-7f2a00036000 rw-s 00000000 08:02 3424074                    /tmp/hsperfdata_dom/18872
+7f2a00036000-7f2a00037000 rw-p 00000000 00:00 0 
+7f2a00037000-7f2a00038000 r--p 00000000 00:00 0 
+7f2a00038000-7f2a0003a000 rw-p 00000000 00:00 0 
+7f2a0003a000-7f2a0003b000 r--p 00027000 08:02 5903193                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f2a0003b000-7f2a0003c000 rw-p 00028000 08:02 5903193                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f2a0003c000-7f2a0003d000 rw-p 00000000 00:00 0 
+7ffcc05ae000-7ffcc05d0000 rw-p 00000000 00:00 0                          [stack]
+7ffcc05da000-7ffcc05dd000 r--p 00000000 00:00 0                          [vvar]
+7ffcc05dd000-7ffcc05df000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -javaagent:/home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/fusionreactor.jar=name=presidedocslocalserver,address=127.0.0.1:46537 -Dfrlicense=CLOUD-UDSTF-0CFEI-WJUCF-JQHAR-VPRAR -Dfr.application.name=presidedocslocalserver -agentpath:/home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so 
+java_command: /home/dom/.CommandBox/lib/runwar-3.8.1-SNAPSHOT.jar --host 127.0.0.1 40567 --processname presidedocslocalserver [lucee 5.2.9+31] --log-dir /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/logs --server-name presidedocslocalserver --tray-icon /home/dom/code/Preside-Documentation/server/trayicon_hires.png --tray-config /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/trayOptions.json --tray-enable false --directoryindex false --timeout 240 --proxy-peeraddress true --cookie-secure false --cookie-httponly false --servlet-rest-mappings __DISABLED__ --gzip-enable true --cfengine-name lucee --jvm-args=-javaagent:/home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/fusionreactor.jar=name=presidedocslocalserver,address=127.0.0.1:46537;-Dfrlicense=CLOUD-UDSTF-0CFEI-WJUCF-JQHAR-VPRAR;-Dfr.application.name=presidedocslocalserver;-agentpath:/home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/libfrjvmti_x64.so -war /home/dom/code/Preside-Documentation/server/ --web-xml-path /home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/WEB-INF/web.xml --http-enable true --ssl-enable false --ajp-enable false --open-browser true --open-url http://127.0.0.1:4141 4141 --urlrewrite-enable true --urlrewrite-file /home/dom/code/Preside-Documentation/server/urlrewrite.xml --background false --port 4141 --stop-port 40567
+java_class_path (initial): /home/dom/.CommandBox/lib/runwar-3.8.1-SNAPSHOT.jar:/home/dom/.CommandBox/server/6EFF1E6C9B90A624D815307CC98E37ED-presidedocslocalserver/lucee-5.2.9.31/fusionreactor/fusionreactor.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=/usr/local/bin/box
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xab92f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xab92f0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8ee560], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x8ee560], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8ee560], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8ee410], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_IGN, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: [libjvm.so+0x8eea80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8eea80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=19.2
+DISTRIB_CODENAME=tina
+DISTRIB_DESCRIPTION="Linux Mint 19.2 Tina"
+
+uname:Linux 4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 63427, NOFILE 4096, AS infinity
+load average:1.07 0.61 0.70
+
+/proc/meminfo:
+MemTotal:       16344440 kB
+MemFree:         1920008 kB
+MemAvailable:    4618440 kB
+Buffers:          154008 kB
+Cached:          3082948 kB
+SwapCached:        11360 kB
+Active:         11092752 kB
+Inactive:        2499968 kB
+Active(anon):    9464156 kB
+Inactive(anon):  1341180 kB
+Active(file):    1628596 kB
+Inactive(file):  1158788 kB
+Unevictable:          80 kB
+Mlocked:              80 kB
+SwapTotal:       2097148 kB
+SwapFree:        1771928 kB
+Dirty:             57384 kB
+Writeback:             0 kB
+AnonPages:      10351260 kB
+Mapped:          1314772 kB
+Shmem:            450400 kB
+Slab:             442220 kB
+SReclaimable:     251888 kB
+SUnreclaim:       190332 kB
+KernelStack:       24928 kB
+PageTables:        96792 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    10269368 kB
+Committed_AS:   19680188 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:     1988516 kB
+DirectMap2M:    14708736 kB
+DirectMap1G:           0 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-7
+cpu_memory_nodes: 0
+active_processor_count: 8
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 13915803648
+memory_max_usage_in_bytes: 11199410176
+
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1518.839
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1301.568
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1319.251
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1204.461
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1029.140
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1202.127
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1241.363
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 158
+model name	: Intel(R) Core(TM) i7-7820HQ CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0xb4
+cpu MHz		: 1295.728
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 5808.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16344440k(1920008k free), swap 2097148k(1771928k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.222-b10) for linux-amd64 JRE (1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10), built on Jul 18 2019 18:52:48 by "buildd" with gcc 7.4.0
+
+time: Mon Sep  2 16:29:36 2019
+timezone: BST
+elapsed time: 367696 seconds (4d 6h 8m 16s)
+
