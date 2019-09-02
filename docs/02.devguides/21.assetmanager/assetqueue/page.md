@@ -20,7 +20,7 @@ settings.features.assetQueueHeartBeat.enabled = true; // will not be enabled if 
 
 You can configure the behaviour of the asset queue "heartbeat" by setting the `settings.assetmanager.queue` struct:
 
-```
+```luceescript
 settings.assetmanager.queue = {
 	  concurrency = 8   // number of threads that will concurrenctly run and process the queue (default: 1)
 	, batchSize   = 100 // number of assets to be processed by a thread before pausing for ~2 seconds (default: 100)
