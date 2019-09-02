@@ -48,7 +48,7 @@
 
 		matches = searchIndex.filter( function( item ) {
 			var titleLen = item.text.length
-			  , match, nextMatch, i, highlighted;
+			  , match, nextMatch, i, highlighted, title;
 
 			for( i=0; i < titleLen; i++ ){
 				nextMatch = item.text.substr(i).match( reg.expr );
@@ -56,14 +56,16 @@
 				if ( !nextMatch ) {
 					break;
 				} else if ( !match || nextMatch[0].length < match[0].length ) {
-					match = nextMatch;
+					match       = nextMatch;
+					title       = item.display;
 					highlighted = item.text.substr(0,i) + item.text.substr(i).replace( reg.expr, reg.replace );
 				}
 			}
 
 			if ( match ) {
-				item.score = match[0].length - input.length;
+				item.score     = match[0].length - input.length;
 				item.highlight = highlighted;
+				item.title     = title;
 
 				return true;
 			}
@@ -83,8 +85,6 @@
 		};
 		fulltextitem.display = fulltextitem.text;
 		matches.unshift( fulltextitem );
-
-		console.log( matches );
 
 		return matches;
 	}
@@ -107,7 +107,13 @@
 	};
 
 	renderSuggestion = function( item ) {
-		return Mustache.render( '<div><i class="fa fa-fw fa-{{icon}}"></i> {{{highlight}}}</div>', item );
+		return Mustache.render(
+			'<div>' +
+				'<p style="margin: 0"><i class="fa fa-fw fa-{{icon}}"></i><strong> {{{title}}} </strong></p>' +
+				'<p style="margin: -2px 0 6px 26px;line-height:1.1em;"><small><i> {{{highlight}}} </i></small></p>' +
+			'</div>'
+			, item
+			);
 	};
 
 	itemSelectedHandler = function( item ) {

@@ -95,6 +95,20 @@ component {
 					icon = "file-o";
 			}
 
+			var subHeaders = reMatchNoCase( "(##{2,6}[a-zA-Z0-9)(.:\"" ]+)", page.getBody() );
+
+			for( subHeader in subHeaders ) {
+				if( len(subHeader) > 3 ) {
+					searchIndex.append( {
+						  "value"   = page.getPath() & ".html"
+						, "display" = page.getTitle()
+						, "text"    = HtmlEditFormat( trim( reReplace( subHeader, '##', '', 'all' ) ) )
+						, "type"    = page.getPageType()
+						, "icon"    = icon
+					} );
+				}
+			}
+
 			searchIndex.append( {
 				  "value"   = page.getPath() & ".html"
 				, "display" = page.getTitle()
