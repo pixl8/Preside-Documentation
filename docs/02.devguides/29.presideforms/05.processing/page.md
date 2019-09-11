@@ -17,7 +17,7 @@ public void function myHandlerAction( event, rc, prc ) {
 		var persist = formData;
 		persist.validationResult = validationResult;
 
-		setNextEvent( 
+		setNextEvent(
 			  url           = myEditViewUrl
 			, persistStruct = persist
 		);
@@ -75,3 +75,49 @@ var validationResult = validateForms();
 ```
 
 See [[presideforms-validation]] for more details of how the [[validation-framework]] is integrated with the form system.
+
+
+## Auto-trimming submitted values
+
+As of 10.11.0, it is possible to configure form submissions so all data returned by `event.getCollectionForForm()` is automatically stripped of leading and trailing whitespace. Application-wide configuration is set in `Config.cfc`:
+
+```luceescript
+// default settings in core Config.cfc
+settings.autoTrimFormSubmissions = { admin=false, frontend=false };
+```
+
+By default, this is turned off for both admin and front-end applications, to maintain the existing behaviour. However, you can enable these in your own application's `Config.cfc`:
+
+```luceescript
+// This will auto-trim all submissions via the front-end of the website
+settings.autoTrimFormSubmissions.frontend = true;
+```
+
+Your application can also override these settings on an individual basis, by specifying an `autoTrim` argument to `event.getCollectionForForm()`. For example:
+
+```luceescript
+var formData = event.getCollectionForForm( formName="my.form", autoTrim=true );
+```
+
+This will auto-trim the submitted data, even if the application default is not to do so. The reverse also applies: you may set `autoTrim=false` even if it is turned on for the application as a whole.
+
+Finally, you can configure this on a per-property basis, either in your object definition or in your form definition. A property with an `autoTrim` setting will *always* obey that setting, regardless of what is defined in the application or in `event.getCollectionForForm()`. For example:
+
+```luceescript
+component {
+	property name="a_field_with_preserved_spaces" type="string" dbtype="varchar" autoTrim=false;
+}
+```
+
+or:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab>
+		<fieldset>
+			<field name="always_trim_this_field" autoTrim="true" />
+		</fieldset>
+	</tab>
+</form>
+```
