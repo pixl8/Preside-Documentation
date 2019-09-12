@@ -769,6 +769,31 @@ component {
 }
 ```
 
+#### Default filters
+
+**As of 10.11.0**, developers can use **saved filters** as default filters. Default filters are filters that will be **automatically** applied to **selectData()**.
+
+##### Using default filters
+
+Default filters can be applied by passing a list of saved filters to the `@defaultFilters` annotations in the object file. For example:
+
+```luceescript
+/**
+ * @defaultFilters publishedStuff,approvedStuff
+ */
+component {
+    // ...
+}
+```
+
+##### Ignoring default filters
+
+In case of needing to ignore the default filters, developers need to pass an array of default filters that wished to be ignored to `ignoreDefaultFilters` argument in their `selectData()`. For example:
+
+```luceescript
+allRecords = recordObject.selectData( ignoreDefaultFilters = [ "publishedStuff", "approvedStuff" ] );
+```
+
 ### Making use of relationships
 
 As seen in the examples above, you can use a special field syntax to reference properties in objects that are related to the object that you are selecting data from / updating data on. When you do this, the service layer will automatically create the necessary SQL joins for you.
