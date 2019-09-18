@@ -18,7 +18,7 @@ Both methods also require that you have an empty test database accessible to the
 Host     : localhost
 Port     : 3306
 DB Name  : preside_test
-User     : travis
+User     : root
 Password : (empty)
 ```
 
@@ -34,6 +34,6 @@ PRESIDETEST_DB_PASSWORD
 
 ## Be patient
 
-On my well spec'd laptop, the full test suite takes around two minutes to complete. Expect for the suite to take a long time.
+On my well spec'd laptop, the full test suite takes around five minutes to complete. Expect for the suite to take a long time.
 
 >>>>>> Use the Web browser based test suite runner to be able to pick and choose which tests to run, this will make a huge difference when focusing on a particular area of development.
