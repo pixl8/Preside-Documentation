@@ -472,6 +472,20 @@ As well as controlling the automatically created pivot table name with "relatedV
 
 >>>>>> If you have multiple many-to-many relationships between the same two objects, you will **need** to use the `relatedVia` attribute to ensure that a different pivot table is created for each context.
 
+#### Subquery relationships with "SelectData Views"
+
+In **10.11.0** the concept of [[select-data-views]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name. 
+
+They can be used in relationship helper properties and result in subqueries being created when querying them. The syntax is the same as that of a `one-to-many` relationship:
+
+```
+component {
+    property name="active_posts" relationship="select-data-view" relatedTo="activePosts" relationshipKey="blog_category";
+}
+```
+
+See [[select-data-views]] for more.
+
 ### Defining indexes and unique constraints
 
 The Preside Object system allows you to define database indexes on your fields using the `indexes` and `uniqueindexes` attributes. The attributes expect a comma separated list of index definitions. An index definition can be either an index name or combination of index name and field position, separated by a pipe character. For example:
