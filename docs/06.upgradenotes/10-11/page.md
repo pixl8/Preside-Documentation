@@ -15,7 +15,7 @@ assetManagerService.editAsset( id=asset.id, data={ file_name=myGeneratedFileName
 
 ## Asset queue
 
-10.11.0 introduced the concept of the [[assetqueue|Asset processing queue]] however it is disabled by default. We highly encourage you to enable it and test as early as possible. See the full guide: [[assetqueue]].
+10.11.0 introduced the concept of the [[enabling-asset-queue|Asset processing queue]] however it is disabled by default. We highly encourage you to enable it and test as early as possible. See the full guide: [[enabling-asset-queue]].
 
 ## Cache configurations
 
