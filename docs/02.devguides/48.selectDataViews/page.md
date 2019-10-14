@@ -19,8 +19,9 @@ component {
 
     private struct function activeBlogPosts( event, rc, prc ) {
         return {
-              objectName = "blog_post"
-            , filter     = { active = true }
+              objectName   = "blog_post"
+            , filter       = { active = true }
+            , selectFields = [ "id", "title", "category" ]
         };
     }
 
