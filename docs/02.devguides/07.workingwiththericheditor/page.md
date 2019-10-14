@@ -23,12 +23,19 @@ public void function configure() {
 
     // default settings
     settings.ckeditor.defaults = {
-          width       = "auto"                                // default width of the editor, in pixels if numeric
-        , minHeight   = "auto"                                // default height of the editor, in pixels if numeric
-        , maxHeight   = 600                                   // maximum autogrow height of the editor, in pixels if numeric
-        , toolbar     = "full"                                // default toolbar set, see below
-        , stylesheets = [ "/specific/richeditor/", "/core/" ] // array of stylesheets to be included in editor body
-        , configFile  = "/ckeditorExtensions/config.js"       // path is relative to the compiled assets folder
+          stylesheets           = [ "/css/admin/specific/richeditor/" ] // array of stylesheets to be included in editor body
+        , configFile            = "/ckeditorExtensions/config.js"       // path is relative to the compiled assets folder
+        , width                 = "auto"                                // default width of the editor, in pixels if numeric
+        , minHeight             = 0                                     // minimum height of the editor, in pixels if numeric
+        , maxHeight             = 300                                   // maximum autogrow height of the editor, in pixels if numeric
+        , toolbar               = "full"                                // default toolbar set, see below
+        , autoParagraph         = false                                 // should single-line content be wrapped in a <p> element
+        , extraAllowedContent   = "img dl dt dd"                        // additional elements allowed in the editor (will not be stripped from source)
+        , pasteFromWordDisallow = [                                     // elements to be stripped when pasting from Word
+              "span"  // Strip all span elements
+            , "*(*)"  // Strip all classes
+            , "*{*}"  // Strip all inline-styles
+          ]
     };
 
     // toolbar sets, see further documentation below
@@ -226,14 +233,14 @@ component {
 
 #### Link Picker categories
 
-Link picker categories can be applied to a richeditor instance to customize the link types that appear in the link picker. For example, you may have a richeditor for a wiki page that requires only a custom "Wiki" link type, and not the others. 
+Link picker categories can be applied to a richeditor instance to customize the link types that appear in the link picker. For example, you may have a richeditor for a wiki page that requires only a custom "Wiki" link type, and not the others.
 
 Link picker categories are defined as a struct at `settings.ckeditor.linkPicker`. Each key is the id of a category and is defined as a struct with a single `types` key, an array of Link types.
 
 The default Preside config defines a default category:
 
 ```luceescript
-settings.ckeditor.linkPicker.default = { 
+settings.ckeditor.linkPicker.default = {
     types = [ "sitetreelink", "url", "email", "asset", "anchor" ]
 }
 ```
