@@ -127,7 +127,7 @@ The stylesheets configuration effects how content within the editor is displayed
 Default stylesheets are configured as an array of stylesheet includes (see Config.cfc example above). Each item in the array will be expanded as a [Sticker](https://github.com/pixl8/sticker) include resource. For example:
 
 ```luceescript
-ckeditor.defaults.stylesheets = [ "/specific/richeditor/", "/core/", "bootstrap-css" ];
+settings.ckeditor.defaults.stylesheets = [ "/specific/richeditor/", "/core/", "bootstrap-css" ];
 ```
 
 #### Specifying non-default stylesheets for form fields
@@ -150,7 +150,7 @@ You can define specific stylesheets for individual form controls by supplying a 
 For the most flexible configuration tweaking, you can define your own CKEditor `config.js` file:
 
 ```js
-ckeditor.defaults.configFile = "/path/to/my/custom/config/file.js"; // relative to your root assets folder
+settings.ckeditor.defaults.configFile = "/path/to/my/custom/config/file.js"; // relative to your root assets folder
 ```
 
 You can also define this inline:
