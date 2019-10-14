@@ -472,6 +472,20 @@ As well as controlling the automatically created pivot table name with "relatedV
 
 >>>>>> If you have multiple many-to-many relationships between the same two objects, you will **need** to use the `relatedVia` attribute to ensure that a different pivot table is created for each context.
 
+#### Subquery relationships with "SelectData Views"
+
+In **10.11.0** the concept of [[select-data-views]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name. 
+
+They can be used in relationship helper properties and result in subqueries being created when querying them. The syntax is the same as that of a `one-to-many` relationship:
+
+```
+component {
+    property name="active_posts" relationship="select-data-view" relatedTo="activePosts" relationshipKey="blog_category";
+}
+```
+
+See [[select-data-views]] for more.
+
 ### Defining indexes and unique constraints
 
 The Preside Object system allows you to define database indexes on your fields using the `indexes` and `uniqueindexes` attributes. The attributes expect a comma separated list of index definitions. An index definition can be either an index name or combination of index name and field position, separated by a pipe character. For example:
@@ -662,11 +676,11 @@ inner join  pobj_tag      as tag      on tag.id      = category.tag
 
 >>> The funky looking `category$tag.label` is expressing a field selection across related objects - in this case **news** -> **category** -> **tag**. See relationships, below, for full details.
 
-#### Filtering data
+### Filtering data
 
 All but the **insertData()** methods accept a data filter to either refine the returned recordset or the records to be updated / deleted. The API provides two arguments for filtering, `filter` and `filterParams`. Depending on the type of filtering you need, the `filterParams` argument will be optional.
 
-##### Simple filtering
+#### Simple filtering
 
 A simple filter consists of one or more strict equality checks, all of which must be true. This can be expressed as a simple CFML structure; the structure keys represent the object fields; their values represent the expected record values:
 
@@ -679,7 +693,7 @@ records = newsObject.selectData( filter={
 
 >>> The funky looking `category$tag.label` is expressing a filter across related objects - in this case **news** -> **category** -> **tag**. We are filtering news items whos category is tagged with a tag whose label field = "red".
 
-##### Complex filters
+#### Complex filters
 
 More complex filters can be achieved with a plain SQL filter combined with filter params to make use of parametized SQL statements:
 
@@ -697,7 +711,104 @@ records = newsObject.selectData(
 
 >>> Notice that all but the *daysOld* filter param do not specify a datatype. This is because the parameters can be mapped to fields on the object/s and their data types derived from there. The *daysOld* filter has no field mapping and so its data type must also be defined here.
 
-#### Making use of relationships
+#### Multiple filters
+
+In addition to the `filter` and `filterParams` arguments, you can also make use of an `extraFilters` argument that allows you to pass an array of structs, each with a `filter` and optional `filterParams` key. All filters will be combined using a logical AND:
+
+```luceescript
+records = newsObject.selectData(
+    extraFilters = [{ 
+          filter = { active=true } 
+    },{
+          filter       = "category != :category and DateDiff( publishdate, :publishdate ) > :daysold and category$tag.label = :category$tag.label"
+        , filterParams = {
+               category             = chosenCategory
+             , publishdate          = publishDateFilter
+             , "category$tag.label" = "red"
+             , daysOld              = { type="integer", value=3 }
+          }
+
+    } ]
+);
+```
+
+#### Pre-saved filters
+
+Developers are able to define named filters that can be passed to methods in an array using the `savedFilters` argument, for example:
+
+```luceescript
+records = newsObject.selectData( savedFilters = [ "activeCategories" ] );
+```
+
+These filters can be defined either in your application's `Config.cfc` file or, **as of 10.11.0**, by implementing a convention based handler. In either case, the named filter should resolve to a _struct_ with `filter` and `filterParams` keys that follow the same rules documented above.
+
+##### Defining saved filters in Config.cfc
+
+A saved filter is defined using the `settings.filters` struct. A filter can either be a struct, with `filter` and optional `filterParams` keys, _or_ an inline function that returns a struct:
+
+```luceescript
+settings.filters.activeCategories = { 
+      filter       = "category.active = :category.active and category.pub_date > Now()"
+    , filterParams = { "category.active"=true }
+};
+
+// or:
+
+settings.filters.activeCategories = function( struct args={}, cbController ) {
+    return cbController.getWirebox.getInstance( "categoriesService" ).getActiveCategoriesFilter();
+}
+```
+
+##### Defining saved filters using handlers
+
+**As of 10.11.0**, these filters can be defined by _convention_ by implementing a private coldbox handler at `DataFilters.filterName`. For example, to implement a `activeCategories` filter:
+
+```luceescript
+// /handlers/DataFilters.cfc
+component {
+
+    property name="categoriesService" inject="categoriesService";
+
+    private struct function activeCategories( event, rc, prc, args={} ) {
+        return categoriesService.getActiveCategoriesFilter();
+
+        // or
+
+        return { 
+              filter       = "category.active = :category.active and category.pub_date > :category.pub_date"
+            , filterParams = { "category.active"=true, "category.pub_date"=Now() }
+        }
+    }
+
+}
+```
+
+#### Default filters
+
+**As of 10.11.0**, developers can use **saved filters** as default filters. Default filters are filters that will be **automatically** applied to **selectData()**.
+
+##### Using default filters
+
+Default filters can be applied by passing a list of saved filters to the `@defaultFilters` annotations in the object file. For example:
+
+```luceescript
+/**
+ * @defaultFilters publishedStuff,approvedStuff
+ */
+component {
+    // ...
+}
+```
+
+##### Ignoring default filters
+
+In case of needing to ignore the default filters, developers need to pass an array of default filters that wished to be ignored to `ignoreDefaultFilters` argument in their `selectData()`. For example:
+
+```luceescript
+allRecords = recordObject.selectData( ignoreDefaultFilters = [ "publishedStuff", "approvedStuff" ] );
+```
+
+### Making use of relationships
 
 As seen in the examples above, you can use a special field syntax to reference properties in objects that are related to the object that you are selecting data from / updating data on. When you do this, the service layer will automatically create the necessary SQL joins for you.
 
@@ -731,7 +842,7 @@ component {
 }
 ```
 
-##### Auto join example
+#### Auto join example
 
 ```luceescript
 // update news items whose category tag = "red"
@@ -742,7 +853,7 @@ presideObjectService.updateData(
 );
 ```
 
-##### Property name examples
+#### Property name examples
 
 ```luceescript
 // delete news items whose category label = "red"
@@ -769,13 +880,13 @@ presideObjectService.selectData(
 
 >>>> While the auto join syntax can be really useful, it is limited to cases where there is only a single relationship path between the two objects. If there are multiple ways in which you could join the two objects, the system can have no way of knowing which path it should take and will throw an error.
 
-#### Caching
+### Caching
 
 By default, all [[presideobjectservice-selectData]] calls have their recordset results cached. These caches are automatically cleared when the data changes.
 
 You can specify *not* to cache results with the `useCache` argument.
 
-#### Cache per object
+### Cache per object
 
 **As of Preside 10.10.55**, an additional feature flag enables the setting of caches _per object_. This greatly simplifies and speeds up the cache clearing and invalidation logic which may benefit certain application profiles. The feature can be enabled in your `Config.cfc` with:
 

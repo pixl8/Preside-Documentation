@@ -5,6 +5,7 @@ title: Developer guides
 
 In this chapter, you should find detailed guides on developing with the Preside platform.
 
+* [[config]]
 * [[dataobjects]]
 * [[dataobjectviews]]
 * [[viewlets]]
@@ -48,3 +49,4 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[reloadingtheapplication]]
 * [[admingritternotifications]]
 * [[extensions]]
+* [[selectdataviews]]

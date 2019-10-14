@@ -214,6 +214,7 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-getlistingmultiactions|getListingMultiActions]]
 * [[datamanager-customization-getextralistingmultiactions|getExtraListingMultiActions]]
 * [[datamanager-customization-multirecordaction|multiRecordAction]]
+* [[datamanager-customization-renderfooterforgridlisting|renderFooterForGridListing]]
 
 
 ### Adding records

@@ -23,12 +23,19 @@ public void function configure() {
 
     // default settings
     settings.ckeditor.defaults = {
-          width       = "auto"                                // default width of the editor, in pixels if numeric
-        , minHeight   = "auto"                                // default height of the editor, in pixels if numeric
-        , maxHeight   = 600                                   // maximum autogrow height of the editor, in pixels if numeric
-        , toolbar     = "full"                                // default toolbar set, see below
-        , stylesheets = [ "/specific/richeditor/", "/core/" ] // array of stylesheets to be included in editor body
-        , configFile  = "/ckeditorExtensions/config.js"       // path is relative to the compiled assets folder
+          stylesheets           = [ "/css/admin/specific/richeditor/" ] // array of stylesheets to be included in editor body
+        , configFile            = "/ckeditorExtensions/config.js"       // path is relative to the compiled assets folder
+        , width                 = "auto"                                // default width of the editor, in pixels if numeric
+        , minHeight             = 0                                     // minimum height of the editor, in pixels if numeric
+        , maxHeight             = 300                                   // maximum autogrow height of the editor, in pixels if numeric
+        , toolbar               = "full"                                // default toolbar set, see below
+        , autoParagraph         = false                                 // should single-line content be wrapped in a <p> element
+        , extraAllowedContent   = "img dl dt dd"                        // additional elements allowed in the editor (will not be stripped from source)
+        , pasteFromWordDisallow = [                                     // elements to be stripped when pasting from Word
+              "span"  // Strip all span elements
+            , "*(*)"  // Strip all classes
+            , "*{*}"  // Strip all inline-styles
+          ]
     };
 
     // toolbar sets, see further documentation below
@@ -174,3 +181,76 @@ You can also define this inline:
 We manage a custom build of the editor, including all the core plugins that we require, through our [own repository on GitHub](https://github.com/pixl8/Preside-Editor). In addition, any Preside specific extensions to the editor are developed and maintained in the [core repository](https://github.com/pixl8/Preside-CMS), they can be found at: `/system/assets/ckeditorExtensions`.
 
 Finally, we have our own custom javascript object for building instances of the editor. It can be found at `/system/assets/js/admin/core/preside.richeditor.js`.
+
+## Customizing the link picker
+
+The richeditor link picker can be customized (as of 10.11.0). Key concepts:
+
+* Link types
+* Link Picker categories
+
+### Link types
+
+Link types are visible in the link picker as a list on the left hand side of the dialog. Examples are 'Site tree page', 'URL', etc.
+
+As of 10.11.0, you are able to create your own link types. To do so, you will require the following:
+
+#### 1. Properties file entry
+
+An entry in `/i18n/cms.properties` matching the pattern: `ckeditor.linkpicker.type.{yourtype}`. This will be the title of your link type.
+
+#### 2. Customize the core richeditor link form
+
+Supply your own [[form-richeditorlinkform|/forms/richeditor/link.xml]] file that will **add a fieldset with the id of your link type to the 'basic' tab.**. For example:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <tab id="basic">
+        <fieldset id="yourtype" sortorder="100">
+            <field name="article" control="objectpicker" object="article" />
+        </fieldset>
+    </tab>
+</form>
+```
+
+#### 3. Create handler for rendering link + default link title
+
+Create a handler at, `/handlers/admin/linkpicker/yourtype.cfc`. It needs to implement _two_ methods. One to render the HREF of the link, the other to render default link text. Each handler method will receive the filled in link form data as its `args` struct. For example:
+
+```luceescript
+component {
+
+    private string function getHref( event, rc, prc, args={} ) {
+        return event.buildLink( articleid=args.article ?: "" );
+    }
+
+    private string function getDefaultLinkText( event, rc, prc, args={} ) {
+        return renderLabel( "article", args.article ?: "" );
+    }
+}
+```
+
+#### Link Picker categories
+
+Link picker categories can be applied to a richeditor instance to customize the link types that appear in the link picker. For example, you may have a richeditor for a wiki page that requires only a custom "Wiki" link type, and not the others.
+
+Link picker categories are defined as a struct at `settings.ckeditor.linkPicker`. Each key is the id of a category and is defined as a struct with a single `types` key, an array of Link types.
+
+The default Preside config defines a default category:
+
+```luceescript
+settings.ckeditor.linkPicker.default = {
+    types = [ "sitetreelink", "url", "email", "asset", "anchor" ]
+}
+```
+
+You can customize this by appending to the list of types (or removing items from it). You can also then define your own categories:
+
+```
+settings.ckeditor.linkPicker.wiki = { types=[ "wikipage" ] };
+```
+
+Finally, an instance of a richeditor can be assigned a link picker category with the `linkPickerCategory` attribute:
+
+```<field name="content" control="richeditor" linkPickerCategory="wiki" />```

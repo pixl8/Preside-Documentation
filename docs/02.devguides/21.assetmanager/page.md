@@ -165,11 +165,13 @@ settings.assetmanager.derivatives.leadimage = {
       permissions     = "inherit"
     , inEditor        = true
     , transformations = [ { method="resize", args={ width=800, height=400 } } ]
+    , autoQueue       = [ "image" ]   
 };
 
 settings.assetmanager.folders.profileImages = {
       label  = "Profile images"
     , hidden = false
+    , autoQueue = []   
     , children = {
             members    = { label="Members"    , hidden=false }
           , nonMembers = { label="Non-Members", hidden=false }
@@ -233,6 +235,7 @@ Derivatives are transformed versions of an asset. This could be a particular cro
 settings.assetmanager.derivatives.leadImage = {
       permissions     = "inherit"
     , inEditor        = true
+    , autoQueue       = []   
     , transformations = [ { method="shrinkToFit", args={ width=800, height=400 } } ]
 };
 ```
@@ -265,7 +268,20 @@ leadimage.title=Lead image (800x400)
 thumbnail.title=Thumbnail (100x100)
 ```
 
->>> This feature was introduced in v10.4.0
+#### autoQueue
+
+**As of 10.11.0**, and if the asset processing queue feature is enabled, a derivative can be configured to be automatically processed in the background as soon as a matching asset is uploaded.
+
+The option expects an array of matching file types, or file type groups upon which it will auto queue the derivative for generation. For example:
+
+```luceescript
+settings.assetmanager.derivatives.thumnail = {
+    autoQueue = [ "image", "pdf" ] // autoqueue for all images + pdfs   
+    // ...
+}
+```
+
+See [[enabling-asset-queue]] for more details on the asset processing queue.
 
 #### Transformations
 
