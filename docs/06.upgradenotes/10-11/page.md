@@ -3,6 +3,12 @@ id: 10-11-upgrade-notes
 title: Upgrade notes for 10.10 -> 10.11
 ---
 
+## CfConcurrent
+
+A new mapping was added to **10.11.0**, `/cfconcurrent`. Unfortunately, this mapping actually already existed but pointed to an empty directory. This may cause the need for a Lucee restart after upgrading from a previous version.
+
+If you see the error, `invalid component definition, can't find component [cfconcurrent.ExecutorService]`, you will need to restart Lucee.
+
 ## Asset file names
 
 In 10.11.0, we introduced a feature to save assets and derivatives using a configured file name. By default this is set as `$slugify( title )` when the asset is uploaded. Content editors are able to edit this file name in the admin and this results in a file name change.
