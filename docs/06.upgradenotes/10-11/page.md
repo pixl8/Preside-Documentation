@@ -3,6 +3,10 @@ id: 10-11-upgrade-notes
 title: Upgrade notes for 10.10 -> 10.11
 ---
 
+## Lucee version
+
+Bugs in earlier versions of Lucee 5 mean that Preside 10.11 may refuse to start. The earliest known Lucee 5 version to work with Preside is Lucee **5.2.9.20**. However, we recommend running at least **5.3.3.63**. We no longer recommend running Lucee 4.5.
+
 ## CfConcurrent
 
 A new mapping was added to **10.11.0**, `/cfconcurrent`. Unfortunately, this mapping actually already existed but pointed to an empty directory. This may cause the need for a Lucee restart after upgrading from a previous version.
