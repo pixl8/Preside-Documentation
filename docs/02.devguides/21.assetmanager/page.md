@@ -309,6 +309,20 @@ settings.assetmanager.derivatives.adminthumbnail = {
 
 For more information on image transformations, see [[transformations]].
 
+### Restricting application of derivatives
+
+As of **10.11.5**, Preside allows you to configure image size limits for derivative generation so that you can protect your server from heavy image transformation operations that would be better performed offline. You can set a max width, height, resolution and even specify a file path to a placeholder image to use instead when images are too large. In `Config.cfc`:
+
+```luceescript
+
+settings.assetmanager.derivativeLimits.maxHeight     = 3000;      // default 0, no limit
+settings.assetmanager.derivativeLimits.maxWidth      = 3000;      // default 0, no limit
+settings.assetmanager.derivativeLimits.maxResolution = 2000*2000; // default 0, no limit
+settings.assetmanager.derivativeLimits.tooBigPlaceholder = "/preside/system/assets/images/placeholders/largeimage.jpg" // this is the default
+```
+
+If an image breaches any of these limits, no derivatives will be generated for it. Instead, the placeholder image will be used.
+
 ## System folders
 
 System folders are pre-defined asset manager folders that will always exist in your asset manager folder structure. They cannot be deleted through the admin UI and can optionally be completely hidden from the UI. They are configured in `Config.cfc`, for example:
