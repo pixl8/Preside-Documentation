@@ -222,6 +222,7 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-addrecordform|addRecordForm]]
 * [[datamanager-customization-getaddrecordformname|getAddRecordFormName]]
 * [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
+* [[datamanager-customization-prequickaddrecordform|preQuickAddRecordForm]]
 * [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
 * [[datamanager-customization-addrecordactionbuttons|addRecordActionButtons]]
 * [[datamanager-customization-getaddrecordactionbuttons|getAddRecordActionButtons]]
@@ -229,8 +230,11 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-gettoprightbuttonsforaddrecord|getTopRightButtonsForAddRecord]]
 * [[datamanager-customization-extratoprightbuttonsforaddrecord|extraTopRightButtonsForAddRecord]]
 * [[datamanager-customization-addrecordaction|addRecordAction]]
+* [[datamanager-customization-quickAddRecordAction|quickAddRecordAction]]
 * [[datamanager-customization-preaddrecordaction|preAddRecordAction]]
+* [[datamanager-customization-prequickaddrecordaction|preQuickAddRecordAction]]
 * [[datamanager-customization-postaddrecordaction|postAddRecordAction]]
+* [[datamanager-customization-postquickaddrecordaction|postQuickAddRecordAction]]
 
 
 ### Viewing records
@@ -252,6 +256,7 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-editrecordform|editRecordForm]]
 * [[datamanager-customization-geteditrecordformname|getEditRecordFormName]]
 * [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
+* [[datamanager-customization-prequickeditrecordform|preQuickEditRecordForm]]
 * [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]
 * [[datamanager-customization-editrecordactionbuttons|editRecordActionButtons]]
 * [[datamanager-customization-geteditrecordactionbuttons|getEditRecordActionButtons]]
@@ -259,8 +264,11 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-gettoprightbuttonsforeditrecord|getTopRightButtonsForEditRecord]]
 * [[datamanager-customization-extratoprightbuttonsforeditrecord|extraTopRightButtonsForEditRecord]]
 * [[datamanager-customization-editrecordaction|editRecordAction]]
+* [[datamanager-customization-quickeditrecordaction|quickeditRecordAction]]
 * [[datamanager-customization-preeditrecordaction|preEditRecordAction]]
+* [[datamanager-customization-prequickeditrecordaction|preQuickEditRecordAction]]
 * [[datamanager-customization-posteditrecordaction|postEditRecordAction]]
+* [[datamanager-customization-postquickeditrecordaction|postQuickEditRecordAction]]
 
 ### Cloning records
 
