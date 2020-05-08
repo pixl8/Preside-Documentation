@@ -50,3 +50,12 @@ The following is an example Apache2 Virtual Host definition that should work wel
 </IfModule>
 </VirtualHost>
 ```
+
+The following mod_proxy section is an optimized example for your preside applications. Due to the RegEx we serve static assets like ico, css, js, png, gif, jpg by apache (which is optimized for that). With that solution Tomcat handles only the CF-Requests. 
+```
+<IfModule mod_proxy.c>
+    ProxyPreserveHost On
+    ProxyPassMatch ^/(?!.*\.(ico|css|js|png|gif|jpg)).*$ http://127.0.0.1:8888/$1
+    ProxyPassReverse / http://127.0.0.1:8888/
+</IfModule>
+```
