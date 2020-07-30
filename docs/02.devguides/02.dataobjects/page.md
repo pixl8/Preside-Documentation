@@ -276,11 +276,12 @@ component {
 }
 ```
 
-The core system provides you with four named generators:
+The core system provides you with these named generators:
 
 * `UUID` - uses `CreateUUId()` to generate a UUID for your field. This is used by default for the primary key in preside objects.
 * `timestamp` - uses `Now()` to auto generate a timestamp for your field
 * `hash` - used in conjunction with a `generateFrom` attribute that should be a list of other properties which to concatenate and generate an MD5 hash from
+* `nextint` - **introduced in 10.12.0**, gives the next incremental integer value for the field
 * `slug` - takes an optional `generateFrom` attribute that defines which field (if present in the submitted data) should be used to generate the slug; by default it will use the object's label field. A unique slug will be generated, so may be suffixed with `-1`, `-2`, etc.
 
 ### Formula fields
@@ -474,7 +475,7 @@ As well as controlling the automatically created pivot table name with "relatedV
 
 #### Subquery relationships with "SelectData Views"
 
-In **10.11.0** the concept of [[select-data-views]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name. 
+In **10.11.0** the concept of [[select-data-views]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name.
 
 They can be used in relationship helper properties and result in subqueries being created when querying them. The syntax is the same as that of a `one-to-many` relationship:
 
@@ -717,8 +718,8 @@ In addition to the `filter` and `filterParams` arguments, you can also make use 
 
 ```luceescript
 records = newsObject.selectData(
-    extraFilters = [{ 
-          filter = { active=true } 
+    extraFilters = [{
+          filter = { active=true }
     },{
           filter       = "category != :category and DateDiff( publishdate, :publishdate ) > :daysold and category$tag.label = :category$tag.label"
         , filterParams = {
@@ -747,7 +748,7 @@ These filters can be defined either in your application's `Config.cfc` file or, 
 A saved filter is defined using the `settings.filters` struct. A filter can either be a struct, with `filter` and optional `filterParams` keys, _or_ an inline function that returns a struct:
 
 ```luceescript
-settings.filters.activeCategories = { 
+settings.filters.activeCategories = {
       filter       = "category.active = :category.active and category.pub_date > Now()"
     , filterParams = { "category.active"=true }
 };
@@ -774,7 +775,7 @@ component {
 
         // or
 
-        return { 
+        return {
               filter       = "category.active = :category.active and category.pub_date > :category.pub_date"
             , filterParams = { "category.active"=true, "category.pub_date"=Now() }
         }
@@ -894,9 +895,9 @@ You can specify *not* to cache results with the `useCache` argument.
 settings.features.queryCachePerObject.enabled = true;
 ```
 
-Configuration of the `defaultQueryCache` then becomes the _default_ configuration for each individual object's own cachebox cache instance. 
+Configuration of the `defaultQueryCache` then becomes the _default_ configuration for each individual object's own cachebox cache instance.
 
-In addition, you can annotate your Preside object with `@cacheProvider` to use a different cache provider for a specific object. Finally, any other annotation attributes on your object that begin with `@cache` will be treated as properties of the cache box cache. 
+In addition, you can annotate your Preside object with `@cacheProvider` to use a different cache provider for a specific object. Finally, any other annotation attributes on your object that begin with `@cache` will be treated as properties of the cache box cache.
 
 A common example may be to set a larger cache for a specific object with different reaping frequency and eviction count:
 
