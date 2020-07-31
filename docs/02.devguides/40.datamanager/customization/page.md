@@ -210,6 +210,7 @@ renderedListingTable = objectDataTable( objectName );
 * [[datamanager-customization-getactionsforgridlisting|getActionsForGridListing]]
 * [[datamanager-customization-getrecordactionsforgridlisting|getRecordActionsForGridListing]]
 * [[datamanager-customization-extrarecordactionsforgridlisting|extraRecordActionsForGridListing]]
+* [[datamanager-customization-getrecordlinkforgridlisting|getRecordLinkForGridListing]]
 * [[datamanager-customization-listingmultiactions|listingMultiActions]]
 * [[datamanager-customization-getlistingmultiactions|getListingMultiActions]]
 * [[datamanager-customization-getextralistingmultiactions|getExtraListingMultiActions]]
