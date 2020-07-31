@@ -191,10 +191,11 @@ There are currently more than 60 customization points in the Data Manager and th
 
 ### Record listing table / grid
 
->>> In addition to the specific customizations, below, you can also use the following helper function in your handlers and views to render a data table for an object:
+>>> In addition to the specific customizations, below, you can also use the following helper functions in your handlers and views to render a data table / tree view for an object:
 >>>
 ```luceescript
-renderedListingTable = objectDataTable( objectName );
+renderedListingTable = objectDataTable( objectName="blog_post", args={} );
+renderedTreeView = objectTreeView( objectName="article", args={} );
 ```
 
 
