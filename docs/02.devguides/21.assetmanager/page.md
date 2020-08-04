@@ -111,7 +111,7 @@ The `renderAsset()` helper function will render the asset referenced by the pass
 
 ### Image asset dimensions
 
-*Introduced in 10.12.0*, The `getAssetDimensions()` helper function will return the dimensions of an image asset. It is a proxy to the [[assetrendererservice-getAssetDimensions]] method of the [[api-assetmanagerservice]]. Usage looks like this:
+*Introduced in 10.12.0*, the `getAssetDimensions()` helper function will return the dimensions of an image asset. It is a proxy to the [[assetmanagerservice-getAssetDimensions]] method of the [[api-assetmanagerservice]]. Usage looks like this:
 
 ```lucee
     dimensions = getAssetDimensions(
