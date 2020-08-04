@@ -9,7 +9,7 @@ The content of the Preside documentation is our number one priority. This chapte
 
 The documentation system is largely based on the [Grav](http://getgrav.org) static CMS. This system uses folders to represent pages, and markdown files within those folders to provide the page content.
 
-All of the source files for this documentation can be found in the `/docs` folder of the public repository; i.e. [https://github.com/pixl8/Preside-CMS/tree/stable/support/docs/docs](https://github.com/pixl8/Preside-CMS/tree/stable/support/docs/docs)
+All of the source files for this documentation can be found in the `/docs` folder of the public repository; i.e. [https://github.com/pixl8/Preside-Documentation/tree/master/docs](https://github.com/pixl8/Preside-Documentation/tree/master/docs)
 
 For more information on how the folder structure and various page types work, see [[docs-structure]].
 

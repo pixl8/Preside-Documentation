@@ -17,6 +17,8 @@ Enable the feature in your application's `Config.cfc` with:
 settings.features.dataexport.enabled = true;
 ```
 
+*Note: `read` operation must be allowed for the object*
+
 ### Customizing default export fields per object
 
 Add the `@dataExportFields` annotation to your preside objects to supply an ordered list of fields that will be used as the _default_ list of fields for exports:

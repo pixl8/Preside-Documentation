@@ -30,13 +30,17 @@ public void function configure() {
         , maxHeight             = 300                                   // maximum autogrow height of the editor, in pixels if numeric
         , toolbar               = "full"                                // default toolbar set, see below
         , autoParagraph         = false                                 // should single-line content be wrapped in a <p> element
-        , extraAllowedContent   = "img dl dt dd"                        // additional elements allowed in the editor (will not be stripped from source)
-        , pasteFromWordDisallow = [                                     // elements to be stripped when pasting from Word
-              "span"  // Strip all span elements
-            , "*(*)"  // Strip all classes
-            , "*{*}"  // Strip all inline-styles
-          ]
+        , defaultConfigs        = {                                     // other configs can be appended to this default config option
+              pasteFromWordDisallow  = [                                // elements to be stripped when pasting from Word
+                  "span"  // Strip all span elements
+                , "*(*)"  // Strip all classes
+                , "*{*}"  // Strip all inline-styles
+            ]
+            , extraAllowedContent   = "img dl dt dd"                     // additional elements allowed in the editor (will not be stripped from source)
+        }
     };
+
+
 
     // toolbar sets, see further documentation below
     settings.ckeditor.toolbars = {};
@@ -60,9 +64,11 @@ Preside uses a light-weight syntax for defining sets of toolbars that translates
 
 **CKEditor config.js**
 
+>>> For `10.11.39` and above you can specify below config within `settings.ckeditor.defaults.defaultConfigs`
+
 ```js
 CKEDITOR.editorConfig = function( config ) {
-    config.toolbar = "mytoolbar";
+    config.toolbar = "mytoolbar"; //Or you can define this config in Config.cfc. e.g. settings.ckeditor.defaults.defaultConfigs.toolbar = "mytoolbar"
 
     config.toolbar_mytoolbar = [
         [
