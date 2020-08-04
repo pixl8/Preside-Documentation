@@ -109,6 +109,19 @@ The `renderAsset()` helper function will render the asset referenced by the pass
 </cfoutput>
 ```
 
+### Image asset dimensions
+
+*Introduced in 10.12.0*, The `getAssetDimensions()` helper function will return the dimensions of an image asset. It is a proxy to the [[assetrendererservice-getAssetDimensions]] method of the [[api-assetmanagerservice]]. Usage looks like this:
+
+```lucee
+    dimensions = getAssetDimensions(
+          id             = myauthor.profile_image
+        , derivativeName = "authorprofile"
+    );
+```
+
+A struct with `height` and `width` values will be returned (or an empty struct if not available for some reason), which can then be used in your HTML code.
+
 ### Create custom contexts for asset rendering
 
 The [[assetrendererservice-renderasset]] method will choose a viewlet with which to render your asset based on:
@@ -165,13 +178,13 @@ settings.assetmanager.derivatives.leadimage = {
       permissions     = "inherit"
     , inEditor        = true
     , transformations = [ { method="resize", args={ width=800, height=400 } } ]
-    , autoQueue       = [ "image" ]   
+    , autoQueue       = [ "image" ]
 };
 
 settings.assetmanager.folders.profileImages = {
       label  = "Profile images"
     , hidden = false
-    , autoQueue = []   
+    , autoQueue = []
     , children = {
             members    = { label="Members"    , hidden=false }
           , nonMembers = { label="Non-Members", hidden=false }
@@ -235,7 +248,7 @@ Derivatives are transformed versions of an asset. This could be a particular cro
 settings.assetmanager.derivatives.leadImage = {
       permissions     = "inherit"
     , inEditor        = true
-    , autoQueue       = []   
+    , autoQueue       = []
     , transformations = [ { method="shrinkToFit", args={ width=800, height=400 } } ]
 };
 ```
@@ -276,7 +289,7 @@ The option expects an array of matching file types, or file type groups upon whi
 
 ```luceescript
 settings.assetmanager.derivatives.thumnail = {
-    autoQueue = [ "image", "pdf" ] // autoqueue for all images + pdfs   
+    autoQueue = [ "image", "pdf" ] // autoqueue for all images + pdfs
     // ...
 }
 ```
