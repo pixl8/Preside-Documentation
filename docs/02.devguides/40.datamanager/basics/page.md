@@ -59,17 +59,20 @@ iconclass=fa-comments
 
 ## Basic customizations for the listing grid
 
-There are three basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
+There are four basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
 
 1. Change the fields that are displayed in the table
 2. Change the _default_ sort order of records
-3. Change the fields that are searchable
+3. Change the sortable fields in the table
+4. Change the fields that are searchable
 
 In addition, limiting the _operations_ that are allowed on an object will affect the actions that appear on each row (see **Limiting operations**, below).
 
 To specify a non-default list of fields to display in the table, use the `@datamanagerGridFields` annotation.
 
 To specify a default sort order for the table, use the `@datamanagerDefaultSortOrder` annotation.
+
+To specify a non-default list of fields to sortable in the table, use the `@datamanagerSortableFields` annotation.
 
 To specify a non-default list of fields that are _searchable_ in the table, use the `@datamanagerSearchFields` annotation.
 
@@ -83,6 +86,7 @@ For example:
  * @labelfield                  name
  * @datamanagerGroup            blog
  * @datamanagerGridFields       name,post_count,datemodified
+ * @datamanagerSortableFields   name,post_count
  * @datamanagerSearchFields     name,posts.title
  * @datamanagerDefaultSortOrder post_count desc
  */
