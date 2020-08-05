@@ -46,6 +46,23 @@ iconclass=fa-user
 field.name.title=Author Name
 ```
 
+#### Translate title base on context
+
+As 10.12, context had introduced to Preside Object title properties. Object listing view is using `listing` context, you able to have different field label in the listing table by adding `field.{field_name}.listing.title`. For example:
+
+```properties
+field.product_id.title=Product ID
+field.product_id.listing.title=#
+```
+
+You also able to add help text for the listing table. For example:
+
+```properties
+field.product_id.listing.help=Product ID
+```
+
+![Screenshot showing example of a Data Manager object listing screen with overwrite label](images/screenshots/datamanager-listing-overwrite-label-example.png)
+
 >>>>>> _See [[presideforms-i18n]] for more conventions for field names, placeholders, help, etc._
 
 Each Data Manager **group** should also have a corresponding `.properties` file at `/i18n/preside-objects/groups/groupname.properties`. For our blog example:
