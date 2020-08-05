@@ -7,6 +7,31 @@ title: Session management and stateless requests
 
 All session management in the core platform is handled by the [SessionStorage ColdBox plugin](http://wiki.coldbox.org/wiki/Plugins:SessionStorage.cfm). Your applications and extensions should also _always_ use this plugin when needing to store data against the session, rather than use the session scope directly.
 
+By default, we use Lucee's session management for our session implementation, but as of Preside 10.12.0, we have created our own implementation which you can turn on.
+
+## Turning on Preside's session management
+
+The advantages of using Preside's Session Management are:
+
+* Very simple database implementation
+* Clean session tidying
+* Simplified cookie management
+* Lean implementation for better performance
+* Simple to use in any environment, including Kubernetes and other containerised environments
+
+To use Preside's session management, modify your app's `Application.cfc` to look something like:
+
+```cfc
+component extends="preside.system.Bootstrap" {
+
+	super.setupApplication(
+		  id                       = "my-application"
+		, presideSessionManagement = true
+	);
+
+}
+```
+
 ## Accessing the session storage plugin
 
 ### In a handler
