@@ -65,6 +65,9 @@ component {
 	private struct function getPreviewParameters() {}
 
 	private string function getToAddress( required string recipientId ) {}
+	
+	// as of 10.12.0
+	private string function getUnsubscribeLink( required string recipientId, required string templateId ) {}
 }
 ```
 
@@ -116,6 +119,32 @@ private struct function getPreviewParameters() {
 #### getToAddress()
 
 The `getToAddress()` method accepts a `recipientId` argument and must return the email address to which to send email. For example:
+
+```luceescript
+private struct function getToAddress( required string recipientId ) {
+	var delegate = bookingService.getDelegate( arguments.recipientId );
+
+	return delegate.email_address ?: "";
+}
+```
+
+#### getUnsubscribeLink()
+
+As of **10.12.0**. The `getUnsubscribeLink()` method accepts `recipientId` and `templateId` arguments and can return a link to use for unsubscribes (or an empty string for no link).
+
+For example, you may wish to link to an 'edit profile' page, or some page specific to custom fields set on the email template:
+
+```luceescript
+private struct function getUnsubscribeLink( required string recipientId, required string templateId ) {
+	var listId = myCustomService.getEmailTemplateUnsubscribeList( arguments.templateId );
+
+	return event.buildLink( 
+		  linkto      = "mycustomemail.ubsubscribeHandler"
+		, queryString = "rid=#arguments.recipientId#&lid=#listId#"
+	);
+}
+```
+
 
 ```luceescript
 private struct function getToAddress( required string recipientId ) {
