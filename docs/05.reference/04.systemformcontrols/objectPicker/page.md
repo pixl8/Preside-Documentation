@@ -3,6 +3,24 @@ id: formcontrol-objectPicker
 title: "Form control: Object Picker"
 ---
 The `objectPicker` control allows users to select one or multiple records from a given preside object. Configuration options also allow you to add new records and edit existing records from within the form control.
+
+### Set object picker default sort order
+
+To specify object default sort order for object picker, use the `@objectPickerDefaultSortOrder` annotation. For example:
+
+```luceescript
+// /application/preside-objects/author.cfc
+
+/**
+ * @objectPickerDefaultSortOrder    post_count desc
+ */
+component {
+    property name="name" type="string" dbtype="varchar" maxlength="200" required=true uniqueindexes="name";
+    property name="posts" relationship="one-to-many" relatedto="blog_post" relationshipkey="blog_author";
+    property name="post_count" type="numeric" formula="Count( ${prefix}posts.id )";
+}
+```
+
 ### Arguments
 <div class="table-responsive">
     <table class="table">
