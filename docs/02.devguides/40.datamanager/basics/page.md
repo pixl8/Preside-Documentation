@@ -134,14 +134,16 @@ component {
 
 ## Limiting operations
 
-The system defines six core "operations" that can be "performed" on any given object record:
+The system defines eight core "operations" that can be "performed" on any given object record:
 
 1. `read`: view an individual record in the view record screen
 2. `add`: add new records
-3. `edit`: edit records (including bulk edit)
-4. `delete`: delete a record
-4. `clone`: clones a record (as of 10.10.0)
-5. `viewversions`: view version history for a record
+3. `edit`: edit records
+4. `batchedit`: batch edit records (as of 10.12.0)
+5. `delete`: delete a record
+6. `batchdelete`: batch delete records (as of 10.12.0)
+7. `clone`: clones a record (as of 10.10.0)
+8. `viewversions`: view version history for a record
 
 All operations are enabled by default. To limit the operations that are allowed for an object, use either the `@datamanagerAllowedOperations` or `@datamanagerDisallowedOperations`annotations, supplying a comma separated list without spaces of the operations that are allowed/disallowed. For example, we could disable deleting and the view screen for our blog authors with:
 
