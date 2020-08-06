@@ -83,6 +83,19 @@ Leads to:
 
 ![Screenshot showing example data view with a custom group decorated with custom labelling](images/screenshots/adminviewCustomGroupWithLabels.jpg)
 
+#### Omit field label for many-to-many fields
+
+To omit a property's field label, use the `displayPropertyTitle` attribute on the `property` definition, e.g.
+
+```luceescript
+// category.cfc
+component {
+	...
+	property name="posts" ... displayPropertyTitle=false;
+}
+```
+
+![Screenshot showing example data view with property field title is hidden](images/screenshots/adminviewPropertyTitleHidden.png)
 
 ### Field renderers
 

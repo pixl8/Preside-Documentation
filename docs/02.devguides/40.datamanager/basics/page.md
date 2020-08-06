@@ -114,6 +114,14 @@ component {
 }
 ```
 
+## Customizing the listing grid header label
+
+There is a `listing` context available when translate property name for listing grid header.
+
+To specify a label for listing grid, add `field.{your_field}.listing.title=Listing label` in corresponding object i18n file.
+
+Optional tooltip can be added to listing grid header field, add `field.{your_field}.listing.help=Listing label help` in corresponding object i18n file.
+
 ## Customizing the add / edit record forms
 
 The Data Manager uses convention-based form names to build add and edit forms for your object. Prior to 10.9.0, these were:

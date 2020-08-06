@@ -17,6 +17,8 @@ Enable the feature in your application's `Config.cfc` with:
 settings.features.dataexport.enabled = true;
 ```
 
+*Note: `read` operation must be allowed for the object*
+
 ### Define default exporter
 
 Add `settings.dataExport.defaultExporter` in your application's `Config.cfc`. Example:
