@@ -21,7 +21,7 @@ The advantages of using Preside's Session Management are:
 
 To use Preside's session management, modify your app's `Application.cfc` to look something like:
 
-```cfc
+```luceescript
 component extends="preside.system.Bootstrap" {
 
 	super.setupApplication(
@@ -42,7 +42,6 @@ property name="sessionStorage" inject="coldbox:plugin:sessionStorage";
 // or...
 
 var sessionStorage = getPlugin( "sessionStorage" );
-
 ```
 
 ### In a service
