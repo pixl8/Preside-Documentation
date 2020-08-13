@@ -46,6 +46,23 @@ iconclass=fa-user
 field.name.title=Author Name
 ```
 
+#### Translate title base on context
+
+As 10.12, context had introduced to Preside Object title properties. Object listing view is using `listing` context, you able to have different field label in the listing table by adding `field.{field_name}.listing.title`. For example:
+
+```properties
+field.product_id.title=Product ID
+field.product_id.listing.title=#
+```
+
+You also able to add help text for the listing table. For example:
+
+```properties
+field.product_id.listing.help=Product ID
+```
+
+![Screenshot showing example of a Data Manager object listing screen with overwrite label](images/screenshots/datamanager-listing-overwrite-label-example.png)
+
 >>>>>> _See [[presideforms-i18n]] for more conventions for field names, placeholders, help, etc._
 
 Each Data Manager **group** should also have a corresponding `.properties` file at `/i18n/preside-objects/groups/groupname.properties`. For our blog example:
@@ -59,17 +76,20 @@ iconclass=fa-comments
 
 ## Basic customizations for the listing grid
 
-There are three basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
+There are four basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
 
 1. Change the fields that are displayed in the table
 2. Change the _default_ sort order of records
-3. Change the fields that are searchable
+3. Change the sortable fields in the table
+4. Change the fields that are searchable
 
 In addition, limiting the _operations_ that are allowed on an object will affect the actions that appear on each row (see **Limiting operations**, below).
 
 To specify a non-default list of fields to display in the table, use the `@datamanagerGridFields` annotation.
 
 To specify a default sort order for the table, use the `@datamanagerDefaultSortOrder` annotation.
+
+To specify a non-default list of fields to sortable in the table, use the `@datamanagerSortableFields` annotation.
 
 To specify a non-default list of fields that are _searchable_ in the table, use the `@datamanagerSearchFields` annotation.
 
@@ -83,6 +103,7 @@ For example:
  * @labelfield                  name
  * @datamanagerGroup            blog
  * @datamanagerGridFields       name,post_count,datemodified
+ * @datamanagerSortableFields   name,post_count
  * @datamanagerSearchFields     name,posts.title
  * @datamanagerDefaultSortOrder post_count desc
  */
@@ -142,14 +163,16 @@ component {
 
 ## Limiting operations
 
-The system defines six core "operations" that can be "performed" on any given object record:
+The system defines eight core "operations" that can be "performed" on any given object record:
 
 1. `read`: view an individual record in the view record screen
 2. `add`: add new records
-3. `edit`: edit records (including bulk edit)
-4. `delete`: delete a record
-4. `clone`: clones a record (as of 10.10.0)
-5. `viewversions`: view version history for a record
+3. `edit`: edit records
+4. `batchedit`: batch edit records (as of 10.12.0)
+5. `delete`: delete a record
+6. `batchdelete`: batch delete records (as of 10.12.0)
+7. `clone`: clones a record (as of 10.10.0)
+8. `viewversions`: view version history for a record
 
 All operations are enabled by default. To limit the operations that are allowed for an object, use either the `@datamanagerAllowedOperations` or `@datamanagerDisallowedOperations`annotations, supplying a comma separated list without spaces of the operations that are allowed/disallowed. For example, we could disable deleting and the view screen for our blog authors with:
 

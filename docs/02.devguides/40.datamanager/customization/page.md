@@ -318,6 +318,57 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-versionnavigator|versionNavigator]]
 
 
+## Interception points
+
+Your application can listen into several core interception points to enhance the features of the Data manager customization, e.g. to implement custom authentication. See the [ColdBox Interceptor's documentation](http://wiki.coldbox.org/wiki/Interceptors.cfm) for detailed documentation on interceptors.
+
+The Interception points are:
+
+### postExtraTopRightButtonsForObject
+
+Fired after the _extraTopRightButtonsForObject_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraQsForBuildAjaxListingLink
+
+Fired after the _getAdditionalQueryStringForBuildAjaxListingLink_ customization action (if any) had run. Takes `objectName` and `extraQs` as arguments.
+
+### postExtraRecordActionsForGridListing
+
+Fired after the _extraRecordActionsForGridListing_ customization action had run. Takes `record`, `objectName` and `actions` as arguments.
+
+### postGetExtraListingMultiActions
+
+Fired after the _getExtraListingMultiActions_ customization action had run. Takes `args` as arguments.
+
+### postGetExtraAddRecordActionButtons
+
+Fired after the _getExtraAddRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtonsForAddRecord
+
+Fired after the _extraTopRightButtonsForAddRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postExtraTopRightButtonsForViewRecord
+
+Fired after the _extraTopRightButtonsForViewRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraEditRecordActionButtons
+
+Fired after the _getExtraEditRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtonsForEditRecord
+
+Fired after the _extraTopRightButtonsForEditRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraCloneRecordActionButtons
+
+Fired after the _getExtraCloneRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtons
+
+Fired after the _extraTopRightButtons_ customization action had run. Takes `objectName`, `action` and `actions` as arguments.
+
+
 ## Creating your own customizations
 
 You may wish to utilize the customization system in your extensions to allow implementations to easily override additional data manager features that you may provide. To do so, you can inject the [[api-datamanagercustomizationservice]] into your handler or service and make use of the methods:
