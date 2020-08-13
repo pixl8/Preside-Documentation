@@ -20,8 +20,8 @@ The `dateTimePicker` control allows users to choose a date and time from a calen
             </tr>
             <tr>
                 <th>defaultDate (optional)</th>
-                <td>Default date to choose when opening the picker for the first time. Defaults to the current day at midnight (00:00).<br>
-                <strong>As of 10.13.0</strong>, the time part is set using defaultTime.</td>
+                <td>Default date to choose when opening the picker for the first time. Defaults to the current day at midnight (00:00)*.<br>
+                <strong>*As of 10.13.0</strong>, the time part is set using defaultTime.</td>
             </tr>
             <tr>
                 <th>defaultTime (optional)</th>
