@@ -22,7 +22,7 @@ For example:
 // /application/handlers/admin/datamanager/GlobalDefaults.cfc
 component {
 
-    private array function getExtraListingMultiActions( event, rc, prc, args={} ) {
+    private void function getExtraListingMultiActions( event, rc, prc, args={} ) {
         args.actions = args.actions ?: [];
         args.actions.append( {
               label     = "Archive selected entities"

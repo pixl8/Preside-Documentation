@@ -224,6 +224,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-addrecordform|addRecordForm]]
 * [[datamanager-customization-getaddrecordformname|getAddRecordFormName]]
 * [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
+* [[datamanager-customization-prequickaddrecordform|preQuickAddRecordForm]]
 * [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
 * [[datamanager-customization-addrecordactionbuttons|addRecordActionButtons]]
 * [[datamanager-customization-getaddrecordactionbuttons|getAddRecordActionButtons]]
@@ -231,8 +232,11 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-gettoprightbuttonsforaddrecord|getTopRightButtonsForAddRecord]]
 * [[datamanager-customization-extratoprightbuttonsforaddrecord|extraTopRightButtonsForAddRecord]]
 * [[datamanager-customization-addrecordaction|addRecordAction]]
+* [[datamanager-customization-quickAddRecordAction|quickAddRecordAction]]
 * [[datamanager-customization-preaddrecordaction|preAddRecordAction]]
+* [[datamanager-customization-prequickaddrecordaction|preQuickAddRecordAction]]
 * [[datamanager-customization-postaddrecordaction|postAddRecordAction]]
+* [[datamanager-customization-postquickaddrecordaction|postQuickAddRecordAction]]
 
 
 ### Viewing records
@@ -254,6 +258,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-editrecordform|editRecordForm]]
 * [[datamanager-customization-geteditrecordformname|getEditRecordFormName]]
 * [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
+* [[datamanager-customization-prequickeditrecordform|preQuickEditRecordForm]]
 * [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]
 * [[datamanager-customization-editrecordactionbuttons|editRecordActionButtons]]
 * [[datamanager-customization-geteditrecordactionbuttons|getEditRecordActionButtons]]
@@ -261,8 +266,11 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-gettoprightbuttonsforeditrecord|getTopRightButtonsForEditRecord]]
 * [[datamanager-customization-extratoprightbuttonsforeditrecord|extraTopRightButtonsForEditRecord]]
 * [[datamanager-customization-editrecordaction|editRecordAction]]
+* [[datamanager-customization-quickeditrecordaction|quickeditRecordAction]]
 * [[datamanager-customization-preeditrecordaction|preEditRecordAction]]
+* [[datamanager-customization-prequickeditrecordaction|preQuickEditRecordAction]]
 * [[datamanager-customization-posteditrecordaction|postEditRecordAction]]
+* [[datamanager-customization-postquickeditrecordaction|postQuickEditRecordAction]]
 
 ### Cloning records
 
@@ -316,6 +324,57 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-objectbreadcrumb|objectBreadcrumb]]
 * [[datamanager-customization-recordbreadcrumb|recordBreadcrumb]]
 * [[datamanager-customization-versionnavigator|versionNavigator]]
+
+
+## Interception points
+
+Your application can listen into several core interception points to enhance the features of the Data manager customization, e.g. to implement custom authentication. See the [ColdBox Interceptor's documentation](http://wiki.coldbox.org/wiki/Interceptors.cfm) for detailed documentation on interceptors.
+
+The Interception points are:
+
+### postExtraTopRightButtonsForObject
+
+Fired after the _extraTopRightButtonsForObject_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraQsForBuildAjaxListingLink
+
+Fired after the _getAdditionalQueryStringForBuildAjaxListingLink_ customization action (if any) had run. Takes `objectName` and `extraQs` as arguments.
+
+### postExtraRecordActionsForGridListing
+
+Fired after the _extraRecordActionsForGridListing_ customization action had run. Takes `record`, `objectName` and `actions` as arguments.
+
+### postGetExtraListingMultiActions
+
+Fired after the _getExtraListingMultiActions_ customization action had run. Takes `args` as arguments.
+
+### postGetExtraAddRecordActionButtons
+
+Fired after the _getExtraAddRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtonsForAddRecord
+
+Fired after the _extraTopRightButtonsForAddRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postExtraTopRightButtonsForViewRecord
+
+Fired after the _extraTopRightButtonsForViewRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraEditRecordActionButtons
+
+Fired after the _getExtraEditRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtonsForEditRecord
+
+Fired after the _extraTopRightButtonsForEditRecord_ customization action had run. Takes `objectName` and `actions` as arguments.
+
+### postGetExtraCloneRecordActionButtons
+
+Fired after the _getExtraCloneRecordActionButtons_ customization action had run. Takes `args` as arguments.
+
+### postExtraTopRightButtons
+
+Fired after the _extraTopRightButtons_ customization action had run. Takes `objectName`, `action` and `actions` as arguments.
 
 
 ## Creating your own customizations

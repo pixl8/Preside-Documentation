@@ -19,6 +19,15 @@ settings.features.dataexport.enabled = true;
 
 *Note: `read` operation must be allowed for the object*
 
+### Define default exporter
+
+Add `settings.dataExport.defaultExporter` in your application's `Config.cfc`. Example:
+
+```
+settings.dataExport.defaultExporter = "Excel";
+```
+
+
 ### Customizing default export fields per object
 
 Add the `@dataExportFields` annotation to your preside objects to supply an ordered list of fields that will be used as the _default_ list of fields for exports:
