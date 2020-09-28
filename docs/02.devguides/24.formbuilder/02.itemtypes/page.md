@@ -401,3 +401,64 @@ component {
 	// ...
 }
 ```
+
+### getQuestionDataType()
+
+>>> v10.13.0 and up only
+
+As of **10.13.0**, your item type can implement the `getQuestionDataType()` private handler action. This is provided with `args.configuration` which you can use to inform the v2 formbuilder data model which field type to save the response against. If not implemented, the system will default to `text` which means querying the responses can not benefit from table indexes.
+
+Possible return responses are:
+
+* `text` - The default, just a clob of data
+* `shorttext` - Maximum 200 chars - can be indexed in the database for faster lookups
+* `date` - A valid date or date time
+* `bool` - A valid boolean value
+* `int` - An integer value
+* `float` - A floating point number
+
+Example from the number item type:
+
+```luceescript
+private string function getQuestionDataType( event, rc, prc, args={} ) {
+	var format = args.configuration.format ?: "";
+
+	if ( format == "integer" ) {
+		return "int";
+	}
+
+	return "float";
+}
+```
+
+### renderV2ResponsesForDb()
+
+>>> v10.13.0 and up only
+
+As of **10.13.0**, your item type can implement a `renderV2ResponsesForDb` handler action to prepare responses for saving in the database.
+
+This action should return either:
+
+1. **A simple value**, for simple item types
+2. **An array of simple values**, for multiple select item types - the order of the values should match the user selected order
+3. **A struct of simple keys with simple values**, for form items that are broken into multiple fields (see matrix for example)
+
+The action receives:
+
+* `args.response` - contains the processed form submission for the question 
+* `args.configuration` - struct, the user configuration of the item
+
+Example from the `Matrix` item type:
+
+```luceescript
+private struct function renderV2ResponsesForDb( event, rc, prc, args={} ) {
+	var response = {};
+	var qAndAs = _getQuestionsAndAnswers( argumentCollection=arguments );
+
+	for( var qAndA in qAndAs ) {
+		response[ qAndA.question ] = qAndA.answer;
+	}
+
+	return response;
+}
+```
