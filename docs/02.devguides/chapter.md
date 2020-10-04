@@ -23,6 +23,7 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[customerrorpages]]
 * [[sitetreenavigationmenus]]
 * [[adminlefthandmenu]]
+* [[adminsystemmenu]]
 * [[assetmanager]]
 * [[workingwithuploadedfiles]]
 * [[multilingualcontent]]
