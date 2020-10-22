@@ -146,7 +146,7 @@ component {
         var bookingCount = 0;
 
         if ( userId.len() ) {
-            bookingCount = emsUserQueriesService.getUserBookingCount( userId=userId ); 
+            bookingCount = emsUserQueriesService.getUserBookingCount( userId=userId );
         }
 
         // we can use the rulesEngineOperatorService to do comparison with
@@ -169,7 +169,7 @@ Example usage:
 ```luceescript
 /**
  * Expression to evaluate a logged in user's spend on events
- * 
+ *
  * @expressionContexts user
  */
 component {
@@ -206,3 +206,5 @@ component {
 
 }
 ```
+
+By default, the interface will be based around datetime values. *10.13.0* adds the attribute `@_time.isDate`: if set, the interface will present simple date pickers, and comparisons will exclude time periods. Automatically generated rules will base this setting on the `dbtype` of the property.
