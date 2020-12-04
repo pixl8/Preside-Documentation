@@ -16,5 +16,5 @@ This feature must be enabled with `settings.features.formbuilder2.enabled=true` 
 
 However, if you have custom form builder item types, you may want to implement v2 features to ensure that they are stored optimally in the database and will work well with the new system. See:
 
-* [renderV2ResponsesForDb()](//devguides/formbuilder/itemtypes.html#renderv2responsesfordb)
-* [getQuestionDataType()](//devguides/formbuilder/itemtypes.html#getquestiondatatype)
+* [renderV2ResponsesForDb()](devguides/formbuilder/itemtypes.html#renderv2responsesfordb)
+* [getQuestionDataType()](devguides/formbuilder/itemtypes.html#getquestiondatatype)
