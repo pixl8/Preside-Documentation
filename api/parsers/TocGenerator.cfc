@@ -21,7 +21,7 @@ component {
 			level = Val( title.nodeName().reReplace( "^[hH]", "" ) );
 			node  = {
 				  title    = title.text()
-				, slug     = LCase( title.text() ).reReplace( "\W", "-", "all" ).reReplace( "-+", "-", "all" )
+				, slug     = LCase( title.text() ).replace( "\.", "", "all" ).reReplace( "\W", "-", "all" ).reReplace( "-+", "-", "all" ).reReplace( "-$", "", "all" )
 				, children = []
 				, level    = level
 			};

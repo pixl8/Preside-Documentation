@@ -43,10 +43,48 @@ room_name.label=Room name
 use_html_notification.label=Use HTML notifications
 ```
 
-## Multiple sites
+## Multiple sites & custom tenancy
 
 As of Preside 10.7.0, if you have multiple sites, each configuration form can now be configured globally and then per-site if you wish to override global defaults in a particular site.
 
+As of Preside **10.13.0**, this behaviour can be overwritten in two ways:
+
+1. Disable site tenancy altogether
+2. Specify an alternative tenant (see [[data-tenancy]])
+
+### Disabling site tenancy for a category
+
+Disabling site tenancy for a system configuration category can be done by adding a `noTenancy="true"` attribute to the configuration form xml:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="system-config.my_category:" noTenancy="true">
+    <tab id="default">
+        <fieldset id="default" sortorder="10">
+            <field name="my_setting" />
+        </fieldset>
+    </tab>
+</form>
+```
+
+### Using a custom tenancy
+
+Custom tenancy (see [[data-tenancy]]) allows automatic filtering of data based on some configured current request record. As of **10.13.0**, you can specify a custom tenant for any configuration form by adding a `tenancy="my_custom_tenant"` attribute to your setting category's xml form.
+
+For example, if you had defined a special `account` tenancy, you could add this to your settings form:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="system-config.my_category:" tenancy="account">
+    <tab id="default">
+        <fieldset id="default" sortorder="10">
+            <field  />
+        </fieldset>
+    </tab>
+</form>
+```
+
+This would result in admin users being able to supply a global set of default settings for your category and then being able to override the settings for each `account` tenant.
 ## Retrieving settings
 
 ### From handlers and views

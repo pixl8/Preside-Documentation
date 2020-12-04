@@ -5,11 +5,17 @@ title: Form Builder overview
 
 As of v10.5.0, Preside provides a system that enables content administrators to build input forms to gather submissions from their site's user base.
 
+>>> As of **v10.13.0**, Preside offers a v2 data model for form builder and this can be enabled separately. Enabling this feature will effect any forms that are created from that point on, previously created forms will continue to function as they were.
+
+>>> This v2 data model makes querying the answers to questions more robust and provides an additional UI to manage a global set of questions that can be asked in forms.
+
 ![Screenshot showing a form builder form's workbench](images/screenshots/formbuilder_workbench.jpg)
 
 ## Enabling form builder
 
-In version 10.5.0, the form builder system is disabled by default. To enable it, set the `enabled` flag on the `formbuilder` feature in your application's `Config.cfc$configure()` method:
+### Pre 10.13.0
+
+In versions 10.5 to 10.12, the form builder system is disabled by default. To enable it, set the `enabled` flag on the `formbuilder` feature in your application's `Config.cfc$configure()` method:
 
 ```luceescript
 component extends="preside.system.config.Config" {
@@ -21,6 +27,27 @@ component extends="preside.system.config.Config" {
 
 		// enable form builder
 		settings.features.formbuilder.enabled = true;
+
+		// ...
+	}
+}
+
+```
+
+### 10.13.0 and above
+
+As of *10.13*, the form builder system is **enabled** by default. However, the v2 of the data model is turned **off** by default. To enable it:
+
+```luceescript
+component extends="preside.system.config.Config" {
+
+	public void function configure() {
+		super.configure();
+
+		// ...
+
+		// enable form builder
+		settings.features.formbuilder2.enabled = true;
 
 		// ...
 	}

@@ -223,6 +223,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 
 * [[datamanager-customization-addrecordform|addRecordForm]]
 * [[datamanager-customization-getaddrecordformname|getAddRecordFormName]]
+* [[datamanager-customization-getquickaddrecordformname|getQuickAddRecordFormName]]
 * [[datamanager-customization-prerenderaddrecordform|preRenderAddRecordForm]]
 * [[datamanager-customization-prequickaddrecordform|preQuickAddRecordForm]]
 * [[datamanager-customization-postrenderaddrecordform|postRenderAddRecordForm]]
@@ -257,6 +258,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 
 * [[datamanager-customization-editrecordform|editRecordForm]]
 * [[datamanager-customization-geteditrecordformname|getEditRecordFormName]]
+* [[datamanager-customization-getquickeditrecordformname|getQuickEditRecordFormName]]
 * [[datamanager-customization-prerendereditrecordform|preRenderEditRecordForm]]
 * [[datamanager-customization-prequickeditrecordform|preQuickEditRecordForm]]
 * [[datamanager-customization-postrendereditrecordform|postRenderEditRecordForm]]

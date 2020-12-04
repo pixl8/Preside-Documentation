@@ -284,6 +284,36 @@ The core system provides you with these named generators:
 * `nextint` - **introduced in 10.12.0**, gives the next incremental integer value for the field
 * `slug` - takes an optional `generateFrom` attribute that defines which field (if present in the submitted data) should be used to generate the slug; by default it will use the object's label field. A unique slug will be generated, so may be suffixed with `-1`, `-2`, etc.
 
+#### Developer provided generators
+
+As of **10.13.0**, you are able to create convention based handler actions for generators. The convention based handler name for any generator is `generators.{generatorname}`.
+
+For example, the property below would attempt to use a handler action of `generators.my.generator`, i.e. a file `/handlers/generators/My.cfc` with a `generator()` method.
+
+```luceescript
+property name="is_cool" ... generator="my.generator";
+```
+
+Your handler action will receive an `args` struct in the arguments with the following keys:
+
+* `objectName`: the name of the object whose record is being added/updated
+* `id`: the ID of the record (for updates only)
+* `generator`: the full generator string used
+* `data`: a struct with the data being passed to the insert/update operation
+* `prop`: a struct with all the property attributes of the property whos value is being generated
+
+##### Example
+
+```luceescript
+component {
+
+    private boolean function generator( event, rc, prc, args={} ) {
+        return IsTrue( args.data.under_thirty ?: "" ) && ( ( args.status ?: "" ) == "active" );
+    } 
+
+}
+```
+
 ### Formula fields
 
 Properties that define a formula are not generated as fields in your database tables. Instead, they are made available to your application to be selected in `selectData` queries. The value of the `formula` attribute should be a valid SQL statement that can be used in a SQL `select` statement and include `${prefix}` tokens before any field definitions (see below for an explanation). For example:
