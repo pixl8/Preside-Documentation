@@ -107,6 +107,20 @@ The `box.json` file is used by [CommandBox](https://www.duckduckgo.com/?q=Comman
                 "minVersion":"3", // (optional) minimum allowed version of dependency
                 "maxVersion":"4", // (optional) maximum allowed version of dependency
             }
+        },
+
+        // list of preside *extension* compatibility issues
+        // block install if compatibility issues are found
+        "compatibility":{
+            "preside-ext-old-ext":{
+                "compatible":false, // if completely incompatible
+                "message":"Custom message to show if compatibility issue is found"
+            },
+            "preside-ext-another-old-ext":{
+                "minVersion":"1.0.0", // i.e. if another-old-ext is installed, it must be at least 1.0.0 to be compatible with this extension
+                "maxVersion":"^1.2.0", // i.e. if another-old-ext is installed, it must be no greater than 1.2.x to be compatible with this extension
+                "message":"Custom message to show if compatibility issue is found"
+            }
         }
     }
 }
