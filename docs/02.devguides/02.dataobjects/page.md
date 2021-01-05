@@ -309,7 +309,7 @@ component {
 
     private boolean function generator( event, rc, prc, args={} ) {
         return IsTrue( args.data.under_thirty ?: "" ) && ( ( args.status ?: "" ) == "active" );
-    } 
+    }
 
 }
 ```
@@ -1065,3 +1065,32 @@ component {
 ```
 
 >>>> As of Preside 10.8.0, this method is deprecated and you should instead use `@tenant site`. See [[data-tenancy]].
+
+
+## Flagging an object record
+
+You are able to flag a record for your objects' data. Doing so will mean you able to filter which records are flagged in the object.
+
+To enable this feature for an object, simple add the `flagEnabled` attribute (disabled by default) to the `component` tag:
+
+```luceescript
+/**
+ * @flagEnabled true
+ *
+ */
+component {
+    // ...
+}
+```
+
+If you wish to use a different property to flag a record, you can use the `flagField` attribute on your CFC, e.g.:
+
+```luceescript
+/**
+ * @flagField record_flag
+ *
+ */
+component {
+    property name="record_flag" type="boolean" dbtype="boolean" default="0" renderer="none" required=true;
+}
+```
