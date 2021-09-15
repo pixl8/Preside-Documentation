@@ -1,4 +1,4 @@
-FROM pixl8/pixl8-build-utility-docker-image:v2.0.0
+FROM pixl8/docker-commandbox-lite:v2-rc
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 RUN gem install s3_website
