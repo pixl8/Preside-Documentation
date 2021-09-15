@@ -1,0 +1,30 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - master
+      - develop
+jobs:
+  ci:
+    name: Preside Documentation CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup flow variables
+        run: |
+          branch=${GITHUB_REF##*/}
+          if [[ $branch == develop ]] ; then
+              bucket=preside-beta-docs
+          else
+              bucket=docs.preside.org
+          fi
+          echo "s3_bucket=$bucket" >> $GITHUB_ENV
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Build and deploy
+        uses: ./.github/actions/build-and-deploy
+        with:
+          s3_bucket: ${{ env.s3_bucket }}

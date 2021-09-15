@@ -1,0 +1,12 @@
+# .github/actions/build-and-deploy/action.yml
+name: 'Build and deploy'
+description: 'Build site with our custom jazz'
+inputs:
+  s3_bucket:
+    description: 'S3 Bucket to push to'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    S3_BUCKET: ${{ inputs.s3_bucket }}
