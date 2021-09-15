@@ -28,3 +28,5 @@ jobs:
         uses: ./.github/actions/build-and-deploy
         with:
           s3_bucket: ${{ env.s3_bucket }}
+          s3_access_key_id: ${{ env.S3_ACCESS_KEY_ID }}
+          s3_secret_key: ${{ env.S3_SECRET_KEY }}
