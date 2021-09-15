@@ -33,7 +33,12 @@
 		componentPath = ReReplace( componentPath, "\.cfc$", "" );
 		componentPath = ListChangeDelims( componentPath, ".", "\/" );
 
-		meta = GetComponentMetaData( componentPath );
+		try {
+			meta = GetComponentMetaData( componentPath );
+		} catch( any e ) {
+			meta = {};
+		}
+
 		if ( IsBoolean( meta.autodoc ?: "" ) && meta.autodoc ) {
 			result = srcToPresideDocs.createCFCDocumentation( componentPath, apiDocsPath );
 			if ( result.success ) {
