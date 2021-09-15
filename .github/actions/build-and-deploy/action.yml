@@ -11,7 +11,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    S3_BUCKET: ${{ inputs.s3_bucket }}
-    S3_ACCESS_KEY_ID: ${{ inputs.s3_access_key_id }}
-    S3_SECRET_KEY: ${{ inputs.s3_secret_key }}
