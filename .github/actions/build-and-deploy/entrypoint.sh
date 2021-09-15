@@ -2,6 +2,8 @@
 
 cd ${GITHUB_WORKSPACE}
 
+chmod +x *.sh
+
 box install save=false force=true || exit 1
 box start serverConfigFile=server.json || exit 1
 ./generateDocs.sh || exit 1

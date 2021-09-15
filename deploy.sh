@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Zipping up docs for offline download..."
 cd builds/html
 zip -q -r presidecms-docs.zip *
