@@ -12,6 +12,8 @@ component {
 	this.mappings[ "/coldbox"      ] = this.cwd & "preside/system/externals/coldbox";
 	this.mappings[ "/cfconcurrent" ] = this.cwd & "preside/system/externals/cfconcurrent";
 
+	this.requesttimeout = CreateTimeSpan( 0, 1, 0, 0 );
+
 	public boolean function onRequest( required string requestedTemplate ) output=true {
 		include template=arguments.requestedTemplate;
 

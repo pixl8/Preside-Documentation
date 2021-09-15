@@ -1,0 +1,13 @@
+# .github/actions/build-and-deploy/action.yml
+name: 'Build and deploy'
+description: 'Build site with our custom jazz'
+inputs:
+  s3_bucket:
+    required: true
+  s3_access_key_id:
+    required: true
+  s3_secret_key:
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

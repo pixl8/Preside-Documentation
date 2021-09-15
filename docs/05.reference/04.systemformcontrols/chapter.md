@@ -17,6 +17,8 @@ System provided form controls for the [[presideforms]]:
 * [[formcontrol-datetimepicker]]
 * [[formcontrol-derivativePicker]]
 * [[formcontrol-emailInput]]
+* [[formcontrol-enumSelect]]
+* [[formcontrol-enumRadioList]]
 * [[formcontrol-fileTypePicker]]
 * [[formcontrol-hidden]]
 * [[formcontrol-imagedimensions]]
