@@ -17,6 +17,7 @@ Each "action" struct can/must have the following keys:
 * `iconClass` _(optional)_: Font awesome icon class to use. Icon will be displayed before the title.
 * `globalKey` _(optional)_: Global keyboard key shortcut for the button.
 * `prompt` _(optional)_: Prompt for the action should you want a modal dialog to appear to confirm the action.
+* `match` _(optional)_: The prompt modal dialog will display this word and requires that the user enters it in order to continue.
 * `target` _(optional)_: e.g. "\_blank" to have the button link open in a new tab.
 * `children` _(optional)_: Array of child actions that will appear in a drop-down menu on button click.
 
@@ -28,6 +29,8 @@ If you wish your button to be a drop down menu, use the `children` array. Each i
 
 * `title` _(required)_: Title/label for the item
 * `link` _(required)_: Link of the item
+* `prompt` _(optional)_: Prompt for the action should you want a modal dialog to appear to confirm the action.
+* `match` _(optional)_: The prompt modal dialog will display this word and requires that the user enters it in order to continue.
 * `target` _(optional)_: Optional link target, e.g. "\_blank" to open in a new tab
 * `icon` _(optional)_: Font awesome icon class for the item. Icon will appear before the title
 

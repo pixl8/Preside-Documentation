@@ -3,7 +3,7 @@ id: 10-14-upgrade-notes
 title: Upgrade notes for 10.13 -> 10.14
 ---
 
-The 10.14.0 release is focused around performance and admin security. A change to how we implement `renderView()`, _may_ cause unexpected bugs with variables not found. See details below.
+The 10.14.0 release is focused around performance and admin security. A change to how we implement `renderView()`, _may_ cause unexpected bugs with variables not found. In addition, the `request.http.body` variable is no longer set on every request. See details below.
 
 ## renderView() changes
 
@@ -27,3 +27,7 @@ You may have in your code some accidental misuse of a previous behaviour that wa
 ```
 
 In Preside 10.13 and below, the output would be "Exists". In 10.14, the output will be "Should not exist".
+
+## request.http.body changes
+
+Preside used to set `request.http.body` on every request. This variable was used in the request context method: `event.getHttpContent()`. The variable is no longer set (see [PRESIDECMS-2017](https://presidecms.atlassian.net/browse/PRESIDECMS-2017)). Any custom code that is attempting to use `request.http.body` directly should be refactored to use `event.getHttpContent()`.
