@@ -28,6 +28,7 @@ component {
 
     property name="myCustomArchiveService" inject="myCustomArchiveService";
     property name="batchOperationService"  inject="datamanagerBatchOperationService";
+    property name="threadUtil"             inject="threadUtil";
     property name="messageBox"             inject="messagebox@cbmessagebox";
 
     private array function multiRecordAction( event, rc, prc, args={} ) {
@@ -83,6 +84,7 @@ component {
         var queueId           = args.batchQueueId ?: "";
         var canLog            = StructkeyExists( arguments, "logger" );
         var canInfo           = canLog && arguments.logger.canInfo();
+        var canWarn           = canLog && arguments.logger.canWarn();
         var canReportProgress = StructKeyExists( arguments, "progress" );
         var queueSize         = canReportProgress ? batchOperationService.getBatchOperationQueueSize( queueId ) : 0;
         var processed         = 0;
@@ -97,6 +99,14 @@ component {
 
             if ( !ArrayLen( ids ) ) {
                 break;
+            }
+
+            if ( threadUtil.isInterrupted() ) {
+                batchOperationService.clearBatchOperationQueue( queueId );
+                if ( canWarn ) {
+                    arguments.logger.warn( "Batch operation was cancelled or interrupted. Safely quitting..." );
+                }
+                return false;
             }
 
             myCustomArchiveService.archiveRecords( objectName=objectName, ids=ids );
