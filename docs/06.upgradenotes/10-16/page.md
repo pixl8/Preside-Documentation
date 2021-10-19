@@ -9,7 +9,7 @@ The 10.16.0 release brings a number of improvements to the platform that should 
 
 ## Asset image alt text
 
-Finally in Preside 10.16.0 we have out-of-the-box alt text on assets. In addition, all of our default asset renderers now use this alt-text when it is available.
+There is now an out-of-the-box alt text field for assets. In addition, all of our default asset renderers now use this alternative text when it is available.
 
 You should check your code-base for any customised asset renderers and update them to get the alt text from the `alt_text` field on the `asset` record. For example:
 
@@ -40,24 +40,23 @@ See the INSERT-GUIDE-HERE guide for more details about configuring this feature.
 
 ## Datamanager listing batch operations
 
-In Preside 10.16.0, two tickets brought some more robust handling of the batch edit and delete functionalities when triggered from datamanager listing tables:
+In Preside 10.16.0, two tickets brought some more robust handling of the batch edit and delete functionalities when triggered from datamanager listing tables. If you are customising the batch operations, or implementing pre/post delete record customisations, then you may need to take action:
 
 * [PRESIDECMS-2213](https://presidecms.atlassian.net/browse/PRESIDECMS-2213) Batch edit/delete: perform in background thread and show progress bar
 * [PRESIDECMS-2214](https://presidecms.atlassian.net/browse/PRESIDECMS-2214) Datamanager batch operations: allow option to select all records matching current filters
 
 ![Screenshot of "select all matching filter" feature in datatables](images/screenshots/batchselectall.png)
 
-### Pre/post delete customisations
+### Pre and post delete customisations
 
 Previously, during the batch delete process, the [[datamanager-customization-predeleterecordaction]] and [[datamanager-customization-postdeleterecordaction]] customisations would be fired for objects that implemented them. 
 
-**THIS IS NO LONGER THE CASE**. Instead, we now execute the following new customisations for objects that implement them:
+**THIS IS NO LONGER THE CASE FOR BATCH DELETE**. Instead, we now execute the following new customisations for objects that implement them:
 
-* TODO
-* TODO
+* [[datamanager-customization-prebatchdeleterecordsaction]]
+* [[datamanager-customization-postbatchdeleterecordsaction]]
 
->>> You should search your code bases for handler implementations of the pre/postdeleteRecordAction customisations and update accordingly to support batch delete in a more progressive way.
-
+>>> You should search your code bases for handler implementations of the pre/postdeleteRecordAction customisations and update accordingly to support batch delete if needed.
 
 ### Custom batch record operations
 
