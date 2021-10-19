@@ -66,5 +66,5 @@ If your codebase has supplied custom batch operations using one of the customisa
 * [[datamanager-customization-getlistingmultiactions|getListingMultiActions]]
 * [[datamanager-customization-getextralistingmultiactions|getExtraListingMultiActions]]
 
-See [[datamanager-customization-multirecordaction]] for a guide to creating batch operations.
+See [[datamanager-customization-multirecordaction]] for an updated guide to creating batch operations. Scanning your codebase for references to `multiRecordAction(` will give you an indication of where this has been customised.
 
