@@ -127,7 +127,7 @@ While you can add any arbitrary attributes to properties (and use them for your 
             <tr><td>relatedViaSourceFk</td>   <td>No</td>  <td>""</td>        <td>The name of the source object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
             <tr><td>relatedViaTargetFk</td>   <td>No</td>  <td>""</td>        <td>The name of the target object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
             <tr><td>enum</td>                 <td>No</td>  <td>""</td>        <td>The name of the configured enum to use with this field. See "ENUM properties", below.</tr>
-        </tbody>
+            <tr><td>aliasses</td>                 <td>No</td>  <td>""</td>        <td>List of alternative names (aliasses) for the property.</tr>        </tbody>
     </table>
 </div>
 
@@ -685,7 +685,7 @@ In addition to the four core methods above, there are also further utility metho
 
 #### Specifying fields for selection
 
-The [[presideobjectservice-selectdata]] method accepts a `selectFields` argument that can be used to specify which fields you wish to select. This can be used to select properties on your object as well as properties on related objects and any plain SQL aggregates or other SQL operations. For example:
+The [[presideobjectservice-selectdata]] method accepts a `selectFields` argument that can be used to specify which fields you wish to select. This can be done by the field's name or one of it's aliasses. This can be used to select properties on your object as well as properties on related objects and any plain SQL aggregates or other SQL operations. For example:
 
 ```luceescript
 records = newsObject.selectData(
