@@ -127,7 +127,7 @@ While you can add any arbitrary attributes to properties (and use them for your 
             <tr><td>relatedViaSourceFk</td>   <td>No</td>  <td>""</td>        <td>The name of the source object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
             <tr><td>relatedViaTargetFk</td>   <td>No</td>  <td>""</td>        <td>The name of the target object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
             <tr><td>enum</td>                 <td>No</td>  <td>""</td>        <td>The name of the configured enum to use with this field. See "ENUM properties", below.</tr>
-        </tbody>
+            <tr><td>aliasses</td>                 <td>No</td>  <td>""</td>        <td>List of alternative names (aliasses) for the property.</tr>        </tbody>
     </table>
 </div>
 
