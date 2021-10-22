@@ -13,6 +13,23 @@ You can tell the system to NOT auto generate filter expressions for a property b
 property name="description" ... autofilter=false;
 ```
 
+## Configure filter expression generation
+
+As of Preside **10.16.0**, you can tell the system to NOT auto generate filter one or more expressions of a property by adding the `excludeAutoExpressions="{one or more expression keys}"` attribute to the property:
+
+```luceescript
+property name="example" ... excludeAutoExpressions="manyToOneFilter,manyToManyCount";
+```
+
+### Filter expression role permission
+
+As of Preside **10.16.0**, you can configure which filter expressions of a property are auto generate for specific admin role by adding the `autoFilterExpressions:{admin role}="{one or more expression keys}"`
+
+```luceescript
+property name="example" ... autoFilterExpressions:contentadmin="propertyIsNull,datePropertyInRange" autoFilterExpressions:contenteditor="datePropertyInRange";
+```
+
+
 ## Auto-adding filters for related objects
 
 The system can also add automatically generated filter expressions for `many-to-one` related objects. This means, for example, you can use filters for various `contact` object properties on a `user` object when the `user` object has a `many-to-one` relationship with `contact`.

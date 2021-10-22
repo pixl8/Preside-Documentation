@@ -27,6 +27,19 @@ Add `settings.dataExport.defaultExporter` in your application's `Config.cfc`. Ex
 settings.dataExport.defaultExporter = "Excel";
 ```
 
+### Configure save export permission key
+
+As of Preside **10.16.0**, the save export permission key can be configure by `dataManagerSaveExportPermissionKey` annotation (Default value is set to `read`)
+
+```luceescript
+/**
+ * @dataManagerSaveExportPermissionKey    saveExport
+ */
+component {
+	// ...
+}
+```
+
 
 ### Customizing default export fields per object
 
@@ -221,4 +234,19 @@ The default delimiter used for CSV export is a comma. You can change this in `Co
 ...
 settings.dataExports.csv.delimiter = Chr( 9 ); // tab
 ...
+```
+
+## Configuring Export Fields Permission
+
+As of Preside **10.16.0**, the export fields' permission can be controlled by `limitToAdminRoles` property attribute. It accepts multiple roles by comma delimiter list.
+
+```luceescript
+// /preside-objects/my_object.cfc
+component {
+
+    // ...
+    property name="my_object_field" ... limitToAdminRoles="sysadmin,contentadmin";
+    // ...
+
+}
 ```
