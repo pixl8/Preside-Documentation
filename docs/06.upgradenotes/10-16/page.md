@@ -36,7 +36,7 @@ In 10.16.0, we added the ability to easily prompt users to type a confirmation t
 
 This feature is turned off by default for single record deletes, and turned _on_ by default for multi-record deletes.
 
-See the INSERT-GUIDE-HERE guide for more details about configuring this feature.
+See the [[customizing-deletion-prompt-matches]] guide for more details about configuring this feature.
 
 ## Datamanager listing batch operations
 

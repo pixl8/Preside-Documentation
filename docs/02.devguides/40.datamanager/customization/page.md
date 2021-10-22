@@ -294,6 +294,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-postdeleterecordaction|postDeleteRecordAction]]
 * [[datamanager-customization-prebatchdeleterecordsaction|preBatchDeleteRecordsAction]]
 * [[datamanager-customization-postbatchdeleterecordsaction|postBatchDeleteRecordsAction]]
+* [[datamanager-customization-getdeletionconfirmationmatch|getDeletionConfirmationMatch]]
 
 
 ### Building links
