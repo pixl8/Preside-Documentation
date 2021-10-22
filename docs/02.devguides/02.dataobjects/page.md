@@ -685,7 +685,7 @@ In addition to the four core methods above, there are also further utility metho
 
 #### Specifying fields for selection
 
-The [[presideobjectservice-selectdata]] method accepts a `selectFields` argument that can be used to specify which fields you wish to select. This can be used to select properties on your object as well as properties on related objects and any plain SQL aggregates or other SQL operations. For example:
+The [[presideobjectservice-selectdata]] method accepts a `selectFields` argument that can be used to specify which fields you wish to select. This can be done by the field's name or one of it's aliasses. This can be used to select properties on your object as well as properties on related objects and any plain SQL aggregates or other SQL operations. For example:
 
 ```luceescript
 records = newsObject.selectData(
