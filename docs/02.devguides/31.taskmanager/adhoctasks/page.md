@@ -182,3 +182,28 @@ public void function downloadExport( event, rc, prc ) {
 
 }
 ```
+
+### Configure Progress Tracking UI
+
+As of Preside **10.16.0**, the progress tracking UI has few extra configurable options in query string as below:
+
+- `hideTaskLog` : Send as `true` to hide the log section, default is `false`
+- `hideCancel` : Send as `true` to disable cancel button, default is `false`
+- `hideReturn` : Send as `true` to disable return button, default is `false`
+- `hideBreadCrumbs` : Send as `true` to hide the UI breadcrumb, default is `false`
+
+```luceescript
+// ...
+
+var hideTaskLog     = true;
+var hideCancel      = true;
+var hideReturn      = true;
+var hideBreadCrumbs = true;
+
+setNextEvent( url=event.buildAdminLink(
+	  linkTo      = "adhoctaskmanager.progress"
+	, queryString = "taskId=" & taskId & "hideTaskLog=" & hideTaskLog & "hideCancel=" & hideCancel & "hideReturn=" & hideReturn & "hideBreadCrumbs=" & hideBreadCrumbs
+) );
+
+// ...
+```
