@@ -65,12 +65,12 @@ settings.adminMenuItems.sitetree = {
             </tr>
             <tr>
                 <td>icon</td>
-                <td><code>admin.menu:{menuItemName}.iconClass</code></td>
+                <td><code>admin.menuitem:{menuItemName}.iconClass</code></td>
                 <td>Font awesome icon class name, or i18n URI that translates to one</td>
             </tr>
             <tr>
                 <td>title</td>
-                <td><code>admin.menu:{menuItemName}.title</code></td>
+                <td><code>admin.menuitem:{menuItemName}.title</code></td>
                 <td>Title of the menu item, or i18n URI that translates to the title</td>
             </tr>
             <tr>
