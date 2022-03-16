@@ -41,7 +41,15 @@ component {
 }
 ```
 
-Each of these menu items is then implemented as a view that lives under a `/views/admin/layout/configurationMenu/` folder. For example, for the 'errorLogs' item, there exists a view at `/views/admin/layout/configurationMenu/errorLogs.cfm` that looks like this:
+## Menu items
+
+As of **10.17.0** each menu item should have a corresponding entry in the `settings.adminMenuItems` struct.
+
+See [[adminmenuitems]] for documentation on specificying a menu item.
+
+### Pre 10.17.0 implementation (still supported)
+
+Prior to 10.17.0, all menu items are then implemented as a view that lives under a `/views/admin/layout/configurationMenu/` folder. For example, for the 'errorLogs' item, there existed a view at `/views/admin/layout/configurationMenu/errorLogs.cfm` that looked like this:
 
 ```lucee
 <!--- /views/admin/layout/configurationMenu/errorLogs.cfm --->

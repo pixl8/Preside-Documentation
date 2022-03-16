@@ -24,6 +24,7 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[sitetreenavigationmenus]]
 * [[adminlefthandmenu]]
 * [[adminsystemmenu]]
+* [[adminmenuitems]]
 * [[assetmanager]]
 * [[workingwithuploadedfiles]]
 * [[multilingualcontent]]
