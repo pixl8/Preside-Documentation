@@ -68,7 +68,7 @@ batch.delete.records.match=DO IT
 
 #### Dynamic match text for single record deletes
 
-To create dynamic match text per record, use the datamanager customisation: [[datamanager-customization-getdeletionconfirmationmatch|getDeletionConfirmationMatch]] (see guide for more details).
+To create dynamic match text per record, use the datamanager customisation: [[datamanager-customization-getrecorddeletionpromptmatch|getRecordDeletionPromptMatch]] (see guide for more details).
 
 
 
