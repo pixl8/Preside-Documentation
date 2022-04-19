@@ -26,6 +26,16 @@ By default, this will cache _everything_ except:
 
 Each page will potentially have two cached entries - one for logged in users and one for anonymous visitors.
 
+### Update notice: caching and logged in web users
+
+This feature has been patched so that full page caching is **disabled by default** for logged in website users. A new feature flag can be used to allow full page caching for logged in website users:
+
+```luceescript
+settings.features.fullPageCachingForLoggedInUsers.enabled = true; // false by default
+```
+
+This change was introduced in hotfixes: `10.12.33`, `10.13.25`, `10.14.32` and `10.15.25`. See [PRESIDECMS-2309](https://presidecms.atlassian.net/browse/PRESIDECMS-2309)
+
 ## Configuration
 
 The following additional settings are available as of **10.11.0** (the default preside settings are show below):
