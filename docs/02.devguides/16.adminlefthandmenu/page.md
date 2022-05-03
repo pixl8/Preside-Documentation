@@ -34,7 +34,17 @@ component {
 }
 ```
 
-Each of these side bar items is then implemented as a view that lives under a `/views/admin/layout/sidebar/` folder. For example, for the 'sitetree' item, there exists a view at `/views/admin/layout/sidebar/sitetree.cfm` that looks like this:
+## Menu items
+
+As of **10.17.0** each menu item should have a corresponding entry in the `settings.adminMenuItems` struct.
+
+See [[adminmenuitems]] for documentation on specificying a menu item.
+
+### Pre 10.17.0 implementation (still supported)
+
+Prior to 10.17.0, all side bar items are implemented as a view that lives under a `/views/admin/layout/sidebar/` folder. This method is still supported, but deprecated in favour of the **Admin menu items** method above.
+
+For example, for a 'sitetree' item, there existed a view at `/views/admin/layout/sidebar/sitetree.cfm` that looked like this:
 
 ```luceescript
 // /views/admin/layout/sidebar/sitetree.cfm
