@@ -15,7 +15,7 @@ Any migrations are run in **name** order. It is recommended therefore that you n
 
 ### Example
 
-```cfc
+```luceescript
 /**
  * Handler at /handlers/dbmigrations/2022-05-25_defaultEventModes.cfc
  *
