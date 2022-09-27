@@ -9,6 +9,8 @@ As of **10.8.7**, Preside comes with a data export API with a simple UI built in
 
 The platform also offers a concept of custom data exporters. A data exporter consists of a single handler action and an i18n `.properties` file to describe it.
 
+As of **10.19.0**, the platform also offers the ability for developers to define custom "Export templates". See [[data-export-templates]]
+
 ### Enabling the feature
 
 Enable the feature in your application's `Config.cfc` with:
