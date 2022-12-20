@@ -53,3 +53,4 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[extensions]]
 * [[selectdataviews]]
 * [[customdbmigrations]]
+* [[systemalerts]]
