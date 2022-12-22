@@ -5,39 +5,122 @@ title: System Alerts
 
 ## Overview
 
-Introduced in **10.20.0**, System Alerts ...
+System alerts were introduced in Preside **10.20** and allow developers to alert users of the admin system to problems that require resolving. For example, when there is missing system config such as the "Default from email address" that will lead to errors with the full working of the system.
+
+Developers register alerts by providing a convention based handler with an accompanying i18n properties file.
 
 ## Implementation
 
+### The system alert handler
+
+System Alert handlers are stored by convention in the `admin.systemAlerts` directory, and are discovered automatically. For example, if I wish to create a "checkDataMappings" alert, I would create a handler file at `/handlers/admin/systemAlerts/CheckDataMappings.cfc`.
+
+The following is a self-documenting example of a system alert handler:
+
+```luceescript
+component {
+
+  /**
+   * Required. The runCheck( check ) method is used to perform your health
+   * check. Use the passed `check` object to report failure or success
+   */
+  private void function runCheck( required systemAlertCheck check ) {
+    var type      = check.getType(); // optional
+    var reference = check.getReference(); // optional, used for context specific checks
+
+    if ( _someLogicFails( reference ) ) {
+      check.fail(); // required to mark as failed
+      check.setLevel( "critical" ); // not required
+      check.setData( { customData="canBeAdded" } ); // not required
+    } else {
+      check.pass();
+    }
+  }
+
+  /**
+   * Optional, but recommended. Renders the alert in the admin
+   * Should provide detail for the user about how to resolve the
+   * issue
+   *
+   * args struct contains any data passed to check.setData() in runCheck
+   */
+  private string function render( event, rc, prc, args={} ) {
+    return renderView( view="/admin/systemAlerts/myAlert/render", args=args );
+  }
 
 
-### Anatomy of a system alert handler
+// CONFIG SETTINGS
+  /**
+   * Optional. Implement this method and return true to have the check run at startup
+   *
+   */
+  private boolean function runAtStartup() {
+    return true;
+  }
 
-System Alert handlers are stored by convention in the `admin.systemAlerts` directory, and are discovered automatically.
+  /**
+   * Optional. Implement this method to have your check run on a schedule.
+   * Must return a valid 6 point cron expression.
+   *
+   */
+  private string function schedule() {
+    return "0 */2 * * * *"; // every two hours
+  }
 
-At its most basic, a system alert handler will contain a `runCheck()` method. This will be called either via automation, or manually in code (see below).
+  /**
+   * Optional. Implement this method to return an array of system category settings
+   * to watch. If the settings change, then the check is run.
+   *
+   */
+  private array function watchSettingsCategories() {
+    return [ "email" ];
+  }
 
-The method is passed `systemAlertCheck` object as the `check` argument, which has various methods and properties, and which will receive the outcome of any tests. If the object is told to fail, then a system alert will be raised. Additional supporting data may also be stored with the system alert.
+  /**
+   * Optional (default is warning). Implement this method to set 
+   * the default level of alert for all alerts raised using this check
+   *
+   */
+  private string function defaultLevel() {
+    return "info";
+  }
 
-It may also be passed a `reference` argument, which is a string to identify a particular record or other thing that the check can be run against (so the same check can be run for multiple instances).
+  /**
+   * Optional (default to empty, meaning 'global'). should return 
+   * a string, denoting the area of the application for which the 
+   * alert is relevant. If not specified, the system alert will 
+   * relate to the application as a whole.
+   */
+  private string function context() {
+    return "events";
+  }
 
-A handler should also have (but does not require) a `render()` method. This viewlet receives as its `args` the record data of a system alert and should respond with a rendered description of the alert. It may explain exactly what the error is, suggest how to resolve it, and even provide a link to go directly to the appropriate part of the application.
+  /**
+   * Optional. should return an array of reference values, which 
+   * will be passed in turn to the `runCheck()` function to run 
+   * multiple checks. This will be done IF the `references()` method 
+   * is defined AND the `runCheck()` method is called without otherwise 
+   * specifying a reference. So, as an example, the method might return 
+   * an array of IDs of all events set to take place in the future, and 
+   * the check can then be run against each in turn.
+   *
+   */
+  private array function references(){
+    return _getEventIdsToCheckForGlobalRecheck();
+  }
 
-### Configuring the handler
+}
+```
 
-Configuration is done via a number of optional methods:
+### i18n properties file
 
-`defaultLevel()` should return a string, denoting the default severity of an alert raised by the handler. This can be one of `critical`, `warning` or `advisory` (in decreasing order of severity). The default is `warning`. Ths default can be overridden by calling `setLevel()` on the `systemAlertCheck` object.
+In addition to the handler, you should supply a `.properties` file to match at `/i18n/systemAlerts/{alertName}.properties`. It is only required to provide a title key (but you can use the file to provide any additional text for your alert rendering). For example:
 
-`context()` should return a string, denoting the area of the application for which the alert is relevant. If not specified, the system alert will relate to the application as a whole.
+```properties
+# /i18n/systemAlerts/eventSetup.properties
+title=Event setup
+```
 
-`runAtStartup()` should return a boolean, and if true the check will run every time the application starts up.
-
-`watchSettingsCategories()` should return an array of one or more strings, each of which is a system settings category. When settings in any of the listed categories are saved, the check will be run.
-
-`schedule()` should return a string, which should be a valid crontab expression. The check will be run regularly according to this schedule.
-
-`references()` should return an array of reference values, which will be passed in turn to the `runCheck()` function to run multiple checks. This will be done IF the `references()` method is defined AND the `runCheck()` method is called without otherwise specifying a reference. So, as an example, the method might return an array of IDs of all events set to take place in the future, and the check can then be run against each in turn.
 
 ## Running a check
 
