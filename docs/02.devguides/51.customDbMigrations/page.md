@@ -29,6 +29,12 @@ component {
 		);
 	}
 
+	// as of 10.20.0 you can now dynamically disable the 
+	// migration with the following *optional* method
+	private boolean function isEnabled() {
+		return isFeatureEnabled( "myFeature" );
+	}
+
 }
 ```
 

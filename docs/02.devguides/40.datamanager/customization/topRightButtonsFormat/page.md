@@ -34,6 +34,8 @@ If you wish your button to be a drop down menu, use the `children` array. Each i
 * `target` _(optional)_: Optional link target, e.g. "\_blank" to open in a new tab
 * `icon` _(optional)_: Font awesome icon class for the item. Icon will appear before the title
 
+As of 10.20, child actions can be supplied as a pre-rendered string **or** you can supply the explicit string "---" to create a spacer entry.
+
 ### Examples
 
 A minimal button item:
@@ -55,6 +57,22 @@ A button with children:
     , children  = [
           { title="Stats"   , link=statsLink   , icon="fa-bar-chart" }
         , { title="Download", link=downloadLink, icon="fa-download"  }
+      ]
+}
+```
+
+A button with primary action and children (from 10.20 onwards):
+
+```luceescript
+{
+      title     = translateResource( "preside-objects.blog:options.btn" )
+    , link      = event.buildAdminLink( objectName=objectName, operation="options" )
+    , iconClass = "fa-wrench"
+    , children  = [
+          { title="Stats"   , link=statsLink   , icon="fa-bar-chart" }
+        , { title="Download", link=downloadLink, icon="fa-download"  }
+        , "---" // spacer
+        , { title="Something else", link=someOtherLink, icon="fa-heels"  }
       ]
 }
 ```
