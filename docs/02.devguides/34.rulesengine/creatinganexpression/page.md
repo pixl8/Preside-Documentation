@@ -119,15 +119,24 @@ component {
      *
      */
     private boolean function prepareFilters(
-          required string eventId       // arguments from configured expression 
-        , required string objectName    // always passed to prepareFilters()
-        , required string filterPrefix  // always passed to prepareFilters()
+          required string eventId           // arguments from configured expression 
+        , required string objectName        // always passed to prepareFilters()
+        ,          string filterPrefix = "" // always passed to prepareFilters() before 10.18.22. As of 10.20.4, 10.19.11 & 10.18.22 *this is always empty and can be ignored*
     ) {
         var paramName   = "eventId" & CreateUUId();  // important to avoid clashing SQL param names
-        var fieldPrefix = arguments.filterPrefix.len() ? arguments.filterPrefix : arguments.objectName;
+        
+        /* prior to 10.18.22: 
+            var fieldPrefix = arguments.filterPrefix.len() ? arguments.filterPrefix : arguments.objectName;
 
+            return [ {
+                filter       = "#fieldPrefix#.event = :#paramName#"
+                filterParams = { "#paramName#" = arguments.eventId }
+            } ];
+        */
+        
+        // from 10.18.22, 10.19.11 and 10.20.4 onwards:
         return [ {
-            filter       = "#fieldPrefix#.event = :#paramName#"
+            filter       = "#arguments.objectName#.event = :#paramName#"
             filterParams = { "#paramName#" = arguments.eventId }
         } ];
     }
@@ -165,11 +174,11 @@ Notice how the `@expressionContexts` for the CFC is also likely to be the same l
 
 ### Arguments
 
-Your `prepareFilters()` method will _always_ receive `objectName` and `filterPrefix` arguments. 
+Your `prepareFilters()` method will _always_ receive `objectName` and `filterPrefix` arguments (prior to latest hotfixes of 10.18, 10.19 and 10.20 onwards). 
 
 `objectName` is the name of the object being filtered. 
 
-`filterPrefix` is a calculated prefix that should be put in front of any fields on the object that you use in filters. If the prefix is empty, then we are filtering _directly_ on the object (you may then wish to use the object name as a prefix as we have done in the example above). This is to allow filters to be nested and to be able to be buried deep in a traversal of the database entity relationships.
+`filterPrefix` **ONLY PRIOR TO latest hotfixes of 10.18, 10.19 and 10.20 ONWARDS - IGNORE FOR LATEST** is a calculated prefix that should be put in front of any fields on the object that you use in filters. If the prefix is empty, then we are filtering _directly_ on the object (you may then wish to use the object name as a prefix as we have done in the example above). This is to allow filters to be nested and to be able to be buried deep in a traversal of the database entity relationships.
 
 Any other arguments will by dynamically generated based on the expression's `evaluateExpression` definition and the user configured expression fields.
 
@@ -189,14 +198,14 @@ component {
           required string  eventId       // arguments from configured expression 
         , required boolean _has          // arguments from configured expression 
         , required string  objectName    // always passed to prepareFilters()
-        , required string  filterPrefix  // always passed to prepareFilters()
+        ,          string  filterPrefix = ""
     ) {
         // setup params and filter clause for the passed eventId
         var paramName     = "eventId" & CreateUUId();
         var params        = { "#paramName#"={ value=arguments.eventId, type="cf_sql_varchar" } };
         var subQueryAlias = "eventCancellations" & CreateUUId();
         var filterSql     = "#subQueryAlias#.cancellation_count #( arguments._has ? '>' : '=' )# 0";
-        var fieldPrefix   = arguments.filterPrefix.len() ? arguments.filterPrefix : arguments.objectName;
+        var fieldPrefix   = arguments.filterPrefix.len() ? arguments.filterPrefix : arguments.objectName; // only necessary prior to latest 10.18
 
         // generate a subquery with user ID and cancellation count
         // fields filtered by the passed eventID.
