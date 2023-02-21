@@ -215,6 +215,7 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-listingmultiactions|listingMultiActions]]
 * [[datamanager-customization-getlistingmultiactions|getListingMultiActions]]
 * [[datamanager-customization-getextralistingmultiactions|getExtraListingMultiActions]]
+* [[datamanager-customization-getlistingbatchactions|getListingBatchActions]]
 * [[datamanager-customization-multirecordaction|multiRecordAction]]
 * [[datamanager-customization-renderfooterforgridlisting|renderFooterForGridListing]]
 
@@ -349,6 +350,10 @@ Fired after the _getAdditionalQueryStringForBuildAjaxListingLink_ customization 
 ### postExtraRecordActionsForGridListing
 
 Fired after the _extraRecordActionsForGridListing_ customization action had run. Takes `record`, `objectName` and `actions` as arguments.
+
+### onGetListingBatchActions
+
+Fired during the _\_getListingMultiActions_ customisation action. Takes `args` as arguments.
 
 ### postGetExtraListingMultiActions
 
