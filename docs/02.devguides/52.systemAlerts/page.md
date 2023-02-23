@@ -64,7 +64,7 @@ component {
    *
    */
   private string function schedule() {
-    return "0 */2 * * * *"; // every two hours
+    return "0 0 */2 * * *"; // every two hours
   }
 
   /**
@@ -77,7 +77,7 @@ component {
   }
 
   /**
-   * Optional (default is warning). Implement this method to set 
+   * Optional (default is warning). Implement this method to set
    * the default level of alert for all alerts raised using this check
    *
    */
@@ -86,9 +86,9 @@ component {
   }
 
   /**
-   * Optional (default to empty, meaning 'global'). should return 
-   * a string, denoting the area of the application for which the 
-   * alert is relevant. If not specified, the system alert will 
+   * Optional (default to empty, meaning 'global'). should return
+   * a string, denoting the area of the application for which the
+   * alert is relevant. If not specified, the system alert will
    * relate to the application as a whole.
    */
   private string function context() {
@@ -96,12 +96,12 @@ component {
   }
 
   /**
-   * Optional. should return an array of reference values, which 
-   * will be passed in turn to the `runCheck()` function to run 
-   * multiple checks. This will be done IF the `references()` method 
-   * is defined AND the `runCheck()` method is called without otherwise 
-   * specifying a reference. So, as an example, the method might return 
-   * an array of IDs of all events set to take place in the future, and 
+   * Optional. should return an array of reference values, which
+   * will be passed in turn to the `runCheck()` function to run
+   * multiple checks. This will be done IF the `references()` method
+   * is defined AND the `runCheck()` method is called without otherwise
+   * specifying a reference. So, as an example, the method might return
+   * an array of IDs of all events set to take place in the future, and
    * the check can then be run against each in turn.
    *
    */
