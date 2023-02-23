@@ -64,7 +64,7 @@ component {
    *
    */
   private string function schedule() {
-    return "0 */2 * * * *"; // every two hours
+    return "0 0 */2 * * *"; // every two hours
   }
 
   /**
