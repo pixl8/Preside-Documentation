@@ -32,9 +32,9 @@ component {
       check.fail(); // required to mark as failed
       check.setLevel( "critical" ); // not required
       check.setData( { customData="canBeAdded" } ); // not required
-    } else {
-      check.pass();
     }
+	// Note that the check is in a "passing" state by default, so we do not need to
+	// explicitly set it as passing, unless we are overriding a previous instruction
   }
 
   /**
@@ -104,8 +104,12 @@ component {
    * an array of IDs of all events set to take place in the future, and
    * the check can then be run against each in turn.
    *
+   * The method is passed one argument, `trigger`, which tells you how the
+   * check was called (for instance, you may want different logic if the
+   * check is being run at startup).
+   *
    */
-  private array function references(){
+  private array function references( string trigger ){
     return _getEventIdsToCheckForGlobalRecheck();
   }
 
@@ -132,11 +136,14 @@ The second argument, `reference` is optional. If a check specifies a `references
 
 The third argument, `async`, is a boolean that defaults to true. If true, the check will be run asynchronously in the background; if false, it will run immediately.
 
+The fourth argument, `trigger`, is an optional string that reports how the check is being called. By default, the value is `code`, denoting it is being called explicitly via code.
+
 If being run globally or against a single reference, the return value is the resulting `systemAlertCheck` object, to help you provide feedback to the user (any alert will have been raised or cleared automatically by the function). Otherwise, null is returned.
+
 
 ## The systemAlertCheck object
 
-For each check that is run, a `systemAlertCheck` object is instantiated and passed into the `runCheck()` method. It is initialised with the type of the system alert, the default level, and any reference that was passed in.
+For each check that is run, a `systemAlertCheck` object is instantiated and passed into the `runCheck()` method. It is initialised with the type of the system alert, the default level, any reference that was passed in, how the check was triggered, and when the check was last run.
 
 You may call the following methods to update its status:
 
@@ -151,5 +158,19 @@ You can retrieve data from the object with the following methods:
 - `getLevel()`
 - `getData()`
 - `passes()` and `fails()`: booleans denoting the current passing state of the check
+- `getTrigger()`: returns a string informing how the check was triggered. Possible values are `startup`, `settings`, `schedule`, `rerun` or (default) `code`
 
 These methods should be used to manipulate the check object when running a check. Based on the result passed back to the service, an alert will either be raised or cleared.
+
+
+## The system alert check log
+
+Behind the scenes, there is an object `system_alert_log`, which stores logging information about when checks have been run. This may be useful for troubleshooting.
+
+Values stored are:
+
+- `type`
+- `reference`
+- `trigger`
+- `ms` - the running time of the check, in milliseconds
+- `run_at` - the datestamp of the running of the check
