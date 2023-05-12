@@ -368,6 +368,28 @@ var employees = companyDao.selectData(
 
 The `${prefix}` token allows us to take the `employees.` prefix of the `full_name` field and replace it so that the final select SQL becomes: `Concat( employees.first_name, ' ', employees.last_name )`. Without a `${prefix}` token, your formula field will only work when selecting directly from the object in which the property is defined, it will not work when traversing relationships as with the example above.
 
+#### Aggregate functions in formula fields
+
+As of **10.23.0**, a new syntax for aggregate functions within formula fields is available, which gives significant performance gains in the generated SQL queries.
+
+Whereas previously you may have written:
+
+```luceescript
+property name="comment_count"        type="numeric" formula="count( distinct ${prefix}comments.id )";
+property name="latest_comment_reply" type="date"    formula="max( ${prefix}comments$replies.date )";
+```
+
+...these would now be written like this:
+
+```luceescript
+property name="comment_count"        type="numeric" formula="agg:count{ comments.id }";
+property name="latest_comment_reply" type="date"    formula="agg:max{ comments$replies.date }";
+```
+
+The syntax takes the form `agg:` followed by the aggregate function name (count, min, max, sum, avg) and then the property to be aggregated contained within curly braces `{}`. Note that `${prefix}` is not required.
+
+The existing syntax will still work, but the new syntax should provide improved performance - especially when multiple formulas are included in the same query, and when the volumes of data involved grow larger. Existing `count()` formulae will automatically be detected and will make use of the optimisation.
+
 
 ### ENUM properties
 
