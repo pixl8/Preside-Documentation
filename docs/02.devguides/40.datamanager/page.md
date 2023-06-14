@@ -14,3 +14,4 @@ As there is a lot to cover, we have broken the documentation down, see distinct 
 * [[datamanagerbasics]]
 * [[customizingdatamanager]]
 * [[adminrecordviews]]
+* [[enhancedrecordviews]]
