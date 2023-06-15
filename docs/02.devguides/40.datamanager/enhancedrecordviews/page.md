@@ -240,7 +240,7 @@ A menu item has the following base structure:
 * `link` _string_ Target link of the menu item.
 * `title` _string_ Label of the menu item, defaults to the `viewtab.tabid.title` i18n property
 * `badge` _string_ Content of a badge to be shown after the menu title - could be text or numeric. Defaults to empty string (no badge)
-* `badgeClass` _string_ One of "success", "warning", "danger" or "error", defining the colour of the badge Defaults to empty string (blue info badge).
+* `badgeClass` _string_ One of "success", "warning", "danger" or "error", defining the colour of the badge. Defaults to empty string (blue info badge).
 * `active` _boolean_ is this the currently selected tab?
 * `display` _boolean_ whether this menu item should be displayed in the sidebar
 * `open` _boolean_ whether a menu with children should be open on page load. Defaults to true if one of its children is the active page, otherwise false
@@ -337,4 +337,4 @@ private string function getPermissionBaseFromObjectName( event, rc, prc, args={}
 }
 ```
 
-The above would remove `crm_` from the beginning of any object name to create the premission base; but you could have more complex logic in here if required.
+The above would remove `crm_` from the beginning of any object name to create the permission base; but you could have more complex logic in here if required.
