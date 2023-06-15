@@ -30,8 +30,8 @@ component extends="preside.system.base.EnhancedDataManagerBase" {
 
 	// for example, add new items to whatever is already
 	// existing in the columns
-	variables.infoCol1.append( "entityStatus" );
-	variables.infoCol2.append( "entityWebsite" );
+	ArrayAppend( variables.infoCol1, "entityStatus" );
+	ArrayAppend( variables.infoCol2, "entityWebsite" );
 
 // ....
 ```
@@ -45,7 +45,7 @@ component extends="preside.system.base.EnhancedDataManagerBase" {
 	variables.infoCol2 = variables.infoCol2 ?: [];
 	variables.infoCol3 = variables.infoCol3 ?: [];
 
-	variables.infoCol1.append( "entityStatus" );
+	ArrayAppend( variables.infoCol1, "entityStatus" );
 
 	private string function _infoCardEntityStatus( event, rc, prc, args={} ) {
 		var record = args.record ?: {}; // struct of the current record
@@ -97,9 +97,9 @@ Similar to the info card items, tabs must be configured in your object's psuedo-
 ```luceescript
 component extends="preside.system.base.EnhancedDataManagerBase" {
 	variables.tabs = variables.tabs ?: [ "default" ]; // the default
-	variables.tabs.insertAt( 2, "ppma" );
-	variables.tabs.append( "directory" );
-	variables.tabs.append( "machinery" );
+	ArrayInsertAt( variables.tabs, 2, "directory" );
+	ArrayAppend( variables.tabs, "orders" );
+	ArrayAppend( variables.tabs, "bookings" );
 	variables.maxTabCount = 5; // default is 6
 
 ```
@@ -109,9 +109,9 @@ For each tab, you must supply a corresponding viewlet (`_{tabid}Tab()`) in your 
 ```luceescript
 component extends="preside.system.base.EnhancedDataManagerBase" {
 	variables.tabs = variables.tabs ?: [ "default" ]; // the default
-	variables.tabs.append( "machinery" );
+	ArrayAppend( variables.tabs, "bookings" );
 
-	private string function _machineryTab( event, rc, prc, args={} ) {
+	private string function _bookingsTab( event, rc, prc, args={} ) {
 		return "your view rendering logic here";
 	}
 
@@ -132,13 +132,13 @@ If you wish to implement more complex logic for rendering your tab title, you ca
 ```luceescript
 component extends="preside.system.base.EnhancedDataManagerBase" {
 	variables.tabs = variables.tabs ?: [ "default" ]; // the default
-	variables.tabs.append( "machinery" );
+	ArrayAppend( variables.tabs, "bookings" );
 
-	private string function _machineryTabTitle( event, rc, prc, args={} ) {
-		var machineryCount = myService.getMachineryCount( args.recordId ?: "" );
-		return translateResource( "preside-objects.my_entity:viewtab.machinery.title" ) & ' <span class="badge">#NumberFormat( machineryCount )#</span>';
+	private string function _bookingsTabTitle( event, rc, prc, args={} ) {
+		var bookingsCount = bookingsService.getBookingsCount( args.recordId ?: "" );
+		return translateResource( "preside-objects.my_entity:viewtab.bookings.title" ) & ' <span class="badge">#NumberFormat( bookingsCount )#</span>';
 	}
-	private string function _machineryTab( event, rc, prc, args={} ) {
+	private string function _bookingsTab( event, rc, prc, args={} ) {
 		return "your view rendering logic here";
 	}
 
@@ -165,7 +165,7 @@ private string function _defaultTab( event, rc, prc, args={} ) {
 	var extraRows = [];
 
 	if ( Len( args.record.amount_paid ) ) {
-		extraRows.append( {
+		ArrayAppend( extraRows, {
 			  title = translateResource( "preside-objects.#args.objectName#:field.amount_paid.title" )
 			, body  = renderLabel( "currency", args.record.paid_currency ) & args.record.amount_paid
 		} );
@@ -249,16 +249,16 @@ A menu item has the following base structure:
 The handler action should then return a struct of the items to be modified, which will be merged with the base item. For example:
 
 ```luceescript
-private struct function _machineryMenuItem( event, rc, prc, args={} ) {
-	if ( !isFeatureEnabled( "machinery" ) ) {
+private struct function _bookingsMenuItem( event, rc, prc, args={} ) {
+	if ( !isFeatureEnabled( "bookings" ) ) {
 		return { display=false }; // The menu item will not be displayed
 	}
 
 	// Return a record count as the badge content, which will be combined
 	// with the default values that have been generated automatically
-	var machineryCount = myService.getMachineryCount( args.recordId ?: "" );
+	var bookingsCount = bookingsService.getBookingsCount( args.recordId ?: "" );
 	return {
-		badge = machineryCount
+		badge = bookingsCount
 	};
 }
 ```
