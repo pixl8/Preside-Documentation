@@ -4,7 +4,7 @@ title: Preside documentation
 
 ## Welcome
 
-<img src="images/puffy.png" height="200px" class="pull-right no-border">
+<img src="images/preside-icon.png" height="200" width="200" style="margin-left: 20px;margin-bottom: 10px;" class="pull-right no-border">
 
 Welcome to the official [Preside](https://www.preside.org) documentation for Developers. The documentation here aims to provide both a thorough reference and guide to developing applications with the Preside platform.
 
