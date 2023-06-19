@@ -226,8 +226,8 @@
 	font-size: $font-size-h4;
 	img {
 		display: block;
-		width: auto;
-		max-height: $line-height;
+		width: ($line-height * 5.625);
+		height: $line-height;
 	}
 }
 

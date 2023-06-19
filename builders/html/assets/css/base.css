@@ -12462,8 +12462,8 @@ h2, h3, h4, h5, h6 {
 }
 .header-logo img {
   display: block;
-  width: auto;
-  max-height: 24px;
+  width: 135px;
+  height: 24px;
 }
 
 .header-nav-scroll {

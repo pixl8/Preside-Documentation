@@ -34,7 +34,7 @@
 			<div class="menu-scroll">
 				<div class="menu-wrap">
 					<div class="menu-content">
-						<a class="nav-drawer-logo" href="index.html"><img src="assets/images/logo-preside.png"></a>
+						<a class="nav-drawer-logo" href="index.html"><img src="assets/images/preside-platform.svg"></a>
 						#args.navTree#
 						<hr>
 						<ul class="nav">
@@ -63,7 +63,7 @@
 					</a>
 				</li>
 			</ul>
-			<a class="header-logo hidden-lg" href="index.html"><img alt="Preside" src="assets/images/logo-preside-reverse.png"></a>
+			<a class="header-logo hidden-lg" href="index.html"><img alt="Preside" src="assets/images/preside-platform-reverse.svg"></a>
 			<ul class="nav nav-list pull-right">
 				<cfset prevPage = args.page.getPreviousPage() />
 				<cfset nextPage = args.page.getNextPage() />

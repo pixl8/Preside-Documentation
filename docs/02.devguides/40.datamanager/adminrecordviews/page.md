@@ -201,6 +201,8 @@ The default preview layout provided by Preside will load the CSS defined to be u
 
 ### Other ways to customize the view
 
+As of **Preside 10.24.0**, the admin system provides an alternative system to the default view record screen, detailed in [[enhancedrecordviews]].
+
 In [[customizingdatamanager]], there are full details of how you can customize the Data Manager either globally, or per object. The following customizations relate to the view screen and allow you to either completely override the rendering of the view screen, or add HTML to various areas:
 
 * [[datamanager-customization-renderrecord|renderRecord]]
