@@ -89,6 +89,4 @@ The datasource should, by default, be named *"preside"* and should be setup as w
 
 With all those settings in place, you should be able to deploy Preside applications to your environment and have them running.
 
-As always, if you need more help than the docs can provide, please join our [Slack team](https://presidecms-slack.herokuapp.com) where we'll be happy to help you out.
-
-<script async defer src="https://presidecms-slack.herokuapp.com/slackin.js?large"></script>
+As always, if you need more help than the docs can provide, please join our [Slack team](https://preside.org/slack) where we'll be happy to help you out.

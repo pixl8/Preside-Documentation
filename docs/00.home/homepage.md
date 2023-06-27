@@ -18,6 +18,4 @@ Welcome to the official [Preside](https://www.preside.org) documentation for Dev
 
 ## Getting help
 
-If you're struggling with something, or finding issues with the documentation or software, you can also join our active [Slack team](https://presidecms-slack.herokuapp.com) where someone will be happy to help you out.
-
-<script async defer src="https://presidecms-slack.herokuapp.com/slackin.js?large"></script>
+If you're struggling with something, or finding issues with the documentation or software, you can also join our active [Slack team](https://preside.org/slack) where someone will be happy to help you out.
