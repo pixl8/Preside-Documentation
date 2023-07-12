@@ -18,4 +18,4 @@ Welcome to the official [Preside](https://www.preside.org) documentation for Dev
 
 ## Getting help
 
-If you're struggling with something, or finding issues with the documentation or software, you can also join our active [Slack team](https://preside.org/slack) where someone will be happy to help you out.
+If you're struggling with something, or finding issues with the documentation or software, head over to our [community forums](https://community.preside.org/) where someone will be happy to help you out.
