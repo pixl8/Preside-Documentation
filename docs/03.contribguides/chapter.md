@@ -10,4 +10,4 @@ This guide is for those who wish to maintain or contribute to Preside.
 * [[runningtests]]
 * [[branchingmodel]]
 
-As always, if you need more help than the docs can provide, please join our [Slack team](https://preside.org/slack) where we'll be happy to help you out.
+As always, if you need more help than the docs can provide, please join our [community forums](https://community.preside.org/) where we'll be happy to help you out.

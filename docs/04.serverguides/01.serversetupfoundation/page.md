@@ -89,4 +89,4 @@ The datasource should, by default, be named *"preside"* and should be setup as w
 
 With all those settings in place, you should be able to deploy Preside applications to your environment and have them running.
 
-As always, if you need more help than the docs can provide, please join our [Slack team](https://preside.org/slack) where we'll be happy to help you out.
+As always, if you need more help than the docs can provide, please join our [community forums](https://community.preside.org/) where we'll be happy to help you out.
