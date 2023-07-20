@@ -84,6 +84,23 @@ settings.tenancy.customer = {
 };
 ```
 
+### Setting default value for tenant
+
+If the tenancy filter value potentially might be empty and you want to set a default value when that happened, you can implement a handler action. `tenancy.{configuredtenant}.getDefaultValue`. This handler should return the desired default value to filter for any tenanted query.
+
+In our example, our tenancy object is `customer`, so our convention based handler would live at `/handlers/tenancy/customer.cfc` and could look like this:
+
+```luceescript
+component {
+
+	property name="customerService" inject="customerService";
+
+	private string function getDefaultValue( event, rc, prc ) {
+		return customerService.getDefaultCustomerId();
+	}
+}
+```
+
 ## More complex filter scenarios
 
 You may find that the tenancy is less straight forward than a record belonging to a single tenant. You may have a situation where you have one _main_ tenant, and then many optional tenants.
