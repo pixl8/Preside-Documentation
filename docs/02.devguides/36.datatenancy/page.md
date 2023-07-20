@@ -86,7 +86,7 @@ settings.tenancy.customer = {
 
 ### Setting default value for tenant
 
-If the tenancy filter value potentially might be empty and you want to set a default value when that happened, you can implement a handler action. `tenancy.{configuredtenant}.getDefaultValue`. This handler should return the desired default value to filter for any tenanted query.
+If the tenancy filter value might potentially be empty, you may want to set a default value; this can be implemented via a handler action, `tenancy.{configuredtenant}.getDefaultValue`. This handler should return the desired default value to filter any tenanted query.
 
 In our example, our tenancy object is `customer`, so our convention based handler would live at `/handlers/tenancy/customer.cfc` and could look like this:
 
