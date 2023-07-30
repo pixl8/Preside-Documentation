@@ -1,9 +1,19 @@
 ---
 id: upgradenotes
-title: Upgrade notes
+title: Upgrade/Release notes
 ---
 
-In this chapter, you will find detailed notes on any upgrade considerations between major Preside versions.
+The Preside team use [Semantic Versioning](https://semver.org/) for their release versions. Our version numbers look like this: `MAJOR.MINOR.PATCH`. Where:
+
+* **MAJOR** means a version when we make incompatible API changes
+* **MINOR** means a version when we add functionality in a backward compatible manner
+* **PATCH** means a version when we make backward compatible bug fixes
+
+It is worth noting, that we have NEVER made a MAJOR release. Backward compatibility is very important to us. If and when we DO create a new release, it will be for really good reasons and we'll STILL be considering compatibility with the utmost effort.
+
+We release "**minor**" versions with relative frequency, currently around 8 releases a year. You will find upgrade notes between minor versions in this chapter.
+
+We release **patch** versions very frequently - once we have validated bugfixes, we don't tend to hang around to release them.
 
 ## General upgrade guides
 
