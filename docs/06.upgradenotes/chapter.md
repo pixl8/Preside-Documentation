@@ -11,7 +11,7 @@ The Preside team use [Semantic Versioning](https://semver.org/) for their releas
 
 It is worth noting, that we have NEVER made a MAJOR release. Backward compatibility is very important to us. If and when we DO create a new release, it will be for really good reasons and we'll STILL be considering compatibility with the utmost effort.
 
-We release "**minor**" versions with relative frequency, currently around 8 releases a year. You will find upgrade notes between minor versions in this chapter.
+We release **minor** versions with relative frequency, currently around 8 releases a year. You will find upgrade notes between minor versions in this chapter.
 
 We release **patch** versions very frequently - once we have validated bugfixes, we don't tend to hang around to release them. Release notes for every minor and patch release can be found on the Preside website: [https://www.preside.org/developers/release-notes.html](https://www.preside.org/developers/release-notes.html)
 
