@@ -13,7 +13,7 @@ It is worth noting, that we have NEVER made a MAJOR release. Backward compatibil
 
 We release "**minor**" versions with relative frequency, currently around 8 releases a year. You will find upgrade notes between minor versions in this chapter.
 
-We release **patch** versions very frequently - once we have validated bugfixes, we don't tend to hang around to release them.
+We release **patch** versions very frequently - once we have validated bugfixes, we don't tend to hang around to release them. Release notes for every minor and patch release can be found on the Preside website: [https://www.preside.org/developers/release-notes.html](https://www.preside.org/developers/release-notes.html)
 
 ## General upgrade guides
 
