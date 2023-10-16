@@ -40,7 +40,7 @@ settings.email.serviceProviders.mailchimp = {
 
 ### i18n .properties file
 
-Each service provider should have a corresponding `.properties` file to provide labels for the provider and any configuration options in the config form. The default locaion is `/i18n/email/serviceProvider/{serviceProviderId}.properties`. An example:
+Each service provider should have a corresponding `.properties` file to provide labels for the provider and any configuration options in the config form. The default location is `/i18n/email/serviceProvider/{serviceProviderId}.properties`. An example:
 
 ```properties
 title=MailGun
