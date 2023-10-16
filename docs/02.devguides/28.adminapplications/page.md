@@ -60,7 +60,7 @@ The system expects an alternative Coldbox layout for each application and defaul
 
 ### Default event and 'active event pattern'
 
-Your admin application should have a default landing page event handler. By default, this will be `admin.{appid}`, e.g. `admin.ems`. You can also supply a regex pattern that will be matched against the current coldbox event, to determine whether or not your application is active. The defualt for this is `^admin\.{appid}.*`. For our "ems" example, this means that all Coldbox events beginning with "admin.ems" will lead to the ems application being set as active.
+Your admin application should have a default landing page event handler. By default, this will be `admin.{appid}`, e.g. `admin.ems`. You can also supply a regex pattern that will be matched against the current coldbox event, to determine whether or not your application is active. The default for this is `^admin\.{appid}.*`. For our "ems" example, this means that all Coldbox events beginning with "admin.ems" will lead to the ems application being set as active.
 
 
 The default handler might be look something like this:
