@@ -5,7 +5,7 @@ title: Routing
 
 ## Overview
 
-Routing is the term used to describe how a URL gets mapped to actions and input variables in your application. In Preside, the action will be a [Coldbox event handler](http://wiki.coldbox.org/wiki/EventHandlers.cfm) and the input variables will appear in your request context.
+Routing is the term used to describe how a URL gets mapped to actions and input variables in your application. In Preside, the action will be a [Coldbox event handler](https://coldbox.ortusbooks.com/the-basics/event-handlers) and the input variables will appear in your request context.
 
 We use Coldbox's own routing system along with a Preside addition for handling dynamic routes. When creating your own custom routes, you are free to use either system.
 
@@ -13,7 +13,7 @@ URLs can be built with `event.buildLink()`. Different routing URLs will be gener
 
 ## Creating custom routes
 
-To create custom routes for your site, you must create a `Routes.cfm` file in your `/application/config/` directory. In this file, you can create regular [ColdBox routes](http://wiki.coldbox.org/wiki/URLMappings.cfm) as well as Preside routes. The following `routes.cfm` file registers a couple of Preside route handlers:
+To create custom routes for your site, you must create a `Routes.cfm` file in your `/application/config/` directory. In this file, you can create regular [ColdBox routes](https://coldbox.ortusbooks.com/the-basics/routing) as well as Preside routes. The following `routes.cfm` file registers a couple of Preside route handlers:
 
 ```luceescript
 addRouteHandler( getModel( "myCustomRouteHandler" ) );
