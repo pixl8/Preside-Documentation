@@ -182,7 +182,7 @@ function saveEventPermissionsAction( event, rc, prc ) {
 
 ## System users
 
-Users that are defined as **system users** are excempt from all permission checking. In effect, they are granted access to **everything**. This concept exists to enable web agencies to manage every aspect of a site while setting up more secure access for their clients.
+Users that are defined as **system users** are exempt from all permission checking. In effect, they are granted access to **everything**. This concept exists to enable web agencies to manage every aspect of a site while setting up more secure access for their clients.
 
 System users are only configurable through your site's `Config.cfc` file as a comma separated list of login ids. The default value of this setting is 'sysadmin'. For example, in your site's Config.cfc, you might have:
 
