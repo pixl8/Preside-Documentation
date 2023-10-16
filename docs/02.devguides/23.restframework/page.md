@@ -231,7 +231,7 @@ settings.rest.apis[ "/myapi/v2" ] = { corsEnabled=true };
 
 The framework automatically adds `ETag` response headers for GET and HEAD REST requests. These are a simple MD5 hash of the serialized response body. In addition, if the REST request includes a `If-None-Match` request header whose value matches the generated `ETag`, the framework will set an empty response body and set the status of the response to `304 Not modified`.
 
-More advanced caching can be achieved using the CacheBox framework that is built in to ColdBox (and therefore Preside). See the [ColdBox docs](http://wiki.coldbox.org/wiki/CacheBox.cfm) for further details.
+More advanced caching can be achieved using the CacheBox framework that is built in to ColdBox (and therefore Preside). See the [ColdBox docs](https://coldbox.ortusbooks.com/getting-started/configuration/coldbox.cfc/configuration-directives/cachebox) for further details.
 
 ## HEAD requests
 
@@ -250,7 +250,7 @@ If the framework detects an `OPTIONS` request without the prerequisite CORS head
 
 ## Interception points
 
-Your application can listen into several core interception points to enhance the features of the REST platform, e.g. to implement custom authentication. See the [ColdBox Interceptor's documentation](http://wiki.coldbox.org/wiki/Interceptors.cfm) for detailed documentation on interceptors.
+Your application can listen into several core interception points to enhance the features of the REST platform, e.g. to implement custom authentication. See the [ColdBox Interceptor's documentation](https://coldbox.ortusbooks.com/the-basics/interceptors) for detailed documentation on interceptors.
 
 For example, an interceptor that listens for the `onUnsupportedRestMethod` interception point and changes the REST response to something other than the default:
 
