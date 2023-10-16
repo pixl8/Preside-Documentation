@@ -212,7 +212,7 @@ component {
   // ...
 }
 
-// /preside-objects/page-types/blog.cfc
+// /preside-objects/page-types/blog_post.cfc
 /**
  * @allowedParentPageTypes blog
  * @allowedChildPageTypes  none
