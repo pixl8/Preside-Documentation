@@ -122,7 +122,7 @@ Use the `@exclusivityGroup` attribute to declare your exclusivity groups per tas
 
 ### Invoking tasks programatically
 
-In cases where you need to start a background task as a result of some progmmable event, you can call the [[taskmanagerservice-runtask]] method of the [[api-taskmanagerservice]] directly, or use the [[api-presidesuperclass]] [[presidesuperclass-$runtask]] method (see [[presidesuperclass]]). For example:
+In cases where you need to start a background task as a result of some programmable event, you can call the [[taskmanagerservice-runtask]] method of the [[api-taskmanagerservice]] directly, or use the [[api-presidesuperclass]] [[presidesuperclass-$runtask]] method (see [[presidesuperclass]]). For example:
 
 ```luceescript
 // /services/AssetManagerService.cfc
