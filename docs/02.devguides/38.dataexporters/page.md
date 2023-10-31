@@ -252,3 +252,30 @@ component {
 
 }
 ```
+
+## Configuring Expand Many to One Related Fields for export
+
+As of Preside **10.25.0**, you able to configure any many to one relationship fields to be expanded and available when exporting an object by `dataExportAllowExpandFields` property attribute. On top of this, you able to configure any fields to be excluded only when the field is nested by `excludeNestedDataExport` property attribute.
+
+```luceescript
+// /preside-objects/foo.cfc
+component {
+
+    // ...
+    property name="bar" relationship="many-to-one" relatedto="bar" dataExportAllowExpandFields="true";
+    // ...
+
+}
+
+
+// /preside-objects/bar.cfc
+component {
+
+    // ...
+    property name="bar_1" ... excludeNestedDataExport="true";
+    property name="bar_2" ...;
+    property name="bar_3" ...;
+    // ...
+
+}
+```
