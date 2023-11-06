@@ -253,11 +253,73 @@ component {
 }
 ```
 
+## Configuring default exclude fields
+
+As of Preside 10.25.0, you are able to configure default global fields to be excluded for data export by `settings.dataExports.defaults.excludeFields`:
+
+```luceescript
+// /application/config/Config.cfc
+...
+settings.dataExport.defaults.excludeFields = [ "id", "datecreated" ];
+...
+```
+
+You also able to set the include or exclude fields for data export in the object attributes by setting `dataExportDefaultIncludeFields` or `dataExportDefaultExcludeFields`:
+
+```luceescript
+// /preside-objects/foo.cfc
+/**
+ * @dataExportDefaultIncludeFields    label,datecreated,datemodified
+ */
+component {
+    ...
+}
+```
+
+```luceescript
+// /preside-objects/bar.cfc
+/**
+ * @dataExportDefaultExcludeFields    id,datecreated
+ */
+component {
+    ...
+}
+```
+
 ## Configuring "expandable" many-to-one fields
 
 ![Screenshot showing example of a expanded many-to-one relationship field in export](images/screenshots/export-expanded-field-example.png)
 
-As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. Two property annotations control this behaviour:
+As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the application level, object level or object property level as below.
+
+### Enable in application level
+
+You can change this in `Config.cfc` by setting `settings.dataExports.defaults.expandManytoOneFields`:
+
+```luceescript
+// /application/config/Config.cfc
+...
+settings.dataExport.defaults.expandManytoOneFields = true;
+...
+```
+
+### Enable in object level
+
+You can only enable it in the individual object by setting `dataExportExpandManytoOneFields` attribute:
+
+```luceescript
+// /preside-objects/foo.cfc
+/**
+ * @dataExportExpandManytoOneFields    true
+ */
+component {
+    ...
+}
+```
+
+### Enable in object property level
+
+There is two property annotations control this behaviour:
 
 1. Set `dataExportAllowExpandFields` attribute to `true` on a `many-to-one` property to allow related object fields to be included in a data export.
 2. Set `excludeNestedDataExport` attribute to `true` on any of the related object's properties to prevent them from being able to be included in a data export from the related context.
