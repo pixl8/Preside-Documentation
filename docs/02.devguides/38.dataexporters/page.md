@@ -292,9 +292,9 @@ component {
 
 As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the application level, object level or object property level as below.
 
-### Enable in application level
+### Configure at application level
 
-You can change this in `Config.cfc` by setting `settings.dataExports.defaults.expandManytoOneFields`:
+Enable globally in your application's `Config.cfc` via the `dataExports.defaults.expandManytoOneFields` setting (default is `false`):
 
 ```luceescript
 // /application/config/Config.cfc
@@ -303,9 +303,9 @@ settings.dataExport.defaults.expandManytoOneFields = true;
 ...
 ```
 
-### Enable in object level
+### Configure at object level
 
-You can only enable it in the individual object by setting `dataExportExpandManytoOneFields` attribute:
+Enable or disable for all many-to-one fields on an individual object using the `dataExportExpandManytoOneFields` annotation:
 
 ```luceescript
 // /preside-objects/foo.cfc
@@ -317,12 +317,12 @@ component {
 }
 ```
 
-### Enable in object property level
+### Configure at object property level
 
-There is two property annotations control this behaviour:
+Two property attributes control the expansion behaviour:
 
 1. Set `dataExportAllowExpandFields` attribute to `true` on a `many-to-one` property to allow related object fields to be included in a data export.
-2. Set `excludeNestedDataExport` attribute to `true` on any of the related object's properties to prevent them from being able to be included in a data export from the related context.
+2. Set `excludeNestedDataExport` attribute to `true` on any property to prevent that property from being included as an option when the object is nested. Note that `excludeDataExport` still applies and excludes a property from any data export.
 
 ```luceescript
 // /preside-objects/foo.cfc
