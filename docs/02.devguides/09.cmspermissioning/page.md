@@ -105,6 +105,14 @@ analyticsViewer.title=Analytics viewer
 analyticsViewer.description=The analytics viewer role grants permission to view statistics in the analytics dashboard
 ```
 
+As of **10.24.0**, you can group your roles. Grouping are defined as `{your role}.group=value` and `roleGroup.{your role group}.title=Label`. For example:
+
+```properties
+roleGroup.event.title=Event
+
+eventsOrganiser.group=event
+```
+
 For permissions, add your keys to the `/i18n/permissions.properties` file, e.g.
 
 
