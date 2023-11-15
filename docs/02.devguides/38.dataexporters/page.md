@@ -318,7 +318,7 @@ Two property attributes control the expansion behaviour:
 component {
 
     // ...
-    property name="bar"         relationship="many-to-one" relatedto="bar" dataExportExpandFields="true";
+    property name="bar"         relationship="many-to-one" relatedto="bar" dataExportExpandFields=true;
     property name="another_bar" relationship="many-to-one" relatedto="bar" dataExportExpandFields="bar_1,bar_2,bar_3";
     // ...
 
@@ -329,7 +329,7 @@ component {
 component {
 
     // ...
-    property name="bar_1" ... excludeNestedDataExport="true";
+    property name="bar_1" ... excludeNestedDataExport=true;
     property name="bar_2" ...;
     property name="bar_3" ...;
     // ...
