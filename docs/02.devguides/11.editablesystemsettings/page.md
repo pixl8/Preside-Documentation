@@ -158,7 +158,7 @@ component {
 
 When you save the settings through the admin UI, two interception points are raised, `preSaveSystemConfig` and `postSaveSystemConfig`. These events allow your systems to perform custom validation and any other logic your need to perform once a category's settings have been saved.
 
->>>>>> See the [ColdBox Interceptors documentation](http://wiki.coldbox.org/wiki/Interceptors.cfm) for in depth instructions on setting up interceptors.
+>>>>>> See the [ColdBox Interceptors documentation](https://coldbox.ortusbooks.com/the-basics/interceptors) for in depth instructions on setting up interceptors.
 
 Both interception points receive `category` and `configuration` arguments in the `interceptData` struct and, in addition, the `preSaveSystemConfig` interception point receives a `validationResult` object with which to record any custom validation (see [[api-validationresult]]).
 
