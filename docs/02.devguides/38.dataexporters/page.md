@@ -255,7 +255,7 @@ component {
 
 ## Configuring default exclude fields
 
-As of Preside 10.25.0, you are able to configure default global fields to be excluded for data export by `settings.dataExports.defaults.excludeFields`:
+As of Preside *10.25.0*, you are able to configure default global fields to be excluded for data export by `settings.dataExports.defaults.excludeFields`:
 
 ```luceescript
 // /application/config/Config.cfc
@@ -290,7 +290,7 @@ component {
 
 ![Screenshot showing example of a expanded many-to-one relationship field in export](images/screenshots/export-expanded-field-example.png)
 
-As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the object level or object property level as below.
+As of Preside *10.25.0*, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the object level or object property level as below.
 
 ### Configure at object level
 
