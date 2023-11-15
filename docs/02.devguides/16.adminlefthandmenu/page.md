@@ -38,7 +38,7 @@ component {
 
 As of **10.17.0** each menu item should have a corresponding entry in the `settings.adminMenuItems` struct.
 
-See [[adminmenuitems]] for documentation on specificying a menu item.
+See [[adminmenuitems]] for documentation on specifying a menu item.
 
 ### Pre 10.17.0 implementation (still supported)
 
