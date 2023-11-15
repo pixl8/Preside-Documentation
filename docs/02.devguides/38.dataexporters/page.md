@@ -290,18 +290,7 @@ component {
 
 ![Screenshot showing example of a expanded many-to-one relationship field in export](images/screenshots/export-expanded-field-example.png)
 
-As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the application level, object level or object property level as below.
-
-### Configure at application level
-
-Enable globally in your application's `Config.cfc` via the `dataExports.defaults.expandManytoOneFields` setting (default is `false`):
-
-```luceescript
-// /application/config/Config.cfc
-...
-settings.dataExport.defaults.expandManytoOneFields = true;
-...
-```
+As of Preside 10.25.0, you are able to configure `many-to-one` relationship fields to be expanded and available when exporting an object. You able to configure this in the object level or object property level as below.
 
 ### Configure at object level
 
@@ -321,7 +310,7 @@ component {
 
 Two property attributes control the expansion behaviour:
 
-1. Set `dataExportAllowExpandFields` attribute to `true` on a `many-to-one` property to allow related object fields to be included in a data export.
+1. Set `dataExportExpandFields` attribute to `true` on a `many-to-one` property to allow related object fields to be included in a data export, or a set of fields list of related object also allowed.
 2. Set `excludeNestedDataExport` attribute to `true` on any property to prevent that property from being included as an option when the object is nested. Note that `excludeDataExport` still applies and excludes a property from any data export.
 
 ```luceescript
@@ -329,7 +318,8 @@ Two property attributes control the expansion behaviour:
 component {
 
     // ...
-    property name="bar" relationship="many-to-one" relatedto="bar" dataExportAllowExpandFields="true";
+    property name="bar"         relationship="many-to-one" relatedto="bar" dataExportExpandFields="true";
+    property name="another_bar" relationship="many-to-one" relatedto="bar" dataExportExpandFields="bar_1,bar_2,bar_3";
     // ...
 
 }
