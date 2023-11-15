@@ -31,7 +31,7 @@ settings.dataExport.defaultExporter = "Excel";
 
 ### Configure save export permission key
 
-As of Preside **10.16.0**, the save export permission key can be configure by `dataManagerSaveExportPermissionKey` annotation (Default value is set to `read`)
+As of Preside **10.16.0**, the save export permission key can be configured by `dataManagerSaveExportPermissionKey` annotation (Default value is set to `read`)
 
 ```luceescript
 /**
