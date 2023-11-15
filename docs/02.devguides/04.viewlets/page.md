@@ -5,7 +5,7 @@ title: Viewlets
 
 ## Overview
 
-Coldbox has a concept of viewlets ([see what they have to say about it in their docs](http://wiki.coldbox.org/wiki/Layouts-Views.cfm)).
+Coldbox has a concept of viewlets ([see what they have to say about it in their docs](https://coldbox.ortusbooks.com/the-basics/event-handlers/viewlets-reusable-events)).
 
 Preside builds on this concept and provides a concrete implementation with the `renderViewlet()` method. This implementation is used throughout Preside and is an important concept to grok when building custom Preside functionality (widgets, form controls, etc.).
 
