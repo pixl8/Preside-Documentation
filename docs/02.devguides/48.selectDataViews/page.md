@@ -1,5 +1,5 @@
 ---
-id: selectDataViews
+id: selectdataviews
 title: SelectData views
 ---
 
