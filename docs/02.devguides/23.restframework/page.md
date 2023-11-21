@@ -295,3 +295,104 @@ Fired before the resource's handler action is called. Takes `args` structure, an
 ### postInvokeRestResource
 
 Fired after the resource's handler action is called. Takes `args` structure, and `restRequest` and `restResponse` objects as arguments. The `args` structure represents the arguments that were passed to the resource's handler action.
+
+## Authentication
+
+The REST framework comes with a system for providing authentication handlers that can optionally be configured through a user interface.
+
+### Creating an authentication provider
+
+An authentication provider is made up of:
+
+1. A convention based handler providing the authentication logic and optional configuration logic
+2. A convention based i18n file to provide user friendly text for the provider
+
+Note, in order for configuration to be activated, the `apiManager` feature is required (`settings.features.apiManager.enabled = true`).
+
+#### The handler
+
+Create a handler at `/handlers/rest/auth/{IdOfProvider}.cfc`. Example (from core "Token" provider):
+
+```luceescript
+/**
+ * Handler for authenticating with token authentication
+ *
+ */
+component {
+
+	property name="authService" inject="presideRestAuthService";
+
+	/**
+	 * Invoked at the start of any REST API request
+	 * for a REST api configured to use this authentication
+	 * provider
+	 *
+	 */
+	private string function authenticate() {
+		var headers    = getHTTPRequestData( false ).headers;
+		var authHeader = headers.Authorization ?: "";
+		var token      = "";
+
+		try {
+			authHeader = toString( toBinary( listRest( authHeader, ' ' ) ) );
+			token      = ListFirst( authHeader, ":" );
+
+			if ( !token.trim().len() ) {
+				throw( type="missing.token" );
+			}
+		} catch( any e ) {
+			// returning empty string, not authenticated
+			return "";
+		}
+
+		var userId = authService.getUserIdByToken( token );
+		if ( userId.len() && authService.userHasAccessToApi( userId, restRequest.getApi() ) ) {
+			
+			// if authentication is successful, return ID of the user
+			return userId;
+		}
+
+		// returning empty string, not authenticated
+		return "";
+	}
+
+	/**
+	 * Invoked when a user clicks on "configure" link in the API manager
+	 * besides the API they wish to configure
+	 *
+	 */
+	private string function configure() {
+		setNextEvent( url=event.buildAdminLink( "apiusermanager" ) );
+	}
+
+}
+```
+
+#### i18n file
+
+Create a `.properties` file at `/i18n/rest/auth/{IdOfProvider}.properties`. e.g. (from core Token provider):
+
+```properties
+title=Basic token authentication
+description=REST users are assigned tokens that can be used to authenticate
+iconClass=fa-tag
+```
+
+### Using an authentication provider
+
+To make use of a custom authentication provider, you must configure your REST api in Config.cfc. For example,
+if you have a REST API at `/handlers/rest-apis/my-api/v1` and wish to use the built-in "token" authentication 
+provider:
+
+
+```luceescript
+settings.rest.apis[ "/my-api/v1" ] = {
+	  authProvider = "token"
+	, description  = "My API with its lovely description"
+}
+```
+
+#### Getting the user ID during a REST request
+
+In any REST route handler, you are able to get the ID of the authenticated user with `restRequest.getUser()`.
+This will be the user ID as returned from the `authenticate()` method of your authentication provider's handler.

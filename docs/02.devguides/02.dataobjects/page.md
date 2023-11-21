@@ -527,7 +527,7 @@ As well as controlling the automatically created pivot table name with "relatedV
 
 #### Subquery relationships with "SelectData Views"
 
-In **10.11.0** the concept of [[select-data-views]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name.
+In **10.11.0** the concept of [[selectdataviews]] was introduced. These 'views' are loosely synonymous with SQL views in that they allow you to store a complex query and reference it by a simple name.
 
 They can be used in relationship helper properties and result in subqueries being created when querying them. The syntax is the same as that of a `one-to-many` relationship:
 
@@ -537,7 +537,7 @@ component {
 }
 ```
 
-See [[select-data-views]] for more.
+See [[selectdataviews]] for more.
 
 ### Defining indexes and unique constraints
 
