@@ -18,7 +18,7 @@ component {
 		var jars        = [ "../lib/pyg-in-blankets-1.0-SNAPSHOT-jar-with-dependencies.jar" ];
 		var highlighter = CreateObject( 'java', 'com.dominicwatson.pyginblankets.PygmentsWrapper', jars );
 
-		if ( arguments.language == "luceescript" || arguments.language == "cfc" ) {
+		if ( arguments.language == "luceescript" ) {
 			arguments.language = "cfs";
 		}
 		if ( arguments.language == "lucee" ) {
@@ -30,7 +30,6 @@ component {
 		} catch( any e ) {
 			throw( type="docs.syntax.highlight.error", message="Error highlighting code for language [#arguments.language#]: [#arguments.code#]")
 		}
-		return arguments.code;
 	}
 
 // PRIVATE HELPERS

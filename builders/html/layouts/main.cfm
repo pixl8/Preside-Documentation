@@ -9,9 +9,7 @@
 <html>
 	<head>
 		<title>Preside Documentation :: #HtmlEditFormat( args.page.getTitle() )#</title>
-		<cfif args.page.getDepth()>
-			<base href="#( repeatString( '../', args.page.getDepth()-1 ) )#">
-		</cfif>
+		<base href="#( repeatString( '../', args.page.getDepth()-1 ) )#">
 
 		<meta content="initial-scale=1.0, width=device-width" name="viewport">
 
