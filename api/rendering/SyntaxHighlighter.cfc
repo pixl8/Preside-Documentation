@@ -26,7 +26,6 @@ component {
 		}
 
 		try {
-
 			return highlighter.highlight( arguments.code, arguments.language, false );
 		} catch( any e ) {
 			throw( type="docs.syntax.highlight.error", message="Error highlighting code for language [#arguments.language#]: [#arguments.code#]")
