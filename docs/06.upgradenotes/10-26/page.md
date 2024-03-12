@@ -22,7 +22,7 @@ If your application has a LOT of email activity, you might expect this to take s
 
 Email bot detection is disabled by default due to its experimental nature. You can enable it with:
 
-```cfc
+```luceescript
 settings.features.emailTrackingBotDetection.enabled = true;
 ```
 
