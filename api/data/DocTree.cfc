@@ -165,7 +165,10 @@ component accessors=true {
 
 	private string function _getParentPagePathFromPagePath( required string pagePath ) {
 		var parts = arguments.pagePath.listToArray( "/" );
-		parts.deleteAt( parts.len() );
+
+		if ( ArrayLen( parts ) ) {
+			parts.deleteAt( parts.len() );
+		}
 
 		return "/" & parts.toList( "/" );
 	}
