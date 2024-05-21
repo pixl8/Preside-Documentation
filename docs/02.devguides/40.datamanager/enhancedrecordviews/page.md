@@ -319,7 +319,7 @@ private string function renderSidebarHeader( event, rc, prc, args={} ) {
 
 ### Permissioning
 
-In addition to improving the view record screen, the base object gives you a standard implementation of the `checkPermission()` customization. Set `variables.permissionBase` in your pseudo constructor to automically map the data manager operations:
+In addition to improving the view record screen, the base object gives you a standard implementation of the `checkPermission()` customization. Set `variables.permissionBase` in your pseudo constructor to automatically map the data manager operations:
 
 * `read`
 * `add`
@@ -327,7 +327,7 @@ In addition to improving the view record screen, the base object gives you a sta
 * `delete`
 * `clone`
 
-i.e. if you set a base of `payments.`, then permission check keys will look like `payments.read`, `payments.add` and so on.
+i.e. if you set a base of `payments`, then permission check keys will look like `payments.read`, `payments.add` and so on.
 
 If you do not set `variables.permissionBase`, the base will default to the object name. However, this default behaviour can be customised by setting up by adding a custom method `getPermissionBaseFromObjectName()` to `/handlers/admin/datamanager/GlobalCustomizations.cfc`, e.g.:
 
