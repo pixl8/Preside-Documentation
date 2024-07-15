@@ -338,3 +338,13 @@ private string function getPermissionBaseFromObjectName( event, rc, prc, args={}
 ```
 
 The above would remove `crm_` from the beginning of any object name to create the permission base; but you could have more complex logic in here if required.
+
+### Out of box audit trail tab
+
+As of Preside 10.27, the system makes an audit trail tab available for your datamanager views. This tab simply displays a pre-filtered view of the existing admin audit trail, showing audit entries for records matching the current record ID. To enable it for your object, add `"audittrail"` to your tabs array, e.g.
+
+```luceescript
+variables.tabs = [ "default", "usage", "auditTrail" ];
+```
+
+If you wish to customize the icon + title, do so as if it were any other tab for your object.
