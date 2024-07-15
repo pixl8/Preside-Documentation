@@ -15,6 +15,7 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[workingwiththericheditor]]
 * [[datamanager]]
 * [[routing]]
+* [[features]]
 * [[cmspermissioning]]
 * [[websiteusersandpermissioning]]
 * [[editablesystemsettings]]
@@ -54,3 +55,4 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[selectdataviews]]
 * [[customdbmigrations]]
 * [[systemalerts]]
+* [[adminenvheader]]

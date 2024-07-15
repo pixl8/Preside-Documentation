@@ -13,6 +13,8 @@ You can find publicly available extensions on [Forgebox](https://forgebox.io/typ
 
 Extensions live under the `/application/extensions` folder within your Preside application, each extension with its own folder, e.g.
 
+_(as of Preside 10.27, you are also able to create extensions in an `/extensions_app`. Great for separating locally committed extensions for organising your application's code.)_
+
 ```
 /application
     ...
@@ -21,8 +23,11 @@ Extensions live under the `/application/extensions` folder within your Preside a
         /my-extension-2
         /my-extension-3
         ...
-    ...
+    /extensions_app
+        /my-app-extension-1
+        ...
 ```
+
 
 Each extension can then contain *all of the valid convention-based folders that your application can contain*, i.e. `/handlers`, `/services`, `/i18n`, `/preside-objects`, etc.:
 
