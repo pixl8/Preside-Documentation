@@ -20,9 +20,9 @@ settings.environmentBannerConfig = {
 };
 ```
 
-Using this approach, you can use Coldbox environments system to provide different configuration for different environments. i.e. Have "local", and "staging" environment configurations by using corresponding methods in your Config.cfc:
+Using this approach, you can use [Coldbox environments system](https://coldbox.ortusbooks.com/getting-started/configuration/coldbox.cfc/configuration-directives/environments) to provide different configuration for different environments. i.e. Have "local", and "staging" environment configurations by using corresponding methods in your Config.cfc:
 
-```
+```luceescript
 function local() {
   super.local();
 
@@ -39,7 +39,7 @@ function staging() {
 
 If you leave `settings.environmentMessage` empty, then you can use i18n to specify the message. The key for the i18n resource will be: `cms:environment.#environment#.label`, where `environment` is the coldbox environment. So in `/i18n/cms.properties`, you could have:
 
-```
+```properties
 environment.staging.label=This is the staging environment
 environment.dev.label=This is the dev environment
 ```
