@@ -33,6 +33,9 @@ If you wish your button to be a drop down menu, use the `children` array. Each i
 * `match` _(optional)_: The prompt modal dialog will display this word and requires that the user enters it in order to continue.
 * `target` _(optional)_: Optional link target, e.g. "\_blank" to open in a new tab
 * `icon` _(optional)_: Font awesome icon class for the item. Icon will appear before the title
+* `linkClass` _(optional)_: Available from 10.27 onwards; CSS class(es) to attach to the anchor tag
+* `liClass` _(optional)_: Available from 10.27 onwards; CSS class(es) to attach to the list item tag
+* `children` _(optional)_: Available from 10.27 onwards; An array of more child items (each item matching this child item format). Will create a nested dropdown.
 
 As of 10.20, child actions can be supplied as a pre-rendered string **or** you can supply the explicit string "---" to create a spacer entry.
 
