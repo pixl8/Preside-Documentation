@@ -319,7 +319,7 @@ private string function renderSidebarHeader( event, rc, prc, args={} ) {
 
 ### Permissioning
 
-In addition to improving the view record screen, the base object gives you a standard implementation of the `checkPermission()` customization. Set `variables.permissionBase` in your pseudo constructor to automically map the data manager operations:
+In addition to improving the view record screen, the base object gives you a standard implementation of the `checkPermission()` customization. Set `variables.permissionBase` in your pseudo constructor to automatically map the data manager operations:
 
 * `read`
 * `add`
@@ -327,7 +327,7 @@ In addition to improving the view record screen, the base object gives you a sta
 * `delete`
 * `clone`
 
-i.e. if you set a base of `payments.`, then permission check keys will look like `payments.read`, `payments.add` and so on.
+i.e. if you set a base of `payments`, then permission check keys will look like `payments.read`, `payments.add` and so on.
 
 If you do not set `variables.permissionBase`, the base will default to the object name. However, this default behaviour can be customised by setting up by adding a custom method `getPermissionBaseFromObjectName()` to `/handlers/admin/datamanager/GlobalCustomizations.cfc`, e.g.:
 
@@ -338,3 +338,13 @@ private string function getPermissionBaseFromObjectName( event, rc, prc, args={}
 ```
 
 The above would remove `crm_` from the beginning of any object name to create the permission base; but you could have more complex logic in here if required.
+
+### Out of box audit trail tab
+
+As of Preside 10.27, the system makes an audit trail tab available for your datamanager views. This tab simply displays a pre-filtered view of the existing admin audit trail, showing audit entries for records matching the current record ID. To enable it for your object, add `"audittrail"` to your tabs array, e.g.
+
+```luceescript
+variables.tabs = [ "default", "usage", "auditTrail" ];
+```
+
+If you wish to customize the icon + title, do so as if it were any other tab for your object.
