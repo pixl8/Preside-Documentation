@@ -24,6 +24,8 @@ The info card layout is configured using three columns that are arrays of info c
 ```luceescript
 component extends="preside.system.base.EnhancedDataManagerBase" {
 
+	variables.infoCardStyle = "default"; // as of 10.26.66 + 10.27.34. Alternative is "definitionlist"
+
 	variables.infoCol1 = variables.infoCol1 ?: [];
 	variables.infoCol2 = variables.infoCol2 ?: [];
 	variables.infoCol3 = variables.infoCol3 ?: [];
@@ -68,6 +70,21 @@ variables.infoCol3 = [];
 // set column sizes
 variables.infoColSizes = [ 3, 9, 0 ];
 ```
+
+#### Definition list style
+
+>>> As of **10.26.66** and **10.27.34** you are able to use definition lists where each item in the info card has a title to accompany the output of the item. This can make it easier to read and provide a consistent looking output.
+
+![definition list style info cards](images/screenshots/enhanced-datamanager-infocard-with-definition-list.png)
+
+To use the "definition list" style output for your info card, set `variables.infoCardStyle = "definitionList";` in your handler. The rendered output of the item works in the same way as the "default" style (either the default renderer for the field if matching a field name, or provided by a corresponding handler action as above).
+
+If the infocol item matches a field name, the default title for the item will be the rendered field name. In either case you can create a specific title for the infocol item by using this convention in your preside object's corresponding i18n file:
+
+```properties
+infocard.nameOfInColItem=My title
+```
+
 
 #### Rendered description
 

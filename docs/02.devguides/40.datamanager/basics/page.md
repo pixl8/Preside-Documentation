@@ -114,6 +114,27 @@ component {
 }
 ```
 
+## Having record viewed in a modal popup
+
+>>> As of **10.26.66** and **10.27.34**
+
+You are able to specify that clicking the eye icon (view record) link in a grid listing results in a modal/popover view of the record rather than showing in a new page. This is great for records that have little value in navigating to view and where it makes sense to remain focused on the grid listing.
+
+To enable this behaviour for your object, use the annotation `@datamanagerModalView true`. e.g.
+
+```luceescript
+// /application/preside-objects/log_detail.cfc
+
+/**
+ * @datamanagerEnabled           true
+ * @datamanagerAllowedOperations view
+ * @datamanagerModalView         true
+ */
+component {
+	// ... etc.
+}
+```
+
 ## Customizing the listing grid header label
 
 There is a `listing` context available when translate property name for listing grid header.
