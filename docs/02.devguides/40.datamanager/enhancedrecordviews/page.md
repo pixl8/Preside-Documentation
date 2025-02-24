@@ -24,7 +24,7 @@ The info card layout is configured using three columns that are arrays of info c
 ```luceescript
 component extends="preside.system.base.EnhancedDataManagerBase" {
 
-	variables.infoCardStyle = "default"; // as of 10.26.66 + 10.27.34. Alternative is "definitionlist"
+	variables.infoCardStyle = "default"; // as of 10.26.67 + 10.27.34. Alternative is "definitionlist"
 
 	variables.infoCol1 = variables.infoCol1 ?: [];
 	variables.infoCol2 = variables.infoCol2 ?: [];
@@ -73,7 +73,7 @@ variables.infoColSizes = [ 3, 9, 0 ];
 
 #### Definition list style
 
->>> As of **10.26.66** and **10.27.34** you are able to use definition lists where each item in the info card has a title to accompany the output of the item. This can make it easier to read and provide a consistent looking output.
+>>> As of **10.26.67** and **10.27.34** you are able to use definition lists where each item in the info card has a title to accompany the output of the item. This can make it easier to read and provide a consistent looking output.
 
 ![definition list style info cards](images/screenshots/enhanced-datamanager-infocard-with-definition-list.png)
 
