@@ -135,7 +135,6 @@ component {
 }
 ```
 
-
 ## Customizing the listing grid header label
 
 There is a `listing` context available when translate property name for listing grid header.
