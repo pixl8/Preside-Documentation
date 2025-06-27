@@ -26,7 +26,7 @@ The principles and [[webflowschema-step|schema]] of the steps are identical to s
 
 Copy and paste the following yaml into a file at `{webroot}/application/workflow/webflowSteps/tutorialStep.yml`:
 
-```yml
+```yaml
 id: tutorialstep
 configform: webflow.steps.tutorialstep.config
 display:
@@ -58,7 +58,7 @@ Finally, create the forms at `/forms/webflow/steps/tutorialstep.xml` and `/forms
 
 Using our `webflowtutorial` webflow from the [[webflowquickstart|quick start guide]], modify it to include the global step by using the `$ref` property in place of `id`:
 
-```yml
+```yaml
 version: 1.0.0
 webflow:
   id: webflowtutorial
@@ -86,7 +86,7 @@ Reload your application and test:
 
 When referencing a global step from within a webflow definition, you can override any of the step definition properties as well as pass in hardcoded stepConfig. For example, let's add a condition and set some config:
 
-```yml
+```yaml
 version: 1.0.0
 webflow:
   id: webflowtutorial

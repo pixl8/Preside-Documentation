@@ -45,7 +45,7 @@ condition:
       testmode: $testmode
 ```
 
-```cfc
+```luceescript
 // /handlers/Events.cfc
 component {
 

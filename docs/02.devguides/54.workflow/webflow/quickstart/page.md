@@ -5,7 +5,7 @@ title: "Webflows: Quick start tutorial"
 
 ## Webflows Quick start tutorial
 
-**NOTE:** The following tutorial assumes you have a running Preside application running Preside 10.30 or higher.
+**NOTE:** The following tutorial assumes you have a running Preside application running Preside 10.29 or higher.
 
 ### 1. Define a webflow
 

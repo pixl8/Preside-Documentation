@@ -6,7 +6,7 @@ title: Datamanager Workflow Quick Start
 
 # Data manager workflow quick start tutorial
 
-**NOTE:** The following tutorial assumes you have a running Preside application using Preside **10.30** or above
+**NOTE:** The following tutorial assumes you have a running Preside application using Preside **10.29** or above
 
 # 1. Create an object
 
@@ -57,7 +57,7 @@ In our object definition, we added the annotation `@datamanagerWorkflowEnabled t
 
 For our quick start, we will use approach 1 and create a yaml file at `/workflows/datamanager/dm_workflow_example.yml`:
 
-```yml
+```yaml
 version: 1.0.0
 workflow:
   id: dm_workflow_example
@@ -155,7 +155,7 @@ We may want to add permissioning to the execution of workflow actions. We can do
 
 Edit your workflow yml file (`/workflows/datamanager/dm_workflow_example.yml`) to add the following `permission` object to the `started -> complete` action:
 
-```yml
+```yaml
 - id: started
   actions:
   - id: complete
@@ -193,7 +193,7 @@ Reload your i18n and test the effect.
 In addition to permissions, you are also able to set a condition that must evaluate to true before an action may be triggered. For example, you may wish to prevent publishing when certain content is not filled in, or a certain length.
 We will edit our `.yml` workflow file, add a handler to perform our `coldbox.handler` condition and edit our i18n file to add a custom message on hover of a disabled action:
 
-```yml
+```yaml
 - id: started
   actions:
   - id: complete
@@ -247,7 +247,7 @@ Add i18n if you like. Next we'll add a form at `/forms/preside-objects/dm_workfl
 
 Next, we'll add the form to our action in the workflow yaml:
 
-```yml
+```yaml
 - id: started
   actions:
   - id: complete
@@ -273,7 +273,7 @@ In addition to transitioning flows, you can also declare handlers to run pre/pos
 
 Edit your flow yaml, adding the following to the 'complete' action of the 'started' step:
 
-```yml
+```yaml
 - id: started
   actions:
   - id: complete
@@ -296,7 +296,7 @@ Reload and perform a full flow with completion on a record. See that published b
 
 Next, we'll add pre and post handler actions to the result. These are just coldbox handlers and you can perform any logic that you want here:
 
-```yml
+```yaml
 - id: started
   actions:
   - id: complete
@@ -348,7 +348,7 @@ Reload the application and complete a flow and figure out what on earth we just 
 
 Unlike JIRA, data manager workflows support split flows! This means that you can have multiple active steps at the same time. Lets setup our flow to add a new step that will be active at the same time as the started step:
 
-```yml
+```yaml
 steps:
   - id: workqueued
     actions:
@@ -378,7 +378,7 @@ step.legal.action.complete.iconClass=fa-gavel
 
 If we reload and start a new flow and then play with it - you'll notice that we can start a flow and get it into a split state. However, the "Completed" step will become active as soon as either the "started" or "legal" steps is completed and we don't really want that. To solve this we will define a new **join**:
 
-```yml
+```yaml
 workflow:
   id: dm_workflow_example
   # ...
@@ -395,7 +395,7 @@ workflow:
 
 At this point **this join will not be automatically used**. To trigger the potential join result, we must edit the results of our two completion action results on the started and legal steps:
 
-```yml
+```yaml
   steps:
   # ...
   - id: legal

@@ -47,7 +47,7 @@ actions:
         template: registrationNotification
 ```
 
-```cfc
+```luceescript
 // /handlers/Email.cfc
 component {
 

@@ -19,7 +19,7 @@ Subflows are effectively mini webflows that can be inserted into full webflow de
 
 First, create another global step. The recommendation is to always use global steps for your subflows so that global defaults can be defined.  Copy and paste the following yml into a file at `{webroot}/application/workflow/webflowSteps/tutorialStep2.yml`:
 
-```yml
+```yaml
 id: tutorialstep2
 ```
 
@@ -32,7 +32,7 @@ description=The simplest of steps to demo subflows
 
 Next, we'll create the subflow. Copy and paste the following yml into a file at `{webroot}/application/workflow/webflowSubflows/tutorial.yml`:
 
-```yml
+```yaml
 id: tutorialSubflow
 steps:
 - $ref: tutorialstep
@@ -57,7 +57,7 @@ description=The simplest of subflows
 
 Let's modify our webflow from the [[webflowquickstart|quick start tutorial]]. To include a subflow, use the `$subflowref` property in place of a step `id`:
 
-```yml
+```yaml
 version: 1.0.0
 webflow:
   id: webflowtutorial
@@ -92,7 +92,7 @@ Notice how the subflow is greyed out. If you click on the diagram, you should be
 
 Modify the [[webflowquickstart|quick start tutorial]] webflow once more:
 
-```yml
+```yaml
 version: 1.0.0
 webflow:
   id: webflowtutorial

@@ -1,13 +1,13 @@
 ---
 id: datamanagerworkflow
-title: Datamanager Workflow (Preside 10.30+)
+title: Datamanager Workflow (Preside 10.29+)
 ---
 
 # Datamanager Workflow
 
 ## Introduction
 
-Preside **10.30** introduces Data manager workflow. This is a JIRA-like workflow
+Preside **10.29** introduces Data manager workflow. This is a JIRA-like workflow
 system for your preside objects, managed through admin data manager screens. A summary of working with the system:
 
 1. Configure an object to be workflow enabled
