@@ -6,6 +6,7 @@ RUN chmod +x /entrypoint.sh
 
 RUN apk update
 RUN apk add ruby zip
+RUN gem install --no-doc aws-eventstream -v 1.3.2
 RUN gem install --no-doc s3_website
 
 RUN curl -o $COMMANDBOX_HOME/engine/cfml/cli/lucee-server/deploy/pdf-extension-1.0.0.94.lex https://ext.lucee.org/pdf-extension-1.0.0.94.lex
