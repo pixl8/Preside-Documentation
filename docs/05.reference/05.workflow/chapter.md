@@ -24,6 +24,7 @@ title: Reference documentation for Preside's CfFlow workflow implementations
 * [[webflowschema-handler]]
 * [[webflowschema-init]]
 * [[webflowschema-prepostaction]]
+* [[webflowschema-instrefconfig]]
 * [[webflowschema-step]]
 * [[webflowschema-webflow]]
 * [[webflowschema-webflowsubflow]]
