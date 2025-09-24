@@ -20,12 +20,44 @@ steps:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `id` | `true` | `string` | Unique identifier for the subflow. This will be used to include the subflow in webflows with `$subflowref` |
-| `feature` | `false` | `string` | Preside feature that must be enabled in order for this subflow to be registered |
-| `steps` | `true` | `array` | Array of [[webflowschema-step|step]] objects. Must have one or more steps. |
-| `meta` | `false` | `object` | Arbitrary data to help describe your subflow. Not used by the engine. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the subflow. This will be used to include the subflow in webflows with <code>$subflowref</code></td>
+            </tr>
+            <tr>
+                <td><code>feature</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside feature that must be enabled in order for this subflow to be registered</td>
+            </tr>
+            <tr>
+                <td><code>steps</code></td>
+                <td><code>true</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[webflowschema-step|step]] objects. Must have one or more steps.</td>
+            </tr>
+            <tr>
+                <td><code>meta</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary data to help describe your subflow. Not used by the engine.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### JSON Schema
 

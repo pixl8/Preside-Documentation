@@ -64,36 +64,188 @@ subflowExitPoint: boolean
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `id` | `true` (if no `$ref` or `$subflowref`) | `string` | Unique identifier for the step within this webflow or, if a global step, within the Preside application. |
-| `$ref` | `true` (if no `id` or `$subflowref`) | `string` | Unique identifier of a globally registered step to pull into this webflow. |
-| `$subflowref` | `true` (if no `id` or `$ref`) | `string` | Unique identifier of a globally registered _subflow_ to pull into this webflow. |
-| `feature` | `false` | `string` | Preside feature that must be enabled in order for this step to be registered |
-| `configform` | `false` | `string` | Preside form ID that will be used by administrators when configuring this step. |
-| `config` | `false` | `object` | Arbitrary object of configuration that will be merged with editorial config when getting the step configuration for rendering / submitting, etc. |
-| `condition` | `false` | `object` | Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this step to be transitioned to active from the previous step. |
-| `preactions` | `false` | `array` | Array of "pre-actions" that will be executed before this step is transitioned to active. |
-| `preactions.handler` | `false` | `object` | Coldbox [[datamanagerworkflowschema-handler|handler]] that will be run to execute this preaction. |
-| `preactions.condition` | `false` | `object` | Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this action to run. |
-| `postactions` | `false` | `array` | Array of "post-actions" that will be executed after this step has successfully submitted and before the next step is transitioned to active. |
-| `postactions.handler` | `false` | `object` | Coldbox [[datamanagerworkflowschema-handler|handler]] that will be run to execute this postaction. |
-| `postactions.condition` | `false` | `object` | Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this action to run. |
-| `display` | `false` | `object` | Optional object defining specifics of how to display this step |
-| `display.form` | `false` | `string` | Optional Preside form ID to render when displaying this step |
-| `display.layout` | `false` | `object` | Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to use to display the _layout_ for this step |
-| `display.viewlet` | `false` | `object` | Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to use to display the _content_ of this step |
-| `submission` | `false` | `object` | Optional object defining specific of how submission of this step is handled |
-| `submission.handler` | `false` | `object` | Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to run as part of submission |
-| `submission.autovalidateforms` | `false` | `boolean` | Whether or not to automatically validate any preside forms that have been submitted with the step (default is `true`) |
-| `submission.ignoretimeout` | `false` | `boolean` | Whether or not to ignore any timeouts set on the flow. Useful for critical steps such as payments. |
-| `next` | `false` | `string` or `array` | Defines which step(s) can be transitioned to after this step. Used only when sequence is not necessarily in a straight order (i.e. conditional paths) |
-| `prev` | `false` | `string` or `array` | Defines which step(s) can be transitioned to when going 'back' from this step. Used only when sequence is not necessarily in a straight order (i.e. conditional paths) |
-| `start` | `false` | `boolean` | Whether or not this step can be the start of the flow (useful only when a step is not the first step in the flow, but may be the first step to be active due to previous steps having conditions). The first step in the array of steps is always a start step. |
-| `finish` | `false` | `boolean` | Whether or not this step finishes the flow. The last step in the array is always a finish step, but you may additionally have other steps that can finish the flow. |
-| `canCancel` | `false` | `boolean` | Whether or not a user is able to cancel the entire flow at this step. Default is `false` |
-| `subflowEntryPoint` | `false` | `boolean` | **For subflows only**: whether or not this step is the first step within the subflow - works the same as `start` but for subflows. |
-| `subflowExitPoint` | `false` | `boolean` | **For subflows only**: whether or not this step is a final step within the subflow - works the same as `finish` but for subflows. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code> (if no <code>$ref</code> or <code>$subflowref</code>)</td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the step within this webflow or, if a global step, within the Preside application.</td>
+            </tr>
+            <tr>
+                <td><code>$ref</code></td>
+                <td><code>true</code> (if no <code>id</code> or <code>$subflowref</code>)</td>
+                <td><code>string</code></td>
+                <td>Unique identifier of a globally registered step to pull into this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>$subflowref</code></td>
+                <td><code>true</code> (if no <code>id</code> or <code>$ref</code>)</td>
+                <td><code>string</code></td>
+                <td>Unique identifier of a globally registered <em>subflow</em> to pull into this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>feature</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside feature that must be enabled in order for this step to be registered</td>
+            </tr>
+            <tr>
+                <td><code>configform</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside form ID that will be used by administrators when configuring this step.</td>
+            </tr>
+            <tr>
+                <td><code>config</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary object of configuration that will be merged with editorial config when getting the step configuration for rendering / submitting, etc.</td>
+            </tr>
+            <tr>
+                <td><code>condition</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this step to be transitioned to active from the previous step.</td>
+            </tr>
+            <tr>
+                <td><code>preactions</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of "pre-actions" that will be executed before this step is transitioned to active.</td>
+            </tr>
+            <tr>
+                <td><code>preactions.handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Coldbox [[datamanagerworkflowschema-handler|handler]] that will be run to execute this preaction.</td>
+            </tr>
+            <tr>
+                <td><code>preactions.condition</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this action to run.</td>
+            </tr>
+            <tr>
+                <td><code>postactions</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of "post-actions" that will be executed after this step has successfully submitted and before the next step is transitioned to active.</td>
+            </tr>
+            <tr>
+                <td><code>postactions.handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Coldbox [[datamanagerworkflowschema-handler|handler]] that will be run to execute this postaction.</td>
+            </tr>
+            <tr>
+                <td><code>postactions.condition</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for this action to run.</td>
+            </tr>
+            <tr>
+                <td><code>display</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional object defining specifics of how to display this step</td>
+            </tr>
+            <tr>
+                <td><code>display.form</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Optional Preside form ID to render when displaying this step</td>
+            </tr>
+            <tr>
+                <td><code>display.layout</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to use to display the <em>layout</em> for this step</td>
+            </tr>
+            <tr>
+                <td><code>display.viewlet</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to use to display the <em>content</em> of this step</td>
+            </tr>
+            <tr>
+                <td><code>submission</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional object defining specific of how submission of this step is handled</td>
+            </tr>
+            <tr>
+                <td><code>submission.handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional Coldbox [[datamanagerworkflowschema-handler|handler]] to run as part of submission</td>
+            </tr>
+            <tr>
+                <td><code>submission.autovalidateforms</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not to automatically validate any preside forms that have been submitted with the step (default is <code>true</code>)</td>
+            </tr>
+            <tr>
+                <td><code>submission.ignoretimeout</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not to ignore any timeouts set on the flow. Useful for critical steps such as payments.</td>
+            </tr>
+            <tr>
+                <td><code>next</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code> or <code>array</code></td>
+                <td>Defines which step(s) can be transitioned to after this step. Used only when sequence is not necessarily in a straight order (i.e. conditional paths)</td>
+            </tr>
+            <tr>
+                <td><code>prev</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code> or <code>array</code></td>
+                <td>Defines which step(s) can be transitioned to when going 'back' from this step. Used only when sequence is not necessarily in a straight order (i.e. conditional paths)</td>
+            </tr>
+            <tr>
+                <td><code>start</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not this step can be the start of the flow (useful only when a step is not the first step in the flow, but may be the first step to be active due to previous steps having conditions). The first step in the array of steps is always a start step.</td>
+            </tr>
+            <tr>
+                <td><code>finish</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not this step finishes the flow. The last step in the array is always a finish step, but you may additionally have other steps that can finish the flow.</td>
+            </tr>
+            <tr>
+                <td><code>canCancel</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not a user is able to cancel the entire flow at this step. Default is <code>false</code></td>
+            </tr>
+            <tr>
+                <td><code>subflowEntryPoint</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td><strong>For subflows only</strong>: whether or not this step is the first step within the subflow - works the same as <code>start</code> but for subflows.</td>
+            </tr>
+            <tr>
+                <td><code>subflowExitPoint</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td><strong>For subflows only</strong>: whether or not this step is a final step within the subflow - works the same as <code>finish</code> but for subflows.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### JSON Schema
 

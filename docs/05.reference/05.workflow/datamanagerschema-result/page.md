@@ -29,19 +29,86 @@ result:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `thisStep`                | `false` | `string` | Status to migrate this step to. Either, 'pending', 'skipped', 'complete' (default if not specified) |
-| `activateSteps`           | `false` | `array`  | Array of step IDs to transition to an active status |
-| `skipSteps`               | `false` | `array`  | Array of step IDs to transition to a skipped status |
-| `completeSteps`           | `false` | `array`  | Array of step IDs to transition to a complete status |
-| `pendingSteps`            | `false` | `array`  | Array of step IDs to transition to a pending status |
-| `skipIncompleteSteps`     | `false` | `array`  | Array of step IDs to transition to a skipped status if they are currently either active or pending |
-| `activateIncompleteSteps` | `false` | `array`  | Array of step IDs to transition to a active status when they are currently in a pending status (i.e. excludes skipped and completed steps) |
-| `joins`                   | `false` | `array`  | Array of join IDs to be evaluated with this result |
-| `appendState`             | `false` | `array`  | Arbitrary object of data to append to the workflow state (by default, this will append to the object's database record for any matching columns) |
-| `preHandlers`             | `false` | `array`  | Array of [[datamanagerworkflowschema-handler|handler]] objects that will be executed *before* any steps are transitioned |
-| `postHandlers`            | `false` | `array`  | Array of [[datamanagerworkflowschema-handler|handler]] objects that will be executed *after* any steps are transitioned |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>thisStep</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Status to migrate this step to. Either, 'pending', 'skipped', 'complete' (default if not specified)</td>
+            </tr>
+            <tr>
+                <td><code>activateSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to an active status</td>
+            </tr>
+            <tr>
+                <td><code>skipSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to a skipped status</td>
+            </tr>
+            <tr>
+                <td><code>completeSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to a complete status</td>
+            </tr>
+            <tr>
+                <td><code>pendingSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to a pending status</td>
+            </tr>
+            <tr>
+                <td><code>skipIncompleteSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to a skipped status if they are currently either active or pending</td>
+            </tr>
+            <tr>
+                <td><code>activateIncompleteSteps</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs to transition to a active status when they are currently in a pending status (i.e. excludes skipped and completed steps)</td>
+            </tr>
+            <tr>
+                <td><code>joins</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of join IDs to be evaluated with this result</td>
+            </tr>
+            <tr>
+                <td><code>appendState</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Arbitrary object of data to append to the workflow state (by default, this will append to the object's database record for any matching columns)</td>
+            </tr>
+            <tr>
+                <td><code>preHandlers</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-handler|handler]] objects that will be executed <em>before</em> any steps are transitioned</td>
+            </tr>
+            <tr>
+                <td><code>postHandlers</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-handler|handler]] objects that will be executed <em>after</em> any steps are transitioned</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema
