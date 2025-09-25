@@ -24,14 +24,56 @@ or
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `ref` | `true` | `string` | Identifier of the registered condition class to use  |
-| `meta` | `false` | `object` | Arbitrary data to help describe your condition. Not used by the engine. |
-| `args` | `false` | `object` | Arbitrary data to pass to the condition class when evaluating the condition |
-| `not` | `false` | `boolean` | Whether or not the condition result should be inveresed. |
-| `and` | `false` | `array` | Array of condition objects that must also be true. |
-| `or` | `false` | `array` | Array of condition objects that may alternatively be true. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>ref</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Identifier of the registered condition class to use</td>
+            </tr>
+            <tr>
+                <td><code>meta</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary data to help describe your condition. Not used by the engine.</td>
+            </tr>
+            <tr>
+                <td><code>args</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary data to pass to the condition class when evaluating the condition</td>
+            </tr>
+            <tr>
+                <td><code>not</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not the condition result should be inveresed.</td>
+            </tr>
+            <tr>
+                <td><code>and</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of condition objects that must also be true.</td>
+            </tr>
+            <tr>
+                <td><code>or</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of condition objects that may alternatively be true.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema

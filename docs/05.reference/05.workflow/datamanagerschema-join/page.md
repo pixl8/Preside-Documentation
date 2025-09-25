@@ -25,12 +25,44 @@ joins:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `id`  | `true` | `string` | Unique identifier for the join within the flow |
-| `waitForSteps`  | `true` | `array` | Array of step IDs. When the join is triggered, the results will only fire once all the steps here are either skipped or completed. |
-| `result`  | `true` | `object` | A default [[datamanagerworkflowschema-result|result]] object that defines step transitions and optional pre/post functions |
-| `conditionalResults`  | `false` | `array` | Optional array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects. First matching result will be executed when the join is triggered and all steps are complete or skipped. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the join within the flow</td>
+            </tr>
+            <tr>
+                <td><code>waitForSteps</code></td>
+                <td><code>true</code></td>
+                <td><code>array</code></td>
+                <td>Array of step IDs. When the join is triggered, the results will only fire once all the steps here are either skipped or completed.</td>
+            </tr>
+            <tr>
+                <td><code>result</code></td>
+                <td><code>true</code></td>
+                <td><code>object</code></td>
+                <td>A default [[datamanagerworkflowschema-result|result]] object that defines step transitions and optional pre/post functions</td>
+            </tr>
+            <tr>
+                <td><code>conditionalResults</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Optional array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects. First matching result will be executed when the join is triggered and all steps are complete or skipped.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema

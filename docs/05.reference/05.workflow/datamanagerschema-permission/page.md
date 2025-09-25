@@ -20,10 +20,32 @@ permission:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `key`  | `false` | `string` | Preside admin permission key (i.e. `hasCmsPermission( key )`). Required if `handler` not supplied. |
-| `handler`  | `false` | `object` | A [[datamanagerworkflowschema-handler|handler]] object specifying a handler to run for a permission check. Required if `key` is not supplied. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>key</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside admin permission key (i.e. <code>hasCmsPermission( key )</code>). Required if <code>handler</code> not supplied.</td>
+            </tr>
+            <tr>
+                <td><code>handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>A [[datamanagerworkflowschema-handler|handler]] object specifying a handler to run for a permission check. Required if <code>key</code> is not supplied.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema

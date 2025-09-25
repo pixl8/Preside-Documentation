@@ -28,10 +28,26 @@ In addition to the optionally provided `args`, your handler will receive the `wf
 
 ##### Args
 
-| Name | Description |
-|-------|--------|
-| `event` | Required. The coldbox `event` id to execute |
-| `args` | Optional. The `args` struct to send to the handler |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>event</code></td>
+                <td>Required. The coldbox <code>event</code> id to execute</td>
+            </tr>
+            <tr>
+                <td><code>args</code></td>
+                <td>Optional. The <code>args</code> struct to send to the handler</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ##### Example
 

@@ -27,18 +27,80 @@ webflow:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `version` | `true` | `string` | Version of the schema. Must be `1.0.0`. |
-| `webflow` | `true` | `object` | Object containing the webflow definition. |
-| `webflow.id` | `true` | `string` | Unique identifier for the webflow. |
-| `webflow.feature` | `false` | `string` | Preside feature that must be enabled in order for this flow to be registered |
-| `webflow.steps` | `true` | `array` | Array of [[webflowschema-step|step]] objects. Must have two or more steps. |
-| `webflow.meta` | `false` | `object` | Arbitrary data to help describe your flow. Not used by the engine. |
-| `webflow.init` | `false` | `object` | Optional [[webflowschema-init|init]] object that can be used to definie initialisation and configuration options for the flow. |
-| `webflow.layout` | `false` | `object` | Optional [[webflowschema-handler|handler]] object defining coldbox handler event and args to be used to render the layout for this webflow. |
-| `webflow.preCancelHandler` | `false` | `object` | Optional [[webflowschema-handler|handler]] object defining coldbox handler event that is triggered before a webflow instance is cancelled. |
-| `webflow.postCancelHandler` | `false` | `object` | Optional [[webflowschema-handler|handler]] object defining coldbox handler event that is triggered after a webflow instance is canncelled. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>version</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Version of the schema. Must be <code>1.0.0</code>.</td>
+            </tr>
+            <tr>
+                <td><code>webflow</code></td>
+                <td><code>true</code></td>
+                <td><code>object</code></td>
+                <td>Object containing the webflow definition.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the webflow.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.feature</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside feature that must be enabled in order for this flow to be registered</td>
+            </tr>
+            <tr>
+                <td><code>webflow.steps</code></td>
+                <td><code>true</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[webflowschema-step|step]] objects. Must have two or more steps.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.meta</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary data to help describe your flow. Not used by the engine.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.init</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[webflowschema-init|init]] object that can be used to definie initialisation and configuration options for the flow.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.layout</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[webflowschema-handler|handler]] object defining coldbox handler event and args to be used to render the layout for this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.preCancelHandler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[webflowschema-handler|handler]] object defining coldbox handler event that is triggered before a webflow instance is cancelled.</td>
+            </tr>
+            <tr>
+                <td><code>webflow.postCancelHandler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[webflowschema-handler|handler]] object defining coldbox handler event that is triggered after a webflow instance is canncelled.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### JSON Schema
 

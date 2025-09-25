@@ -26,15 +26,62 @@ initialActions:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `id`  | `true` | `string` | Unique identifier for the action within the step |
-| `auto`  | `false` | `boolean` | Default: `false`. Whether or not the action should run/be attempted to run automatically as soon as the step becomes active. If `auto: true`, then the action will not be available in the manual actions dropdown list in datamanager. |
-| `form`  | `false` | `string` | ID of a preside form definition that will be auto rendered for you on trigger of the action. Form must be submitted and validated in order for the action to then be triggered. |
-| `permission`  | `false` | `string` | A [[datamanagerworkflowschema-permission|permission]] object that defines whether or not this manual action can be triggered by the logged in admin user. |
-| `condition`  | `false` | `array` | A [[datamanagerworkflowschema-condition|condition]] object. If defined, the condition must evaluate to true before the action may be triggered. |
-| `result`  | `true` | `object` | A [[datamanagerworkflowschema-result|default result]] object specifying what step transitions to execute |
-| `conditionalResults`  | `false` | `array` | Array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the action within the step</td>
+            </tr>
+            <tr>
+                <td><code>auto</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Default: <code>false</code>. Whether or not the action should run/be attempted to run automatically as soon as the step becomes active. If <code>auto: true</code>, then the action will not be available in the manual actions dropdown list in datamanager.</td>
+            </tr>
+            <tr>
+                <td><code>form</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>ID of a preside form definition that will be auto rendered for you on trigger of the action. Form must be submitted and validated in order for the action to then be triggered.</td>
+            </tr>
+            <tr>
+                <td><code>permission</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>A [[datamanagerworkflowschema-permission|permission]] object that defines whether or not this manual action can be triggered by the logged in admin user.</td>
+            </tr>
+            <tr>
+                <td><code>condition</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>A [[datamanagerworkflowschema-condition|condition]] object. If defined, the condition must evaluate to true before the action may be triggered.</td>
+            </tr>
+            <tr>
+                <td><code>result</code></td>
+                <td><code>true</code></td>
+                <td><code>object</code></td>
+                <td>A [[datamanagerworkflowschema-result|default result]] object specifying what step transitions to execute</td>
+            </tr>
+            <tr>
+                <td><code>conditionalResults</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema

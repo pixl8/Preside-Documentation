@@ -1,6 +1,6 @@
 ---
-id: datamanagerworkflowschema-step
-title: "Datamanager flow JSON Schema: Step"
+id: datamanagerworkflowschema-workflow
+title: "Datamanager flow JSON Schema: Workflow"
 ---
 
 ## Workflow
@@ -24,13 +24,50 @@ workflow:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `id`  | `true` | `string` | Global identifier for the flow |
-| `feature`  | `false` | `string` | Optional feature flag for the flow. If the feature is disabled, the flow will not be loaded by the system. |
-| `initialActions`  | `true` | `array` | Array of [[datamanagerworkflowschema-initialaction|initialAction]] objects |
-| `steps`  | `true` | `array` | Array of [[datamanagerworkflowschema-step|step]] objects |
-| `joins`  | `false` | `array` | Array of [[datamanagerworkflowschema-join|join]] objects |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Global identifier for the flow</td>
+            </tr>
+            <tr>
+                <td><code>feature</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Optional feature flag for the flow. If the feature is disabled, the flow will not be loaded by the system.</td>
+            </tr>
+            <tr>
+                <td><code>initialActions</code></td>
+                <td><code>true</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-initialaction|initialAction]] objects</td>
+            </tr>
+            <tr>
+                <td><code>steps</code></td>
+                <td><code>true</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-step|step]] objects</td>
+            </tr>
+            <tr>
+                <td><code>joins</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-join|join]] objects</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema
