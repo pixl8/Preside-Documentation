@@ -46,7 +46,7 @@ This tells the framework that 'customer' can be used to create tenancy in other 
  * @labelfield title
  */
 component {
-	//... 	
+	//...
 }
 ```
 
@@ -195,7 +195,7 @@ This will ensure that any tenancy filters are **not** applied for the given tena
 
 
 ```xml
-<field binding="article.related_articles" bypassTenants="customer" /> 
+<field binding="article.related_articles" bypassTenants="customer" />
 ```
 
 ## Overriding the per-request tenant
@@ -213,3 +213,61 @@ var alternativeCustomerAccounts = accounts.selectData(
 ```
 
 The value of this argument must be a struct whose keys are the names of the tenant and whose values are the ID to use for the tenant. See [[presideobjectservice-selectdata]] for documentation.
+
+## Indexes
+
+By default, all indexes on a tenanted object are modified to include the foreign key. As of **10.30.4**, the default index management strategy for tenancy is now configurable so that you can instead preserve all indexes and have *new* indexes added that include the foreign key.
+
+Configuration is done either at the Config.cfc level, or as an annotation on a tenanted object:
+
+**Config.cfc setting:**
+```luceescript
+settings.tenancy.customer = {
+	  object          = "cust"
+	, defaultFk       = "cust_id"
+	, preserveIndexes = true // default = false
+};
+```
+
+**Object annotation:**
+```luceescript
+/**
+ * @tenant                customer
+ * @tenantPreserveIndexes true
+ */
+component {
+  // ...
+}
+```
+
+**Unique indexes** are unaffected by the change. These indexes are always modified so that they include the tenant foreign key.
+
+### Before and after example
+
+```luceescript
+settings.tenancy.customer = {
+	  object          = "cust"
+	, defaultFk       = "cust_id"
+	, preserveIndexes = true // default = false
+};
+```
+
+```luceescript
+/**
+ * @tenant customer
+ * // ...
+ */
+component {
+	property name="status" ... indexes="status";
+	// ...
+}
+```
+
+**Without** preserving indexes:
+
+* `ix_my_object_status( cust_id, status )`
+
+**With** preserving indexes:
+
+* `ix_my_object_status( cust_id )`
+* `ix_my_object_status_tnt( cust_id, status )`
