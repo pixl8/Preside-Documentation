@@ -43,6 +43,37 @@ room_name.label=Room name
 use_html_notification.label=Use HTML notifications
 ```
 
+## Delegating access to a single category
+
+By default, the entire system settings area - the index of categories, and viewing or saving any individual category - requires the `systemConfiguration.manage` permission, which is granted wholesale to the sysadmin role.
+
+As of Preside **10.31.0**, an individual category can additionally be delegated to a domain specific role by declaring a `permissionKey` attribute on the root `form` element of its configuration form (see [[presideforms-permissioning]]):
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form i18nBaseUri="system-config.payments:" permissionKey="payments.settings.manage">
+    <tab id="default">
+        <fieldset id="default" sortorder="10">
+            <field name="my_setting" />
+        </fieldset>
+    </tab>
+</form>
+```
+
+A user is then able to view and save that category if they hold **either** `systemConfiguration.manage` **or** the category's declared permission key. This is useful where a settings link has been moved out of the *System > Settings* menu into a domain specific admin menu (see [[adminmenuitems]]) and needs to be usable by the role that owns that menu, without granting that role access to every other settings category.
+
+The rules are:
+
+* Categories that do **not** declare a `permissionKey` behave exactly as before: only `systemConfiguration.manage` grants access.
+* Users with `systemConfiguration.manage` always retain access to every category, whether or not it declares a key.
+* A user who holds only a category's declared key can view and save that category (including its tenanted variants), but cannot reach the settings index or any other category. The settings breadcrumb, which links to that index, is omitted for them.
+* The category menu viewlet lists only the categories the current user can access.
+* Saving is unaffected in every other respect: the `preSaveSystemConfig` and `postSaveSystemConfig` interception points, the audit trail entry and any watched-settings system alert checks (see [[systemalerts]]) all run as normal.
+
+Because form definitions are merged across core, extensions and your application, an application can override an extension's declared key by redeclaring the attribute in its own copy of the form definition.
+
+>>> Remember to define the permission key itself - and grant it to the relevant roles - in your `Config.cfc`. See [[cmspermissioning]].
+
 ## Multiple sites & custom tenancy
 
 As of Preside 10.7.0, if you have multiple sites, each configuration form can now be configured globally and then per-site if you wish to override global defaults in a particular site.

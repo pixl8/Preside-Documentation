@@ -14,11 +14,11 @@ As of Preside 10.8.0, the forms system allows you to restrict individual `field`
 	<tab id="default" permissionKey="standard.editing">
 		<fieldset id="default" sortorder="10">
 			<field binding="myobject.title"       />
-			
+
 			<!-- only users with 'slug.edit' perms will see this field -->
 			<field binding="myobject.slug" permissionkey="slugs.edit" />
 		</fieldset>
-		
+
 		<!-- only users with 'advanced.editing' perms will see this fieldset -->
 		<fieldset id="advanced" sortorder="10" permissionkey="advanced.editing">
 			<field binding="myobject.title"       />
@@ -27,6 +27,39 @@ As of Preside 10.8.0, the forms system allows you to restrict individual `field`
 	</tab>
 </form>
 ```
+
+### Restricting an entire form
+
+As of Preside **10.31.0**, the root `form` element also accepts a `permissionKey` attribute. This does not strip any elements from the form; instead it declares the permission key that governs access to the form as a whole, for admin areas that want to restrict a whole screen rather than individual fields.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form permissionKey="payments.settings.manage">
+	<tab id="default">
+		<fieldset id="default" sortorder="10">
+			<field name="my_setting" />
+		</fieldset>
+	</tab>
+</form>
+```
+
+Because form definitions are merged across core, extensions and your application (see [[presideforms-merging]]), the attribute can be declared by an extension and then overridden in your own copy of the form definition.
+
+To check the declared key for the currently logged in admin user, use [[formsservice-usercanaccessform]]:
+
+```luceescript
+component {
+	property name="formsService" inject="formsService";
+
+	private boolean function _userCanEditSettings() {
+		return formsService.userCanAccessForm( formName="system-config.my_category" );
+	}
+}
+```
+
+Forms that do not declare a `permissionKey` are considered accessible by default. Pass `allowedIfNoPermissionKey=false` to invert that, so that only forms explicitly declaring a key are considered accessible - this is how [[editablesystemsettings]] categories use the attribute.
+
+The method also accepts `permissionContext` and `permissionContextKeys` arguments for context aware permissions, as described below.
 
 ### Context permissions
 
@@ -47,11 +80,11 @@ var formData = event.getCollectionForForm(
 	, permissionContext     = "myContext"
 	, permissionContextKeys = [ contextId ]
 );
-var validationResult = validateForm( 
+var validationResult = validateForm(
 	  formName              = "my.form"
 	, formData              = formData
 	, permissionContext     = "myContext"
-	, permissionContextKeys = [ contextId ] 
+	, permissionContextKeys = [ contextId ]
 );
 ```
 
