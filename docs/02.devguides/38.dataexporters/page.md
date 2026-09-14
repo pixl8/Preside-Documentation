@@ -59,7 +59,7 @@ component {
 
 ### Adding the export feature to your custom admin grids
 
-If you are making use of the core object based data grids (i.e. `renderView( view="/admin/datamanager/_objectDataTable",...`), you can add the `allowDataExport` flag to the passed args to allow default export behaviour:
+If you are making use of the core object based data grids (i.e. `renderView( view="/admin/datamanager/_objectDataTable",...`), you can add the `allowDataExport` flag to the passed args to allow default export behaviour. The same `args` struct is also used to turn on column picking and saved listing views; see [[customizingdatamanager]]. For example:
 
 ```luceescript
 #renderView( view="/admin/datamanager/_objectDataTable", args={
