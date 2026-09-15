@@ -214,7 +214,7 @@ The flags that matter for the listing toolbar:
 * `compact`: when `true`, column picker, per-column filters and saved views are all forced **off**. Related-record tables on the view record screen use this.
 * `allowColumnPicker`: show/hide/reorder columns. Defaults to on unless `compact` is true.
 * `allowColumnFilter`: per-column heading filters. Defaults to on unless `compact` is true, and also requires `allowFilter` (rules engine listing filters).
-* `allowSavedViews`: named snapshots of filters plus columns. If you omit it, the core listing uses `@datamanagerAllowSavedViews` on the object. Pass `true` or `false` to override that annotation for this table only. Compact listings never show saved views.
+* `allowSavedViews`: named snapshots of filters plus columns. If you omit it, the core listing uses `@datamanagerAllowSavedViews` when that annotation is set, otherwise it follows `allowColumnPicker`. Pass `true` or `false` to override for this table only. Compact listings never show saved views.
 * `listingPreferenceKey`: isolates stored column layouts and saved views when the same object is listed in more than one place. Defaults to the object name.
 * `hiddenGridFields`: extra columns to offer in the picker (merged with `@datamanagerHiddenGridFields`).
 
@@ -240,6 +240,7 @@ You can replace the picker column pool entirely with a `getAvailableListingColum
 * [[datamanager-customization-getlistingbatchactions|getListingBatchActions]]
 * [[datamanager-customization-multirecordaction|multiRecordAction]]
 * [[datamanager-customization-renderfooterforgridlisting|renderFooterForGridListing]]
+* [[datamanager-customization-geteverythingbaractions|getEverythingBarActions]]
 
 
 ### Adding records
