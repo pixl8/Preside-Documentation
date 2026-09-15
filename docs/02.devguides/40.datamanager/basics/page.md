@@ -120,7 +120,7 @@ Non-compact listing tables include a column picker (show, hide and reorder colum
 
 The columns a user can pick from start as `@datamanagerGridFields` plus `@datamanagerHiddenGridFields`. Hidden grid fields are available in the picker but are not shown until the user turns them on.
 
-Use `@datamanagerLockedGridFields` for columns that must stay visible and at the front of the table (they cannot be hidden or reordered). If you omit it, the object's label field is locked.
+Use `@datamanagerLockedGridFields` for columns that must stay visible and at the front of the table (they cannot be hidden or reordered). If you omit it, no columns are locked.
 
 ```luceescript
 // /application/preside-objects/author.cfc
@@ -139,9 +139,15 @@ component {
 }
 ```
 
-To widen or narrow the picker pool without listing every field, use `@datamanagerColumnPickerFields`. The list accepts `*` wildcards and `!` exclusions, for example `*,!internal_notes`. Individual properties can opt in or out with `datamanagerUserColumn=true` / `datamanagerUserColumn=false`.
+To widen or narrow the picker pool without listing every field, use `@datamanagerColumnPickerFields`. The list accepts:
 
-When an object omits `@datamanagerColumnPickerFields`, Preside uses the application default `settings.dataManager.defaults.columnPickerFields`. That setting is an **empty string** unless you change it. Set it to `*` if every listable field should be available in the picker by default:
+* `auto` — include a sensible default set of columns: skip the object's ID field; skip `text` / `longtext` (and other unbounded text or binary) fields; skip `excludeDataExport=true` and `autofilter=false` unless the property sets `datamanagerUserColumn=true`; skip `one-to-many`, `many-to-many` and `select-data-view` relationships; skip secret, encrypted, password and `renderer=none` fields
+* `*` wildcards
+* `!` exclusions, for example `auto,!internal_notes` or `*,!internal_notes`
+
+Grid fields, hidden grid fields and search fields stay in the pool even when `auto` would otherwise skip them. Individual properties can opt in or out with `datamanagerUserColumn=true` / `datamanagerUserColumn=false`.
+
+When an object omits `@datamanagerColumnPickerFields`, Preside uses the application default `settings.dataManager.defaults.columnPickerFields`, which is **`auto`**. Set it to an empty string to limit the picker to grid and hidden grid fields, or `*` if every listable field should be available:
 
 ```luceescript
 // /application/config/Config.cfc
@@ -150,9 +156,9 @@ settings.dataManager.defaults.columnPickerFields = "*";
 
 Per-object annotations still win over that global default.
 
-Per-column heading filters follow the same field pool and also require rules-engine listing filters to be enabled for the table (`allowFilter`). Properties with `autofilter=false` do not get a column filter.
+Per-column heading filters follow the same field pool and also require rules-engine listing filters to be enabled for the table (`allowFilter`). Properties with `autofilter=false`, formula fields, many-to-many and one-to-many relationships do not get a column filter. Many-to-one columns use an object picker for related records and a saved-filter picker for filters of that related object.
 
-A user's chosen column layout is stored per listing. See [[customizingdatamanager]] for the listing `args` that turn the picker and filters on or off for a specific table.
+A user's chosen column layout, and the view they last had selected, are stored per user, listing and **listing context**. By default that context is the table's ajax datasource query string (cache-buster parameters removed). Pass `listingContextKey` / `listingContextLabel` when two listings of the same object should be labelled and stored separately — for example corporate vs individual subscriptions, or subscriptions for a specific product. See [[customizingdatamanager]] for the listing `args` that turn the picker and filters on or off for a specific table.
 
 ## Saved listing views
 
@@ -177,6 +183,8 @@ component {
 Compact listings never show saved views, even when the annotation is `true`.
 
 Users can save **personal** views without any extra permission. Sharing a view as global or with a user group requires the CMS permission `datamanager.sharelistingviews`. Roles that already have `datamanager.*` pick this up automatically.
+
+When the table has a developer-supplied `listingContextLabel`, the save form also asks whether the view should apply to **all listings of this object** or **this context only**. Without a labelled context, that control is hidden and the view is stored against the derived datasource query string.
 
 Named views lock the filters they own until the user chooses **Edit view**. Visible columns can still be shown, hidden or reordered at any time; those column changes are not saved onto the view unless it is being edited. Extra search and extra filters can still be added on top without changing the saved view.
 
