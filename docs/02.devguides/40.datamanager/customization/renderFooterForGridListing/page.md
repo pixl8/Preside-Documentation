@@ -7,7 +7,12 @@ title: "Data Manager customization: renderFooterForGridListing"
 
 >>> This feature was introduced in 10.11.0
 
-The `renderFooterForGridListing` customization allows you render footer text at the bottom of a dynamic data grid in the Data Manager. This may be to show a sum of certain fields based on the search and filters used, or just show a static message. It must return the string of the rendered message.
+The `renderFooterForGridListing` customization allows you to render footer content at the bottom of a dynamic data grid in the Data Manager. This may be to show a sum of certain fields based on the search and filters used, or just show a static message.
+
+You may return:
+
+* a **string** — shown in the first footer cell (legacy layout; does not follow hidden or reordered columns)
+* a **struct** (or array of row structs) — cells keyed by field name, placed under the matching visible column. Prefer this when the listing has a column picker. See [[datamanagerlistings]].
 
 * `objectName`: The name of the object
 * `records`: The paginated records that have been selected to show
@@ -37,5 +42,19 @@ component {
         );
     }
 
+}
+```
+
+When the listing has a column picker, return cells keyed by field so they stay under the matching column:
+
+```luceescript
+private any function renderFooterForGridListing( event, rc, prc, args={} ) {
+	return {
+		  labelField = "label"
+		, label      = "Totals"
+		, cells      = {
+			  amount = NumberFormat( 1234.5, "9,999.99" )
+		  }
+	};
 }
 ```

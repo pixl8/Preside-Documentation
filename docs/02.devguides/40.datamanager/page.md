@@ -12,6 +12,7 @@ Preside's Data Manager is a sophisticated auto CRUD admin for your data objects.
 As there is a lot to cover, we have broken the documentation down, see distinct topics below:
 
 * [[datamanagerbasics]]
+* [[datamanagerlistings]]
 * [[customizingdatamanager]]
 * [[adminrecordviews]]
 * [[enhancedrecordviews]]

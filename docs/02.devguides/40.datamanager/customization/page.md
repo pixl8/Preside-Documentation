@@ -198,7 +198,7 @@ renderedListingTable = objectDataTable( objectName="blog_post", args={} );
 renderedTreeView = objectTreeView( objectName="article", args={} );
 ```
 
-`objectDataTable()` runs the object's `listingViewlet` customization and falls back to the core listing viewlet. Pass listing toolbar flags in `args` to enable or disable column picking, per-column filters and saved views for **that table**, without changing the object's annotations (see [[datamanagerbasics]]).
+`objectDataTable()` runs the object's `listingViewlet` customization and falls back to the core listing viewlet. Pass listing toolbar flags in `args` to enable or disable column picking, per-column filters and saved views for **that table**, without changing the object's annotations (see [[datamanagerlistings]] and [[datamanagerbasics]]).
 
 ```luceescript
 renderedListingTable = objectDataTable( objectName="blog_post", args={
@@ -245,6 +245,8 @@ You can replace the picker column pool entirely with a `getAvailableListingColum
 * [[datamanager-customization-multirecordaction|multiRecordAction]]
 * [[datamanager-customization-renderfooterforgridlisting|renderFooterForGridListing]]
 * [[datamanager-customization-geteverythingbaractions|getEverythingBarActions]]
+
+Picker pool and default visible columns (see [[datamanagerlistings]]): `getAvailableListingColumns`, `getDefaultListingColumns`.
 
 
 ### Adding records

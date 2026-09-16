@@ -74,6 +74,8 @@ description=Data related to blogs
 iconclass=fa-comments
 ```
 
+>>>>>> _Listings were rebuilt around DataTables 3 (everything bar, column picker, saved views, mapped footers). See [[datamanagerlistings]] for what to check when upgrading, and how to turn features on or off._
+
 ## Basic customizations for the listing grid
 
 There are four basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
