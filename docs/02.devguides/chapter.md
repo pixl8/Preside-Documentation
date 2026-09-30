@@ -16,6 +16,7 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[datamanager]]
 * [[routing]]
 * [[features]]
+* [[labs]]
 * [[cmspermissioning]]
 * [[websiteusersandpermissioning]]
 * [[editablesystemsettings]]
