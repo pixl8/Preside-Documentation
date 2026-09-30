@@ -5,6 +5,8 @@ title: Labs experiments
 
 ## Overview
 
+>>> Labs feature introduced in **Preside 10.31**
+
 Labs is a way to ship experimental admin behaviour that individual administrators can turn on, without making it the permanent behaviour of the application.
 
 It is deliberately separate from [[features|feature flags]]. Feature flags are decided in code and change the makeup of the application, including its database structure. A Labs experiment is a runtime choice: the code for both behaviours is always present, and whether the experimental one is used is resolved per request from a code default, a site-wide setting and the logged-in administrator's own preference.
@@ -48,7 +50,6 @@ These two keys are the single source of copy. They are used for:
 * the fieldset title, description and field label on **Edit profile > Labs**
 * the title in the navbar signpost that points administrators at new experiments
 
-There is nothing to add to `system-config/labs.properties` or `cms.properties` for an individual experiment.
 
 ## Checking whether an experiment is enabled
 
@@ -100,8 +101,3 @@ To fix the site-wide list from the environment, supply `labs.enabled_experiments
 
 Core experiments may also read their own environment variable when choosing a mode, for example `LABS_DATATABLES_OVERHAUL` and `LABS_TIPTAP_EDITOR`, whose value is one of the modes above. That is part of each experiment's registration, not of the framework: an application experiment can do the same, or simply hard-code its mode.
 
-## What you do not need to do
-
-* Do not add a `yesNoSwitch` (or any other field) to `/forms/system-config/labs.xml` for your experiment. The form has one field, `enabled_experiments`, and new experiments appear in it through the `labsExperiment` enum, which is registered at startup from `settings.labs.experiments`.
-* Do not give each experiment its own system setting. User preferences are still per experiment; the site-wide choice is the single list.
-* Do not put experiment titles under `cms:editProfile.labs`. Use `labs:{experimentId}.title` and `labs:{experimentId}.description`.
