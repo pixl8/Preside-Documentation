@@ -38,6 +38,7 @@ In this chapter, you should find detailed guides on developing with the Preside 
 * [[sessionmanagement]]
 * [[presideforms]]
 * [[i18n]]
+* [[enums]]
 * [[taskmanager]]
 * [[auditing]]
 * [[rulesengine]]

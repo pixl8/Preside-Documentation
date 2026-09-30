@@ -83,7 +83,7 @@ For a known experiment, the result is decided in this order:
 
 ## Site-wide and per-user settings
 
-**System > Settings > Labs** has a single *Enabled experiments* field: a checkbox per configurable experiment. Saving it stores one `enabled_experiments` value. This is the site-wide default.
+**System > Settings > Labs** has a single *Enabled experiments* field: a checkbox per configurable experiment. Saving it stores one `enabled_experiments` value. This is the site-wide default. The checkboxes are the `labsExperiment` enum, registered at startup with [[enums|dynamic enum registration]].
 
 **Edit profile > Labs** lets each administrator override that default per experiment:
 

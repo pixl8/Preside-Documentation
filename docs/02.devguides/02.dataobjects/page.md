@@ -126,7 +126,7 @@ While you can add any arbitrary attributes to properties (and use them for your 
             <tr><td>relationshipIsSource</td> <td>No</td>  <td>**true**</td>  <td>In a many-to-many relationship, whether or not this object is regarded as the "source" of the relationship. If not, then it is regarded as the "target". See :ref:`preside-objects-relationships`, below.</td>                                                       </tr>
             <tr><td>relatedViaSourceFk</td>   <td>No</td>  <td>""</td>        <td>The name of the source object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
             <tr><td>relatedViaTargetFk</td>   <td>No</td>  <td>""</td>        <td>The name of the target object's foreign key field in a many-to-many relationship's pivot table. See :ref:`preside-objects-relationships`, below.</td>                                                                                                                </tr>
-            <tr><td>enum</td>                 <td>No</td>  <td>""</td>        <td>The name of the configured enum to use with this field. See "ENUM properties", below.</tr>
+            <tr><td>enum</td>                 <td>No</td>  <td>""</td>        <td>The name of the configured enum to use with this field. See [[enums]].</tr>
             <tr><td>aliasses</td>                 <td>No</td>  <td>""</td>        <td>List of alternative names (aliasses) for the property.</tr>        </tbody>
     </table>
 </div>
@@ -393,26 +393,7 @@ The existing syntax will still work, but the new syntax should provide improved 
 
 ### ENUM properties
 
-Properties defined with an `enum` attribute implement an application enforced ENUM system. Named ENUM types are defined in your application's `Config.cfc` and can then be attributed to a property which then automatically limits and validates the options that are available to the field. ENUM options are saved to the database as a plain string; we avoid any mapping with integer values to keep the implementation portable and simple. Example ENUM definitions in `Config.cfc`:
-
-```luceescript
-settings.enum = {};
-settings.enum.redirectType                = [ "301", "302" ];
-settings.enum.pageAccessRestriction       = [ "inherit", "none", "full", "partial" ];
-settings.enum.pageIframeAccessRestriction = [ "inherit", "block", "sameorigin", "allow" ];
-```
-
-In addition to the `Config.cfc` definition, each ENUM type should have a corresponding `.properties` file to define the labels and optional description of each item. The file must live at `/i18n/enum/{enumTypeId}.properties`. For example:
-
-
-```properties
-# /i18n/enum/redirectType.properties
-301.label=301 Moved Permanently
-301.description=A 301 redirect indicates that the resource has been *permanently* moved to the new locations. This is particularly important to use for moved content as it instructs search engines to index the new location, potentially without losing any SEO rankings. Browsers will aggressively cache these redirects to avoid wasted calls to a URL that it has been told is moved.
-
-302.label=302 Found (Temporary redirect)
-302.description=A 302 redirect indicates that the resource has been *temporarily* moved to the new location. Use this only when you know that you will/might reinstate the original source URL at some point in time.
-```
+A property with an `enum` attribute names an enum defined in [[enums]]. The column stores the selected key as a plain string.
 
 ### Defining relationships with properties
 
