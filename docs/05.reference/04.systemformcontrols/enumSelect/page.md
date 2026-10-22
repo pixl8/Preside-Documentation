@@ -12,7 +12,7 @@ The `enumSelect` control is an extension of the [[formcontrol-select]] form cont
         <tbody>
             <tr>
                 <th>enum (required)</th>
-                <td>Name of the enum to get values from</td>
+                <td>Name of the enum to get values from. Any enum from [[enums]], whether declared in configuration or registered at startup.</td>
             </tr>
         </tbody>
     </table>

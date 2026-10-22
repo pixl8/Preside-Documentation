@@ -35,6 +35,10 @@ All forms must have a root `form` element that contains one or more `tab` elemen
                 <th>extends (optional)</th>
                 <td>ID of another form whose definition this form should inherit and extend. See [[presideforms-merging]] for more details.</td>
             </tr>
+            <tr>
+                <th>permissionKey (optional)</th>
+                <td>Admin permission key that controls access to the form as a whole. Available as of Preside <strong>10.31.0</strong>. See [[presideforms-permissioning]] for more details.</td>
+            </tr>
         </tbody>
     </table>
 </div> 

@@ -74,6 +74,8 @@ description=Data related to blogs
 iconclass=fa-comments
 ```
 
+>>>>>> _Listings were rebuilt around DataTables 3 (everything bar, column picker, saved views, mapped footers). See [[datamanagerlistings]] for what to check when upgrading, and how to turn features on or off._
+
 ## Basic customizations for the listing grid
 
 There are four basic customizations that can be achieved with simple annotations on your preside object `.cfc` file:
@@ -113,6 +115,82 @@ component {
 	property name="post_count" type="numeric" formula="Count( ${prefix}posts.id )";
 }
 ```
+
+## Column picker and per-column filters
+
+Non-compact listing tables include a column picker (show, hide and reorder columns) and per-column heading filters. Both are on by default for the main Data Manager listing; they are off when the table is rendered with `compact=true` (for example, related-record tables on a view record screen).
+
+The columns a user can pick from start as `@datamanagerGridFields` plus `@datamanagerHiddenGridFields`. Hidden grid fields are available in the picker but are not shown until the user turns them on.
+
+Use `@datamanagerLockedGridFields` for columns that must stay visible and at the front of the table (they cannot be hidden or reordered). If you omit it, no columns are locked.
+
+```luceescript
+// /application/preside-objects/author.cfc
+
+/**
+ * @datamanagerGroup             blog
+ * @datamanagerGridFields        name,post_count,datemodified
+ * @datamanagerHiddenGridFields  email_address,website
+ * @datamanagerLockedGridFields  name
+ */
+component {
+	property name="name"          type="string" dbtype="varchar" maxlength="200" required=true uniqueindexes="name";
+	property name="email_address" type="string" dbtype="varchar" maxlength="255";
+	property name="website"       type="string" dbtype="varchar" maxlength="255";
+	property name="post_count"    type="numeric" formula="Count( ${prefix}posts.id )";
+}
+```
+
+To widen or narrow the picker pool without listing every field, use `@datamanagerColumnPickerFields`. The list accepts:
+
+* `auto` — include a sensible default set of columns: skip the object's ID field; skip `text` / `longtext` (and other unbounded text or binary) fields; skip `excludeDataExport=true` and `autofilter=false` unless the property sets `datamanagerUserColumn=true`; skip `one-to-many`, `many-to-many` and `select-data-view` relationships; skip secret, encrypted, password and `renderer=none` fields
+* `*` wildcards
+* `!` exclusions, for example `auto,!internal_notes` or `*,!internal_notes`
+
+Grid fields, hidden grid fields and search fields stay in the pool even when `auto` would otherwise skip them. Individual properties can opt in or out with `datamanagerUserColumn=true` / `datamanagerUserColumn=false`.
+
+When an object omits `@datamanagerColumnPickerFields`, Preside uses the application default `settings.dataManager.defaults.columnPickerFields`, which is **`auto`**. Set it to an empty string to limit the picker to grid and hidden grid fields, or `*` if every listable field should be available:
+
+```luceescript
+// /application/config/Config.cfc
+settings.dataManager.defaults.columnPickerFields = "*";
+```
+
+Per-object annotations still win over that global default.
+
+Per-column heading filters follow the same field pool and also require rules-engine listing filters to be enabled for the table (`allowFilter`). Properties with `autofilter=false`, formula fields, many-to-many and one-to-many relationships do not get a column filter. Many-to-one columns use an object picker for related records and a saved-filter picker for filters of that related object.
+
+A user's chosen column layout, and the view they last had selected, are stored per user, listing and **listing context**. By default that context is the table's ajax datasource query string (cache-buster parameters removed). Pass `listingContextKey` / `listingContextLabel` when two listings of the same object should be labelled and stored separately — for example corporate vs individual subscriptions, or subscriptions for a specific product. See [[customizingdatamanager]] for the listing `args` that turn the picker and filters on or off for a specific table.
+
+## Saved listing views
+
+A saved listing view is a named snapshot of the listing's **filters and columns**. It does not store free-text search, sort order, or page length. The implicit **Default** view is the object's annotated grid fields with no saved filters applied.
+
+Saved views follow the column picker. If you omit `@datamanagerAllowSavedViews`, views are **on** when the table can edit columns (`allowColumnPicker`, which is true unless the listing is compact) and **off** otherwise. Set the annotation to `true` or `false` to override that default:
+
+```luceescript
+// /application/preside-objects/author.cfc
+
+/**
+ * @datamanagerGroup           blog
+ * @datamanagerGridFields      name,post_count,datemodified
+ * @datamanagerAllowSavedViews false
+ */
+component {
+	property name="name" type="string" dbtype="varchar" maxlength="200" required=true uniqueindexes="name";
+	property name="post_count" type="numeric" formula="Count( ${prefix}posts.id )";
+}
+```
+
+Compact listings never show saved views, even when the annotation is `true`.
+
+Users can save **personal** views without any extra permission. Sharing a view as global or with a user group requires the CMS permission `datamanager.sharelistingviews`. Roles that already have `datamanager.*` pick this up automatically.
+
+When the table has a developer-supplied `listingContextLabel`, the save form also asks whether the view should apply to **all listings of this object** or **this context only**. Without a labelled context, that control is hidden and the view is stored against the derived datasource query string.
+
+Named views lock the filters they own until the user chooses **Edit view**. Visible columns can still be shown, hidden or reordered at any time; those column changes are not saved onto the view unless it is being edited. Extra search and extra filters can still be added on top without changing the saved view.
+
+To enable or disable views for a single embedded table (rather than the object's main listing), pass `allowSavedViews` to `objectDataTable()` / `_objectDataTable` — see [[customizingdatamanager]].
 
 ## Having record viewed in a modal popup
 

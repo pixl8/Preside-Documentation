@@ -198,6 +198,32 @@ renderedListingTable = objectDataTable( objectName="blog_post", args={} );
 renderedTreeView = objectTreeView( objectName="article", args={} );
 ```
 
+`objectDataTable()` runs the object's `listingViewlet` customization and falls back to the core listing viewlet. Pass listing toolbar flags in `args` to enable or disable column picking, per-column filters and saved views for **that table**, without changing the object's annotations (see [[datamanagerlistings]] and [[datamanagerbasics]]).
+
+```luceescript
+renderedListingTable = objectDataTable( objectName="blog_post", args={
+	  allowColumnPicker    = true
+	, allowColumnFilter    = true
+	, allowSavedViews      = true
+	, listingPreferenceKey = "blog_post_editorial"
+	, listingContextKey    = "corporate"
+	, listingContextLabel  = "crm.subscription:listing.context.corporate"
+} );
+```
+
+The flags that matter for the listing toolbar:
+
+* `compact`: when `true`, column picker, per-column filters and saved views are all forced **off**. Related-record tables on the view record screen use this.
+* `allowColumnPicker`: show/hide/reorder columns. Defaults to on unless `compact` is true.
+* `allowColumnFilter`: per-column heading filters. Defaults to on unless `compact` is true, and also requires `allowFilter` (rules engine listing filters).
+* `allowSavedViews`: named snapshots of filters plus columns. If you omit it, the core listing uses `@datamanagerAllowSavedViews` when that annotation is set, otherwise it follows `allowColumnPicker`. Pass `true` or `false` to override for this table only. Compact listings never show saved views.
+* `listingPreferenceKey`: isolates named saved views when the same object is listed in more than one place on the same screen. Defaults to the object name. It does not replace listing context.
+* `listingContextKey` / `listingContextLabel`: a labelled listing identity for user column prefs and saved views. The key is a stable machine id (max 100 characters). If the label contains `:`, it is treated as an i18n URI. When a label is present, the save form adds a **Context** control: all listings of this object vs this context only. **Share with** (global / personal / group) is unchanged.
+* If you omit `listingContextKey`, prefs and views are keyed from the table's ajax `datasourceUrl` query string (minus `cachebuster`, `prefetchCacheBuster` and `_`). Extra filters added through [[datamanager-customization-getadditionalquerystringforbuildajaxlistinglink|getAdditionalQueryStringForBuildAjaxListingLink]] are included. An empty query string is a plain object listing.
+* `hiddenGridFields`: extra columns to offer in the picker (merged with `@datamanagerHiddenGridFields`).
+
+You can replace the picker column pool entirely with a `getAvailableListingColumns` customization on the object (return an array of field names). Explicit `gridFields` / `hiddenGridFields` passed into the table are still merged into that pool.
+
 
 * [[datamanager-customization-listingviewlet|listingViewlet]]
 * [[datamanager-customization-prerenderlisting|preRenderListing]]
@@ -218,6 +244,9 @@ renderedTreeView = objectTreeView( objectName="article", args={} );
 * [[datamanager-customization-getlistingbatchactions|getListingBatchActions]]
 * [[datamanager-customization-multirecordaction|multiRecordAction]]
 * [[datamanager-customization-renderfooterforgridlisting|renderFooterForGridListing]]
+* [[datamanager-customization-geteverythingbaractions|getEverythingBarActions]]
+
+Picker pool and default visible columns (see [[datamanagerlistings]]): `getAvailableListingColumns`, `getDefaultListingColumns`.
 
 
 ### Adding records

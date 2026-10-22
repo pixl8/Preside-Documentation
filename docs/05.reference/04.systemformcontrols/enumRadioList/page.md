@@ -12,7 +12,7 @@ The `enumRadioList` control allows users to pick from the values of an enum, sho
         <tbody>
             <tr>
                 <th>enum (required)</th>
-                <td>Name of the enum to get values from</td>
+                <td>Name of the enum to get values from. Any enum from [[enums]], whether declared in configuration or registered at startup.</td>
             </tr>
         </tbody>
     </table>
