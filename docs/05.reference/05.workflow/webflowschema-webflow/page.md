@@ -15,6 +15,7 @@ webflow:
   id: string
   feature: string
   singleton: boolean
+  persistUndeclaredFields: boolean
   meta: object
   init: # {init}
   layout: # {handler}
@@ -61,6 +62,12 @@ webflow:
                 <td><code>false</code></td>
                 <td><code>string</code></td>
                 <td>Preside feature that must be enabled in order for this flow to be registered</td>
+            </tr>
+            <tr>
+                <td><code>webflow.persistUndeclaredFields</code></td>
+                <td><code>false</code></td>
+                <td><code>boolean</code></td>
+                <td>Default for steps in this flow that do not declare <code>submission.persistFields</code>. When <code>false</code>, those steps save form fields only. When <code>true</code>, those steps save the whole request. When omitted, the application setting <code>webflow.state.persistUndeclaredFields</code> is used. See [[webflowsubmittedfields]].</td>
             </tr>
             <tr>
                 <td><code>webflow.steps</code></td>
@@ -133,6 +140,7 @@ webflow:
                 "id":{ "type":"string", "description":"Unique identifier for the webflow template" },
                 "feature":{ "type":"string", "description":"Preside feature that must be enabled in order for this flow to be registered" },
                 "singleton":{ "type":"boolean", "description":"Whether or not more than one configured instance of this flow can exist, or not." },
+                "persistUndeclaredFields":{ "type":"boolean", "description":"Default for steps in this flow that do not declare submission.persistFields. When false, those steps save form fields only, even if the application setting webflow.state.persistUndeclaredFields is true. When true, those steps save the whole request, even if the application setting is false. When omitted, the application setting is used. A step that declares submission.persistFields always uses that list." },
                 "meta":{ "type":"object", "description":"Abitrary struct of metadata to describe/enhance the webflow definition" },
                 "init":{ "type":"object", "$ref": "webflow.init.schema.json" },
                 "layout":{ "type": "object", "$ref":"webflow.handler.schema.json", "description":"Explicit webflow layout viewlet in which to display steps" },

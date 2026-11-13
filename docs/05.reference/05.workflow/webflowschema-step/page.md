@@ -53,6 +53,8 @@ submission:
   handler: # { handler }
   autovalidateforms: boolean
   ignoretimeout: boolean
+  persistFields:
+  - string
 next: string # or array of strings
 prev: string # or array of strings
 start: boolean
@@ -202,6 +204,12 @@ subflowExitPoint: boolean
                 <td>Whether or not to ignore any timeouts set on the flow. Useful for critical steps such as payments.</td>
             </tr>
             <tr>
+                <td><code>submission.persistFields</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Extra request keys, other than the fields on the step form, that may be saved into webflow state. When this property is present, including as an empty list, undeclared request keys are not saved. When it is omitted, undeclared keys are saved only when the webflow allows them. See [[webflowsubmittedfields]].</td>
+            </tr>
+            <tr>
                 <td><code>next</code></td>
                 <td><code>false</code></td>
                 <td><code>string</code> or <code>array</code></td>
@@ -317,7 +325,12 @@ subflowExitPoint: boolean
                     "description":"Action to run when performing the 'back' action from this step. If the action returns false, the back trigger will be aborted and the step will remain active."
                 },
                 "autovalidateforms":{ "type":"boolean", "description":"Whether or not to automatically validate submitted preside forms (defaults to true)." },
-                "ignoretimeout":{ "type":"boolean", "description":"Whether or not to ignore any timeouts set on the flow. Useful for critical steps such as payments." }
+                "ignoretimeout":{ "type":"boolean", "description":"Whether or not to ignore any timeouts set on the flow. Useful for critical steps such as payments." },
+                "persistFields":{
+                    "type":"array",
+                    "description":"Explicit extra request keys, other than the fields on the step form, that may be saved into webflow state. When this property is present, undeclared request keys are not saved. When it is omitted, undeclared keys are saved only when the webflow allows them: webflow.persistUndeclaredFields when that property is set, otherwise webflow.state.persistUndeclaredFields.",
+                    "items":{ "type":"string" }
+                }
             }
         },
         "next":{
