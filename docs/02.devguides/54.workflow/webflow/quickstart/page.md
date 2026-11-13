@@ -174,17 +174,19 @@ component {
         // halted and the user being returned to the step they just submitted.
         // You can also achieve this by return 'false' from this method
 
-		// The persistData argument is a struct combining all the data from the
-		// form submission (with defaults and preprocessed fields), combined with
-		// any other data received in the rc scope. You can modify this, and the
-		// resulting persistData will be persisted to the state on success, or
-		// passed back to the calling page on validation failure.
+		// The persistData argument is the data that will be saved into webflow
+		// state. By default this is the submitted request together with the
+		// processed form fields. A step can limit that set. You can modify
+		// this struct. The result is saved on success, or passed back to the
+		// step when validation fails.
     }
 
 }
 ```
 
 Reload the application and journey through the flow, testing that you can only complete the flow by entering 'tutorial' in the custom input box.
+
+By default, `persistData` contains the submitted request as well as the processed form fields. See [[webflowsubmittedfields]] for how to limit that set.
 
 ### 7. Add custom step configuration for editors
 

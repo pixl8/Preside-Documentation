@@ -15,6 +15,7 @@ webflow:
   id: string
   feature: string
   singleton: boolean
+  persistUndeclaredFields: boolean
   meta: object
   init: # {init}
   layout: # {handler}
@@ -33,6 +34,7 @@ webflow:
 | `webflow` | `true` | `object` | Object containing the webflow definition. |
 | `webflow.id` | `true` | `string` | Unique identifier for the webflow. |
 | `webflow.feature` | `false` | `string` | Preside feature that must be enabled in order for this flow to be registered |
+| `webflow.persistUndeclaredFields` | `false` | `boolean` | Default for steps in this flow that do not declare `submission.persistFields`. When `false`, those steps save form fields only. When `true`, those steps save the whole request. When omitted, the application setting `webflow.state.persistUndeclaredFields` is used. See [[webflowsubmittedfields]]. |
 | `webflow.steps` | `true` | `array` | Array of [[webflowschema-step|step]] objects. Must have two or more steps. |
 | `webflow.meta` | `false` | `object` | Arbitrary data to help describe your flow. Not used by the engine. |
 | `webflow.init` | `false` | `object` | Optional [[webflowschema-init|init]] object that can be used to definie initialisation and configuration options for the flow. |
@@ -71,6 +73,7 @@ webflow:
                 "id":{ "type":"string", "description":"Unique identifier for the webflow template" },
                 "feature":{ "type":"string", "description":"Preside feature that must be enabled in order for this flow to be registered" },
                 "singleton":{ "type":"boolean", "description":"Whether or not more than one configured instance of this flow can exist, or not." },
+                "persistUndeclaredFields":{ "type":"boolean", "description":"Default for steps in this flow that do not declare submission.persistFields. When false, those steps save form fields only, even if the application setting webflow.state.persistUndeclaredFields is true. When true, those steps save the whole request, even if the application setting is false. When omitted, the application setting is used. A step that declares submission.persistFields always uses that list." },
                 "meta":{ "type":"object", "description":"Abitrary struct of metadata to describe/enhance the webflow definition" },
                 "init":{ "type":"object", "$ref": "webflow.init.schema.json" },
                 "layout":{ "type": "object", "$ref":"webflow.handler.schema.json", "description":"Explicit webflow layout viewlet in which to display steps" },
