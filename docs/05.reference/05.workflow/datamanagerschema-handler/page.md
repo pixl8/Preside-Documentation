@@ -16,10 +16,32 @@ args: object
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `event` | `true` | `string` | Coldbox `event` identifier of the handler  |
-| `args` | `false` | `object` | Arbitrary `args` to pass to the handler |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>event</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Coldbox <code>event</code> identifier of the handler</td>
+            </tr>
+            <tr>
+                <td><code>args</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Arbitrary <code>args</code> to pass to the handler</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### JSON schema
 

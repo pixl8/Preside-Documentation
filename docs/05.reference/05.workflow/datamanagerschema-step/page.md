@@ -18,10 +18,32 @@ steps:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `id`  | `true` | `string` | Unique identifier for the step within the flow |
-| `actions`  | `false` | `array` | Array of [[datamanagerworkflowschema-action|action]] objects |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the step within the flow</td>
+            </tr>
+            <tr>
+                <td><code>actions</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-action|action]] objects</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema

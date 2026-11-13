@@ -23,16 +23,68 @@ condition: # {condition}
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|
-| `state` | `false` | `object` | Object to define how initial state of any workflow instance is set. |
-| `state.handler` | `false` | `object` | Optional [[datamanagerworkflowschema-handler|handler]] that will be run to generate initial state args. |
-| `state.configform` | `false` | `string` | Preside form ID of a form that will be used to configure this webflow. |
-| `state.args` | `false` | `object` | Optional and arbitrary object that will be added to the initial state of any webflow instance on creation. |
-| `instanceargs` | `false` | `object` | Optional object that describes how cfflow 'instanceArgs' are generated for this webflow. |
-| `instanceargs.handler` | `false` | `object` | Optional [[datamanagerworkflowschema-handler|handler]] that will be run to generate instance args for this webflow. |
-| `instanceargs.args` | `false` | `object` | Optional arbitrary object that will be appended to the cfflow 'instanceArgs' for this webflow |
-| `condition` | `false` | `object` | Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for an instance of this webflow to be instantiated. |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>state</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Object to define how initial state of any workflow instance is set.</td>
+            </tr>
+            <tr>
+                <td><code>state.handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[datamanagerworkflowschema-handler|handler]] that will be run to generate initial state args.</td>
+            </tr>
+            <tr>
+                <td><code>state.configform</code></td>
+                <td><code>false</code></td>
+                <td><code>string</code></td>
+                <td>Preside form ID of a form that will be used to configure this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>state.args</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional and arbitrary object that will be added to the initial state of any webflow instance on creation.</td>
+            </tr>
+            <tr>
+                <td><code>instanceargs</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional object that describes how cfflow 'instanceArgs' are generated for this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>instanceargs.handler</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional [[datamanagerworkflowschema-handler|handler]] that will be run to generate instance args for this webflow.</td>
+            </tr>
+            <tr>
+                <td><code>instanceargs.args</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional arbitrary object that will be appended to the cfflow 'instanceArgs' for this webflow</td>
+            </tr>
+            <tr>
+                <td><code>condition</code></td>
+                <td><code>false</code></td>
+                <td><code>object</code></td>
+                <td>Optional cfflow [[datamanagerworkflowschema-condition|condition]] object that must evaluate to true in order for an instance of this webflow to be instantiated.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### JSON Schema
 

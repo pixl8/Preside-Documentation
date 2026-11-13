@@ -22,12 +22,44 @@ initialActions:
 
 ### Properties
 
-| Name | Required | Type | Description |
-|-------|--------|--------|--------|
-| `id`  | `true` | `string` | Unique identifier for the step within the flow |
-| `result`  | `true` | `object` | A [[datamanagerworkflowschema-result|default result]] object specifying what step transitions to execute |
-| `condition`  | `false` | `array` | A [[datamanagerworkflowschema-condition|condition]] object. If defined, the condition must evaluate to true before any other conditional initial actions for this action to be executed. |
-| `conditionalResults`  | `false` | `array` | Array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects |
+<div class="table-resp">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>id</code></td>
+                <td><code>true</code></td>
+                <td><code>string</code></td>
+                <td>Unique identifier for the step within the flow</td>
+            </tr>
+            <tr>
+                <td><code>result</code></td>
+                <td><code>true</code></td>
+                <td><code>object</code></td>
+                <td>A [[datamanagerworkflowschema-result|default result]] object specifying what step transitions to execute</td>
+            </tr>
+            <tr>
+                <td><code>condition</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>A [[datamanagerworkflowschema-condition|condition]] object. If defined, the condition must evaluate to true before any other conditional initial actions for this action to be executed.</td>
+            </tr>
+            <tr>
+                <td><code>conditionalResults</code></td>
+                <td><code>false</code></td>
+                <td><code>array</code></td>
+                <td>Array of [[datamanagerworkflowschema-conditionalresult|conditionalResult]] objects</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 ### JSON schema
